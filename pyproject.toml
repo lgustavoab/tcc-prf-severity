@@ -11,7 +11,7 @@ dependencies = [
 
 [project.scripts]
 prf-audit = "tcc_prf_severity.cli:audit_main"
-prf-ingest = "tcc_prf_severity.cli:ingest_main"
+prf-build-interim = "tcc_prf_severity.cli:build_interim_main"
 
 [dependency-groups]
 dev = [
