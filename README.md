@@ -4,17 +4,22 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 1 — Ingestão e auditoria reproduzível.**
+**Fase 1B — Contrato de dados e schema definitivo.**
 
 Nesta fase o projeto:
 
 - preserva os CSVs oficiais sem alteração;
 - valida a presença e ordem das 30 colunas esperadas;
 - padroniza apenas tipos técnicos;
-- cria um `target_grave_provisorio` para auditoria (`mortos > 0` ou `feridos_graves > 0`);
-- valida o schema com Pandera;
+- cria o target oficial `target_grave` (`mortos > 0` ou `feridos_graves > 0`), sem usar
+  `classificacao_acidente`;
+- valida tipos, nulabilidade, categorias estáveis e limites numéricos com Pandera;
+- valida IDs, relações entre contagens, ano, target e dia da semana entre colunas;
 - gera relatório de qualidade por ano;
-- ainda não faz limpeza de negócio, feature engineering ou machine learning.
+- mantém divergências na decomposição de `pessoas` como métrica de auditoria, não como erro;
+- ainda não remove ou imputa registros, gera Parquet, faz feature engineering ou machine learning.
+
+O contrato completo está em [`docs/DATA_CONTRACT.md`](docs/DATA_CONTRACT.md).
 
 ## Requisitos
 
@@ -57,19 +62,7 @@ artifacts/audit/audit_2021_2025.json
 artifacts/audit/audit_summary.csv
 ```
 
-## Gerar Parquet padronizado
-
-Após a auditoria ser aprovada:
-
-```powershell
-uv run prf-ingest
-```
-
-Saída:
-
-```text
-data/interim/prf_2021_2025_standardized.parquet
-```
+O Parquet intermediário pertence a uma fase posterior e não é gerado na Fase 1B.
 
 ## Qualidade
 

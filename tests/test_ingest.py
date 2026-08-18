@@ -40,10 +40,10 @@ def _raw_frame() -> pl.DataFrame:
     )
 
 
-def test_standardize_types_builds_provisional_target() -> None:
+def test_standardize_types_builds_target() -> None:
     result = standardize_types(_raw_frame(), year=2025)
 
-    assert result["target_grave_provisorio"].item() is True
+    assert result["target_grave"].item() is True
     assert result["source_year"].item() == 2025
     assert result["km"].item() == 128.5
     assert result["latitude"].item() == -23.55

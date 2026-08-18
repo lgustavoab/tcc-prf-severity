@@ -54,9 +54,7 @@ def standardize_types(df: pl.DataFrame, year: int) -> pl.DataFrame:
             pl.col("br").str.strip_chars().cast(pl.Int64, strict=False),
             pl.lit(year, dtype=pl.Int64).alias("source_year"),
         ]
-    ).with_columns(
-        ((pl.col("mortos") > 0) | (pl.col("feridos_graves") > 0)).alias("target_grave_provisorio")
-    )
+    ).with_columns(((pl.col("mortos") > 0) | (pl.col("feridos_graves") > 0)).alias("target_grave"))
 
 
 def load_year(path: Path, year: int) -> pl.DataFrame:
