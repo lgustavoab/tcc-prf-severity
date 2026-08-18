@@ -9,7 +9,7 @@ Este arquivo registra os valores esperados para os cinco CSVs enviados e analisa
 | Registros | 342.624 |
 | IDs únicos | 342.624 |
 | IDs duplicados | 0 |
-| Graves — target provisório | 96.857 |
+| Graves — `target_grave` | 96.857 |
 | Taxa de graves | 28,2692% |
 | Falhas em `feridos = feridos_leves + feridos_graves` | 0 |
 | Divergências na decomposição de `pessoas` | 18.538 |
@@ -39,3 +39,9 @@ SHA-256 dos arquivos analisados:
 ```
 
 Se a auditoria local produzir números diferentes, primeiro compare os hashes. A PRF pode atualizar retroativamente um arquivo anual, e isso deve ser registrado em vez de tratado automaticamente como erro do pipeline.
+
+## Contrato definitivo
+
+O target oficial é `target_grave = (mortos > 0) OR (feridos_graves > 0)`. A auditoria
+aplica o [contrato de dados](DATA_CONTRACT.md) completo antes de produzir os relatórios.
+`classificacao_acidente` não participa da construção do target.

@@ -10,7 +10,7 @@ import polars as pl
 
 from tcc_prf_severity.config import AUDIT_DIR, EXPECTED_YEARS, RAW_FILE_TEMPLATE
 from tcc_prf_severity.data.ingest import load_year
-from tcc_prf_severity.data.schemas import validate_standardized
+from tcc_prf_severity.data.validation import validate_dataset
 
 
 @dataclass(frozen=True)
@@ -46,7 +46,7 @@ def sha256_file(path: Path) -> str:
 
 
 def audit_year(df: pl.DataFrame, year: int, path: Path) -> YearAudit:
-    graves = int(_scalar(df, pl.col("target_grave_provisorio").sum()))
+    graves = int(_scalar(df, pl.col("target_grave").sum()))
     rows = df.height
 
     feridos_identity_failures = int(
@@ -74,7 +74,7 @@ def audit_year(df: pl.DataFrame, year: int, path: Path) -> YearAudit:
         year=year,
         sha256=sha256_file(path),
         rows=rows,
-        columns=len(df.columns) - 2,  # remove source_year e target provisório
+        columns=len(df.columns) - 2,  # remove source_year e target_grave
         duplicate_ids=int(df.select(pl.col("id").is_duplicated().sum()).item()),
         date_min=str(df.select(pl.col("data_inversa").min()).item()),
         date_max=str(df.select(pl.col("data_inversa").max()).item()),
@@ -147,7 +147,7 @@ def run_audit(raw_dir: Path, output_dir: Path = AUDIT_DIR) -> dict[str, Any]:
             raise FileNotFoundError(f"Arquivo obrigatório não encontrado: {path}")
 
         df = load_year(path, year)
-        validate_standardized(df)
+        validate_dataset(df)
         all_frames.append(df)
         yearly_reports.append(audit_year(df, year, path))
         detailed[str(year)] = {
@@ -157,20 +157,27 @@ def run_audit(raw_dir: Path, output_dir: Path = AUDIT_DIR) -> dict[str, Any]:
         }
 
     combined = pl.concat(all_frames, how="vertical_relaxed", rechunk=True)
+    validate_dataset(combined)
 
     summary = {
         "years": [asdict(report) for report in yearly_reports],
         "combined": {
             "rows": combined.height,
             "duplicate_ids": int(combined.select(pl.col("id").is_duplicated().sum()).item()),
-            "graves": int(combined.select(pl.col("target_grave_provisorio").sum()).item()),
-            "grave_rate": round(
-                float(combined.select(pl.col("target_grave_provisorio").mean()).item()), 6
+            "graves": int(combined.select(pl.col("target_grave").sum()).item()),
+            "grave_rate": round(float(combined.select(pl.col("target_grave").mean()).item()), 6),
+            "feridos_identity_failures": sum(
+                report.feridos_identity_failures for report in yearly_reports
             ),
+            "pessoas_identity_failures": sum(
+                report.pessoas_identity_failures for report in yearly_reports
+            ),
+            "br_zero": sum(report.br_zero for report in yearly_reports),
+            "km_zero": sum(report.km_zero for report in yearly_reports),
         },
         "details": detailed,
         "notes": {
-            "target": "PROVISORIO: mortos > 0 OU feridos_graves > 0",
+            "target": "target_grave = (mortos > 0) OU (feridos_graves > 0)",
             "raw_files_mutated": False,
             "modeling_started": False,
         },

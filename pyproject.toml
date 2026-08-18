@@ -52,3 +52,6 @@ include = ["src", "tests"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+filterwarnings = [
+    "ignore:the default behavior of `how='horizontal'` for `concat` is deprecated:DeprecationWarning:pandera.backends.polars.checks",
+]

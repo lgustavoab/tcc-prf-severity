@@ -7,7 +7,7 @@ from tcc_prf_severity.config import (
 )
 from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.ingest import concatenate_years, load_year
-from tcc_prf_severity.data.schemas import validate_standardized
+from tcc_prf_severity.data.validation import validate_dataset
 
 
 def audit_main() -> None:
@@ -15,7 +15,7 @@ def audit_main() -> None:
     combined = summary["combined"]
     print("Auditoria concluída.")
     print(f"Registros: {combined['rows']:,}".replace(",", "."))
-    print(f"Graves (target provisório): {combined['graves']:,}".replace(",", "."))
+    print(f"Graves (target_grave): {combined['graves']:,}".replace(",", "."))
     print(f"Taxa de graves: {combined['grave_rate']:.2%}")
     print(f"Relatórios: {AUDIT_DIR}")
 
@@ -27,11 +27,11 @@ def ingest_main() -> None:
         if not path.exists():
             raise FileNotFoundError(f"Arquivo obrigatório não encontrado: {path}")
         frame = load_year(path, year)
-        validate_standardized(frame)
+        validate_dataset(frame)
         frames.append(frame)
 
     combined = concatenate_years(frames)
-    validate_standardized(combined)
+    validate_dataset(combined)
 
     INTERIM_DIR.mkdir(parents=True, exist_ok=True)
     output = INTERIM_DIR / "prf_2021_2025_standardized.parquet"
