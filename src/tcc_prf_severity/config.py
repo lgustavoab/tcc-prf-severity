@@ -7,6 +7,9 @@ INTERIM_DIR = DATA_DIR / "interim"
 PROCESSED_DIR = DATA_DIR / "processed"
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
 AUDIT_DIR = ARTIFACTS_DIR / "audit"
+INTERIM_ARTIFACTS_DIR = ARTIFACTS_DIR / "interim"
+INTERIM_PARQUET_PATH = INTERIM_DIR / "prf_accidents_2021_2025.parquet"
+INTERIM_MANIFEST_PATH = INTERIM_ARTIFACTS_DIR / "interim_manifest.json"
 
 EXPECTED_YEARS = tuple(range(2021, 2026))
 RAW_FILE_TEMPLATE = "datatran{year}.csv"

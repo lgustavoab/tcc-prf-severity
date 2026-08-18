@@ -16,7 +16,7 @@ __pycache__/
 # Dados locais: não versionar dados brutos/intermediários/processados
 /data/raw/*.csv
 /data/raw/*.zip
-/data/interim/*
+/data/interim/*.parquet
 !/data/interim/.gitkeep
 /data/processed/*
 !/data/processed/.gitkeep
@@ -26,6 +26,9 @@ __pycache__/
 !/artifacts/audit/
 /artifacts/audit/*
 !/artifacts/audit/.gitkeep
+!/artifacts/interim/
+/artifacts/interim/*.json
+!/artifacts/interim/.gitkeep
 /mlruns/
 
 # Sistema operacional

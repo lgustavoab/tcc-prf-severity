@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 1B — Contrato de dados e schema definitivo.**
+**Fase 1C — Dataset intermediário padronizado em Apache Parquet.**
 
 Nesta fase o projeto:
 
@@ -17,9 +17,12 @@ Nesta fase o projeto:
 - valida IDs, relações entre contagens, ano, target e dia da semana entre colunas;
 - gera relatório de qualidade por ano;
 - mantém divergências na decomposição de `pessoas` como métrica de auditoria, não como erro;
-- ainda não remove ou imputa registros, gera Parquet, faz feature engineering ou machine learning.
+- consolida os cinco anos em um Parquet validado antes e depois da persistência;
+- registra proveniência, hashes e versões em um manifesto;
+- ainda não remove ou imputa registros, faz feature engineering ou machine learning.
 
-O contrato completo está em [`docs/DATA_CONTRACT.md`](docs/DATA_CONTRACT.md).
+Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
+[`dataset intermediário`](docs/INTERIM_DATASET.md).
 
 ## Requisitos
 
@@ -62,7 +65,18 @@ artifacts/audit/audit_2021_2025.json
 artifacts/audit/audit_summary.csv
 ```
 
-O Parquet intermediário pertence a uma fase posterior e não é gerado na Fase 1B.
+## Dataset intermediário
+
+```powershell
+uv run prf-build-interim
+```
+
+Saídas locais, derivadas e ignoradas pelo Git:
+
+```text
+data/interim/prf_accidents_2021_2025.parquet
+artifacts/interim/interim_manifest.json
+```
 
 ## Qualidade
 
