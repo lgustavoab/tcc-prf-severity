@@ -2736,6 +2736,7 @@ name = "tcc-prf-severity"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "matplotlib" },
     { name = "pandera", extra = ["polars"] },
     { name = "polars" },
 ]
@@ -2755,13 +2756,13 @@ ml = [
 ]
 viz = [
     { name = "jupyterlab" },
-    { name = "matplotlib" },
     { name = "plotly" },
     { name = "streamlit" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "matplotlib" },
     { name = "pandera", extras = ["polars"] },
     { name = "polars" },
 ]
@@ -2781,7 +2782,6 @@ ml = [
 ]
 viz = [
     { name = "jupyterlab" },
-    { name = "matplotlib" },
     { name = "plotly" },
     { name = "streamlit" },
 ]

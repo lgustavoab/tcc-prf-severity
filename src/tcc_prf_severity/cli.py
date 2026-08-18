@@ -1,3 +1,4 @@
+from tcc_prf_severity.analysis.general import run_general_analysis
 from tcc_prf_severity.config import (
     AUDIT_DIR,
     RAW_DIR,
@@ -37,3 +38,23 @@ def verify_interim_main() -> None:
     print(f"SHA-256: {result.sha256}")
     print(f"RAW sources: {result.raw_sources_verified}/5 OK")
     print("Manifesto: OK")
+
+
+def eda_general_main() -> None:
+    result = run_general_analysis()
+    analysis = result.analysis
+    summary = analysis.annual_summary
+    stability = analysis.stability
+    rows = int(summary.get_column("total_occurrences").sum())
+    graves = int(summary.get_column("severe_occurrences").sum())
+    years = summary.get_column("source_year")
+
+    print("Fase 2A concluída.")
+    print(f"Registros: {rows:,}".replace(",", "."))
+    print(f"Período: {years.min()}-{years.max()}")
+    print(f"Graves: {graves:,}".replace(",", "."))
+    print(f"Taxa global: {stability.weighted_global_rate_percent:.2f}%")
+    print(f"Menor taxa anual: {stability.minimum_annual_rate_percent:.2f}%")
+    print(f"Maior taxa anual: {stability.maximum_annual_rate_percent:.2f}%")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")

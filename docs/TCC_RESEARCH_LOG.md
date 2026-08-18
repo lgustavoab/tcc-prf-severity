@@ -56,7 +56,9 @@ identificação de ocorrências graves.
 ## Objetivos específicos
 
 1. Consolidar e validar os registros da PRF de 2021 a 2025. **Concluído na Fase 1.**
-2. Caracterizar temporal e geograficamente as ocorrências. **Ainda não executado.**
+2. Caracterizar temporal e geograficamente as ocorrências. **Iniciado na Fase 2A com a
+   caracterização anual geral; padrões temporais detalhados e geográficos ainda não foram
+   executados.**
 3. Investigar fatores associados à gravidade. **Ainda não executado.**
 4. Definir operacionalmente uma variável-alvo de gravidade. **Concluído na Fase 1.**
 5. Treinar e comparar modelos de classificação. **Ainda não executado.**
@@ -188,9 +190,41 @@ registros foi corrigido ou removido na fundação de dados.
 
 ## Achados exploratórios
 
-Nenhum achado EDA foi registrado. A Fase 2 ainda não foi iniciada. Registros detalhados devem
-nascer em [EDA_FINDINGS.md](EDA_FINDINGS.md) e somente depois de revisão podem ser sintetizados
-aqui com IDs `EDAxxx`.
+### EDA001 — Distribuição anual do volume
+
+Entre as 342.624 ocorrências registradas, os totais anuais variaram de 64.567 em 2021 a 73.156
+em 2024. O volume ficou praticamente estável em 2022 (+0,0604%), cresceu em 2023 (+4,8912%) e
+2024 (+7,9538%) e recuou discretamente em 2025 (-0,8571%). O resultado descreve a composição
+da base e não mede exposição ao tráfego ou risco de acidente.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA001](EDA_FINDINGS.md#eda001--distribuição-anual-do-volume-de-ocorrências-registradas).
+
+### EDA002 — Estabilidade descritiva do target
+
+A proporção anual de ocorrências graves permaneceu entre 28,0608% e 28,4943%, com amplitude
+de 0,4335 ponto percentual. A média anual simples foi 28,2707%, enquanto a taxa global
+ponderada pelos registros foi 28,2692%. A proximidade é descritiva e não substitui avaliação
+inferencial futura.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA002](EDA_FINDINGS.md#eda002--estabilidade-descritiva-da-proporção-anual-de-ocorrências-graves).
+
+### EDA003 — Qualidade analítica básica
+
+Somente `classificacao_acidente`, `regional`, `delegacia` e `uop` apresentaram nulos, todos
+com proporções inferiores a 0,1% por coluna. Foram preservados 883 registros `Não Informado`
+em `sentido_via` e 4.492 registros `Ignorado` em `condicao_metereologica`; essas categorias
+não foram convertidas para nulo.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA003](EDA_FINDINGS.md#eda003--nulidade-e-categorias-especiais-preservadas).
+
+### EDA004 — Cardinalidade categórica
+
+As maiores cardinalidades entre as variáveis categóricas avaliadas ocorreram em `municipio`
+(2.050), `tracado_via` (1.214), `uop` (408), `delegacia` (155) e `causa_acidente` (76). Esse
+resultado orienta decisões futuras de apresentação e codificação, mas não mede relevância ou
+capacidade preditiva.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA004](EDA_FINDINGS.md#eda004--cardinalidade-das-principais-variáveis-categóricas).
 
 ## Hipóteses
 
@@ -240,8 +274,10 @@ explicitamente quantificadas e consideradas nas análises.
 
 ## Figuras e tabelas associadas
 
-Nenhuma figura ou tabela científica foi produzida. Artefatos futuros devem ser armazenados em
-`reports/figures/` e `reports/tables/` e referenciados pelo ID do registro correspondente.
+A Fase 2A produziu as figuras `phase_2a_occurrences_by_year.png` e
+`phase_2a_severe_rate_by_year.png`, além das tabelas de resumo anual, qualidade, cardinalidade
+e categorias especiais em `reports/`. Cada artefato está associado aos IDs EDA correspondentes
+em [EDA_FINDINGS.md](EDA_FINDINGS.md).
 
 ## Templates para registros futuros
 
