@@ -102,6 +102,15 @@ uv run pyright
 uv run pytest
 ```
 
+## Documentação científica
+
+- [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
+  resultados confirmados, hipóteses e limitações.
+- [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da futura Fase 2,
+  inclusive resultados provisórios ou inconclusivos.
+- [`PHASE_1_ACCEPTANCE.md`](docs/PHASE_1_ACCEPTANCE.md): evidência congelada do encerramento e
+  aceite da fundação de dados.
+
 ## Grupos planejados
 
 As dependências das fases futuras já estão separadas no `pyproject.toml`:
