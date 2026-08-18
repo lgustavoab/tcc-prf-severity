@@ -5,6 +5,7 @@ description = "TCC de Ciência de Dados: gravidade de acidentes em rodovias fede
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
 dependencies = [
+    "matplotlib",
     "polars",
     "pandera[polars]",
 ]
@@ -12,6 +13,7 @@ dependencies = [
 [project.scripts]
 prf-audit = "tcc_prf_severity.cli:audit_main"
 prf-build-interim = "tcc_prf_severity.cli:build_interim_main"
+prf-eda-general = "tcc_prf_severity.cli:eda_general_main"
 prf-verify-interim = "tcc_prf_severity.cli:verify_interim_main"
 
 [dependency-groups]
@@ -29,7 +31,6 @@ ml = [
 ]
 viz = [
     "jupyterlab",
-    "matplotlib",
     "plotly",
     "streamlit",
 ]

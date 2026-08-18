@@ -1,0 +1,16 @@
+column,distinct_non_null,null_count
+dia_semana,7,0
+uf,27,0
+municipio,2050,0
+causa_acidente,76,0
+tipo_acidente,18,0
+classificacao_acidente,3,5
+fase_dia,4,0
+sentido_via,3,0
+condicao_metereologica,10,0
+tipo_pista,3,0
+tracado_via,1214,0
+uso_solo,2,0
+regional,28,27
+delegacia,155,127
+uop,408,282

@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 1D — Fundação de dados aceita e reproduzível.**
+**Fase 2A — Caracterização geral das ocorrências registradas.**
 
 Nesta fase o projeto:
 
@@ -20,7 +20,9 @@ Nesta fase o projeto:
 - consolida os cinco anos em um Parquet validado antes e depois da persistência;
 - registra proveniência, hashes e versões em um manifesto;
 - verifica o Parquet e sua proveniência sem reconstruir ou modificar os artefatos;
-- ainda não remove ou imputa registros, faz feature engineering ou machine learning.
+- caracteriza volume anual, estabilidade do target, nulidade e cardinalidade básica;
+- ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
+  learning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -102,11 +104,21 @@ uv run pyright
 uv run pytest
 ```
 
+## EDA — Caracterização geral
+
+```powershell
+uv run prf-eda-general
+```
+
+O comando verifica o interim e gera quatro tabelas em `reports/tables/` e duas figuras
+científicas em `reports/figures/`. A lógica numérica oficial está em
+`src/tcc_prf_severity/analysis/general.py`.
+
 ## Documentação científica
 
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
-- [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da futura Fase 2,
+- [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
   inclusive resultados provisórios ou inconclusivos.
 - [`PHASE_1_ACCEPTANCE.md`](docs/PHASE_1_ACCEPTANCE.md): evidência congelada do encerramento e
   aceite da fundação de dados.
@@ -116,9 +128,10 @@ uv run pytest
 As dependências das fases futuras já estão separadas no `pyproject.toml`:
 
 - `ml`: scikit-learn, XGBoost, Optuna, MLflow e SHAP;
-- `viz`: JupyterLab, Matplotlib, Plotly e Streamlit.
+- `viz`: JupyterLab, Plotly e Streamlit.
 
-Elas não são necessárias para concluir a Fase 1.
+Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2A. Os grupos
+`ml` e `viz` permanecem reservados para fases futuras.
 
 ## Princípio metodológico
 
