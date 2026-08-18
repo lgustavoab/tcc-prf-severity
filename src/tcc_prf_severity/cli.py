@@ -3,7 +3,7 @@ from tcc_prf_severity.config import (
     RAW_DIR,
 )
 from tcc_prf_severity.data.audit import run_audit
-from tcc_prf_severity.data.interim import build_interim_dataset
+from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 
 
 def audit_main() -> None:
@@ -25,3 +25,15 @@ def build_interim_main() -> None:
     print(f"Taxa de graves: {result.grave_rate:.2%}")
     print(f"Parquet: {result.parquet_path}")
     print(f"Manifesto: {result.manifest_path}")
+
+
+def verify_interim_main() -> None:
+    result = verify_interim_dataset()
+    print("Dataset intermediário verificado.")
+    print(f"Registros: {result.rows:,}".replace(",", "."))
+    print(f"Colunas: {result.columns}")
+    print(f"Graves: {result.graves:,}".replace(",", "."))
+    print(f"Taxa de graves: {result.grave_rate:.2%}")
+    print(f"SHA-256: {result.sha256}")
+    print(f"RAW sources: {result.raw_sources_verified}/5 OK")
+    print("Manifesto: OK")

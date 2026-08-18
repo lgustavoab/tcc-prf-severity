@@ -1,11 +1,9 @@
 $ErrorActionPreference = "Stop"
 
-uv lock
-uv sync --locked
-uv run ruff format .
+uv run ruff format --check .
 uv run ruff check .
 uv run pyright
 uv run pytest
 uv run prf-audit
 uv run prf-build-interim
-uv run pytest
+uv run prf-verify-interim

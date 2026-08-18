@@ -5,6 +5,7 @@ import os
 import sys
 import tempfile
 import uuid
+from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from importlib.metadata import PackageNotFoundError, version
@@ -14,6 +15,7 @@ from typing import Any
 import polars as pl
 
 from tcc_prf_severity.config import (
+    EXPECTED_RAW_SHA256,
     EXPECTED_YEARS,
     INTERIM_MANIFEST_PATH,
     INTERIM_PARQUET_PATH,
@@ -45,6 +47,20 @@ class InterimBuildResult:
     grave_rate: float
     sha256: str
     size_bytes: int
+
+
+@dataclass(frozen=True)
+class InterimVerificationResult:
+    parquet_path: Path
+    manifest_path: Path
+    rows: int
+    columns: int
+    years: tuple[int, ...]
+    graves: int
+    grave_rate: float
+    sha256: str
+    size_bytes: int
+    raw_sources_verified: int
 
 
 DEFAULT_INTERIM_EXPECTATIONS = InterimExpectations()
@@ -150,6 +166,128 @@ def _manifest(
             "project": _installed_version("tcc-prf-severity"),
         },
     }
+
+
+def _read_manifest(manifest_path: Path) -> dict[str, Any]:
+    if not manifest_path.is_file():
+        raise FileNotFoundError(f"Manifesto intermediário não encontrado: {manifest_path}")
+
+    try:
+        manifest: dict[str, Any] = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise ValueError(
+            f"Não foi possível ler o manifesto intermediário: {manifest_path}"
+        ) from error
+
+    if not isinstance(manifest, dict):
+        raise ValueError("Manifesto intermediário inválido: o conteúdo deve ser um objeto JSON.")
+    return manifest
+
+
+def _validate_manifest_and_sources(
+    manifest: dict[str, Any],
+    df: pl.DataFrame,
+    parquet_path: Path,
+    parquet_sha256: str,
+    parquet_size: int,
+    raw_dir: Path,
+    expected: InterimExpectations,
+    expected_raw_sha256: Mapping[int, str] | None,
+) -> int:
+    years, graves, _ = _dataset_metrics(df)
+    expected_values: dict[str, Any] = {
+        "sha256": parquet_sha256,
+        "size_bytes": parquet_size,
+        "rows": df.height,
+        "columns": df.width,
+        "years": list(years),
+        "graves": graves,
+        "grave_rate": round(graves / df.height, 6),
+        "schema": {name: str(dtype) for name, dtype in df.schema.items()},
+        "artifact_name": parquet_path.name,
+        "format": "parquet",
+        "compression": "zstd",
+    }
+    failures: list[str] = []
+
+    for field, expected_value in expected_values.items():
+        if field not in manifest:
+            failures.append(f"campo ausente no manifesto: {field}")
+        elif manifest[field] != expected_value:
+            failures.append(
+                f"{field} divergente no manifesto: "
+                f"esperado={expected_value!r}, recebido={manifest[field]!r}"
+            )
+
+    raw_sources = manifest.get("raw_sources")
+    entries_by_year: dict[int, dict[str, Any]] = {}
+    if not isinstance(raw_sources, list):
+        failures.append("raw_sources ausente ou inválido no manifesto")
+    else:
+        for index, source in enumerate(raw_sources):
+            if not isinstance(source, dict):
+                failures.append(f"raw_sources[{index}] não é um objeto")
+                continue
+            year = source.get("year")
+            if not isinstance(year, int):
+                failures.append(f"raw_sources[{index}].year é inválido")
+            elif year in entries_by_year:
+                failures.append(f"fonte RAW duplicada no manifesto para o ano {year}")
+            else:
+                entries_by_year[year] = source
+
+    verified_sources = 0
+    for year in expected.years:
+        source_path = raw_dir / RAW_FILE_TEMPLATE.format(year=year)
+        entry = entries_by_year.get(year)
+        source_ok = True
+
+        if entry is None:
+            failures.append(f"fonte RAW {year} ausente no manifesto")
+            source_ok = False
+        if not source_path.is_file():
+            failures.append(f"arquivo RAW {year} não encontrado: {source_path}")
+            source_ok = False
+
+        if entry is not None:
+            if entry.get("filename") != source_path.name:
+                failures.append(
+                    f"nome da fonte RAW {year} divergente: "
+                    f"esperado={source_path.name!r}, recebido={entry.get('filename')!r}"
+                )
+                source_ok = False
+            if source_path.is_file():
+                current_hash = sha256_file(source_path)
+                if entry.get("sha256") != current_hash:
+                    failures.append(
+                        f"SHA-256 da fonte RAW {year} divergente: "
+                        f"manifesto={entry.get('sha256')!r}, atual={current_hash!r}"
+                    )
+                    source_ok = False
+                if expected_raw_sha256 is not None:
+                    baseline_hash = expected_raw_sha256.get(year)
+                    if baseline_hash is None:
+                        failures.append(f"SHA-256 oficial não definido para a fonte RAW {year}")
+                        source_ok = False
+                    elif current_hash != baseline_hash:
+                        failures.append(
+                            f"SHA-256 da fonte RAW {year} diverge do baseline oficial: "
+                            f"esperado={baseline_hash!r}, atual={current_hash!r}"
+                        )
+                        source_ok = False
+
+        if source_ok:
+            verified_sources += 1
+
+    unexpected_years = sorted(set(entries_by_year) - set(expected.years))
+    if unexpected_years:
+        failures.append(f"fontes RAW inesperadas no manifesto: {unexpected_years}")
+
+    if failures:
+        details = "\n- ".join(failures)
+        raise ValueError(f"Manifesto ou proveniência divergente:\n- {details}")
+
+    return verified_sources
 
 
 def _backup_path(path: Path) -> Path:
@@ -325,3 +463,54 @@ def build_interim_dataset(
             temporary_parquet.unlink(missing_ok=True)
         if temporary_manifest is not None:
             temporary_manifest.unlink(missing_ok=True)
+
+
+def verify_interim_dataset(
+    raw_dir: Path = RAW_DIR,
+    parquet_path: Path = INTERIM_PARQUET_PATH,
+    manifest_path: Path = INTERIM_MANIFEST_PATH,
+    *,
+    expected: InterimExpectations = DEFAULT_INTERIM_EXPECTATIONS,
+    expected_raw_sha256: Mapping[int, str] | None = EXPECTED_RAW_SHA256,
+) -> InterimVerificationResult:
+    """Verifica, sem reconstruir ou modificar, o Parquet e sua proveniência."""
+    if not parquet_path.is_file():
+        raise FileNotFoundError(f"Parquet intermediário não encontrado: {parquet_path}")
+    if not manifest_path.is_file():
+        raise FileNotFoundError(f"Manifesto intermediário não encontrado: {manifest_path}")
+
+    try:
+        persisted = pl.read_parquet(parquet_path)
+    except Exception as error:
+        raise ValueError(f"Não foi possível ler o Parquet intermediário: {parquet_path}") from error
+
+    validate_dataset(persisted)
+    _validate_expected_dataset(persisted, expected)
+
+    parquet_sha256 = sha256_file(parquet_path)
+    parquet_size = parquet_path.stat().st_size
+    manifest = _read_manifest(manifest_path)
+    verified_sources = _validate_manifest_and_sources(
+        manifest,
+        persisted,
+        parquet_path,
+        parquet_sha256,
+        parquet_size,
+        raw_dir,
+        expected,
+        expected_raw_sha256,
+    )
+    years, graves, _ = _dataset_metrics(persisted)
+
+    return InterimVerificationResult(
+        parquet_path=parquet_path,
+        manifest_path=manifest_path,
+        rows=persisted.height,
+        columns=persisted.width,
+        years=years,
+        graves=graves,
+        grave_rate=graves / persisted.height,
+        sha256=parquet_sha256,
+        size_bytes=parquet_size,
+        raw_sources_verified=verified_sources,
+    )
