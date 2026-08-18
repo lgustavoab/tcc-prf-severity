@@ -1,0 +1,33 @@
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.pyright/
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dados locais: não versionar dados brutos/intermediários/processados
+/data/raw/*.csv
+/data/raw/*.zip
+/data/interim/*
+!/data/interim/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+
+# Artefatos gerados
+/artifacts/*
+!/artifacts/audit/
+/artifacts/audit/*
+!/artifacts/audit/.gitkeep
+/mlruns/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
