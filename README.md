@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 1C — Dataset intermediário padronizado em Apache Parquet.**
+**Fase 1D — Fundação de dados aceita e reproduzível.**
 
 Nesta fase o projeto:
 
@@ -19,10 +19,12 @@ Nesta fase o projeto:
 - mantém divergências na decomposição de `pessoas` como métrica de auditoria, não como erro;
 - consolida os cinco anos em um Parquet validado antes e depois da persistência;
 - registra proveniência, hashes e versões em um manifesto;
+- verifica o Parquet e sua proveniência sem reconstruir ou modificar os artefatos;
 - ainda não remove ou imputa registros, faz feature engineering ou machine learning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
-[`dataset intermediário`](docs/INTERIM_DATASET.md).
+[`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
+[`docs/PHASE_1_ACCEPTANCE.md`](docs/PHASE_1_ACCEPTANCE.md).
 
 ## Requisitos
 
@@ -46,7 +48,6 @@ Os dados brutos não são versionados no Git.
 ## Instalação
 
 ```powershell
-uv lock
 uv sync --locked
 ```
 
@@ -77,6 +78,20 @@ Saídas locais, derivadas e ignoradas pelo Git:
 data/interim/prf_accidents_2021_2025.parquet
 artifacts/interim/interim_manifest.json
 ```
+
+## Reprodução da fundação de dados
+
+```powershell
+uv sync --locked
+uv run prf-audit
+uv run prf-build-interim
+uv run prf-verify-interim
+```
+
+- `uv sync --locked`: reproduz o ambiente definido no `uv.lock`.
+- `prf-audit`: valida os RAW e reproduz as métricas de qualidade.
+- `prf-build-interim`: reconstrói e publica o par Parquet + manifesto.
+- `prf-verify-interim`: verifica, sem reconstruir, contrato, baseline, manifesto e hashes RAW.
 
 ## Qualidade
 

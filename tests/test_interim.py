@@ -13,6 +13,7 @@ from tcc_prf_severity.data.interim import (
     InterimBuildResult,
     InterimExpectations,
     build_interim_dataset,
+    verify_interim_dataset,
 )
 from tcc_prf_severity.data.validation import validate_dataset
 
@@ -267,3 +268,177 @@ def test_manifest_publish_failure_without_previous_pair_leaves_no_artifacts(
     assert not manifest_path.exists()
     assert not list(parquet_path.parent.glob(f".{parquet_path.name}.*"))
     assert not list(manifest_path.parent.glob(f".{manifest_path.name}.*"))
+
+
+def test_valid_interim_verification_passes(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+
+    result = verify_interim_dataset(
+        raw_dir,
+        build_result.parquet_path,
+        build_result.manifest_path,
+        expected=expected,
+        expected_raw_sha256=None,
+    )
+
+    assert result.rows == 5
+    assert result.columns == 32
+    assert result.years == (2021, 2022, 2023, 2024, 2025)
+    assert result.graves == 1
+    assert result.sha256 == build_result.sha256
+    assert result.raw_sources_verified == 5
+
+
+def test_verification_fails_when_parquet_is_missing(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    build_result.parquet_path.unlink()
+
+    with pytest.raises(FileNotFoundError, match="Parquet intermediário não encontrado"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=None,
+        )
+
+
+def test_verification_fails_when_manifest_is_missing(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    build_result.manifest_path.unlink()
+
+    with pytest.raises(FileNotFoundError, match="Manifesto intermediário não encontrado"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=None,
+        )
+
+
+def test_verification_fails_when_manifest_parquet_hash_is_tampered(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    manifest = json.loads(build_result.manifest_path.read_text(encoding="utf-8"))
+    manifest["sha256"] = "0" * 64
+    build_result.manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="sha256 divergente no manifesto"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=None,
+        )
+
+
+def test_verification_fails_when_manifest_metric_is_tampered(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    manifest = json.loads(build_result.manifest_path.read_text(encoding="utf-8"))
+    manifest["rows"] = 6
+    build_result.manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="rows divergente no manifesto"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=None,
+        )
+
+
+def test_verification_fails_when_raw_source_changes(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    changed_source = raw_dir / "datatran2021.csv"
+    changed_source.write_bytes(changed_source.read_bytes() + b"\n")
+
+    with pytest.raises(ValueError, match="SHA-256 da fonte RAW 2021 divergente"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=None,
+        )
+
+
+def test_verification_fails_when_raw_hash_differs_from_official_baseline(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    different_baseline = {year: "0" * 64 for year in range(2021, 2026)}
+
+    with pytest.raises(ValueError, match="diverge do baseline oficial"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=different_baseline,
+        )
+
+
+def test_verification_fails_when_parquet_is_corrupted(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    build_result.parquet_path.write_bytes(b"not a parquet file")
+
+    with pytest.raises(ValueError, match="Não foi possível ler o Parquet intermediário"):
+        verify_interim_dataset(
+            raw_dir,
+            build_result.parquet_path,
+            build_result.manifest_path,
+            expected=expected,
+            expected_raw_sha256=None,
+        )
+
+
+def test_verification_does_not_modify_any_artifact(
+    built_interim: tuple[InterimBuildResult, Path, dict[Path, str]],
+    expected: InterimExpectations,
+) -> None:
+    build_result, raw_dir, _ = built_interim
+    paths = [
+        *sorted(raw_dir.glob("datatran*.csv")),
+        build_result.parquet_path,
+        build_result.manifest_path,
+    ]
+    before = {
+        path: (sha256_file(path), path.stat().st_size, path.stat().st_mtime_ns) for path in paths
+    }
+
+    verify_interim_dataset(
+        raw_dir,
+        build_result.parquet_path,
+        build_result.manifest_path,
+        expected=expected,
+        expected_raw_sha256=None,
+    )
+
+    after = {
+        path: (sha256_file(path), path.stat().st_size, path.stat().st_mtime_ns) for path in paths
+    }
+    assert after == before
