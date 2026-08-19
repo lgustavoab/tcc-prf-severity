@@ -591,6 +591,34 @@ modestos, a ausência de tendência demonstrada nos folds, o cegamento estrutura
 **Status:** primeira versão concluída e auditada; próxima etapa: Fase 5F — revisão científica,
 editorial e de integração, sem reabrir resultados congelados.
 
+### D025 — Revisão científica e editorial sem reabertura dos resultados
+
+**Data:** 19/08/2026.
+
+**Decisão:** revisar os capítulos 4 e 5 em novo documento, preservando o rascunho histórico da
+Fase 5E.2, a estrutura da Fase 5C, os resultados congelados, os elementos acadêmicos e somente
+as referências verificadas. A revisão padroniza terminologia, melhora transições e reduz
+redundâncias sem alterar conteúdo científico.
+
+**Justificativa:** a primeira redação já era rastreável, mas ainda continha linguagem de
+implementação, IDs internos visíveis e repetições de cautelas. A integração acadêmica exigia
+distinguir com maior fluidez associação descritiva, capacidade preditiva e contribuição para
+as predições do modelo.
+
+**Consequências:** foram preservados os 45 parágrafos de prosa, os 41 grupos numéricos, as 16
+unidades de citação e as 19 referências `VERIFIED`. Termos técnicos foram apresentados em
+português ou contextualizados na primeira ocorrência; T1, F1, F2, F4, F5, T2, F6, F7 e F8
+permaneceram nas posições aprovadas. Nenhuma análise, métrica, figura ou tabela científica foi
+recalculada ou modificada.
+
+**Origem:** [PHASE_5F_RESULTS_DISCUSSION_REVISED.md](PHASE_5F_RESULTS_DISCUSSION_REVISED.md),
+[PHASE_5F_SCIENTIFIC_REVISION.md](PHASE_5F_SCIENTIFIC_REVISION.md) e tabelas `phase_5f_*` em
+`reports/tables/`.
+
+**Status:** revisão técnica concluída e auditada; aprovação humana pendente. Próximo marco:
+integração com Introdução, Metodologia e Conclusão, normalização bibliográfica institucional e
+numeração definitiva dos elementos acadêmicos.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5E.2 concluída — primeira redação acadêmica de Resultados e Discussão pronta para revisão.**
+**Fase 5F concluída tecnicamente — Resultados e Discussão revisados, com aprovação humana ainda pendente.**
 
 Nesta fase o projeto:
 
@@ -80,6 +80,8 @@ Nesta fase o projeto:
   mapas temático e de afirmações e limites de uso para a futura redação.
 - redige a primeira versão dos capítulos de Resultados e Discussão, com auditorias numérica,
   bibliográfica e parágrafo–evidência, sem executar nova análise científica.
+- revisa cientificamente e editorialmente esses capítulos, preservando todos os números e as
+  19 referências verificadas, com auditorias de terminologia, números, citações e revisão.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -127,6 +129,9 @@ A fundamentação bibliográfica verificável está documentada em
 A primeira redação acadêmica e seu relatório de rastreabilidade estão em
 [`docs/PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md`](docs/PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md) e
 [`docs/PHASE_5E2_WRITING_REPORT.md`](docs/PHASE_5E2_WRITING_REPORT.md).
+A versão revisada e o relatório da Fase 5F estão em
+[`docs/PHASE_5F_RESULTS_DISCUSSION_REVISED.md`](docs/PHASE_5F_RESULTS_DISCUSSION_REVISED.md) e
+[`docs/PHASE_5F_SCIENTIFIC_REVISION.md`](docs/PHASE_5F_SCIENTIFIC_REVISION.md).
 
 ## Requisitos
 
@@ -495,6 +500,14 @@ prosa possuem mapa de evidência; afirmações numéricas e citações externas 
 próprias, ambas sem `FAIL`. O texto é uma primeira versão para revisão na Fase 5F, não o
 manuscrito final. Nenhuma análise, métrica, figura ou resultado científico foi recalculado.
 
+## Revisão científica de Resultados e Discussão
+
+A Fase 5F produziu uma versão revisada dos capítulos 4 e 5, com terminologia acadêmica,
+transições e redundâncias revistas. Os 41 grupos numéricos e as 19 referências verificadas
+foram preservados, e as auditorias de terminologia, números, citações e revisão não registraram
+falhas. Nenhuma nova análise foi executada. A leitura e a aprovação humanas ainda são
+necessárias antes da integração definitiva ao manuscrito.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -542,6 +555,10 @@ manuscrito final. Nenhuma análise, métrica, figura ou resultado científico fo
   redação acadêmica dos capítulos 4 e 5.
 - [`PHASE_5E2_WRITING_REPORT.md`](docs/PHASE_5E2_WRITING_REPORT.md): fontes, extensão, cautelas,
   auditorias e pontos para revisão editorial.
+- [`PHASE_5F_RESULTS_DISCUSSION_REVISED.md`](docs/PHASE_5F_RESULTS_DISCUSSION_REVISED.md): versão
+  revisada dos capítulos de Resultados e Discussão.
+- [`PHASE_5F_SCIENTIFIC_REVISION.md`](docs/PHASE_5F_SCIENTIFIC_REVISION.md): escopo, política
+  terminológica, preservação científica, auditorias e pendências de revisão humana.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -562,8 +579,9 @@ grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 5F — revisão científica e editorial**, com integração posterior aos
-demais capítulos e sem reabrir resultados congelados.
+A próxima etapa é a **revisão humana da versão 5F e sua integração ao manuscrito completo**,
+com normalização final de referências e numeração global dos elementos acadêmicos, sem reabrir
+resultados congelados.
 
 ## Princípio metodológico
 
