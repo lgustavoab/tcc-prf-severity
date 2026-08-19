@@ -435,6 +435,30 @@ permaneceram inalterados.
 **Status:** confirmada; 25 checks PASS e 0 FAIL. Próximo passo: consolidar as perguntas de
 pesquisa e mapear cada pergunta às evidências produzidas nas Fases 2–4.
 
+### D019 — Congelamento das perguntas de pesquisa e de seu mapa de evidências
+
+**Data:** 19/08/2026.
+
+**Decisão:** consolidar uma pergunta principal e exatamente cinco perguntas específicas,
+definindo para cada uma método, evidências versionadas, resposta curta e limitações. A Fase 2
+responde primariamente RQ1; as Fases 3–4 respondem RQ2–RQ5; a interpretação 4I é suporte e não
+origina uma pergunta post hoc.
+
+**Justificativa:** a modelagem e a avaliação final já estavam encerradas. A redação científica
+precisa de rastreabilidade entre perguntas e resultados sem recalcular o experimento ou
+selecionar evidências apenas por conveniência narrativa.
+
+**Consequências:** foram materializadas cinco respostas, 22 evidências selecionadas, 12
+achados centrais e dez limitações mínimas. Evidência descritiva, preditiva, temporal, final e
+interpretativa permanecem semanticamente separadas. Nenhum modelo, score, threshold, teste
+estatístico ou artefato das Fases 2–4 foi alterado.
+
+**Origem:** [PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md](PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md)
+e tabelas `phase_5a_*` em `reports/tables/`.
+
+**Status:** confirmada; 20 checks PASS e 0 FAIL. Próximo passo: selecionar evidências, tabelas
+e figuras para os capítulos de Resultados e Discussão.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -735,6 +759,24 @@ ocorrência de acidente.
 e `phase_4i_error_analysis.csv`.
 
 **Status:** confirmado; interpretação pós-avaliação concluída sem alteração retrospectiva.
+
+## Perguntas de pesquisa consolidadas
+
+**Pergunta principal:** Quais características temporais, geográficas, meteorológicas e viárias
+estão associadas à gravidade dos acidentes registrados em rodovias federais brasileiras e em
+que medida modelos de aprendizado de máquina conseguem identificar ocorrências graves?
+
+| Pergunta | Fase principal | Resposta curta |
+|---|---|---|
+| RQ1 — Quais características estão associadas a maiores proporções de acidentes graves entre as ocorrências registradas pela PRF? | Fase 2 — EDA | Houve heterogeneidade temporal, geográfica, meteorológica e viária, incluindo noite/fim de semana, Nordeste/UFs, condições informadas e pista Simples; são associações não causais e sem denominador de exposição. |
+| RQ2 — Em que medida características disponíveis no momento inicial da ocorrência permitem distinguir acidentes graves dos não graves? | 3B e 4A–4C/4H | Existe sinal preditivo moderado; em 2025, AP foi 0,397446 e ROC-AUC 0,628556, enquanto o threshold priorizou recall 0,771825 com precision 0,331593. |
+| RQ3 — Como Regressão Logística, Random Forest e XGBoost se comparam em validação temporal? | 4A–4E | XGBoost apresentou a maior AP média, seguido por Random Forest e Logística, mas os ganhos absolutos foram pequenos e incrementais. |
+| RQ4 — O desempenho preditivo permanece consistente entre diferentes anos de validação? | 3D e 4D | As três famílias apresentaram APs mais elevadas nos folds posteriores, sem queda abrupta ou colapso; como o período de treino também cresce, a sequência não demonstra tendência de melhora. |
+| RQ5 — O modelo selecionado mantém desempenho em um período temporal posterior, reservado para avaliação final em 2025? | 4G e 4H | Sim, aproximadamente: AP, ROC-AUC, Brier e métricas do threshold ficaram próximas das referências internas, sem ajuste baseado em 2025. |
+
+O mapeamento integral de métodos, evidências, resultados e limitações está em
+[PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md](PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md). A Fase 4I
+permanece evidência complementar para compreender o XGBoost e não constitui RQ6.
 
 ## Achados exploratórios
 
