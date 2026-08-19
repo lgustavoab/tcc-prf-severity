@@ -1,0 +1,7 @@
+dimension,minimum_occurrences,eligible_categories
+br_excluding_zero,100,99
+br_excluding_zero,500,62
+br_excluding_zero,1000,47
+municipality,100,763
+municipality,500,157
+municipality,1000,59

@@ -56,8 +56,8 @@ identificação de ocorrências graves.
 ## Objetivos específicos
 
 1. Consolidar e validar os registros da PRF de 2021 a 2025. **Concluído na Fase 1.**
-2. Caracterizar temporal e geograficamente as ocorrências. **Caracterização temporal concluída
-   na Fase 2B; padrões geográficos ainda não foram executados.**
+2. Caracterizar temporal e geograficamente as ocorrências. **Caracterizações temporal e
+   geográfica concluídas nas Fases 2B e 2C.**
 3. Investigar fatores associados à gravidade. **Ainda não executado.**
 4. Definir operacionalmente uma variável-alvo de gravidade. **Concluído na Fase 1.**
 5. Treinar e comparar modelos de classificação. **Ainda não executado.**
@@ -273,6 +273,65 @@ drift por variável antes da modelagem.
 
 **Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA010](EDA_FINDINGS.md#eda010--recorrência-e-variação-dos-padrões-temporais-entre-anos).
 
+### EDA011 — Desigualdade geográfica descritiva por macrorregião
+
+Sudeste concentrou 107.259 ocorrências registradas (31,3052% do dataset), enquanto Nordeste
+apresentou a maior proporção grave, 26.662 em 74.232 registros (35,9171%). Sul apresentou
+24,8740%. Nordeste liderou a taxa em quatro anos e Norte em 2023. Volume e composição de
+gravidade são dimensões distintas e não representam exposição rodoviária.
+
+**Relevância:** o contraste macrorregional se relaciona diretamente à pergunta da pesquisa e
+indica que geografia deverá ser considerada com validação temporal e linguagem não causal.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA011](EDA_FINDINGS.md#eda011--distribuição-e-gravidade-por-macrorregião).
+
+### EDA012 — Heterogeneidade estadual de volume e gravidade
+
+MG liderou o volume nos cinco anos e somou 44.502 registros. MA apresentou 2.647 graves em
+5.778 registros (45,8117%), a maior taxa consolidada, e liderou em quatro anos; PA liderou em
+2022. SP apresentou 4.288 graves em 23.005 registros (18,6394%). As diferenças são
+condicionadas às ocorrências registradas e não permitem classificar risco estadual.
+
+**Relevância:** UF é uma candidata importante para análise associativa e eventual modelagem,
+mas exigirá tratamento categórico e avaliação de generalização temporal.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA012](EDA_FINDINGS.md#eda012--concentração-e-proporção-de-graves-por-uf).
+
+### EDA013 — Variação anual das taxas estaduais
+
+As amplitudes anuais variaram de 0,9389 ponto percentual no RS a 17,9409 em RR. MG, líder de
+volume, variou 1,0856 ponto, enquanto MA variou 8,0007. Não foi aplicado limiar automático de
+estabilidade, e tamanho amostral deverá acompanhar qualquer interpretação de taxa estadual.
+
+**Relevância:** o resultado reforça H001 e afeta a futura estratégia de validação temporal de
+features geográficas.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA013](EDA_FINDINGS.md#eda013--amplitude-anual-da-proporção-de-graves-por-uf).
+
+### EDA015 — Alta cardinalidade e chave municipal composta
+
+Foram observados 2.098 pares `uf + municipio` para 2.050 nomes municipais distintos. As 48
+combinações excedentes mostram que município isolado não é uma chave geográfica suficiente.
+Brasília/DF concentrou o maior volume, com 4.948 registros, mas nenhuma tabela município × ano
+foi criada por parcimônia.
+
+**Relevância:** a cardinalidade e a necessidade da chave composta afetam preparação,
+codificação e validação de variáveis em fases futuras.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA015](EDA_FINDINGS.md#eda015--concentração-municipal-com-chave-uf--município).
+
+### EDA016 — Controle editorial de pequenas amostras geográficas
+
+Os rankings de taxa de BR e município foram restritos a categorias com pelo menos 500
+registros, sem excluir categorias das tabelas completas. Seriam elegíveis 99/62/47 BRs e
+763/157/59 municípios nos cortes 100/500/1000, respectivamente. A categoria municipal líder
+muda quando o corte passa de 500 para 1000, evidenciando sensibilidade ao critério.
+
+**Relevância:** documenta uma salvaguarda contra destaques de taxas em grupos muito pequenos e
+mostra que o limiar é editorial, não universal ou científico.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA016](EDA_FINDINGS.md#eda016--destaques-de-taxa-com-critério-editorial-de-amostra).
+
 ## Hipóteses
 
 ### H001 — Estabilidade temporal das features
@@ -334,10 +393,10 @@ explicitamente quantificadas e consideradas nas análises.
 
 ## Figuras e tabelas associadas
 
-As Fases 2A e 2B produziram figuras e tabelas versionadas em `reports/`. A Fase 2B acrescentou
-sete figuras temporais, nove resumos consolidados/anuais e uma tabela de estabilidade. Cada
-artefato científico está associado aos IDs EDA correspondentes em
-[EDA_FINDINGS.md](EDA_FINDINGS.md).
+As Fases 2A, 2B e 2C produziram figuras e tabelas versionadas em `reports/`. A Fase 2C
+acrescentou seis figuras geográficas e 15 tabelas, incluindo resumos completos, destaques,
+estabilidade, sensibilidade do threshold e cobertura de coordenadas. Cada artefato científico
+está associado aos IDs EDA correspondentes em [EDA_FINDINGS.md](EDA_FINDINGS.md).
 
 ## Templates para registros futuros
 

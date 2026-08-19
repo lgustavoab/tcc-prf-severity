@@ -1,6 +1,7 @@
 from typing import Any
 
 from tcc_prf_severity.analysis.general import run_general_analysis
+from tcc_prf_severity.analysis.geographic import run_geographic_analysis
 from tcc_prf_severity.analysis.temporal import run_temporal_analysis
 from tcc_prf_severity.config import (
     AUDIT_DIR,
@@ -107,5 +108,53 @@ def eda_temporal_main() -> None:
     )
     print(f"Hora com maior proporção grave: {hour_rate['hour']}h — {rate(hour_rate)}")
     print(f"Fase do dia com maior proporção grave: {phase_rate['fase_dia']} — {rate(phase_rate)}")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")
+
+
+def eda_geographic_main() -> None:
+    import polars as pl
+
+    result = run_geographic_analysis()
+    analysis = result.analysis
+
+    def maximum(table: pl.DataFrame, metric: str) -> dict[str, Any]:
+        return table.sort(metric, descending=True).row(0, named=True)
+
+    def count(value: Any) -> str:
+        return f"{int(value):,}".replace(",", ".")
+
+    def rate(row: dict[str, Any]) -> str:
+        return f"{float(row['severe_rate_percent']):.2f}% (n={count(row['total_occurrences'])})"
+
+    macroregion_volume = maximum(analysis.macroregion_summary, "total_occurrences")
+    uf_volume = maximum(analysis.uf_summary, "total_occurrences")
+    uf_rate = maximum(analysis.uf_summary, "severe_rate_percent")
+    br_volume = analysis.br_volume_top15.row(0, named=True)
+    municipality_volume = analysis.municipality_volume_top15.row(0, named=True)
+    br_rate = analysis.br_severe_rate_top15.row(0, named=True)
+    municipality_rate = analysis.municipality_severe_rate_top15.row(0, named=True)
+    br_zero = analysis.br_summary.filter(pl.col("br") == 0).row(0, named=True)
+    rows = int(analysis.macroregion_summary.get_column("total_occurrences").sum())
+
+    print("Fase 2C concluída.")
+    print(f"Registros: {count(rows)}")
+    print(
+        f"Macrorregião com maior volume: {macroregion_volume['macroregion']} "
+        f"({count(macroregion_volume['total_occurrences'])})"
+    )
+    print(f"UF com maior volume: {uf_volume['uf']} ({count(uf_volume['total_occurrences'])})")
+    print(f"UF com maior proporção grave: {uf_rate['uf']} — {rate(uf_rate)}")
+    print(f"BR com maior volume: {br_volume['br_label']} ({count(br_volume['total_occurrences'])})")
+    print(
+        f"Município/UF com maior volume: {municipality_volume['municipality_label']} "
+        f"({count(municipality_volume['total_occurrences'])})"
+    )
+    print(f"BR com maior proporção grave entre n>=500: {br_rate['br_label']} — {rate(br_rate)}")
+    print(
+        "Município/UF com maior proporção grave entre n>=500: "
+        f"{municipality_rate['municipality_label']} — {rate(municipality_rate)}"
+    )
+    print(f"BR 0: {count(br_zero['total_occurrences'])} registros preservados.")
     print(f"Tabelas: {result.table_paths[0].parent}")
     print(f"Figuras: {result.figure_paths[0].parent}")
