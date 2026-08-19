@@ -2,9 +2,9 @@
 
 ## Finalidade
 
-Este documento recebe o registro detalhado e auditável da Análise Exploratória de Dados. A
-Fase 2A — Caracterização Geral foi executada sobre o Parquet interim validado; as demais
-subfases ainda não foram iniciadas.
+Este documento reúne o registro detalhado e auditável da Análise Exploratória de Dados. As
+Fases 2A–2F foram executadas sobre o Parquet interim validado, e a Fase 2G encerrou a EDA com
+uma síntese editorial, sem adicionar nova análise.
 
 Os registros nascem aqui, inclusive quando provisórios, inconclusivos ou descartados. Achados
 que sobreviverem à revisão metodológica podem ser sintetizados na
@@ -1580,7 +1580,9 @@ drift antes da modelagem.
 
 ## 2G — Síntese
 
-Nenhum achado registrado.
+A Fase 2G não adicionou nova análise nem novo ID EDA. Ela consolidou EDA029, EDA030 e os
+achados promovidos anteriormente em [PHASE_2_EDA_SYNTHESIS.md](PHASE_2_EDA_SYNTHESIS.md),
+preservando números, prioridades, limitações e decisões metodológicas da Fase 2F.
 
 ## Template de achado EDA
 

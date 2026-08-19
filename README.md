@@ -4,14 +4,14 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 2E — Dinâmica das ocorrências registradas.**
+**Fase 2 — Análise Exploratória concluída e aceita.**
 
 Nesta fase o projeto:
 
 - preserva os CSVs oficiais sem alteração;
 - valida a presença e ordem das 30 colunas esperadas;
 - padroniza apenas tipos técnicos;
-- cria o target oficial `target_grave` (`mortos > 0` ou `feridos_graves > 0`), sem usar
+- cria a definição operacional de `target_grave` (`mortos > 0` ou `feridos_graves > 0`), sem usar
   `classificacao_acidente`;
 - valida tipos, nulabilidade, categorias estáveis e limites numéricos com Pandera;
 - valida IDs, relações entre contagens, ano, target e dia da semana entre colunas;
@@ -27,12 +27,17 @@ Nesta fase o projeto:
   de traçado, separando volume, proporção grave, amostra e estabilidade anual;
 - caracteriza tipo e causa registrados, mudanças de taxonomia e distribuições exatas de
   pessoas e veículos, sem decidir sua elegibilidade futura como features;
+- consolida oito achados centrais e separa evidência descritiva de elegibilidade preditiva;
+- encerra a EDA com uma síntese científica, uma matriz autoritativa de elegibilidade e um
+  inventário de verificações temporais futuras;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
-[`docs/PHASE_1_ACCEPTANCE.md`](docs/PHASE_1_ACCEPTANCE.md).
+[`docs/PHASE_1_ACCEPTANCE.md`](docs/PHASE_1_ACCEPTANCE.md). A síntese e o aceite da EDA estão
+em [`docs/PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md) e
+[`docs/PHASE_2_ACCEPTANCE.md`](docs/PHASE_2_ACCEPTANCE.md).
 
 ## Requisitos
 
@@ -178,6 +183,9 @@ treino/teste, modelos ou dataset processed.
 
 ## Documentação científica
 
+- [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
+  provisória da EDA à pergunta de pesquisa.
+- [`PHASE_2_ACCEPTANCE.md`](docs/PHASE_2_ACCEPTANCE.md): aceite formal das Fases 2A–2G.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -194,6 +202,12 @@ As dependências das fases futuras já estão separadas no `pyproject.toml`:
 
 Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2. Os grupos
 `ml` e `viz` permanecem reservados para fases futuras.
+
+## Próximo passo
+
+Antes de criar dataset processed ou iniciar modelagem, o projeto deve definir o momento
+preditivo, avaliar drift nas 22 variáveis sinalizadas e resolver a elegibilidade de
+`tipo_acidente`, `causa_acidente`, `pessoas` e `veiculos`.
 
 ## Princípio metodológico
 

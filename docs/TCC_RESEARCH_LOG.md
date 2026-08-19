@@ -25,6 +25,8 @@ o registro anterior, atualizar o status e explicar a revisão.
   revisão.
 - [PHASE_1_ACCEPTANCE.md](PHASE_1_ACCEPTANCE.md) é a evidência congelada do encerramento da
   Fase 1 e não deve se transformar em diário de pesquisa.
+- [PHASE_2_EDA_SYNTHESIS.md](PHASE_2_EDA_SYNTHESIS.md) e
+  [PHASE_2_ACCEPTANCE.md](PHASE_2_ACCEPTANCE.md) registram a síntese e o aceite da EDA.
 
 Detalhes técnicos permanecem no [contrato de dados](DATA_CONTRACT.md), na documentação do
 [dataset intermediário](INTERIM_DATASET.md) e no [aceite da Fase 1](PHASE_1_ACCEPTANCE.md).
@@ -68,7 +70,7 @@ identificação de ocorrências graves.
    iniciada. **Estratégia planejada; ainda não executada.**
 
 Nenhuma atividade de treinamento, comparação, avaliação ou interpretação de modelos foi
-executada até o encerramento da Fase 1.
+executada até o encerramento da Fase 2.
 
 ## Decisões metodológicas
 
@@ -141,6 +143,27 @@ temporal final.
 desenvolvimento.
 
 **Status:** planejada; nenhuma divisão ou modelagem foi executada.
+
+### D007 — Fechamento da EDA e autoridade da matriz de elegibilidade
+
+**Data:** 19/08/2026.
+
+**Decisão:** encerrar formalmente a Fase 2 após a síntese 2G e adotar
+`phase_2f_modeling_eligibility_matrix.csv` como fonte autoritativa para a triagem conceitual
+de features.
+
+**Justificativa:** relevância descritiva não garante disponibilidade no momento preditivo nem
+ausência de leakage. A matriz separa candidatas, cautelas, decisões pendentes e exclusões sem
+criar dataset de modelagem.
+
+**Consequências:** antes de qualquer preparação ou ML, devem ser definidos o momento
+preditivo, o tratamento das quatro variáveis pendentes e as verificações de drift previstas
+por H001. Os sete campos de leakage permanecem bloqueados.
+
+**Origem:** [PHASE_2_EDA_SYNTHESIS.md](PHASE_2_EDA_SYNTHESIS.md) e
+`reports/tables/phase_2f_modeling_eligibility_matrix.csv`.
+
+**Status:** confirmada; Fase 2 encerrada e modelagem não iniciada.
 
 ## Resultados consolidados
 
@@ -512,11 +535,10 @@ explicitamente quantificadas e consideradas nas análises.
 
 ## Figuras e tabelas associadas
 
-As Fases 2A a 2E produziram figuras e tabelas versionadas em `reports/`. A Fase 2E acrescentou
-seis figuras e 17 tabelas, incluindo resumos completos de tipo e causa, diagnósticos de
-taxonomia, lifecycle, estabilidade e distribuições exatas de pessoas e veículos. Cada
-artefato científico está associado aos IDs EDA correspondentes em
-[EDA_FINDINGS.md](EDA_FINDINGS.md).
+As Fases 2A a 2F produziram figuras e tabelas versionadas em `reports/`. A Fase 2G consolidou
+esses resultados em [PHASE_2_EDA_SYNTHESIS.md](PHASE_2_EDA_SYNTHESIS.md), no aceite formal e
+em uma tabela editorial de decisões, sem executar nova EDA. Os artefatos científicos estão
+associados aos IDs correspondentes em [EDA_FINDINGS.md](EDA_FINDINGS.md).
 
 ## Templates para registros futuros
 
