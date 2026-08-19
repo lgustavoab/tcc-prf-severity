@@ -1,0 +1,2614 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "EXPLORATION",
+    "part_id": "contextual",
+    "scientific_status": "EXPLORATORY",
+    "source_artifacts": [
+      "data/processed/prf_primary_analytical_2021_2025.parquet",
+      "reports/tables/phase_3c_analytical_schema.csv"
+    ],
+    "required_caveats": [
+      "Os percentuais representam a proporção de ocorrências graves entre acidentes registrados pela PRF. Sem denominador de exposição ao tráfego, esses valores não representam risco de ocorrência de acidente.",
+      "Associações descritivas não devem ser interpretadas como causais."
+    ]
+  },
+  "dimensions": [
+    "source_year",
+    "tipo_pista",
+    "condicao_metereologica",
+    "uso_solo"
+  ],
+  "filters": {
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "road_types": [
+      "Dupla",
+      "Múltipla",
+      "Simples"
+    ],
+    "weather_conditions": [
+      "Chuva",
+      "Céu Claro",
+      "Garoa/Chuvisco",
+      "Granizo",
+      "Ignorado",
+      "Neve",
+      "Nevoeiro/Neblina",
+      "Nublado",
+      "Sol",
+      "Vento"
+    ],
+    "land_use": [
+      "Não",
+      "Sim"
+    ]
+  },
+  "data": [
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 1911,
+      "severe_occurrences": 343,
+      "non_severe_occurrences": 1568,
+      "severe_proportion": 0.1794871794871795
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 1154,
+      "severe_occurrences": 244,
+      "non_severe_occurrences": 910,
+      "severe_proportion": 0.21143847487001732
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 7236,
+      "severe_occurrences": 1777,
+      "non_severe_occurrences": 5459,
+      "severe_proportion": 0.24557766721945826
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 8870,
+      "severe_occurrences": 2174,
+      "non_severe_occurrences": 6696,
+      "severe_proportion": 0.2450958286358512
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 589,
+      "severe_occurrences": 95,
+      "non_severe_occurrences": 494,
+      "severe_proportion": 0.16129032258064516
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 427,
+      "severe_occurrences": 80,
+      "non_severe_occurrences": 347,
+      "severe_proportion": 0.1873536299765808
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Sim",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 145,
+      "severe_occurrences": 26,
+      "non_severe_occurrences": 119,
+      "severe_proportion": 0.1793103448275862
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 144,
+      "severe_occurrences": 45,
+      "non_severe_occurrences": 99,
+      "severe_proportion": 0.3125
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 109,
+      "severe_occurrences": 30,
+      "non_severe_occurrences": 79,
+      "severe_proportion": 0.27522935779816515
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 57,
+      "severe_occurrences": 18,
+      "non_severe_occurrences": 39,
+      "severe_proportion": 0.3157894736842105
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 2249,
+      "severe_occurrences": 517,
+      "non_severe_occurrences": 1732,
+      "severe_proportion": 0.22987994664295242
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 2472,
+      "severe_occurrences": 600,
+      "non_severe_occurrences": 1872,
+      "severe_proportion": 0.24271844660194175
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 821,
+      "severe_occurrences": 187,
+      "non_severe_occurrences": 634,
+      "severe_proportion": 0.22777101096224117
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 992,
+      "severe_occurrences": 211,
+      "non_severe_occurrences": 781,
+      "severe_proportion": 0.2127016129032258
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 45,
+      "severe_occurrences": 13,
+      "non_severe_occurrences": 32,
+      "severe_proportion": 0.28888888888888886
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 20,
+      "severe_occurrences": 6,
+      "non_severe_occurrences": 14,
+      "severe_proportion": 0.3
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 131,
+      "severe_occurrences": 25,
+      "non_severe_occurrences": 106,
+      "severe_proportion": 0.19083969465648856
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 311,
+      "severe_occurrences": 72,
+      "non_severe_occurrences": 239,
+      "severe_proportion": 0.2315112540192926
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 644,
+      "severe_occurrences": 137,
+      "non_severe_occurrences": 507,
+      "severe_proportion": 0.2127329192546584
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 2508,
+      "severe_occurrences": 561,
+      "non_severe_occurrences": 1947,
+      "severe_proportion": 0.2236842105263158
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 43,
+      "severe_occurrences": 7,
+      "non_severe_occurrences": 36,
+      "severe_proportion": 0.16279069767441862
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 137,
+      "severe_occurrences": 23,
+      "non_severe_occurrences": 114,
+      "severe_proportion": 0.1678832116788321
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 17,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 15,
+      "severe_proportion": 0.11764705882352941
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 43,
+      "severe_occurrences": 10,
+      "non_severe_occurrences": 33,
+      "severe_proportion": 0.23255813953488372
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 4,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 3,
+      "severe_proportion": 0.25
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 8,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 8,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 224,
+      "severe_occurrences": 40,
+      "non_severe_occurrences": 184,
+      "severe_proportion": 0.17857142857142858
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 959,
+      "severe_occurrences": 195,
+      "non_severe_occurrences": 764,
+      "severe_proportion": 0.20333680917622524
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 87,
+      "severe_occurrences": 18,
+      "non_severe_occurrences": 69,
+      "severe_proportion": 0.20689655172413793
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 369,
+      "severe_occurrences": 87,
+      "non_severe_occurrences": 282,
+      "severe_proportion": 0.23577235772357724
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 3,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.6666666666666666
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 17,
+      "severe_occurrences": 8,
+      "non_severe_occurrences": 9,
+      "severe_proportion": 0.47058823529411764
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2554,
+      "severe_occurrences": 801,
+      "non_severe_occurrences": 1753,
+      "severe_proportion": 0.31362568519968675
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 652,
+      "severe_occurrences": 195,
+      "non_severe_occurrences": 457,
+      "severe_proportion": 0.299079754601227
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 13082,
+      "severe_occurrences": 4640,
+      "non_severe_occurrences": 8442,
+      "severe_proportion": 0.354685827855068
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 6655,
+      "severe_occurrences": 2047,
+      "non_severe_occurrences": 4608,
+      "severe_proportion": 0.30758827948910594
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 657,
+      "severe_occurrences": 176,
+      "non_severe_occurrences": 481,
+      "severe_proportion": 0.2678843226788432
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 295,
+      "severe_occurrences": 72,
+      "non_severe_occurrences": 223,
+      "severe_proportion": 0.2440677966101695
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 354,
+      "severe_occurrences": 154,
+      "non_severe_occurrences": 200,
+      "severe_proportion": 0.4350282485875706
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 114,
+      "severe_occurrences": 48,
+      "non_severe_occurrences": 66,
+      "severe_proportion": 0.42105263157894735
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Neve",
+      "uso_solo": "Não",
+      "total_occurrences": 3,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 2,
+      "severe_proportion": 0.3333333333333333
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 248,
+      "severe_occurrences": 81,
+      "non_severe_occurrences": 167,
+      "severe_proportion": 0.32661290322580644
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 62,
+      "severe_occurrences": 12,
+      "non_severe_occurrences": 50,
+      "severe_proportion": 0.1935483870967742
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 3358,
+      "severe_occurrences": 1157,
+      "non_severe_occurrences": 2201,
+      "severe_proportion": 0.34455032757593806
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1698,
+      "severe_occurrences": 517,
+      "non_severe_occurrences": 1181,
+      "severe_proportion": 0.3044758539458186
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 1269,
+      "severe_occurrences": 425,
+      "non_severe_occurrences": 844,
+      "severe_proportion": 0.33490937746256894
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 759,
+      "severe_occurrences": 216,
+      "non_severe_occurrences": 543,
+      "severe_proportion": 0.2845849802371542
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 43,
+      "severe_occurrences": 15,
+      "non_severe_occurrences": 28,
+      "severe_proportion": 0.3488372093023256
+    },
+    {
+      "source_year": 2021,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 16,
+      "severe_occurrences": 7,
+      "non_severe_occurrences": 9,
+      "severe_proportion": 0.4375
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2046,
+      "severe_occurrences": 343,
+      "non_severe_occurrences": 1703,
+      "severe_proportion": 0.16764418377321602
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 1203,
+      "severe_occurrences": 245,
+      "non_severe_occurrences": 958,
+      "severe_proportion": 0.20365752285951788
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 7227,
+      "severe_occurrences": 1744,
+      "non_severe_occurrences": 5483,
+      "severe_proportion": 0.24131728241317282
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 8999,
+      "severe_occurrences": 2216,
+      "non_severe_occurrences": 6783,
+      "severe_proportion": 0.2462495832870319
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 571,
+      "severe_occurrences": 103,
+      "non_severe_occurrences": 468,
+      "severe_proportion": 0.18038528896672504
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 470,
+      "severe_occurrences": 101,
+      "non_severe_occurrences": 369,
+      "severe_proportion": 0.2148936170212766
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Sim",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 153,
+      "severe_occurrences": 43,
+      "non_severe_occurrences": 110,
+      "severe_proportion": 0.28104575163398693
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 148,
+      "severe_occurrences": 48,
+      "non_severe_occurrences": 100,
+      "severe_proportion": 0.32432432432432434
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Neve",
+      "uso_solo": "Sim",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 125,
+      "severe_occurrences": 33,
+      "non_severe_occurrences": 92,
+      "severe_proportion": 0.264
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 54,
+      "severe_occurrences": 9,
+      "non_severe_occurrences": 45,
+      "severe_proportion": 0.16666666666666666
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 2111,
+      "severe_occurrences": 482,
+      "non_severe_occurrences": 1629,
+      "severe_proportion": 0.22832780672666983
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 2164,
+      "severe_occurrences": 570,
+      "non_severe_occurrences": 1594,
+      "severe_proportion": 0.2634011090573013
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 670,
+      "severe_occurrences": 133,
+      "non_severe_occurrences": 537,
+      "severe_proportion": 0.19850746268656716
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 819,
+      "severe_occurrences": 207,
+      "non_severe_occurrences": 612,
+      "severe_proportion": 0.25274725274725274
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 36,
+      "severe_occurrences": 12,
+      "non_severe_occurrences": 24,
+      "severe_proportion": 0.3333333333333333
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 21,
+      "severe_occurrences": 5,
+      "non_severe_occurrences": 16,
+      "severe_proportion": 0.23809523809523808
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 133,
+      "severe_occurrences": 33,
+      "non_severe_occurrences": 100,
+      "severe_proportion": 0.24812030075187969
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 359,
+      "severe_occurrences": 63,
+      "non_severe_occurrences": 296,
+      "severe_proportion": 0.17548746518105848
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 711,
+      "severe_occurrences": 157,
+      "non_severe_occurrences": 554,
+      "severe_proportion": 0.22081575246132207
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 2665,
+      "severe_occurrences": 641,
+      "non_severe_occurrences": 2024,
+      "severe_proportion": 0.24052532833020637
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 67,
+      "severe_occurrences": 14,
+      "non_severe_occurrences": 53,
+      "severe_proportion": 0.208955223880597
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 189,
+      "severe_occurrences": 39,
+      "non_severe_occurrences": 150,
+      "severe_proportion": 0.20634920634920634
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 10,
+      "severe_occurrences": 5,
+      "non_severe_occurrences": 5,
+      "severe_proportion": 0.5
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 44,
+      "severe_occurrences": 14,
+      "non_severe_occurrences": 30,
+      "severe_proportion": 0.3181818181818182
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 9,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 8,
+      "severe_proportion": 0.1111111111111111
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 13,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 11,
+      "severe_proportion": 0.15384615384615385
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 228,
+      "severe_occurrences": 42,
+      "non_severe_occurrences": 186,
+      "severe_proportion": 0.18421052631578946
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 927,
+      "severe_occurrences": 195,
+      "non_severe_occurrences": 732,
+      "severe_proportion": 0.21035598705501618
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 72,
+      "severe_occurrences": 13,
+      "non_severe_occurrences": 59,
+      "severe_proportion": 0.18055555555555555
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 342,
+      "severe_occurrences": 68,
+      "non_severe_occurrences": 274,
+      "severe_proportion": 0.19883040935672514
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 5,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 4,
+      "severe_proportion": 0.2
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 15,
+      "severe_occurrences": 3,
+      "non_severe_occurrences": 12,
+      "severe_proportion": 0.2
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2615,
+      "severe_occurrences": 822,
+      "non_severe_occurrences": 1793,
+      "severe_proportion": 0.31434034416826
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 770,
+      "severe_occurrences": 211,
+      "non_severe_occurrences": 559,
+      "severe_proportion": 0.274025974025974
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 13154,
+      "severe_occurrences": 4786,
+      "non_severe_occurrences": 8368,
+      "severe_proportion": 0.3638436977345294
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 6466,
+      "severe_occurrences": 2091,
+      "non_severe_occurrences": 4375,
+      "severe_proportion": 0.3233838540055676
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 783,
+      "severe_occurrences": 235,
+      "non_severe_occurrences": 548,
+      "severe_proportion": 0.3001277139208174
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 347,
+      "severe_occurrences": 96,
+      "non_severe_occurrences": 251,
+      "severe_proportion": 0.276657060518732
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Sim",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 400,
+      "severe_occurrences": 175,
+      "non_severe_occurrences": 225,
+      "severe_proportion": 0.4375
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 148,
+      "severe_occurrences": 50,
+      "non_severe_occurrences": 98,
+      "severe_proportion": 0.33783783783783783
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Neve",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 285,
+      "severe_occurrences": 108,
+      "non_severe_occurrences": 177,
+      "severe_proportion": 0.37894736842105264
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 70,
+      "severe_occurrences": 23,
+      "non_severe_occurrences": 47,
+      "severe_proportion": 0.32857142857142857
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 3261,
+      "severe_occurrences": 1090,
+      "non_severe_occurrences": 2171,
+      "severe_proportion": 0.3342532965348053
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1768,
+      "severe_occurrences": 541,
+      "non_severe_occurrences": 1227,
+      "severe_proportion": 0.3059954751131222
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 1180,
+      "severe_occurrences": 396,
+      "non_severe_occurrences": 784,
+      "severe_proportion": 0.33559322033898303
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 704,
+      "severe_occurrences": 181,
+      "non_severe_occurrences": 523,
+      "severe_proportion": 0.2571022727272727
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 30,
+      "severe_occurrences": 12,
+      "non_severe_occurrences": 18,
+      "severe_proportion": 0.4
+    },
+    {
+      "source_year": 2022,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 14,
+      "severe_occurrences": 7,
+      "non_severe_occurrences": 7,
+      "severe_proportion": 0.5
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2032,
+      "severe_occurrences": 314,
+      "non_severe_occurrences": 1718,
+      "severe_proportion": 0.1545275590551181
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 1067,
+      "severe_occurrences": 217,
+      "non_severe_occurrences": 850,
+      "severe_proportion": 0.20337394564198688
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 8527,
+      "severe_occurrences": 2087,
+      "non_severe_occurrences": 6440,
+      "severe_proportion": 0.24475196434853994
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 9026,
+      "severe_occurrences": 2214,
+      "non_severe_occurrences": 6812,
+      "severe_proportion": 0.24529138045645912
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 607,
+      "severe_occurrences": 96,
+      "non_severe_occurrences": 511,
+      "severe_proportion": 0.15815485996705106
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 438,
+      "severe_occurrences": 73,
+      "non_severe_occurrences": 365,
+      "severe_proportion": 0.16666666666666666
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 173,
+      "severe_occurrences": 37,
+      "non_severe_occurrences": 136,
+      "severe_proportion": 0.2138728323699422
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 154,
+      "severe_occurrences": 55,
+      "non_severe_occurrences": 99,
+      "severe_proportion": 0.35714285714285715
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 134,
+      "severe_occurrences": 37,
+      "non_severe_occurrences": 97,
+      "severe_proportion": 0.27611940298507465
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 66,
+      "severe_occurrences": 20,
+      "non_severe_occurrences": 46,
+      "severe_proportion": 0.30303030303030304
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 2176,
+      "severe_occurrences": 483,
+      "non_severe_occurrences": 1693,
+      "severe_proportion": 0.22196691176470587
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1979,
+      "severe_occurrences": 457,
+      "non_severe_occurrences": 1522,
+      "severe_proportion": 0.23092470944921678
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 773,
+      "severe_occurrences": 174,
+      "non_severe_occurrences": 599,
+      "severe_proportion": 0.22509702457956016
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 807,
+      "severe_occurrences": 185,
+      "non_severe_occurrences": 622,
+      "severe_proportion": 0.22924411400247832
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 34,
+      "severe_occurrences": 11,
+      "non_severe_occurrences": 23,
+      "severe_proportion": 0.3235294117647059
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 17,
+      "severe_occurrences": 3,
+      "non_severe_occurrences": 14,
+      "severe_proportion": 0.17647058823529413
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 180,
+      "severe_occurrences": 27,
+      "non_severe_occurrences": 153,
+      "severe_proportion": 0.15
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 339,
+      "severe_occurrences": 63,
+      "non_severe_occurrences": 276,
+      "severe_proportion": 0.18584070796460178
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 1160,
+      "severe_occurrences": 261,
+      "non_severe_occurrences": 899,
+      "severe_proportion": 0.225
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 2796,
+      "severe_occurrences": 665,
+      "non_severe_occurrences": 2131,
+      "severe_proportion": 0.23783977110157367
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 76,
+      "severe_occurrences": 12,
+      "non_severe_occurrences": 64,
+      "severe_proportion": 0.15789473684210525
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 167,
+      "severe_occurrences": 23,
+      "non_severe_occurrences": 144,
+      "severe_proportion": 0.1377245508982036
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 18,
+      "severe_occurrences": 5,
+      "non_severe_occurrences": 13,
+      "severe_proportion": 0.2777777777777778
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 47,
+      "severe_occurrences": 9,
+      "non_severe_occurrences": 38,
+      "severe_proportion": 0.19148936170212766
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 9,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 8,
+      "severe_proportion": 0.1111111111111111
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 12,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 10,
+      "severe_proportion": 0.16666666666666666
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 279,
+      "severe_occurrences": 59,
+      "non_severe_occurrences": 220,
+      "severe_proportion": 0.2114695340501792
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 822,
+      "severe_occurrences": 184,
+      "non_severe_occurrences": 638,
+      "severe_proportion": 0.22384428223844283
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 115,
+      "severe_occurrences": 22,
+      "non_severe_occurrences": 93,
+      "severe_proportion": 0.19130434782608696
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 355,
+      "severe_occurrences": 65,
+      "non_severe_occurrences": 290,
+      "severe_proportion": 0.18309859154929578
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 7,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 5,
+      "severe_proportion": 0.2857142857142857
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 12,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 11,
+      "severe_proportion": 0.08333333333333333
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2433,
+      "severe_occurrences": 760,
+      "non_severe_occurrences": 1673,
+      "severe_proportion": 0.31237155774763664
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 648,
+      "severe_occurrences": 204,
+      "non_severe_occurrences": 444,
+      "severe_proportion": 0.3148148148148148
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 14735,
+      "severe_occurrences": 5356,
+      "non_severe_occurrences": 9379,
+      "severe_proportion": 0.3634882931795046
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 6905,
+      "severe_occurrences": 2198,
+      "non_severe_occurrences": 4707,
+      "severe_proportion": 0.31832005792903695
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 742,
+      "severe_occurrences": 218,
+      "non_severe_occurrences": 524,
+      "severe_proportion": 0.29380053908355797
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 315,
+      "severe_occurrences": 80,
+      "non_severe_occurrences": 235,
+      "severe_proportion": 0.25396825396825395
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Sim",
+      "total_occurrences": 2,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 2,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 337,
+      "severe_occurrences": 143,
+      "non_severe_occurrences": 194,
+      "severe_proportion": 0.42433234421364985
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 125,
+      "severe_occurrences": 57,
+      "non_severe_occurrences": 68,
+      "severe_proportion": 0.456
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Neve",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 306,
+      "severe_occurrences": 117,
+      "non_severe_occurrences": 189,
+      "severe_proportion": 0.38235294117647056
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 57,
+      "severe_occurrences": 21,
+      "non_severe_occurrences": 36,
+      "severe_proportion": 0.3684210526315789
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 3198,
+      "severe_occurrences": 1090,
+      "non_severe_occurrences": 2108,
+      "severe_proportion": 0.34083802376485306
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1673,
+      "severe_occurrences": 495,
+      "non_severe_occurrences": 1178,
+      "severe_proportion": 0.2958756724447101
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 1237,
+      "severe_occurrences": 415,
+      "non_severe_occurrences": 822,
+      "severe_proportion": 0.3354890864995958
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 611,
+      "severe_occurrences": 180,
+      "non_severe_occurrences": 431,
+      "severe_proportion": 0.2945990180032733
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 30,
+      "severe_occurrences": 12,
+      "non_severe_occurrences": 18,
+      "severe_proportion": 0.4
+    },
+    {
+      "source_year": 2023,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 5,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 3,
+      "severe_proportion": 0.4
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2272,
+      "severe_occurrences": 366,
+      "non_severe_occurrences": 1906,
+      "severe_proportion": 0.16109154929577466
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 1130,
+      "severe_occurrences": 215,
+      "non_severe_occurrences": 915,
+      "severe_proportion": 0.1902654867256637
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 9080,
+      "severe_occurrences": 2193,
+      "non_severe_occurrences": 6887,
+      "severe_proportion": 0.24151982378854625
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 10052,
+      "severe_occurrences": 2430,
+      "non_severe_occurrences": 7622,
+      "severe_proportion": 0.24174293672900915
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 733,
+      "severe_occurrences": 102,
+      "non_severe_occurrences": 631,
+      "severe_proportion": 0.13915416098226466
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 535,
+      "severe_occurrences": 101,
+      "non_severe_occurrences": 434,
+      "severe_proportion": 0.18878504672897195
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Sim",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 158,
+      "severe_occurrences": 42,
+      "non_severe_occurrences": 116,
+      "severe_proportion": 0.26582278481012656
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 142,
+      "severe_occurrences": 46,
+      "non_severe_occurrences": 96,
+      "severe_proportion": 0.323943661971831
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 152,
+      "severe_occurrences": 42,
+      "non_severe_occurrences": 110,
+      "severe_proportion": 0.27631578947368424
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 83,
+      "severe_occurrences": 25,
+      "non_severe_occurrences": 58,
+      "severe_proportion": 0.30120481927710846
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 2402,
+      "severe_occurrences": 568,
+      "non_severe_occurrences": 1834,
+      "severe_proportion": 0.23646960865945046
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 2214,
+      "severe_occurrences": 510,
+      "non_severe_occurrences": 1704,
+      "severe_proportion": 0.23035230352303523
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 808,
+      "severe_occurrences": 194,
+      "non_severe_occurrences": 614,
+      "severe_proportion": 0.2400990099009901
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 913,
+      "severe_occurrences": 222,
+      "non_severe_occurrences": 691,
+      "severe_proportion": 0.24315443592552027
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 23,
+      "severe_occurrences": 4,
+      "non_severe_occurrences": 19,
+      "severe_proportion": 0.17391304347826086
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 32,
+      "severe_occurrences": 8,
+      "non_severe_occurrences": 24,
+      "severe_proportion": 0.25
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 195,
+      "severe_occurrences": 33,
+      "non_severe_occurrences": 162,
+      "severe_proportion": 0.16923076923076924
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 382,
+      "severe_occurrences": 81,
+      "non_severe_occurrences": 301,
+      "severe_proportion": 0.21204188481675393
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 1133,
+      "severe_occurrences": 237,
+      "non_severe_occurrences": 896,
+      "severe_proportion": 0.2091791703442189
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 3264,
+      "severe_occurrences": 762,
+      "non_severe_occurrences": 2502,
+      "severe_proportion": 0.23345588235294118
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 94,
+      "severe_occurrences": 14,
+      "non_severe_occurrences": 80,
+      "severe_proportion": 0.14893617021276595
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 173,
+      "severe_occurrences": 26,
+      "non_severe_occurrences": 147,
+      "severe_proportion": 0.15028901734104047
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Granizo",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 1,
+      "non_severe_occurrences": 0,
+      "severe_proportion": 1.0
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 16,
+      "severe_occurrences": 3,
+      "non_severe_occurrences": 13,
+      "severe_proportion": 0.1875
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 64,
+      "severe_occurrences": 9,
+      "non_severe_occurrences": 55,
+      "severe_proportion": 0.140625
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Neve",
+      "uso_solo": "Sim",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 21,
+      "severe_occurrences": 3,
+      "non_severe_occurrences": 18,
+      "severe_proportion": 0.14285714285714285
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 18,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 16,
+      "severe_proportion": 0.1111111111111111
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 325,
+      "severe_occurrences": 71,
+      "non_severe_occurrences": 254,
+      "severe_proportion": 0.21846153846153846
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 976,
+      "severe_occurrences": 194,
+      "non_severe_occurrences": 782,
+      "severe_proportion": 0.1987704918032787
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 99,
+      "severe_occurrences": 17,
+      "non_severe_occurrences": 82,
+      "severe_proportion": 0.1717171717171717
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 355,
+      "severe_occurrences": 76,
+      "non_severe_occurrences": 279,
+      "severe_proportion": 0.2140845070422535
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 3,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 3,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 19,
+      "severe_occurrences": 4,
+      "non_severe_occurrences": 15,
+      "severe_proportion": 0.21052631578947367
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2730,
+      "severe_occurrences": 894,
+      "non_severe_occurrences": 1836,
+      "severe_proportion": 0.3274725274725275
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 711,
+      "severe_occurrences": 189,
+      "non_severe_occurrences": 522,
+      "severe_proportion": 0.26582278481012656
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 15314,
+      "severe_occurrences": 5544,
+      "non_severe_occurrences": 9770,
+      "severe_proportion": 0.36202167950894604
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 7428,
+      "severe_occurrences": 2440,
+      "non_severe_occurrences": 4988,
+      "severe_proportion": 0.32848680667743674
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 863,
+      "severe_occurrences": 240,
+      "non_severe_occurrences": 623,
+      "severe_proportion": 0.27809965237543455
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 378,
+      "severe_occurrences": 94,
+      "non_severe_occurrences": 284,
+      "severe_proportion": 0.24867724867724866
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 412,
+      "severe_occurrences": 167,
+      "non_severe_occurrences": 245,
+      "severe_proportion": 0.4053398058252427
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 126,
+      "severe_occurrences": 56,
+      "non_severe_occurrences": 70,
+      "severe_proportion": 0.4444444444444444
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 296,
+      "severe_occurrences": 98,
+      "non_severe_occurrences": 198,
+      "severe_proportion": 0.3310810810810811
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 87,
+      "severe_occurrences": 27,
+      "non_severe_occurrences": 60,
+      "severe_proportion": 0.3103448275862069
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 3366,
+      "severe_occurrences": 1160,
+      "non_severe_occurrences": 2206,
+      "severe_proportion": 0.34462269756387404
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1750,
+      "severe_occurrences": 523,
+      "non_severe_occurrences": 1227,
+      "severe_proportion": 0.2988571428571429
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 1175,
+      "severe_occurrences": 396,
+      "non_severe_occurrences": 779,
+      "severe_proportion": 0.33702127659574466
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 609,
+      "severe_occurrences": 177,
+      "non_severe_occurrences": 432,
+      "severe_proportion": 0.29064039408866993
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 34,
+      "severe_occurrences": 15,
+      "non_severe_occurrences": 19,
+      "severe_proportion": 0.4411764705882353
+    },
+    {
+      "source_year": 2024,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 8,
+      "severe_occurrences": 4,
+      "non_severe_occurrences": 4,
+      "severe_proportion": 0.5
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 1997,
+      "severe_occurrences": 359,
+      "non_severe_occurrences": 1638,
+      "severe_proportion": 0.17976965448172258
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 1031,
+      "severe_occurrences": 181,
+      "non_severe_occurrences": 850,
+      "severe_proportion": 0.1755577109602328
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 9380,
+      "severe_occurrences": 2331,
+      "non_severe_occurrences": 7049,
+      "severe_proportion": 0.24850746268656718
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 10012,
+      "severe_occurrences": 2513,
+      "non_severe_occurrences": 7499,
+      "severe_proportion": 0.2509988014382741
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 668,
+      "severe_occurrences": 125,
+      "non_severe_occurrences": 543,
+      "severe_proportion": 0.18712574850299402
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 405,
+      "severe_occurrences": 87,
+      "non_severe_occurrences": 318,
+      "severe_proportion": 0.21481481481481482
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 195,
+      "severe_occurrences": 49,
+      "non_severe_occurrences": 146,
+      "severe_proportion": 0.2512820512820513
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 172,
+      "severe_occurrences": 49,
+      "non_severe_occurrences": 123,
+      "severe_proportion": 0.28488372093023256
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 129,
+      "severe_occurrences": 31,
+      "non_severe_occurrences": 98,
+      "severe_proportion": 0.24031007751937986
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 63,
+      "severe_occurrences": 21,
+      "non_severe_occurrences": 42,
+      "severe_proportion": 0.3333333333333333
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 2535,
+      "severe_occurrences": 576,
+      "non_severe_occurrences": 1959,
+      "severe_proportion": 0.2272189349112426
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 2300,
+      "severe_occurrences": 572,
+      "non_severe_occurrences": 1728,
+      "severe_proportion": 0.24869565217391304
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 883,
+      "severe_occurrences": 200,
+      "non_severe_occurrences": 683,
+      "severe_proportion": 0.22650056625141562
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 966,
+      "severe_occurrences": 234,
+      "non_severe_occurrences": 732,
+      "severe_proportion": 0.2422360248447205
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 27,
+      "severe_occurrences": 8,
+      "non_severe_occurrences": 19,
+      "severe_proportion": 0.2962962962962963
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Dupla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 19,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 17,
+      "severe_proportion": 0.10526315789473684
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 200,
+      "severe_occurrences": 29,
+      "non_severe_occurrences": 171,
+      "severe_proportion": 0.145
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 330,
+      "severe_occurrences": 66,
+      "non_severe_occurrences": 264,
+      "severe_proportion": 0.2
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 1071,
+      "severe_occurrences": 223,
+      "non_severe_occurrences": 848,
+      "severe_proportion": 0.20821661998132587
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 3270,
+      "severe_occurrences": 762,
+      "non_severe_occurrences": 2508,
+      "severe_proportion": 0.23302752293577983
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 77,
+      "severe_occurrences": 17,
+      "non_severe_occurrences": 60,
+      "severe_proportion": 0.22077922077922077
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 168,
+      "severe_occurrences": 29,
+      "non_severe_occurrences": 139,
+      "severe_proportion": 0.17261904761904762
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 15,
+      "severe_occurrences": 5,
+      "non_severe_occurrences": 10,
+      "severe_proportion": 0.3333333333333333
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 60,
+      "severe_occurrences": 13,
+      "non_severe_occurrences": 47,
+      "severe_proportion": 0.21666666666666667
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 12,
+      "severe_occurrences": 2,
+      "non_severe_occurrences": 10,
+      "severe_proportion": 0.16666666666666666
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 20,
+      "severe_occurrences": 5,
+      "non_severe_occurrences": 15,
+      "severe_proportion": 0.25
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 304,
+      "severe_occurrences": 63,
+      "non_severe_occurrences": 241,
+      "severe_proportion": 0.20723684210526316
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1033,
+      "severe_occurrences": 250,
+      "non_severe_occurrences": 783,
+      "severe_proportion": 0.2420135527589545
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 89,
+      "severe_occurrences": 15,
+      "non_severe_occurrences": 74,
+      "severe_proportion": 0.16853932584269662
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 345,
+      "severe_occurrences": 71,
+      "non_severe_occurrences": 274,
+      "severe_proportion": 0.20579710144927535
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 2,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 2,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Múltipla",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 18,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 18,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Não",
+      "total_occurrences": 2252,
+      "severe_occurrences": 712,
+      "non_severe_occurrences": 1540,
+      "severe_proportion": 0.31616341030195383
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Chuva",
+      "uso_solo": "Sim",
+      "total_occurrences": 628,
+      "severe_occurrences": 178,
+      "non_severe_occurrences": 450,
+      "severe_proportion": 0.28343949044585987
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Não",
+      "total_occurrences": 15327,
+      "severe_occurrences": 5408,
+      "non_severe_occurrences": 9919,
+      "severe_proportion": 0.35284139100932993
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Céu Claro",
+      "uso_solo": "Sim",
+      "total_occurrences": 7315,
+      "severe_occurrences": 2272,
+      "non_severe_occurrences": 5043,
+      "severe_proportion": 0.3105946684894053
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Não",
+      "total_occurrences": 786,
+      "severe_occurrences": 232,
+      "non_severe_occurrences": 554,
+      "severe_proportion": 0.2951653944020356
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Garoa/Chuvisco",
+      "uso_solo": "Sim",
+      "total_occurrences": 318,
+      "severe_occurrences": 88,
+      "non_severe_occurrences": 230,
+      "severe_proportion": 0.27672955974842767
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Não",
+      "total_occurrences": 418,
+      "severe_occurrences": 152,
+      "non_severe_occurrences": 266,
+      "severe_proportion": 0.36363636363636365
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Ignorado",
+      "uso_solo": "Sim",
+      "total_occurrences": 140,
+      "severe_occurrences": 35,
+      "non_severe_occurrences": 105,
+      "severe_proportion": 0.25
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Neve",
+      "uso_solo": "Não",
+      "total_occurrences": 1,
+      "severe_occurrences": 0,
+      "non_severe_occurrences": 1,
+      "severe_proportion": 0.0
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Não",
+      "total_occurrences": 263,
+      "severe_occurrences": 104,
+      "non_severe_occurrences": 159,
+      "severe_proportion": 0.39543726235741444
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nevoeiro/Neblina",
+      "uso_solo": "Sim",
+      "total_occurrences": 66,
+      "severe_occurrences": 18,
+      "non_severe_occurrences": 48,
+      "severe_proportion": 0.2727272727272727
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Não",
+      "total_occurrences": 3492,
+      "severe_occurrences": 1224,
+      "non_severe_occurrences": 2268,
+      "severe_proportion": 0.35051546391752575
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Nublado",
+      "uso_solo": "Sim",
+      "total_occurrences": 1771,
+      "severe_occurrences": 546,
+      "non_severe_occurrences": 1225,
+      "severe_proportion": 0.308300395256917
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Não",
+      "total_occurrences": 1295,
+      "severe_occurrences": 427,
+      "non_severe_occurrences": 868,
+      "severe_proportion": 0.32972972972972975
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Sol",
+      "uso_solo": "Sim",
+      "total_occurrences": 623,
+      "severe_occurrences": 190,
+      "non_severe_occurrences": 433,
+      "severe_proportion": 0.30497592295345105
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Não",
+      "total_occurrences": 26,
+      "severe_occurrences": 12,
+      "non_severe_occurrences": 14,
+      "severe_proportion": 0.46153846153846156
+    },
+    {
+      "source_year": 2025,
+      "tipo_pista": "Simples",
+      "condicao_metereologica": "Vento",
+      "uso_solo": "Sim",
+      "total_occurrences": 12,
+      "severe_occurrences": 7,
+      "non_severe_occurrences": 5,
+      "severe_proportion": 0.5833333333333334
+    }
+  ]
+}

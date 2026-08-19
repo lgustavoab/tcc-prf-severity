@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "OVERVIEW",
+    "part_id": "default",
+    "scientific_status": "MIXED",
+    "source_artifacts": [
+      "reports/tables/tcc/T1_population_characterization.csv",
+      "data/processed/prf_primary_analytical_2021_2025.parquet"
+    ],
+    "required_caveats": [
+      "Os percentuais representam a proporção de ocorrências graves entre acidentes registrados pela PRF. Sem denominador de exposição ao tráfego, esses valores não representam risco de ocorrência de acidente."
+    ]
+  },
+  "filters": {
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "summary": {
+    "scope": "total",
+    "source_year": null,
+    "total_occurrences": 342624,
+    "severe_occurrences": 96857,
+    "non_severe_occurrences": 245767,
+    "severe_proportion": 0.28269181
+  },
+  "data": [
+    {
+      "scope": "year",
+      "source_year": 2021,
+      "total_occurrences": 64567,
+      "severe_occurrences": 18118,
+      "non_severe_occurrences": 46449,
+      "severe_proportion": 0.28060774
+    },
+    {
+      "scope": "year",
+      "source_year": 2022,
+      "total_occurrences": 64606,
+      "severe_occurrences": 18409,
+      "non_severe_occurrences": 46197,
+      "severe_proportion": 0.28494257
+    },
+    {
+      "scope": "year",
+      "source_year": 2023,
+      "total_occurrences": 67766,
+      "severe_occurrences": 19212,
+      "non_severe_occurrences": 48554,
+      "severe_proportion": 0.283505
+    },
+    {
+      "scope": "year",
+      "source_year": 2024,
+      "total_occurrences": 73156,
+      "severe_occurrences": 20625,
+      "non_severe_occurrences": 52531,
+      "severe_proportion": 0.28193176000000003
+    },
+    {
+      "scope": "year",
+      "source_year": 2025,
+      "total_occurrences": 72529,
+      "severe_occurrences": 20493,
+      "non_severe_occurrences": 52036,
+      "severe_proportion": 0.28254905
+    },
+    {
+      "scope": "total",
+      "source_year": null,
+      "total_occurrences": 342624,
+      "severe_occurrences": 96857,
+      "non_severe_occurrences": 245767,
+      "severe_proportion": 0.28269181
+    }
+  ]
+}

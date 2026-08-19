@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "TEMPORAL_VALIDATION",
+    "part_id": "default",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/phase_4d_fold_comparison.csv",
+      "reports/tables/phase_4d_temporal_stability.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard."
+    ]
+  },
+  "validation_year_role": "published_result_dimension_not_population_filter",
+  "data": [
+    {
+      "fold": 1,
+      "validation_year": 2022,
+      "model_id": "phase_4a_logistic_baseline",
+      "average_precision": 0.3866809762501382,
+      "roc_auc": 0.6169751375443843,
+      "brier_score": 0.19645154811277926,
+      "validation_positive_rate": 0.2849425749930347
+    },
+    {
+      "fold": 1,
+      "validation_year": 2022,
+      "model_id": "phase_4b_random_forest_baseline",
+      "average_precision": 0.3880957692713414,
+      "roc_auc": 0.6185441901535429,
+      "brier_score": 0.1966648077574826,
+      "validation_positive_rate": 0.2849425749930347
+    },
+    {
+      "fold": 1,
+      "validation_year": 2022,
+      "model_id": "phase_4c_xgboost_baseline",
+      "average_precision": 0.390374557377428,
+      "roc_auc": 0.6221008401959205,
+      "brier_score": 0.19586497357841257,
+      "validation_positive_rate": 0.2849425749930347
+    },
+    {
+      "fold": 2,
+      "validation_year": 2023,
+      "model_id": "phase_4a_logistic_baseline",
+      "average_precision": 0.3960583174959361,
+      "roc_auc": 0.62737846563422,
+      "brier_score": 0.19444985459760528,
+      "validation_positive_rate": 0.28350500250863264
+    },
+    {
+      "fold": 2,
+      "validation_year": 2023,
+      "model_id": "phase_4b_random_forest_baseline",
+      "average_precision": 0.3996726973944841,
+      "roc_auc": 0.6294224726541079,
+      "brier_score": 0.19488729276566014,
+      "validation_positive_rate": 0.28350500250863264
+    },
+    {
+      "fold": 2,
+      "validation_year": 2023,
+      "model_id": "phase_4c_xgboost_baseline",
+      "average_precision": 0.40496847114969603,
+      "roc_auc": 0.6336685028033421,
+      "brier_score": 0.19345287692771096,
+      "validation_positive_rate": 0.28350500250863264
+    },
+    {
+      "fold": 3,
+      "validation_year": 2024,
+      "model_id": "phase_4a_logistic_baseline",
+      "average_precision": 0.3977855869271569,
+      "roc_auc": 0.6287792847282672,
+      "brier_score": 0.19355777397050494,
+      "validation_positive_rate": 0.28193176226146865
+    },
+    {
+      "fold": 3,
+      "validation_year": 2024,
+      "model_id": "phase_4b_random_forest_baseline",
+      "average_precision": 0.4001833160938038,
+      "roc_auc": 0.6303369399771448,
+      "brier_score": 0.19399737763950947,
+      "validation_positive_rate": 0.28193176226146865
+    },
+    {
+      "fold": 3,
+      "validation_year": 2024,
+      "model_id": "phase_4c_xgboost_baseline",
+      "average_precision": 0.4070898952179728,
+      "roc_auc": 0.6367804799820942,
+      "brier_score": 0.19237455525677927,
+      "validation_positive_rate": 0.28193176226146865
+    }
+  ],
+  "temporal_stability": [
+    {
+      "model_id": "phase_4a_logistic_baseline",
+      "ap_min": 0.3866809762501382,
+      "ap_max": 0.3977855869271569,
+      "ap_range": 0.011104610677018678,
+      "ap_standard_deviation": 0.004878870165386994,
+      "fold1_to_fold2_delta": 0.009377341245797921,
+      "fold2_to_fold3_delta": 0.001727269431220757
+    },
+    {
+      "model_id": "phase_4b_random_forest_baseline",
+      "ap_min": 0.3880957692713414,
+      "ap_max": 0.4001833160938038,
+      "ap_range": 0.012087546822462436,
+      "ap_standard_deviation": 0.00558166427201829,
+      "fold1_to_fold2_delta": 0.011576928123142705,
+      "fold2_to_fold3_delta": 0.0005106186993197315
+    },
+    {
+      "model_id": "phase_4c_xgboost_baseline",
+      "ap_min": 0.390374557377428,
+      "ap_max": 0.4070898952179728,
+      "ap_range": 0.016715337840544797,
+      "ap_standard_deviation": 0.007430307892479644,
+      "fold1_to_fold2_delta": 0.014593913772268041,
+      "fold2_to_fold3_delta": 0.002121424068276756
+    }
+  ]
+}

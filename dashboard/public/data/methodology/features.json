@@ -1,0 +1,400 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "METHODOLOGY_FEATURES",
+    "part_id": "default",
+    "scientific_status": "DOCUMENTATION",
+    "source_artifacts": [
+      "reports/tables/tcc/M2_features_preprocessing.csv",
+      "reports/tables/phase_3b_primary_feature_set.csv",
+      "reports/tables/phase_3c_analytical_schema.csv",
+      "reports/tables/phase_3e_preprocessing_contract.csv"
+    ],
+    "required_caveats": []
+  },
+  "data": [
+    {
+      "feature": "month_name",
+      "source": "data_inversa",
+      "representation": "categorical_month",
+      "rationale": "Mês sazonal reprodutível derivável de informação temporal assumida no cenário.",
+      "expected_future_preprocessing": "Derivar após o split lógico; encoder fit somente em 2021-2024 e tolerante a unknown."
+    },
+    {
+      "feature": "dia_semana",
+      "source": "interim",
+      "representation": "categorical_weekday",
+      "rationale": "Representação semanal compatível com o momento preditivo conceitual e sem duplicata escolhida.",
+      "expected_future_preprocessing": "Encoder categórico fit somente em 2021-2024."
+    },
+    {
+      "feature": "hour",
+      "source": "horario",
+      "representation": "categorical_hour_0_23",
+      "rationale": "Representação horária derivável de informação temporal assumida no cenário sem usar o horário exato.",
+      "expected_future_preprocessing": "Derivar após o split lógico; encoder fit somente em 2021-2024."
+    },
+    {
+      "feature": "uf",
+      "source": "interim",
+      "representation": "categorical_state",
+      "rationale": "Contexto geográfico agregado com suporte completo.",
+      "expected_future_preprocessing": "Encoder categórico fit somente em 2021-2024."
+    },
+    {
+      "feature": "br",
+      "source": "interim",
+      "representation": "categorical_road_identifier",
+      "rationale": "Identificador rodoviário substantivo com política explícita para unknown e BR 0.",
+      "expected_future_preprocessing": "Encoder tolerante a unknown e fit somente em 2021-2024."
+    },
+    {
+      "feature": "km",
+      "source": "interim",
+      "representation": "continuous_road_position",
+      "rationale": "Posição ao longo da BR sem coordenadas precisas redundantes.",
+      "expected_future_preprocessing": "Transformação numérica fit somente em 2021-2024; não reutilizar automaticamente bins da 3A."
+    },
+    {
+      "feature": "sentido_via",
+      "source": "interim",
+      "representation": "categorical_direction",
+      "rationale": "Contexto plausivelmente observável no momento definido com preservação de Não Informado como ausência semântica.",
+      "expected_future_preprocessing": "Preservar Não Informado; encoder tolerante a unknown e fit somente em 2021-2024."
+    },
+    {
+      "feature": "condicao_metereologica",
+      "source": "interim",
+      "representation": "categorical_weather",
+      "rationale": "Contexto ambiental plausivelmente observável no momento definido com preservação de Ignorado como ausência semântica.",
+      "expected_future_preprocessing": "Preservar Ignorado; encoder tolerante a unknown e fit somente em 2021-2024."
+    },
+    {
+      "feature": "tipo_pista",
+      "source": "interim",
+      "representation": "categorical_road_type",
+      "rationale": "Característica substantiva da infraestrutura viária.",
+      "expected_future_preprocessing": "Encoder categórico fit somente em 2021-2024."
+    },
+    {
+      "feature": "uso_solo",
+      "source": "interim",
+      "representation": "categorical_land_use",
+      "rationale": "Campo contextual preservado sem reinterpretação urbano/rural.",
+      "expected_future_preprocessing": "Encoder categórico fit somente em 2021-2024."
+    },
+    {
+      "feature": "tracado_via_components",
+      "source": "tracado_via",
+      "representation": "multilabel_binary_components",
+      "rationale": "Componentes semanticamente estáveis substituem combinações brutas de alta cardinalidade.",
+      "expected_future_preprocessing": "Materializar indicadores binários multilabel somente na Fase 3C e ajustar no desenvolvimento."
+    }
+  ],
+  "preprocessing_groups": [
+    {
+      "group": "categorical",
+      "source_features": "month_name,dia_semana,hour,uf,br,sentido_via,condicao_metereologica,tipo_pista,uso_solo",
+      "transformer": "OneHotEncoder",
+      "learned_parameters": "categories_",
+      "fit_scope": "fold_train_only",
+      "unknown_policy": "handle_unknown=ignore; audit_separately",
+      "output_type": "sparse one-hot columns",
+      "notes": "drop=None; min_frequency=None; max_categories=None; all train categories preserved"
+    },
+    {
+      "group": "numeric",
+      "source_features": "km",
+      "transformer": "StandardScaler",
+      "learned_parameters": "mean_; scale_; var_",
+      "fit_scope": "fold_train_only",
+      "unknown_policy": "not_applicable",
+      "output_type": "scaled numeric column in sparse combined matrix",
+      "notes": "km only; no bins, clipping, log, winsorization or imputation"
+    },
+    {
+      "group": "binary",
+      "source_features": "tracado_aclive,tracado_curva,tracado_declive,tracado_desvio_temporario,tracado_em_obras,tracado_intersecao_de_vias,tracado_ponte,tracado_reta,tracado_retorno_regulamentado,tracado_rotatoria,tracado_tunel,tracado_viaduto",
+      "transformer": "passthrough",
+      "learned_parameters": "none",
+      "fit_scope": "not_applicable",
+      "unknown_policy": "strict_binary_0_1_validation",
+      "output_type": "unchanged binary columns in sparse combined matrix",
+      "notes": "no encoding, scaling or imputation"
+    }
+  ],
+  "physical_predictors": [
+    {
+      "column": "month_name",
+      "role": "predictor",
+      "conceptual_feature": "month_name",
+      "source": "data_inversa",
+      "derivation": "derivado deterministicamente de data_inversa",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Nome do mês em português derivado de data_inversa.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "dia_semana",
+      "role": "predictor",
+      "conceptual_feature": "dia_semana",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Valor do contrato intermediário preservado sem imputação.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "hour",
+      "role": "predictor",
+      "conceptual_feature": "hour",
+      "source": "horario",
+      "derivation": "derivado deterministicamente de horario",
+      "dtype": "Int64",
+      "nullable": "false",
+      "allowed_values_note": "Inteiro de 0 a 23 derivado de horario.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "uf",
+      "role": "predictor",
+      "conceptual_feature": "uf",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Valor do contrato intermediário preservado sem imputação.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "br",
+      "role": "predictor",
+      "conceptual_feature": "br",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "Int64",
+      "nullable": "false",
+      "allowed_values_note": "Valor observado preservado, inclusive br = 0.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "km",
+      "role": "predictor",
+      "conceptual_feature": "km",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "Float64",
+      "nullable": "false",
+      "allowed_values_note": "Valor numérico observado preservado, inclusive km = 0.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "sentido_via",
+      "role": "predictor",
+      "conceptual_feature": "sentido_via",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Categoria observada preservada, inclusive Não Informado.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "condicao_metereologica",
+      "role": "predictor",
+      "conceptual_feature": "condicao_metereologica",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Categoria observada preservada, inclusive Ignorado.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tipo_pista",
+      "role": "predictor",
+      "conceptual_feature": "tipo_pista",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Valor do contrato intermediário preservado sem imputação.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "uso_solo",
+      "role": "predictor",
+      "conceptual_feature": "uso_solo",
+      "source": "interim",
+      "derivation": "preservada sem transformação",
+      "dtype": "String",
+      "nullable": "false",
+      "allowed_values_note": "Valor do contrato intermediário preservado sem imputação.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_aclive",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Aclive",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_curva",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Curva",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_declive",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Declive",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_desvio_temporario",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Desvio Temporário",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_em_obras",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Em Obras",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_intersecao_de_vias",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Interseção de Vias",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_ponte",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Ponte",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_reta",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Reta",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_retorno_regulamentado",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Retorno Regulamentado",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_rotatoria",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Rotatória",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_tunel",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Túnel",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    },
+    {
+      "column": "tracado_viaduto",
+      "role": "predictor",
+      "conceptual_feature": "tracado_via_components",
+      "source": "tracado_via",
+      "derivation": "indicador determinístico da presença do componente Viaduto",
+      "dtype": "UInt8",
+      "nullable": "false",
+      "allowed_values_note": "Indicador binário: 0 ou 1.",
+      "included_in_model_matrix": "true"
+    }
+  ],
+  "published_summary": [
+    {
+      "Grupo": "Categóricas",
+      "Predictors físicos": "9",
+      "Representações conceituais": "9",
+      "Preprocessing": "OneHotEncoder(handle_unknown=\"ignore\")",
+      "Política adicional": "Vocabulário aprendido somente no treino"
+    },
+    {
+      "Grupo": "Numérica",
+      "Predictors físicos": "1",
+      "Representações conceituais": "1",
+      "Preprocessing": "StandardScaler",
+      "Política adicional": "Parâmetros aprendidos somente no treino"
+    },
+    {
+      "Grupo": "Binárias de traçado",
+      "Predictors físicos": "12",
+      "Representações conceituais": "1",
+      "Preprocessing": "passthrough",
+      "Política adicional": "Validação binária 0/1"
+    },
+    {
+      "Grupo": "Total",
+      "Predictors físicos": "22",
+      "Representações conceituais": "11",
+      "Preprocessing": "ColumnTransformer",
+      "Política adicional": "remainder=drop"
+    }
+  ]
+}

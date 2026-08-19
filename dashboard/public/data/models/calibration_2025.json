@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "CALIBRATION_2025",
+    "part_id": "default",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/phase_4h_calibration.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard."
+    ]
+  },
+  "data": [
+    {
+      "quantile_bin": 1,
+      "bin_count": 7253,
+      "probability_min": 0.05519633740186691,
+      "probability_max": 0.1750064492225647,
+      "mean_predicted_probability": 0.14931416648929158,
+      "observed_severe_proportion": 0.14338894250654902
+    },
+    {
+      "quantile_bin": 2,
+      "bin_count": 7253,
+      "probability_min": 0.17501094937324524,
+      "probability_max": 0.20512798428535461,
+      "mean_predicted_probability": 0.19072843472143708,
+      "observed_severe_proportion": 0.18351027161174685
+    },
+    {
+      "quantile_bin": 3,
+      "bin_count": 7253,
+      "probability_min": 0.20513121783733368,
+      "probability_max": 0.22840508818626404,
+      "mean_predicted_probability": 0.21701153776907978,
+      "observed_severe_proportion": 0.21480766579346477
+    },
+    {
+      "quantile_bin": 4,
+      "bin_count": 7253,
+      "probability_min": 0.2284085899591446,
+      "probability_max": 0.24943998456001282,
+      "mean_predicted_probability": 0.23895375831002583,
+      "observed_severe_proportion": 0.24141734454708397
+    },
+    {
+      "quantile_bin": 5,
+      "bin_count": 7253,
+      "probability_min": 0.24944384396076202,
+      "probability_max": 0.2708747088909149,
+      "mean_predicted_probability": 0.25996086848870187,
+      "observed_severe_proportion": 0.2645801737212188
+    },
+    {
+      "quantile_bin": 6,
+      "bin_count": 7252,
+      "probability_min": 0.27087512612342834,
+      "probability_max": 0.2957368791103363,
+      "mean_predicted_probability": 0.2831840975239865,
+      "observed_severe_proportion": 0.29191947049089906
+    },
+    {
+      "quantile_bin": 7,
+      "bin_count": 7253,
+      "probability_min": 0.2957385182380676,
+      "probability_max": 0.32316070795059204,
+      "mean_predicted_probability": 0.3093978725276157,
+      "observed_severe_proportion": 0.3029091410450848
+    },
+    {
+      "quantile_bin": 8,
+      "bin_count": 7253,
+      "probability_min": 0.3231663405895233,
+      "probability_max": 0.3567579984664917,
+      "mean_predicted_probability": 0.3389026507022347,
+      "observed_severe_proportion": 0.33723976285674895
+    },
+    {
+      "quantile_bin": 9,
+      "bin_count": 7253,
+      "probability_min": 0.35676082968711853,
+      "probability_max": 0.4090918004512787,
+      "mean_predicted_probability": 0.38046429225630257,
+      "observed_severe_proportion": 0.36784778712257
+    },
+    {
+      "quantile_bin": 10,
+      "bin_count": 7253,
+      "probability_min": 0.4090927839279175,
+      "probability_max": 0.7569674849510193,
+      "mean_predicted_probability": 0.4708657106925221,
+      "observed_severe_proportion": 0.47787122569971047
+    }
+  ]
+}

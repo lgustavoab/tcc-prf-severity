@@ -1,0 +1,226 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-19T21:59:46.8033684Z",
+  "data_period": {
+    "start_year": 2021,
+    "end_year": 2025
+  },
+  "source_scope": "Acidentes registrados pela PRF em rodovias federais, 2021-2025.",
+  "target_definition": "target_grave = (mortos > 0) OR (feridos_graves > 0)",
+  "assets": [
+    {
+      "asset_id": "META",
+      "part_id": "default",
+      "path": "meta.json",
+      "purpose": "Metadados globais e cautelas científicas.",
+      "scientific_status": "DOCUMENTATION",
+      "source_artifacts": [
+        "docs/PHASE_1_ACCEPTANCE.md",
+        "docs/PHASE_3B_FEATURE_POLICY.md",
+        "reports/tables/tcc/T1_population_characterization.csv"
+      ],
+      "row_count": 1,
+      "size_bytes": 1267,
+      "sha256": "789ef663c2a7ace6702368ec61fdb82a716c2daeb6348cd431c097de4339cd61",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "OVERVIEW",
+      "part_id": "default",
+      "path": "overview/summary.json",
+      "purpose": "Resumo populacional geral e anual publicado.",
+      "scientific_status": "MIXED",
+      "source_artifacts": [
+        "reports/tables/tcc/T1_population_characterization.csv",
+        "data/processed/prf_primary_analytical_2021_2025.parquet"
+      ],
+      "row_count": 6,
+      "size_bytes": 2137,
+      "sha256": "569fd1aa6e7abb5c4d61eac377ac284957f21a2da49bf0d29f32540765aa6114",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "EXPLORATION",
+      "part_id": "temporal",
+      "path": "exploration/temporal.json",
+      "purpose": "Agregações observadas do escopo temporal.",
+      "scientific_status": "EXPLORATORY",
+      "source_artifacts": [
+        "data/processed/prf_primary_analytical_2021_2025.parquet",
+        "reports/tables/phase_3c_analytical_schema.csv"
+      ],
+      "row_count": 840,
+      "size_bytes": 202578,
+      "sha256": "ac7e3fa435686d55858c64129617ebc82bbe5ab0fa0bf732eb9cbbdf26b07335",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "EXPLORATION",
+      "part_id": "contextual",
+      "path": "exploration/contextual.json",
+      "purpose": "Agregações observadas do escopo contextual.",
+      "scientific_status": "EXPLORATORY",
+      "source_artifacts": [
+        "data/processed/prf_primary_analytical_2021_2025.parquet",
+        "reports/tables/phase_3c_analytical_schema.csv"
+      ],
+      "row_count": 256,
+      "size_bytes": 74353,
+      "sha256": "cefc725e90d27e89483c5ea54d9881357459bd3706bb6dbb20ad68bf31b5c39f",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "GEOGRAPHY",
+      "part_id": "default",
+      "path": "geography/geography.json",
+      "purpose": "Agregações observadas por ano, UF e BR.",
+      "scientific_status": "EXPLORATORY",
+      "source_artifacts": [
+        "data/processed/prf_primary_analytical_2021_2025.parquet",
+        "reports/tables/phase_3c_analytical_schema.csv"
+      ],
+      "row_count": 1288,
+      "size_bytes": 286016,
+      "sha256": "e8eb18c2d24c26f798a64a37a6cd8fe1d069734ac7464f85c8717fea0ff764e8",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "MODEL_COMPARISON",
+      "part_id": "default",
+      "path": "models/model_comparison.json",
+      "purpose": "Comparação e seleção publicadas das três famílias de modelos.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/phase_4d_model_comparison.csv",
+        "reports/tables/phase_4d_pairwise_ap_deltas.csv",
+        "reports/tables/phase_4e_model_selection.csv"
+      ],
+      "row_count": 3,
+      "size_bytes": 2746,
+      "sha256": "c73211d1757de8d2344c592015f4ce595a1d6a58aee6c8e3bd83e9897b2195b2",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "TEMPORAL_VALIDATION",
+      "part_id": "default",
+      "path": "validation/temporal_validation.json",
+      "purpose": "Métricas publicadas dos nove pares modelo/fold.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/phase_4d_fold_comparison.csv",
+        "reports/tables/phase_4d_temporal_stability.csv"
+      ],
+      "row_count": 9,
+      "size_bytes": 4146,
+      "sha256": "bf1ca374efe755993bfde4038fd0efcdc9f4de15381eceb835855527c7c79c49",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "FINAL_2025",
+      "part_id": "default",
+      "path": "models/final_2025.json",
+      "purpose": "Avaliação temporal final publicada para 2025.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/tcc/T2_final_2025_evaluation.csv",
+        "reports/tables/phase_4h_final_evaluation.csv",
+        "reports/tables/phase_4h_development_comparison.csv"
+      ],
+      "row_count": 6,
+      "size_bytes": 4073,
+      "sha256": "f717a8d1b60a8459e56211e4b7a8432e07c1a7e9ad7445ac9dd38593b823baa7",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "CALIBRATION_2025",
+      "part_id": "default",
+      "path": "models/calibration_2025.json",
+      "purpose": "Faixas quantílicas de calibração publicadas para 2025.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/phase_4h_calibration.csv"
+      ],
+      "row_count": 10,
+      "size_bytes": 3040,
+      "sha256": "5d72cb4c5c85940a03face8b58ec1a92cd807ed35f4cbfcefcce8cd5c87a2784",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "THRESHOLD_2025",
+      "part_id": "default",
+      "path": "threshold/threshold_2025.json",
+      "purpose": "Ponto de operação congelado e avaliação publicada em 2025.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/phase_4f_threshold_selection.csv",
+        "reports/tables/phase_4h_threshold_evaluation.csv"
+      ],
+      "row_count": 1,
+      "size_bytes": 929,
+      "sha256": "e5579439ba9f5af6f6a3cfec290ea8b639fe10a3150b6429efaae25bfa91c264",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "INTERPRETATION",
+      "part_id": "source_predictors",
+      "path": "interpretation/source_predictors.json",
+      "purpose": "Contribuições Tree SHAP publicadas por variável de origem.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/phase_4i_global_feature_contributions.csv"
+      ],
+      "row_count": 22,
+      "size_bytes": 7500,
+      "sha256": "ef902aaf547993c0a04d926a2196dd54844b50d517aabbb95d4b6b7c0aead7ac",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "INTERPRETATION",
+      "part_id": "transformed_top15",
+      "path": "interpretation/transformed_top15.json",
+      "purpose": "Top 15 publicado de features transformadas.",
+      "scientific_status": "FROZEN_RESULT",
+      "source_artifacts": [
+        "reports/tables/tcc/A1_top15_transformed_features.csv",
+        "reports/tables/phase_4i_transformed_feature_contributions.csv"
+      ],
+      "row_count": 15,
+      "size_bytes": 5213,
+      "sha256": "e0413ff09154e3e608842aa37358003ad51808bf5bbdbd9c95f86144f4c6be0c",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "METHODOLOGY_DESIGN",
+      "part_id": "default",
+      "path": "methodology/design.json",
+      "purpose": "Contrato estruturado do desenho experimental temporal.",
+      "scientific_status": "DOCUMENTATION",
+      "source_artifacts": [
+        "reports/tables/phase_3d_temporal_folds.csv",
+        "reports/tables/phase_3d_experimental_contract.csv",
+        "docs/PHASE_3D_EXPERIMENTAL_DESIGN.md"
+      ],
+      "row_count": 3,
+      "size_bytes": 4262,
+      "sha256": "c1181026ade8fd83776ab99a57f8aa333382ec8fa202e6d1b5871c00a6f48fbb",
+      "generation_status": "generated"
+    },
+    {
+      "asset_id": "METHODOLOGY_FEATURES",
+      "part_id": "default",
+      "path": "methodology/features.json",
+      "purpose": "Contrato estruturado das variáveis e do preprocessing.",
+      "scientific_status": "DOCUMENTATION",
+      "source_artifacts": [
+        "reports/tables/tcc/M2_features_preprocessing.csv",
+        "reports/tables/phase_3b_primary_feature_set.csv",
+        "reports/tables/phase_3c_analytical_schema.csv",
+        "reports/tables/phase_3e_preprocessing_contract.csv"
+      ],
+      "row_count": 11,
+      "size_bytes": 15171,
+      "sha256": "626f12989cd1c59482b2ad645ea37af1e8890865f608af2d46339faac756423a",
+      "generation_status": "generated"
+    }
+  ]
+}

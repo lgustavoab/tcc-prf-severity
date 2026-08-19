@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "INTERPRETATION",
+    "part_id": "transformed_top15",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/tcc/A1_top15_transformed_features.csv",
+      "reports/tables/phase_4i_transformed_feature_contributions.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard.",
+      "Contribuições Tree SHAP descrevem o modelo e não representam efeitos causais."
+    ]
+  },
+  "data": [
+    {
+      "rank": 1,
+      "transformed_feature": "categorical__tipo_pista_Simples",
+      "source_predictor": "tipo_pista",
+      "predictor_group": "categorical",
+      "category_or_level": "Simples",
+      "mean_absolute_shap": 0.16333748430331746,
+      "mean_signed_margin_contribution": -0.009057053392703312
+    },
+    {
+      "rank": 2,
+      "transformed_feature": "numeric__km",
+      "source_predictor": "km",
+      "predictor_group": "numeric",
+      "category_or_level": null,
+      "mean_absolute_shap": 0.05342911061350782,
+      "mean_signed_margin_contribution": 0.005230840570079059
+    },
+    {
+      "rank": 3,
+      "transformed_feature": "categorical__uf_RJ",
+      "source_predictor": "uf",
+      "predictor_group": "categorical",
+      "category_or_level": "RJ",
+      "mean_absolute_shap": 0.049295763042818096,
+      "mean_signed_margin_contribution": -0.008856661103046618
+    },
+    {
+      "rank": 4,
+      "transformed_feature": "categorical__uf_RS",
+      "source_predictor": "uf",
+      "predictor_group": "categorical",
+      "category_or_level": "RS",
+      "mean_absolute_shap": 0.04558408870262294,
+      "mean_signed_margin_contribution": -0.0007711993538546487
+    },
+    {
+      "rank": 5,
+      "transformed_feature": "categorical__uf_SP",
+      "source_predictor": "uf",
+      "predictor_group": "categorical",
+      "category_or_level": "SP",
+      "mean_absolute_shap": 0.039741662093391916,
+      "mean_signed_margin_contribution": -0.005272238805497826
+    },
+    {
+      "rank": 6,
+      "transformed_feature": "categorical__tipo_pista_Dupla",
+      "source_predictor": "tipo_pista",
+      "predictor_group": "categorical",
+      "category_or_level": "Dupla",
+      "mean_absolute_shap": 0.03763496880374983,
+      "mean_signed_margin_contribution": -0.00380652151200959
+    },
+    {
+      "rank": 7,
+      "transformed_feature": "categorical__uf_SC",
+      "source_predictor": "uf",
+      "predictor_group": "categorical",
+      "category_or_level": "SC",
+      "mean_absolute_shap": 0.037616869136038206,
+      "mean_signed_margin_contribution": 0.0006976492967745674
+    },
+    {
+      "rank": 8,
+      "transformed_feature": "binary__tracado_reta",
+      "source_predictor": "tracado_reta",
+      "predictor_group": "binary",
+      "category_or_level": null,
+      "mean_absolute_shap": 0.03534370390834038,
+      "mean_signed_margin_contribution": 0.004778382387685264
+    },
+    {
+      "rank": 9,
+      "transformed_feature": "categorical__condicao_metereologica_Chuva",
+      "source_predictor": "condicao_metereologica",
+      "predictor_group": "categorical",
+      "category_or_level": "Chuva",
+      "mean_absolute_shap": 0.0273973269826363,
+      "mean_signed_margin_contribution": 0.000725873148136912
+    },
+    {
+      "rank": 10,
+      "transformed_feature": "binary__tracado_declive",
+      "source_predictor": "tracado_declive",
+      "predictor_group": "binary",
+      "category_or_level": null,
+      "mean_absolute_shap": 0.026401786513688824,
+      "mean_signed_margin_contribution": 0.002005120317888845
+    },
+    {
+      "rank": 11,
+      "transformed_feature": "categorical__hour_19",
+      "source_predictor": "hour",
+      "predictor_group": "categorical",
+      "category_or_level": "19",
+      "mean_absolute_shap": 0.024655146976092217,
+      "mean_signed_margin_contribution": -0.0005000627458527743
+    },
+    {
+      "rank": 12,
+      "transformed_feature": "categorical__hour_18",
+      "source_predictor": "hour",
+      "predictor_group": "categorical",
+      "category_or_level": "18",
+      "mean_absolute_shap": 0.02037337809631397,
+      "mean_signed_margin_contribution": -0.00038080462757894334
+    },
+    {
+      "rank": 13,
+      "transformed_feature": "categorical__br_116",
+      "source_predictor": "br",
+      "predictor_group": "categorical",
+      "category_or_level": "116",
+      "mean_absolute_shap": 0.020146821814230047,
+      "mean_signed_margin_contribution": -0.00011884789890745442
+    },
+    {
+      "rank": 14,
+      "transformed_feature": "categorical__uf_PE",
+      "source_predictor": "uf",
+      "predictor_group": "categorical",
+      "category_or_level": "PE",
+      "mean_absolute_shap": 0.018949463187857958,
+      "mean_signed_margin_contribution": -0.0009687774021396638
+    },
+    {
+      "rank": 15,
+      "transformed_feature": "categorical__condicao_metereologica_Céu Claro",
+      "source_predictor": "condicao_metereologica",
+      "predictor_group": "categorical",
+      "category_or_level": "Céu Claro",
+      "mean_absolute_shap": 0.01884140629201051,
+      "mean_signed_margin_contribution": 0.0006526465978667893
+    }
+  ]
+}

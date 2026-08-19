@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "THRESHOLD_2025",
+    "part_id": "default",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/phase_4f_threshold_selection.csv",
+      "reports/tables/phase_4h_threshold_evaluation.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard."
+    ]
+  },
+  "threshold_role": "frozen_before_2025",
+  "data": [
+    {
+      "threshold": 0.23723246157169342,
+      "rows": 72529,
+      "actual_positive": 20493,
+      "actual_negative": 52036,
+      "predicted_positive": 47700,
+      "predicted_negative": 24829,
+      "positive_precision": 0.33159329140461213,
+      "recall": 0.7718245254477138,
+      "f1": 0.4638892554954321,
+      "true_negative": 20153,
+      "false_positive": 31883,
+      "false_negative": 4676,
+      "true_positive": 15817
+    }
+  ]
+}
