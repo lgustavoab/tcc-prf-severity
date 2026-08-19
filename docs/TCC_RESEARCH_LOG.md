@@ -564,6 +564,33 @@ tabelas `phase_5e1_*` em `reports/tables/`.
 **Status:** confirmada; oito temas cobertos e 28 checks PASS. Próximo passo: Fase 5E.2 —
 redigir Resultados e Discussão usando somente referências verificadas e resultados congelados.
 
+### D024 — Primeira redação rastreável de Resultados e Discussão
+
+**Data:** 19/08/2026.
+
+**Decisão:** redigir os capítulos 4 e 5 conforme a estrutura congelada na Fase 5C, incorporando
+T1, F1, F2, F4, F5, T2, F6, F7 e F8 e usando somente as 19 referências `VERIFIED` da Fase
+5E.1. Resultados permanece restrito à evidência interna; literatura externa é usada na
+Discussão para contextualizar métodos e limites.
+
+**Justificativa:** perguntas, números, elementos acadêmicos e base bibliográfica já estavam
+congelados. A primeira redação precisava transformar esses componentes em argumento acadêmico
+contínuo sem recalcular resultados nem reabrir decisões experimentais.
+
+**Consequências:** foram produzidas 3.428 palavras nos dois capítulos e 45 parágrafos de prosa,
+todos ligados a evidências internas. As 19 referências verificadas foram usadas; 41 registros
+numéricos e 16 afirmações citadas passaram nas auditorias, e o checklist registrou 50 `PASS` e
+0 `FAIL`. Permanecem explícitas a ausência de exposição, a interpretação não causal, os ganhos
+modestos, a ausência de tendência demonstrada nos folds, o cegamento estrutural parcial de
+2025, o compromisso do threshold e os limites de SHAP.
+
+**Origem:** [PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md](PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md),
+[PHASE_5E2_WRITING_REPORT.md](PHASE_5E2_WRITING_REPORT.md) e tabelas `phase_5e2_*` em
+`reports/tables/`.
+
+**Status:** primeira versão concluída e auditada; próxima etapa: Fase 5F — revisão científica,
+editorial e de integração, sem reabrir resultados congelados.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

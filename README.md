@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5E.1 concluída — fundamentação bibliográfica verificável pronta para revisão.**
+**Fase 5E.2 concluída — primeira redação acadêmica de Resultados e Discussão pronta para revisão.**
 
 Nesta fase o projeto:
 
@@ -78,6 +78,8 @@ Nesta fase o projeto:
   resultados congelados, sem executar análise, modelo, predição ou SHAP.
 - verifica 19 referências candidatas e cobre os oito temas bibliográficos L1–L8 com inventário,
   mapas temático e de afirmações e limites de uso para a futura redação.
+- redige a primeira versão dos capítulos de Resultados e Discussão, com auditorias numérica,
+  bibliográfica e parágrafo–evidência, sem executar nova análise científica.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -122,6 +124,9 @@ Os critérios e outputs acadêmicos da Fase 5D estão documentados em
 [`docs/PHASE_5D_ACADEMIC_VISUALS.md`](docs/PHASE_5D_ACADEMIC_VISUALS.md).
 A fundamentação bibliográfica verificável está documentada em
 [`docs/PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md`](docs/PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md).
+A primeira redação acadêmica e seu relatório de rastreabilidade estão em
+[`docs/PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md`](docs/PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md) e
+[`docs/PHASE_5E2_WRITING_REPORT.md`](docs/PHASE_5E2_WRITING_REPORT.md).
 
 ## Requisitos
 
@@ -480,8 +485,15 @@ A Fase 5E.1 verificou 19 referências candidatas — 19 `VERIFIED` e nenhuma `UN
 cobriu os oito temas L1–L8 definidos na Fase 5C. O inventário e os mapas de tema e afirmação
 registram fontes de verificação, uso planejado e fronteiras interpretativas, separando
 literatura aplicada de referências metodológicas. Nenhuma citação foi inserida no roteiro 5C e
-nenhuma análise foi reexecutada. O próximo passo é a Fase 5E.2, com a primeira redação de
-Resultados e Discussão usando somente fontes verificadas.
+nenhuma análise foi reexecutada.
+
+## Primeira redação de Resultados e Discussão
+
+A Fase 5E.2 redigiu os capítulos 4 e 5 com a estrutura congelada na Fase 5C, os elementos
+acadêmicos da Fase 5D e somente as referências verificadas na Fase 5E.1. Os 45 parágrafos de
+prosa possuem mapa de evidência; afirmações numéricas e citações externas têm auditorias
+próprias, ambas sem `FAIL`. O texto é uma primeira versão para revisão na Fase 5F, não o
+manuscrito final. Nenhuma análise, métrica, figura ou resultado científico foi recalculado.
 
 ## Documentação científica
 
@@ -526,6 +538,10 @@ Resultados e Discussão usando somente fontes verificadas.
   padrão visual, outputs, prévias tabulares, QA e revisão humana posteriormente concluída.
 - [`PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md`](docs/PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md): protocolo
   de verificação, inventário, mapas bibliográficos e limites de uso para L1–L8.
+- [`PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md`](docs/PHASE_5E2_RESULTS_DISCUSSION_DRAFT.md): primeira
+  redação acadêmica dos capítulos 4 e 5.
+- [`PHASE_5E2_WRITING_REPORT.md`](docs/PHASE_5E2_WRITING_REPORT.md): fontes, extensão, cautelas,
+  auditorias e pontos para revisão editorial.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -546,8 +562,8 @@ grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-Após aprovação visual humana, a próxima etapa é a **Fase 5E — primeira redação de Resultados e
-Discussão**, usando os artefatos acadêmicos sem recalcular resultados científicos.
+A próxima etapa é a **Fase 5F — revisão científica e editorial**, com integração posterior aos
+demais capítulos e sem reabrir resultados congelados.
 
 ## Princípio metodológico
 
