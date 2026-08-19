@@ -239,8 +239,8 @@ em cada um dos cinco anos (5.847 em 2021; 5.838 em 2022; 6.614 em 2023; 6.587 em
 **Interpretação:** no período analisado, houve maior concentração de registros em dezembro,
 inclusive após controlar apenas a duração dos meses.
 
-**O que NÃO podemos concluir:** maior volume mensal não significa maior risco de acidente ou
-efeito causal do mês.
+**O que NÃO podemos concluir:** maior volume mensal não representa taxa por unidade de
+exposição nem efeito causal do mês.
 
 **Limitações:** meses têm durações diferentes e não há denominador de fluxo veicular mensal.
 
@@ -338,8 +338,8 @@ recorrente, embora a liderança entre sábado e domingo tenha mudado.
 **Interpretação:** entre as ocorrências registradas, houve maior concentração de registros e
 maior fração de graves no fim de semana.
 
-**O que NÃO podemos concluir:** o resultado não mostra que o fim de semana causa gravidade ou
-que trafegar nesses dias tenha maior risco individual.
+**O que NÃO podemos concluir:** o resultado não mostra que o fim de semana causa gravidade nem
+estima uma probabilidade individual condicionada à exposição.
 
 **Limitações:** não há quantidade de veículos, viagens ou veículo-quilômetro por dia da
 semana; a composição das ocorrências pode diferir entre categorias.
@@ -388,8 +388,8 @@ faixa noturna de 19h–21h.
 **Interpretação:** o volume apresenta picos às 7h e, de forma mais acentuada, entre 17h e 19h;
 a fração de graves é menor no período diurno central e mais alta em várias horas noturnas.
 
-**O que NÃO podemos concluir:** nenhuma hora pode ser descrita como mais perigosa; as taxas
-são condicionadas às ocorrências registradas e não ao total de veículos circulando.
+**O que NÃO podemos concluir:** as taxas não permitem classificar comparativamente a segurança
+das horas; são condicionadas aos registros e não ao total de veículos circulando.
 
 **Limitações:** falta denominador horário de exposição; análises por hora não controlam outras
 características das ocorrências.
@@ -511,9 +511,353 @@ futura de drift.
 
 **Status:** confirmado.
 
-## 2C — Padrões geográficos
+## Fase 2C — Padrões geográficos
 
-Nenhum achado registrado.
+### EDA011 — Distribuição e gravidade por macrorregião
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** como volume e proporção de ocorrências graves se distribuem pelas macrorregiões
+brasileiras?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros.
+
+**Categorias ausentes/ignoradas:** nenhuma; as cinco macrorregiões foram derivadas em memória
+a partir de `uf`. `macroregion` representa a divisão geográfica brasileira e não a coluna
+`regional`, ligada à estrutura administrativa da PRF.
+
+**Resultado absoluto:** Sudeste concentrou 107.259 registros e 27.127 graves; Sul, 101.415 e
+25.226; Nordeste, 74.232 e 26.662; Centro-Oeste, 41.178 e 11.446; Norte, 18.540 e 6.396.
+
+**Proporção/taxa:** Sudeste reuniu 31,3052% do dataset e Sul, 29,5995%. A proporção de graves
+foi maior no Nordeste (35,9171%) e menor no Sul (24,8740%), diferença descritiva de 11,0431
+pontos percentuais.
+
+**Comparação:** maior concentração de registros e maior proporção de graves não ocorreram na
+mesma macrorregião.
+
+**Estabilidade entre anos:** Nordeste teve a maior taxa em quatro anos e Norte em 2023. As
+amplitudes anuais foram 0,8891 ponto percentual no Sudeste, 1,0513 no Centro-Oeste, 1,2394 no
+Sul, 2,4035 no Nordeste e 4,1118 no Norte.
+
+**Interpretação:** há desigualdade geográfica descritiva tanto no volume registrado quanto na
+composição de gravidade, e essas dimensões devem ser analisadas separadamente.
+
+**O que NÃO podemos concluir:** as diferenças não estimam risco rodoviário nem efeito causal
+da macrorregião.
+
+**Limitações:** não há fluxo veicular, veículos-quilômetro, extensão usada como exposição ou
+quantidade de viagens por região.
+
+**Figura:** `../reports/figures/phase_2c_occurrences_by_macroregion.png` e
+`../reports/figures/phase_2c_severe_rate_by_macroregion.png`.
+
+**Tabela:** `../reports/tables/phase_2c_macroregion_summary.csv`,
+`../reports/tables/phase_2c_macroregion_by_year.csv` e
+`../reports/tables/phase_2c_macroregion_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** caracterização da desigualdade geográfica descritiva e planejamento
+da validação de features geográficas.
+
+**Status:** confirmado.
+
+### EDA012 — Concentração e proporção de graves por UF
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** quais UFs concentram maior volume e quais apresentam maior proporção de graves
+entre as ocorrências registradas?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros; as 27 UFs foram preservadas.
+
+**Categorias ausentes/ignoradas:** nenhuma.
+
+**Resultado absoluto:** MG concentrou 44.502 registros e 13.025 graves, seguido por SC com
+39.849 e 9.942 e PR com 37.055 e 9.850. MA apresentou 2.647 graves entre 5.778 registros; PA,
+2.037 entre 4.666; SP, 4.288 entre 23.005.
+
+**Proporção/taxa:** MG representou 12,9886% do dataset. A maior proporção grave ocorreu no MA
+(45,8117%), seguido por PA (43,6562%); a menor ocorreu em SP (18,6394%). A amplitude
+consolidada entre MA e SP foi 27,1723 pontos percentuais.
+
+**Comparação:** MG liderou o volume nos cinco anos. MA teve a maior proporção em 2021 e de
+2023 a 2025; PA liderou em 2022.
+
+**Estabilidade entre anos:** o padrão de volume de MG foi recorrente, enquanto a liderança de
+taxa alternou uma vez entre MA e PA.
+
+**Interpretação:** volume e fração grave apresentam distribuições estaduais distintas e não
+devem ser condensados em uma única noção de desempenho geográfico.
+
+**O que NÃO podemos concluir:** não é possível ordenar a segurança das UFs; faltam
+denominadores de exposição e controle da composição das ocorrências.
+
+**Limitações:** as UFs diferem em malha rodoviária, tráfego, população, registro e composição
+das ocorrências, dimensões não ajustadas nesta fase.
+
+**Figura:** `../reports/figures/phase_2c_occurrences_by_uf.png` e
+`../reports/figures/phase_2c_severe_rate_by_uf.png`.
+
+**Tabela:** `../reports/tables/phase_2c_uf_summary.csv`,
+`../reports/tables/phase_2c_uf_volume_top15.csv` e
+`../reports/tables/phase_2c_uf_by_year.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** discussão da heterogeneidade estadual e futura avaliação de UF como
+feature categórica.
+
+**Status:** confirmado.
+
+### EDA013 — Amplitude anual da proporção de graves por UF
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** as taxas estaduais permanecem numericamente semelhantes entre 2021 e 2025?
+
+**População analisada:** todas as 342.624 ocorrências, estratificadas por 27 UFs e cinco anos.
+
+**Categorias ausentes/ignoradas:** nenhuma; todas as UFs foram observadas nos cinco anos.
+
+**Resultado absoluto:** as menores amplitudes anuais ocorreram em RS (0,9389 ponto
+percentual), MG (1,0856), RN (1,1202) e GO (1,2421). As maiores ocorreram em RR (17,9409), SE
+(9,5196), MA (8,0007), AM (7,2431) e PA (7,1917).
+
+**Proporção/taxa:** em MA, as taxas anuais variaram de 42,1751% a 50,1757%; em MG, de 28,8726%
+a 29,9582%; em RR, de 27,9851% a 45,9259%.
+
+**Comparação:** amplitudes maiores apareceram em várias UFs com volumes consolidados menores,
+o que exige considerar conjuntamente taxa, tamanho amostral e ano.
+
+**Estabilidade entre anos:** foram reportados mínimo, máximo e amplitude, sem transformar
+qualquer valor automaticamente em classe “estável” ou “instável”.
+
+**Interpretação:** a estabilidade anual varia entre UFs e deverá ser avaliada antes de usar
+geografia em validação temporal futura.
+
+**O que NÃO podemos concluir:** pequena amplitude não prova invariância; grande amplitude não
+prova drift estrutural nem mudança causal.
+
+**Limitações:** a análise é descritiva e não ajusta composição, exposição ou incerteza de
+amostras anuais menores.
+
+**Figura:** não aplicável; as figuras consolidadas por UF complementam a evidência.
+
+**Tabela:** `../reports/tables/phase_2c_uf_stability.csv` e
+`../reports/tables/phase_2c_uf_by_year.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** seção metodológica sobre drift e validação temporal das features.
+
+**Status:** confirmado.
+
+### EDA014 — Concentração de registros por BR e preservação de BR 0
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** quais BRs concentram mais ocorrências e como a categoria `br = 0` foi tratada?
+
+**População analisada:** todas as 342.624 ocorrências nas tabelas completas; apenas o destaque
+de volume excluiu `br = 0`.
+
+**Categorias ausentes/ignoradas:** `br = 0` foi preservada e rotulada como “Não identificada
+(BR 0)”; não foi tratada como rodovia válida no ranking.
+
+**Resultado absoluto:** BR 101 concentrou 59.370 registros e 15.468 graves; BR 116, 52.837 e
+12.309; BR 40, 16.390 e 4.015. A categoria BR 0 preservou 883 registros, dos quais 81 graves.
+
+**Proporção/taxa:** BR 101 representou 17,3280% do dataset e apresentou 26,0536% de graves;
+BR 116 representou 15,4213% e apresentou 23,2962%. BR 0 representou 0,2577% do dataset.
+
+**Comparação:** as duas primeiras BRs concentraram volumes muito superiores às demais, mas
+essa contagem não foi normalizada por extensão ou tráfego.
+
+**Estabilidade entre anos:** não avaliada por BR nesta fase, em favor de parcimônia.
+
+**Interpretação:** o resultado descreve concentração de registros por código de BR e preserva
+explicitamente a anomalia conhecida sem contaminar os destaques de rodovias identificadas.
+
+**O que NÃO podemos concluir:** o ranking não ordena segurança rodoviária e não estima taxas
+por quilômetro ou por veículo.
+
+**Limitações:** não há extensão percorrida, fluxo veicular ou segmentação da rodovia; códigos
+agregam trechos heterogêneos.
+
+**Figura:** `../reports/figures/phase_2c_br_volume_top15.png`.
+
+**Tabela:** `../reports/tables/phase_2c_br_summary.csv` e
+`../reports/tables/phase_2c_br_volume_top15.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** descrição da concentração por rodovia e advertência metodológica
+sobre exposição e `br = 0`.
+
+**Status:** confirmado.
+
+### EDA015 — Concentração municipal com chave UF + município
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** quais pares município/UF concentram maior volume de registros?
+
+**População analisada:** todas as 342.624 ocorrências, agrupadas em 2.098 pares `uf +
+municipio`.
+
+**Categorias ausentes/ignoradas:** nenhuma. Os 2.098 pares correspondem a 2.050 nomes
+municipais distintos; as 48 combinações excedentes demonstram por que o nome isolado não foi
+usado como chave.
+
+**Resultado absoluto:** Brasília/DF concentrou 4.948 registros e 948 graves; Guarulhos/SP,
+3.914 e 571; Curitiba/PR, 3.774 e 720; São José/SC, 3.629 e 707; Duque de Caxias/RJ, 3.508 e
+544.
+
+**Proporção/taxa:** Brasília representou 1,4441% do dataset e apresentou 19,1593% de graves.
+Entre os cinco maiores volumes, as proporções variaram de 14,5887% em Guarulhos a 19,4820% em
+São José.
+
+**Comparação:** o município/UF de maior volume não coincide com os destaques de maior taxa
+entre grupos elegíveis.
+
+**Estabilidade entre anos:** não foi criada tabela município × ano devido à alta cardinalidade
+e à ausência de necessidade científica nesta fase.
+
+**Interpretação:** os registros apresentam concentração municipal, mas o agrupamento correto
+depende da composição de UF e nome do município.
+
+**O que NÃO podemos concluir:** maior contagem não significa maior insegurança ou risco para
+moradores e viajantes.
+
+**Limitações:** não há população exposta, fluxo, viagens ou extensão rodoviária municipal como
+denominador.
+
+**Figura:** `../reports/figures/phase_2c_municipality_volume_top15.png`.
+
+**Tabela:** `../reports/tables/phase_2c_municipality_summary.csv` e
+`../reports/tables/phase_2c_municipality_volume_top15.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** caracterização da alta cardinalidade municipal e justificativa da
+chave geográfica composta.
+
+**Status:** confirmado.
+
+### EDA016 — Destaques de taxa com critério editorial de amostra
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** entre BRs e municípios com amostra suficiente para destaque descritivo, quais
+apresentam maiores proporções de graves?
+
+**População analisada:** tabelas completas com 126 categorias de BR e 2.098 pares
+município/UF; destaques restritos a BRs identificadas e categorias com pelo menos 500
+ocorrências.
+
+**Categorias ausentes/ignoradas:** nenhuma foi removida das tabelas completas. BR 0 foi
+excluída somente do ranking; categorias abaixo de 500 permaneceram disponíveis nos resumos.
+
+**Resultado absoluto:** entre BRs elegíveis, BR 10 apresentou 992 graves em 2.139 registros,
+BR 423 teve 463 em 999 e BR 316, 2.652 em 5.889. Entre municípios/UF elegíveis, Barreiras/BA
+teve 236 graves em 500 registros, Picos/PI 240 em 572 e Sabará/MG 248 em 592.
+
+**Proporção/taxa:** as taxas foram 46,3768% na BR 10, 46,3463% na BR 423 e 45,0331% na BR
+316; 47,2000% em Barreiras, 41,9580% em Picos e 41,8919% em Sabará.
+
+**Comparação:** com n≥100 seriam elegíveis 99 BRs e 763 municípios; com n≥500, 62 e 157; com
+n≥1000, 47 e 59. No corte municipal de 1000, o primeiro destaque passaria a Governador
+Valadares/MG, com 408 graves em 1.112 registros (36,6906%).
+
+**Critério n>=500:** o limite foi adotado apenas para evitar destacar proporções extremamente
+instáveis em grupos muito pequenos. Não é limiar científico universal nem filtro do dataset.
+
+**Estabilidade entre anos:** não avaliada para BR e município nesta fase.
+
+**Interpretação:** os destaques dependem do critério editorial de tamanho amostral; por isso,
+taxa, numerador e total foram apresentados conjuntamente.
+
+**O que NÃO podemos concluir:** as categorias destacadas não constituem uma classificação de
+segurança, e a taxa não estima probabilidade individual de acidente grave.
+
+**Limitações:** o corte de 500 é convencional e os resultados não controlam exposição ou
+composição das ocorrências.
+
+**Figura:** não aplicável; tabelas evitam ênfase visual indevida em rankings de taxa.
+
+**Tabela:** `../reports/tables/phase_2c_br_severe_rate_top15_n500.csv`,
+`../reports/tables/phase_2c_municipality_severe_rate_top15_n500.csv` e
+`../reports/tables/phase_2c_ranking_threshold_diagnostics.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** justificativa metodológica para controle editorial de pequenas
+amostras e discussão de alta cardinalidade.
+
+**Status:** confirmado.
+
+### EDA017 — Cobertura mínima das coordenadas
+
+**Data:** 18/08/2026.
+
+**Fase:** 2C — Padrões geográficos.
+
+**Pergunta:** qual é a cobertura básica das coordenadas no dataset interim?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025.
+
+**Categorias ausentes/ignoradas:** não aplicável.
+
+**Resultado absoluto:** latitude apresentou zero nulos; longitude, zero nulos; foram
+observados 166.502 pares distintos de coordenadas.
+
+**Proporção/taxa:** cobertura não nula de 100% em ambas as colunas.
+
+**Comparação:** não aplicável; esta foi somente uma caracterização de cobertura.
+
+**Estabilidade entre anos:** não avaliada.
+
+**Interpretação:** as coordenadas estão preenchidas no interim, mas isso não valida precisão,
+exatidão ou adequação para análise espacial.
+
+**O que NÃO podemos concluir:** preenchimento completo não garante georreferenciamento
+correto nem autoriza inferência espacial.
+
+**Limitações:** não foram criados mapas, clusters, testes espaciais ou validação externa de
+coordenadas.
+
+**Figura:** não aplicável.
+
+**Tabela:** `../reports/tables/phase_2c_coordinate_coverage.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/geographic.py`, dataset interim verificado
+de 2021–2025.
+
+**Possível uso no TCC:** avaliação futura da viabilidade de visualizações espaciais simples.
+
+**Status:** confirmado.
 
 ## 2D — Via e ambiente
 

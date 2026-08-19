@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 2B — Padrões temporais das ocorrências registradas.**
+**Fase 2C — Padrões geográficos das ocorrências registradas.**
 
 Nesta fase o projeto:
 
@@ -22,6 +22,7 @@ Nesta fase o projeto:
 - verifica o Parquet e sua proveniência sem reconstruir ou modificar os artefatos;
 - caracteriza volume anual, estabilidade do target, nulidade e cardinalidade básica;
 - caracteriza mês, dia da semana, hora e fase do dia, incluindo estabilidade descritiva anual;
+- caracteriza macrorregião, UF, BR e município, separando volume de proporção grave;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
@@ -124,6 +125,16 @@ uv run prf-eda-temporal
 O comando verifica o interim sem reconstruí-lo e gera dez tabelas temporais em
 `reports/tables/` e sete figuras científicas em `reports/figures/`. As derivações de mês e hora
 existem somente em memória; nenhum dataset processed é criado.
+
+## EDA — Padrões geográficos
+
+```powershell
+uv run prf-eda-geographic
+```
+
+O comando verifica o interim, deriva macrorregião somente em memória e gera 15 tabelas e seis
+figuras geográficas. As tabelas completas preservam `br = 0` e todas as categorias; rankings
+de taxa de BR e município usam `n >= 500` apenas como critério editorial de destaque.
 
 ## Documentação científica
 

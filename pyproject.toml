@@ -14,6 +14,7 @@ dependencies = [
 prf-audit = "tcc_prf_severity.cli:audit_main"
 prf-build-interim = "tcc_prf_severity.cli:build_interim_main"
 prf-eda-general = "tcc_prf_severity.cli:eda_general_main"
+prf-eda-geographic = "tcc_prf_severity.cli:eda_geographic_main"
 prf-eda-temporal = "tcc_prf_severity.cli:eda_temporal_main"
 prf-verify-interim = "tcc_prf_severity.cli:verify_interim_main"
 
