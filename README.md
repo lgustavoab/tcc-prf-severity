@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4H concluída — avaliação temporal final em 2025 materializada.**
+**Fase 4I concluída — interpretação pós-avaliação do modelo final congelada.**
 
 Nesta fase o projeto:
 
@@ -64,6 +64,10 @@ Nesta fase o projeto:
   `0,397446`, ROC-AUC `0,628556` e Brier `0,193822`;
 - aplica sem alteração o threshold `0.23723246157169342`, com precision `0,331593`, recall
   `0,771825` e F1 `0,463889`, e persiste as predições finais sem retreinamento ou tuning.
+- interpreta as predições finais com Tree SHAP nativo do XGBoost na escala de margem, com
+  `uf`, `tipo_pista`, `hour`, `br` e `condicao_metereologica` nas cinco primeiras posições;
+- reconcilia as contribuições com as probabilities 4H com erro máximo `4,0788e-07`, sem
+  fit, novo threshold, seleção de features ou interpretação causal.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -96,6 +100,8 @@ O refit final está documentado em
 [`docs/PHASE_4G_FINAL_REFIT.md`](docs/PHASE_4G_FINAL_REFIT.md).
 A avaliação temporal final está documentada em
 [`docs/PHASE_4H_FINAL_EVALUATION.md`](docs/PHASE_4H_FINAL_EVALUATION.md).
+A interpretação final está documentada em
+[`docs/PHASE_4I_FINAL_INTERPRETATION.md`](docs/PHASE_4I_FINAL_INTERPRETATION.md).
 
 ## Requisitos
 
@@ -392,6 +398,20 @@ precision, recall e F1 foram `0,33159329140461213`, `0,7718245254477138` e
 desenvolvimento é descritiva; nenhum modelo, hiperparâmetro, predictor, preprocessing ou
 threshold foi alterado após a observação do holdout.
 
+## Interpretação final pós-avaliação
+
+```powershell
+uv run prf-interpret-final-model
+```
+
+O comando valida os hashes do pipeline e das predictions 4H, transforma os 22 predictors sem
+novo fit e calcula contribuições Tree SHAP nativas para as 226 features. As contribuições são
+aditivas na margem bruta, não em pontos percentuais de probabilidade. Os cinco predictors de
+maior contribuição absoluta média em 2025 foram `uf`, `tipo_pista`, `hour`, `br` e
+`condicao_metereologica`. TP/FP/FN/TN permaneceram em 15.817/31.883/4.676/20.153. O ranking
+explica o uso de informações pelo modelo e não representa causalidade, feature selection ou
+nova decisão experimental.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -423,6 +443,8 @@ threshold foi alterado após a observação do holdout.
   persistência, SHA e proteção do holdout final.
 - [`PHASE_4H_FINAL_EVALUATION.md`](docs/PHASE_4H_FINAL_EVALUATION.md): abertura do holdout,
   métricas finais, threshold congelado, calibração e comparação temporal descritiva.
+- [`PHASE_4I_FINAL_INTERPRETATION.md`](docs/PHASE_4I_FINAL_INTERPRETATION.md): Tree SHAP
+  nativo, contribuições globais e transformadas, análise dos erros e relação cautelosa com a EDA.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -443,8 +465,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4I — interpretação e análise final**, reutilizando as predições
-congeladas pela 4H sem novo treinamento ou ajuste de threshold.
+A próxima etapa é a **consolidação científica das perguntas de pesquisa**, mapeando cada
+pergunta às evidências produzidas nas Fases 2–4 e preparando os resultados para o texto do TCC.
 
 ## Princípio metodológico
 
