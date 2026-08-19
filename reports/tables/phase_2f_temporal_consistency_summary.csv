@@ -1,0 +1,19 @@
+dimension,category_or_comparison,years_observed,annual_minimum_rate_percent,annual_maximum_rate_percent,annual_range_percentage_points,temporal_consistency_note,scientific_priority
+target_global,maior taxa anual vs menor taxa anual,5,28.060774,28.494257,0.433483,Taxa global anual observada em 5 anos; amplitude de 0.43 p.p.,contextual
+month_name,Maio vs Fevereiro,5,28.04223,29.855643,1.813413,Observada em 5 anos; amplitude anual de 1.81 p.p.,secundário
+weekday_group,Fim de semana vs Dias úteis,5,29.702335,30.691166,0.988831,Observada em 5 anos; amplitude anual de 0.99 p.p.,central
+hour,19 vs 8,5,32.586605,35.145631,2.559026,Observada em 5 anos; amplitude anual de 2.56 p.p.,secundário
+fase_dia,Plena Noite vs Pleno dia,5,31.925756,33.212225,1.286469,Observada em 5 anos; amplitude anual de 1.29 p.p.,central
+macroregion,Nordeste vs Sul,5,34.508705,36.912178,2.403473,Observada em 5 anos; amplitude anual de 2.40 p.p.,central
+uf,MA vs SP,5,42.175066,50.175747,8.000681,Observada em 5 anos; amplitude anual de 8.00 p.p.,contextual
+tipo_pista,Simples vs Dupla,5,33.200289,34.074872,0.874583,Observada em 5 anos; amplitude anual de 0.87 p.p.,central
+tipo_pista,Simples vs Múltipla,5,33.200289,34.074872,0.874583,Observada em 5 anos; amplitude anual de 0.87 p.p.,secundário
+uso_solo,Não vs Sim,5,29.688254,30.049604,0.36135,Observada em 5 anos; amplitude anual de 0.36 p.p.,secundário
+condicao_metereologica,Nevoeiro/Neblina vs Garoa/Chuvisco,5,29.098361,33.90411,4.805749,Observada em 5 anos; amplitude anual de 4.81 p.p.,secundário
+tracado_via_component,Ponte vs Rotatória,5,29.890644,34.828496,4.937852,Observada em 5 anos; amplitude anual de 4.94 p.p.,secundário
+tipo_acidente,Atropelamento de Pedestre vs Colisão traseira,5,67.157344,68.771708,1.614364,Observada em 5 anos; amplitude anual de 1.61 p.p.,central
+tipo_acidente,Colisão frontal vs Colisão traseira,5,62.278481,63.533525,1.255044,Observada em 5 anos; amplitude anual de 1.26 p.p.,central
+causa_acidente,Pedestre andava na pista vs Reação tardia ou ineficiente do condutor,5,74.257426,77.794562,3.537136,Observada em 5 anos; amplitude anual de 3.54 p.p.,central
+causa_acidente,Transitar na contramão vs Reação tardia ou ineficiente do condutor,5,58.866279,60.829103,1.962824,Observada em 5 anos; amplitude anual de 1.96 p.p.,central
+pessoas,9 vs 1,5,44.370861,53.225806,8.854945,Observada em 5 anos; amplitude anual de 8.85 p.p.,secundário
+veiculos,5 vs 1,5,37.325349,41.634241,4.308892,Observada em 5 anos; amplitude anual de 4.31 p.p.,secundário
