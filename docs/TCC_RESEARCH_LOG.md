@@ -184,6 +184,34 @@ sem thresholds universais ou rótulos automáticos.
 
 **Status:** confirmada.
 
+### D009 — Momento preditivo e política final de features
+
+**Data:** 19/08/2026.
+
+**Decisão:** definir o registro inicial da ocorrência como momento preditivo, antes dos
+desfechos humanos e da consolidação investigativa/dinâmica. O conjunto principal fica
+congelado em `month_name`, `dia_semana`, `hour`, `uf`, `br`, `km`, `sentido_via`,
+`condicao_metereologica`, `tipo_pista`, `uso_solo` e `tracado_via_components`.
+
+**Justificativa:** disponibilidade temporal, anti-leakage e semântica prevalecem sobre força
+associativa ou baixa magnitude de drift. As combinações cruas de `tracado_via` são
+substituídas por componentes multilabel; data/horário crus, `fase_dia`, município e
+coordenadas ficam fora por redundância da versão escolhida.
+
+**Consequências:** `tipo_acidente`, `causa_acidente`, `pessoas` e `veiculos` ficam somente em
+experimento secundário tardio. Encoders e transformações serão ajustados em 2021–2024,
+tolerarão categorias unknown e nunca aprenderão vocabulário ou estatísticas usando 2025. Os
+sete campos de leakage e três administrativos permanecem proibidos.
+
+**Fronteira temporal:** a 3A já usou 2025 para diagnóstico estrutural e desenho experimental.
+A partir do congelamento 3B, 2025 será reservado à avaliação final e não poderá orientar
+seleção por performance, thresholds, hiperparâmetros ou transformações.
+
+**Origem:** [PHASE_3B_FEATURE_POLICY.md](PHASE_3B_FEATURE_POLICY.md) e
+`reports/tables/phase_3b_feature_policy.csv`.
+
+**Status:** confirmada; nenhuma feature foi materializada e nenhum modelo foi iniciado.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -578,6 +606,18 @@ conhecidas na decomposição de `pessoas`.
 explicitamente quantificadas e consideradas nas análises.
 
 **Status:** ativa.
+
+### L005 — Holdout temporal previamente explorado
+
+**Limitação:** 2025 foi incluído na EDA 2021–2025 e na auditoria estrutural de drift da Fase
+3A. Portanto, não constitui holdout completamente cego no sentido experimental mais estrito.
+
+**Consequência:** a partir do congelamento da política 3B, nenhuma decisão poderá ser
+otimizada por performance em 2025. Seleção posterior, vocabulários, imputações, scalers,
+thresholds e hiperparâmetros deverão usar somente 2021–2024; 2025 ficará reservado à
+avaliação final do pipeline congelado.
+
+**Status:** ativa e explicitamente mitigada pelo protocolo temporal da Fase 3B.
 
 ## Figuras e tabelas associadas
 

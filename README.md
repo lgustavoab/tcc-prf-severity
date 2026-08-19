@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 3A — Auditoria Temporal e Drift das Features concluída.**
+**Fase 3B — Momento Preditivo e Política Final de Features concluída.**
 
 Nesta fase o projeto:
 
@@ -33,6 +33,8 @@ Nesta fase o projeto:
 - audita as 22 variáveis sinalizadas comparando 2021–2024 com 2025, com TVD descritiva,
   categorias não vistas, bins numéricos definidos somente no desenvolvimento e prevalências
   multilabel de traçado;
+- congela o momento preditivo, 11 features/representações principais, quatro variáveis
+  secundárias e as políticas anti-leakage, de redundância e categorias desconhecidas;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
@@ -43,6 +45,8 @@ em [`docs/PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md) e
 [`docs/PHASE_2_ACCEPTANCE.md`](docs/PHASE_2_ACCEPTANCE.md).
 Os métodos e resultados da auditoria temporal estão em
 [`docs/PHASE_3A_TEMPORAL_DRIFT.md`](docs/PHASE_3A_TEMPORAL_DRIFT.md).
+A política final de features está em
+[`docs/PHASE_3B_FEATURE_POLICY.md`](docs/PHASE_3B_FEATURE_POLICY.md).
 
 ## Requisitos
 
@@ -201,6 +205,10 @@ split, dataset processed, encoding, seleção definitiva de features ou modelo.
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
   provisória da EDA à pergunta de pesquisa.
 - [`PHASE_2_ACCEPTANCE.md`](docs/PHASE_2_ACCEPTANCE.md): aceite formal das Fases 2A–2G.
+- [`PHASE_3A_TEMPORAL_DRIFT.md`](docs/PHASE_3A_TEMPORAL_DRIFT.md): auditoria de drift entre
+  desenvolvimento e 2025.
+- [`PHASE_3B_FEATURE_POLICY.md`](docs/PHASE_3B_FEATURE_POLICY.md): momento preditivo e contrato
+  conceitual dos conjuntos principal e secundário.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -220,9 +228,9 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A Fase 3B deve usar a auditoria temporal para definir momento preditivo, tratamento de
-categorias desconhecidas, representações redundantes e elegibilidade metodológica, ainda sem
-usar 2025 para aprender transformações.
+A Fase 3C deverá materializar o dataset analítico e o split temporal conforme a política 3B,
+ajustando transformações somente em 2021–2024 e preservando 2025 para avaliação final. Nenhum
+dataset processed ou split foi criado até aqui.
 
 ## Princípio metodológico
 
