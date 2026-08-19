@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "FINAL_2025",
+    "part_id": "default",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/tcc/T2_final_2025_evaluation.csv",
+      "reports/tables/phase_4h_final_evaluation.csv",
+      "reports/tables/phase_4h_development_comparison.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard."
+    ]
+  },
+  "selected_model_id": "phase_4c_xgboost_baseline",
+  "training_period": "2021-2024",
+  "final_test_year": 2025,
+  "final_rows": 72529,
+  "data": [
+    {
+      "metric": "average_precision",
+      "development_reference": 0.40081097458169895,
+      "final_2025_value": 0.3974456687131155,
+      "delta_final_minus_development": -0.003365305868583468,
+      "reference_description": "Média interna dos folds"
+    },
+    {
+      "metric": "roc_auc",
+      "development_reference": 0.6308499409937857,
+      "final_2025_value": 0.6285562620583193,
+      "delta_final_minus_development": -0.0022936789354663922,
+      "reference_description": "Média interna dos folds"
+    },
+    {
+      "metric": "brier_score",
+      "development_reference": 0.19389746858763426,
+      "final_2025_value": 0.19382199321256413,
+      "delta_final_minus_development": -7.547537507013313e-05,
+      "reference_description": "Média interna dos folds; menor é melhor"
+    },
+    {
+      "metric": "precision",
+      "development_reference": 0.33330114898136526,
+      "final_2025_value": 0.33159329140461213,
+      "delta_final_minus_development": -0.0017078575767531246,
+      "reference_description": "OOF temporal no threshold congelado"
+    },
+    {
+      "metric": "recall",
+      "development_reference": 0.7704563403495519,
+      "final_2025_value": 0.7718245254477138,
+      "delta_final_minus_development": 0.0013681850981619448,
+      "reference_description": "OOF temporal no threshold congelado"
+    },
+    {
+      "metric": "f1",
+      "development_reference": 0.46530870405989,
+      "final_2025_value": 0.4638892554954321,
+      "delta_final_minus_development": -0.0014194485644579147,
+      "reference_description": "OOF temporal no threshold congelado"
+    }
+  ],
+  "development_comparison": [
+    {
+      "metric": "average_precision",
+      "development_reference": "internal_fold_mean",
+      "development_value": 0.40081097458169895,
+      "final_2025_value": 0.3974456687131155,
+      "delta_final_minus_development": -0.003365305868583468
+    },
+    {
+      "metric": "average_precision",
+      "development_reference": "fold3_2024",
+      "development_value": 0.4070898952179728,
+      "final_2025_value": 0.3974456687131155,
+      "delta_final_minus_development": -0.0096442265048573
+    },
+    {
+      "metric": "roc_auc",
+      "development_reference": "internal_fold_mean",
+      "development_value": 0.6308499409937857,
+      "final_2025_value": 0.6285562620583193,
+      "delta_final_minus_development": -0.0022936789354663922
+    },
+    {
+      "metric": "brier_score",
+      "development_reference": "internal_fold_mean",
+      "development_value": 0.19389746858763426,
+      "final_2025_value": 0.19382199321256413,
+      "delta_final_minus_development": -7.547537507013313e-05
+    },
+    {
+      "metric": "precision_frozen_threshold",
+      "development_reference": "pooled_temporal_oof",
+      "development_value": 0.33330114898136526,
+      "final_2025_value": 0.33159329140461213,
+      "delta_final_minus_development": -0.0017078575767531246
+    },
+    {
+      "metric": "recall_frozen_threshold",
+      "development_reference": "pooled_temporal_oof",
+      "development_value": 0.7704563403495519,
+      "final_2025_value": 0.7718245254477138,
+      "delta_final_minus_development": 0.0013681850981619448
+    },
+    {
+      "metric": "f1_frozen_threshold",
+      "development_reference": "pooled_temporal_oof",
+      "development_value": 0.46530870405989,
+      "final_2025_value": 0.4638892554954321,
+      "delta_final_minus_development": -0.0014194485644579147
+    }
+  ]
+}

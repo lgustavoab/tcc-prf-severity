@@ -643,8 +643,35 @@ exposição será obrigatório nas páginas pertinentes.
 **Origem:** [PHASE_6A_DASHBOARD_ARCHITECTURE.md](PHASE_6A_DASHBOARD_ARCHITECTURE.md) e
 tabelas `phase_6a_*` em `reports/tables/`.
 
-**Status:** arquitetura documental congelada para revisão; implementação não iniciada. Próxima
-etapa: Fase 6B — exportador Python/Polars, JSONs versionados, manifesto e testes.
+**Status:** arquitetura documental congelada e preservada; sua camada de dados foi
+materializada na Fase 6B, sem iniciar o frontend.
+
+### D027 — Materialização auditada dos dados estáticos do dashboard
+
+**Data:** 19/08/2026.
+
+**Decisão:** materializar os 12 assets lógicos da 6A em 14 partes físicas JSON sob
+`dashboard/public/data/`, com serialização canônica, manifesto versionado, SHA-256, row counts,
+reconciliação e publicação com rollback. `EXPLORATION` permanece dividido nos escopos
+independentes temporal e contextual.
+
+**Justificativa:** o futuro frontend deve consumir um conjunto pequeno, determinístico e
+auditável sem acessar Parquet, modelos ou predições. A separação física dos escopos evita o
+produto cartesiano proibido e mantém explícita a fronteira entre agregação exploratória e
+resultado científico congelado.
+
+**Consequências:** foram exportadas 840 células temporais, 256 contextuais e 1.288 geográficas.
+As três visões reconciliam com 342.624 ocorrências, 96.857 graves e 245.767 não graves, além
+dos totais anuais publicados em T1. Os resultados congelados foram copiados das tabelas 4D–4I,
+T2 e A1 sem recalcular AP, ROC-AUC, Brier, threshold, matriz, calibração ou SHAP. O manifesto
+cobre 14 partes, e duas execuções com o mesmo `generated_at` foram byte a byte idênticas.
+
+**Origem:** [PHASE_6B_DASHBOARD_DATA_EXPORT.md](PHASE_6B_DASHBOARD_DATA_EXPORT.md),
+`dashboard/public/data/` e tabelas `phase_6b_*` em `reports/tables/`.
+
+**Status:** confirmada; 116 reconciliações PASS, incluindo 27 comparações exatas de AP,
+ROC-AUC e Brier nas nove combinações modelo/fold, 50 checks PASS e 0 FAIL. Próxima etapa:
+Fase 6C — infraestrutura do frontend estático, sem reabrir os resultados científicos.
 
 ## Resultados consolidados
 

@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "MODEL_COMPARISON",
+    "part_id": "default",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/phase_4d_model_comparison.csv",
+      "reports/tables/phase_4d_pairwise_ap_deltas.csv",
+      "reports/tables/phase_4e_model_selection.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard."
+    ]
+  },
+  "selection_metric": "Average Precision",
+  "selection_aggregation": "unweighted_fold_mean",
+  "selected_model_id": "phase_4c_xgboost_baseline",
+  "data": [
+    {
+      "model_id": "phase_4c_xgboost_baseline",
+      "model_family": "xgboost_gradient_boosted_trees",
+      "mean_average_precision": 0.40081097458169895,
+      "ap_standard_deviation": 0.007430307892479644,
+      "mean_roc_auc": 0.6308499409937857,
+      "mean_brier_score": 0.19389746858763426,
+      "primary_metric_rank": 1,
+      "ap_fold3_rank": 1,
+      "selection_status": "selected"
+    },
+    {
+      "model_id": "phase_4b_random_forest_baseline",
+      "model_family": "random_forest",
+      "mean_average_precision": 0.3959839275865431,
+      "ap_standard_deviation": 0.00558166427201829,
+      "mean_roc_auc": 0.6261012009282653,
+      "mean_brier_score": 0.19518315938755074,
+      "primary_metric_rank": 2,
+      "ap_fold3_rank": 2,
+      "selection_status": "not_selected"
+    },
+    {
+      "model_id": "phase_4a_logistic_baseline",
+      "model_family": "logistic_regression",
+      "mean_average_precision": 0.3935082935577437,
+      "ap_standard_deviation": 0.004878870165386994,
+      "mean_roc_auc": 0.6243776293022905,
+      "mean_brier_score": 0.1948197255602965,
+      "primary_metric_rank": 3,
+      "ap_fold3_rank": 3,
+      "selection_status": "not_selected"
+    }
+  ],
+  "pairwise_ap_deltas": [
+    {
+      "model_a": "phase_4a_logistic_baseline",
+      "model_b": "phase_4b_random_forest_baseline",
+      "ap_delta_fold1": 0.0014147930212031756,
+      "ap_delta_fold2": 0.003614379898547959,
+      "ap_delta_fold3": 0.0023977291666469336,
+      "ap_mean_delta": 0.0024756340287994116
+    },
+    {
+      "model_a": "phase_4a_logistic_baseline",
+      "model_b": "phase_4c_xgboost_baseline",
+      "ap_delta_fold1": 0.003693581127289791,
+      "ap_delta_fold2": 0.008910153653759911,
+      "ap_delta_fold3": 0.00930430829081591,
+      "ap_mean_delta": 0.00730268102395526
+    },
+    {
+      "model_a": "phase_4b_random_forest_baseline",
+      "model_b": "phase_4c_xgboost_baseline",
+      "ap_delta_fold1": 0.0022787881060866155,
+      "ap_delta_fold2": 0.005295773755211952,
+      "ap_delta_fold3": 0.006906579124168977,
+      "ap_mean_delta": 0.004827046995155848
+    }
+  ]
+}

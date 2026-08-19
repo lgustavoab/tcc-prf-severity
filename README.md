@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 6A concluída documentalmente — arquitetura do dashboard estático congelada para revisão.**
+**Fase 6B concluída — dados estáticos do dashboard exportados e auditados; frontend ainda não iniciado.**
 
 Nesta fase o projeto:
 
@@ -82,8 +82,9 @@ Nesta fase o projeto:
   bibliográfica e parágrafo–evidência, sem executar nova análise científica.
 - revisa cientificamente e editorialmente esses capítulos, preservando todos os números e as
   19 referências verificadas, com auditorias de terminologia, números, citações e revisão.
-- inicia a Fase 6 com a arquitetura `Python → JSON versionado → Next.js` e separa páginas
-  exploratórias de resultados científicos congelados, sem implementar frontend ou exportador.
+- materializa 12 assets lógicos em 14 partes JSON, com manifesto, hashes, reconciliação e
+  escopos temporal/contextual separados, sem inferência ou recomputação de ML;
+- mantém o frontend não iniciado: não existem Next.js, React, TypeScript ou dependências Node.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -136,6 +137,8 @@ A versão revisada e o relatório da Fase 5F estão em
 [`docs/PHASE_5F_SCIENTIFIC_REVISION.md`](docs/PHASE_5F_SCIENTIFIC_REVISION.md).
 A arquitetura documental do dashboard está em
 [`docs/PHASE_6A_DASHBOARD_ARCHITECTURE.md`](docs/PHASE_6A_DASHBOARD_ARCHITECTURE.md).
+A exportação estática auditada está documentada em
+[`docs/PHASE_6B_DASHBOARD_DATA_EXPORT.md`](docs/PHASE_6B_DASHBOARD_DATA_EXPORT.md).
 
 ## Requisitos
 
@@ -514,11 +517,11 @@ necessárias antes da integração definitiva ao manuscrito.
 
 ## Arquitetura do dashboard estático
 
-A Fase 6A definiu que a futura aplicação ficará em `dashboard/` e consumirá JSONs
-determinísticos, auditados e versionados produzidos por Python/Polars. O frontend planejado usa
-Next.js, React e TypeScript com exportação estática, sem backend, banco ou inferência. Filtros
-ficam restritos às páginas exploratórias; resultados de modelos, validação, limiar e
-interpretação permanecem congelados. A pasta e a aplicação ainda não foram criadas.
+A Fase 6A definiu a arquitetura e a Fase 6B materializou os JSONs determinísticos, auditados e
+versionados em `dashboard/public/data/`. O manifesto registra fontes, row counts, tamanhos e
+SHA-256; as agregações temporal e contextual permanecem fisicamente separadas. Resultados de
+modelos, validação, limiar e interpretação foram copiados das fontes congeladas, sem
+recomputação. A aplicação Next.js/React/TypeScript ainda não foi criada.
 
 ## Documentação científica
 
@@ -573,6 +576,8 @@ interpretação permanecem congelados. A pasta e a aplicação ainda não foram 
   terminológica, preservação científica, auditorias e pendências de revisão humana.
 - [`PHASE_6A_DASHBOARD_ARCHITECTURE.md`](docs/PHASE_6A_DASHBOARD_ARCHITECTURE.md): arquitetura
   estática, contratos de dados, rotas, filtros, fronteiras científicas e plano das Fases 6B–6E.
+- [`PHASE_6B_DASHBOARD_DATA_EXPORT.md`](docs/PHASE_6B_DASHBOARD_DATA_EXPORT.md): exportador,
+  JSONs, manifesto, hashes, reconciliação, determinismo e limites da camada estática de dados.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -593,8 +598,8 @@ grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-A próxima etapa do dashboard é a **Fase 6B — exportação determinística dos JSONs e do
-manifesto**, com testes de schema, proveniência e hashes antes da criação do frontend.
+A próxima etapa do dashboard é a **Fase 6C — infraestrutura web estática**, que poderá criar o
+frontend Next.js/React/TypeScript e consumir os JSONs auditados sem recalcular ciência.
 
 ## Princípio metodológico
 

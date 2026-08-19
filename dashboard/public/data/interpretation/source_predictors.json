@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "INTERPRETATION",
+    "part_id": "source_predictors",
+    "scientific_status": "FROZEN_RESULT",
+    "source_artifacts": [
+      "reports/tables/phase_4i_global_feature_contributions.csv"
+    ],
+    "required_caveats": [
+      "Resultados de machine learning são congelados e não são recalculados no dashboard.",
+      "Contribuições Tree SHAP descrevem o modelo e não representam efeitos causais."
+    ]
+  },
+  "data": [
+    {
+      "rank": 1,
+      "source_predictor": "uf",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 27,
+      "mean_absolute_shap": 0.30914061427705003,
+      "mean_signed_margin_contribution": -0.02296477563943777,
+      "contribution_share": 0.26622591059992623
+    },
+    {
+      "rank": 2,
+      "source_predictor": "tipo_pista",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 3,
+      "mean_absolute_shap": 0.2156401333022573,
+      "mean_signed_margin_contribution": -0.011986051413068235,
+      "contribution_share": 0.18570510699326395
+    },
+    {
+      "rank": 3,
+      "source_predictor": "hour",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 24,
+      "mean_absolute_shap": 0.21537897879567514,
+      "mean_signed_margin_contribution": -0.007407677708959423,
+      "contribution_share": 0.18548020578937427
+    },
+    {
+      "rank": 4,
+      "source_predictor": "br",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 125,
+      "mean_absolute_shap": 0.11535052497091844,
+      "mean_signed_margin_contribution": -0.0020261454225333738,
+      "contribution_share": 0.09933763837656347
+    },
+    {
+      "rank": 5,
+      "source_predictor": "condicao_metereologica",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 10,
+      "mean_absolute_shap": 0.06993538475580058,
+      "mean_signed_margin_contribution": 0.0008441487853511318,
+      "contribution_share": 0.060226999073901416
+    },
+    {
+      "rank": 6,
+      "source_predictor": "km",
+      "predictor_group": "numeric",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.05342911061350782,
+      "mean_signed_margin_contribution": 0.005230840570079059,
+      "contribution_share": 0.04601211542161731
+    },
+    {
+      "rank": 7,
+      "source_predictor": "dia_semana",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 7,
+      "mean_absolute_shap": 0.04208529200467867,
+      "mean_signed_margin_contribution": -0.0012095861175985666,
+      "contribution_share": 0.036243038505345784
+    },
+    {
+      "rank": 8,
+      "source_predictor": "tracado_reta",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.03534370390834038,
+      "mean_signed_margin_contribution": 0.004778382387685264,
+      "contribution_share": 0.030437313385614968
+    },
+    {
+      "rank": 9,
+      "source_predictor": "tracado_declive",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.026401786513688824,
+      "mean_signed_margin_contribution": 0.002005120317888845,
+      "contribution_share": 0.022736707282895067
+    },
+    {
+      "rank": 10,
+      "source_predictor": "tracado_rotatoria",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.015050987950956999,
+      "mean_signed_margin_contribution": -0.0013352987527592607,
+      "contribution_share": 0.012961619365487278
+    },
+    {
+      "rank": 11,
+      "source_predictor": "month_name",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 12,
+      "mean_absolute_shap": 0.014985442167000656,
+      "mean_signed_margin_contribution": -0.0001618860161444664,
+      "contribution_share": 0.012905172605618563
+    },
+    {
+      "rank": 12,
+      "source_predictor": "uso_solo",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 2,
+      "mean_absolute_shap": 0.012244505157178917,
+      "mean_signed_margin_contribution": -0.0013783001964410464,
+      "contribution_share": 0.010544730730184911
+    },
+    {
+      "rank": 13,
+      "source_predictor": "sentido_via",
+      "predictor_group": "categorical",
+      "transformed_feature_cardinality": 3,
+      "mean_absolute_shap": 0.011673241823949384,
+      "mean_signed_margin_contribution": -9.18298073047604e-05,
+      "contribution_share": 0.010052769809951106
+    },
+    {
+      "rank": 14,
+      "source_predictor": "tracado_curva",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.011110312154336027,
+      "mean_signed_margin_contribution": -0.001363364397593808,
+      "contribution_share": 0.00956798567944465
+    },
+    {
+      "rank": 15,
+      "source_predictor": "tracado_aclive",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.008296334094738915,
+      "mean_signed_margin_contribution": 0.00025686032373129663,
+      "contribution_share": 0.007144642266362513
+    },
+    {
+      "rank": 16,
+      "source_predictor": "tracado_retorno_regulamentado",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.0013813678808901578,
+      "mean_signed_margin_contribution": 0.0003931218507667557,
+      "contribution_share": 0.0011896072692470358
+    },
+    {
+      "rank": 17,
+      "source_predictor": "tracado_intersecao_de_vias",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.0013507358259462667,
+      "mean_signed_margin_contribution": 0.0005014784999272116,
+      "contribution_share": 0.0011632275367099325
+    },
+    {
+      "rank": 18,
+      "source_predictor": "tracado_ponte",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.0012111951534744185,
+      "mean_signed_margin_contribution": -7.831984125391427e-06,
+      "contribution_share": 0.0010430578117405344
+    },
+    {
+      "rank": 19,
+      "source_predictor": "tracado_em_obras",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.0007249733118683761,
+      "mean_signed_margin_contribution": 0.00010969879722266835,
+      "contribution_share": 0.0006243329772898467
+    },
+    {
+      "rank": 20,
+      "source_predictor": "tracado_viaduto",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 0.0003303683956817521,
+      "mean_signed_margin_contribution": -4.6544268189162955e-05,
+      "contribution_share": 0.00028450686487602227
+    },
+    {
+      "rank": 21,
+      "source_predictor": "tracado_desvio_temporario",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 8.216060858262802e-05,
+      "mean_signed_margin_contribution": -7.154624216064584e-06,
+      "contribution_share": 7.075512509576482e-05
+    },
+    {
+      "rank": 22,
+      "source_predictor": "tracado_tunel",
+      "predictor_group": "binary",
+      "transformed_feature_cardinality": 1,
+      "mean_absolute_shap": 4.9416496081441573e-05,
+      "mean_signed_margin_contribution": -4.120889420680939e-06,
+      "contribution_share": 4.255652948968129e-05
+    }
+  ]
+}

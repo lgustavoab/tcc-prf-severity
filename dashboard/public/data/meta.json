@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "META",
+    "part_id": "default",
+    "scientific_status": "DOCUMENTATION",
+    "source_artifacts": [
+      "docs/PHASE_1_ACCEPTANCE.md",
+      "docs/PHASE_3B_FEATURE_POLICY.md",
+      "reports/tables/tcc/T1_population_characterization.csv"
+    ],
+    "required_caveats": []
+  },
+  "data_period": {
+    "start_year": 2021,
+    "end_year": 2025
+  },
+  "source_scope": "Acidentes registrados pela PRF em rodovias federais, 2021-2025.",
+  "target_definition": "target_grave = (mortos > 0) OR (feridos_graves > 0)",
+  "scientific_scope": {
+    "exploratory": "Agregações descritivas de ocorrências registradas.",
+    "frozen_results": "Resultados científicos publicados e apresentados sem recomputação."
+  },
+  "caveats": [
+    "Os percentuais representam a proporção de ocorrências graves entre acidentes registrados pela PRF. Sem denominador de exposição ao tráfego, esses valores não representam risco de ocorrência de acidente.",
+    "Associações descritivas não devem ser interpretadas como causais.",
+    "Resultados de machine learning são congelados e não são recalculados no dashboard.",
+    "Contribuições Tree SHAP descrevem o modelo e não representam efeitos causais."
+  ]
+}

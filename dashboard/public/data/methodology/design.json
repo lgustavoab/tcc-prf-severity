@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "schema_version": "1",
+    "asset_id": "METHODOLOGY_DESIGN",
+    "part_id": "default",
+    "scientific_status": "DOCUMENTATION",
+    "source_artifacts": [
+      "reports/tables/phase_3d_temporal_folds.csv",
+      "reports/tables/phase_3d_experimental_contract.csv",
+      "docs/PHASE_3D_EXPERIMENTAL_DESIGN.md"
+    ],
+    "required_caveats": []
+  },
+  "data": [
+    {
+      "fold": 1,
+      "train_years": [
+        2021
+      ],
+      "validation_year": 2022,
+      "train_rows": 64567,
+      "validation_rows": 64606,
+      "train_severe": 18118,
+      "validation_severe": 18409
+    },
+    {
+      "fold": 2,
+      "train_years": [
+        2021,
+        2022
+      ],
+      "validation_year": 2023,
+      "train_rows": 129173,
+      "validation_rows": 67766,
+      "train_severe": 36527,
+      "validation_severe": 19212
+    },
+    {
+      "fold": 3,
+      "train_years": [
+        2021,
+        2022,
+        2023
+      ],
+      "validation_year": 2024,
+      "train_rows": 196939,
+      "validation_rows": 73156,
+      "train_severe": 55739,
+      "validation_severe": 20625
+    }
+  ],
+  "contract": [
+    {
+      "key": "development_period",
+      "value": "2021-2024",
+      "rationale": "Período exclusivo de desenvolvimento."
+    },
+    {
+      "key": "final_evaluation_period",
+      "value": "2025",
+      "rationale": "Avaliação temporal somente após congelamento."
+    },
+    {
+      "key": "validation_strategy",
+      "value": "expanding_window_by_source_year",
+      "rationale": "Treino sempre antecede validação."
+    },
+    {
+      "key": "number_of_internal_folds",
+      "value": "3",
+      "rationale": "Validações em 2022, 2023 e 2024."
+    },
+    {
+      "key": "physical_predictors",
+      "value": "22",
+      "rationale": "Obtidos do esquema 3C, sem lista paralela."
+    },
+    {
+      "key": "primary_metric",
+      "value": "Average Precision (AP)",
+      "rationale": "Calcular para target_grave=True pela definição operacional de sklearn.metrics.average_precision_score; não calculada na Fase 3D."
+    },
+    {
+      "key": "secondary_metrics",
+      "value": "ROC-AUC; recall; precision; F1; confusion_matrix; calibration; Brier_score",
+      "rationale": "Reporte futuro de discriminação, decisão e calibração."
+    },
+    {
+      "key": "diagnostic_outputs",
+      "value": "Precision-Recall_curve",
+      "rationale": "Curva futura para diagnóstico gráfico; não é uma segunda métrica primária."
+    },
+    {
+      "key": "fold_aggregation",
+      "value": "unweighted_mean_AP_plus_std_and_latest_fold",
+      "rationale": "Ranking pela média aritmética não ponderada das três APs; reportar desvio padrão e Fold 3 separadamente; não usar o melhor fold nem AP única no OOF concatenado."
+    },
+    {
+      "key": "threshold_selection_source",
+      "value": "temporal_OOF_2022_2024",
+      "rationale": "Concatenar OOF somente para threshold; não para ranking de modelo. 2021 não possui previsão OOF e 2025 é proibido."
+    },
+    {
+      "key": "threshold_objective",
+      "value": "maximize_positive_class_F1",
+      "rationale": "Sem requisito operacional externo disponível."
+    },
+    {
+      "key": "threshold_tie_break",
+      "value": "higher_recall_then_lower_threshold",
+      "rationale": "Desempate determinístico."
+    },
+    {
+      "key": "final_refit_period",
+      "value": "2021-2024",
+      "rationale": "Refit futuro após seleção somente nos folds internos."
+    },
+    {
+      "key": "fitting_policy",
+      "value": "fit_train_only_within_each_fold",
+      "rationale": "Encoder, scaler, imputer e modelo nunca veem a validação no fit."
+    },
+    {
+      "key": "metadata_policy",
+      "value": "id_source_year_data_inversa_excluded_from_X",
+      "rationale": "Metadata serve somente à rastreabilidade e auditoria temporal."
+    },
+    {
+      "key": "final_holdout_policy",
+      "value": "no_optimization_or_fit_on_2025",
+      "rationale": "2025 não orienta features, modelo, hiperparâmetros, threshold ou preprocessing."
+    },
+    {
+      "key": "deterministic_features",
+      "value": "month_name; hour; tracado_via_components",
+      "rationale": "Derivações 3C não aprendem parâmetros e podem preceder o split."
+    }
+  ]
+}

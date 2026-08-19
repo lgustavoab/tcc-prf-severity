@@ -1,0 +1,51 @@
+check_id,check,status,evidence
+D6B001,branch correta,PASS,feat/phase-6b-dashboard-data-export
+D6B002,contrato 6A lido,PASS,7 contratos
+D6B003,contrato 6A inalterado,PASS,hashes antes/depois
+D6B004,dashboard/public/data criado,PASS,C:\Users\Pichau\Desktop\tcc-prf-severity\dashboard\public\data
+D6B005,nenhum frontend criado,PASS,somente public/data
+D6B006,nenhuma dependência Node,PASS,sem manifests ou node_modules
+D6B007,nenhuma dependência Python nova,PASS,pyproject/uv.lock preservados
+D6B008,schema version 1,PASS,manifest e metadata
+D6B009,manifest criado,PASS,manifest.json
+D6B010,meta criado,PASS,meta.json
+D6B011,overview criado,PASS,overview/summary.json
+D6B012,exploration temporal criado,PASS,exploration/temporal.json
+D6B013,exploration contextual criado,PASS,exploration/contextual.json
+D6B014,geography criado,PASS,geography/geography.json
+D6B015,model comparison criado,PASS,models/model_comparison.json
+D6B016,temporal validation criado,PASS,validation/temporal_validation.json
+D6B017,final 2025 criado,PASS,models/final_2025.json
+D6B018,calibration 2025 criado,PASS,models/calibration_2025.json
+D6B019,threshold 2025 criado,PASS,threshold/threshold_2025.json
+D6B020,interpretation source criado,PASS,interpretation/source_predictors.json
+D6B021,interpretation transformed criado,PASS,interpretation/transformed_top15.json
+D6B022,methodology design criado,PASS,methodology/design.json
+D6B023,methodology features criado,PASS,methodology/features.json
+D6B024,nenhuma ocorrência individual exportada,PASS,agregações somente
+D6B025,TEMPORAL isolado,PASS,3 dimensões
+D6B026,CONTEXTUAL isolado,PASS,4 dimensões
+D6B027,GEOGRAPHY isolada,PASS,3 dimensões
+D6B028,crossproduct completo ausente,PASS,escopos físicos separados
+D6B029,UF BR dependência válida,PASS,br_by_uf derivado
+D6B030,totais globais reconciliados,PASS,T1
+D6B031,totais anuais reconciliados,PASS,T1 2021-2025
+D6B032,frozen results reconciliados,PASS,9 modelo/fold e 27 métricas 4D reconciliados
+D6B033,nenhuma AP recalculada,PASS,cópia de 4D/T2
+D6B034,nenhuma ROC-AUC recalculada,PASS,cópia de 4D/T2
+D6B035,nenhum Brier recalculado,PASS,cópia de 4D/T2
+D6B036,nenhum threshold recalculado,PASS,cópia de 4F/4H
+D6B037,nenhuma matriz recalculada,PASS,cópia de 4H
+D6B038,nenhum SHAP recalculado,PASS,cópia de 4I/A1
+D6B039,nenhum modelo carregado,PASS,fontes tabulares
+D6B040,nenhuma prediction carregada,PASS,fontes tabulares
+D6B041,hashes válidos,PASS,bytes finais reabertos
+D6B042,row counts válidos,PASS,regra data/lista
+D6B043,determinismo aprovado,PASS,serialização repetida idêntica; teste dedicado
+D6B044,nenhum asset >5 MiB,PASS,maior=286016
+D6B045,source artifacts existentes,PASS,fontes=25
+D6B046,figuras 5D inalteradas,PASS,hashes antes/depois
+D6B047,Fase 5F inalterada,PASS,hashes antes/depois
+D6B048,Fase 6A inalterada,PASS,hashes antes/depois
+D6B049,pyproject inalterado,PASS,hash antes/depois
+D6B050,uv.lock inalterado,PASS,hash antes/depois
