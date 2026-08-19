@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 3F concluída — Fase 3 encerrada e aprovada para modelagem principal.**
+**Fase 4A concluída — Regressão Logística baseline executada nos três folds temporais.**
 
 Nesta fase o projeto:
 
@@ -44,8 +44,9 @@ Nesta fase o projeto:
 - valida nos três folds uma receita train-only com nove categóricas em one-hot, `km`
   padronizado e 12 indicadores de traçado em passthrough;
 - tolera e audita categorias desconhecidas sem aprender vocabulário da validação ou de 2025;
-- ainda não remove ou imputa registros, persiste transformers fitados ou inicia machine
-  learning.
+- executa a primeira baseline logística sem tuning: AP média não ponderada de 0,393508 e
+  desvio padrão populacional de 0,004879;
+- preserva 2025, não seleciona threshold, não faz refit final e não persiste modelos fitados.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -62,6 +63,8 @@ O desenho experimental temporal está em
 [`docs/PHASE_3D_EXPERIMENTAL_DESIGN.md`](docs/PHASE_3D_EXPERIMENTAL_DESIGN.md).
 O contrato e a auditoria do preprocessing estão em
 [`docs/PHASE_3E_PREPROCESSING.md`](docs/PHASE_3E_PREPROCESSING.md).
+A primeira baseline preditiva está documentada em
+[`docs/PHASE_4A_LOGISTIC_BASELINE.md`](docs/PHASE_4A_LOGISTIC_BASELINE.md).
 
 ## Requisitos
 
@@ -261,6 +264,17 @@ one-hot com categorias desconhecidas toleradas e auditadas, somente `km` usa
 `StandardScaler`, e os 12 indicadores `tracado_*` seguem por passthrough. As matrizes ficam
 esparsas; 2025 não é transformado e nenhum modelo ou transformer fitado é persistido.
 
+## Regressão Logística baseline
+
+```powershell
+uv run prf-run-logistic-baseline
+```
+
+O comando executa a configuração logística fixa nos três folds temporais e publica métricas,
+calibração diagnóstica e previsões OOF de 2022–2024. As APs foram 0,386681, 0,396058 e
+0,397786; a média não ponderada foi 0,393508. O corte 0,5 é somente referência: nenhum
+threshold foi selecionado, nenhum refit foi feito e 2025 permaneceu fora da execução.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -276,6 +290,8 @@ esparsas; 2025 não é transformado e nenhum modelo ou transformer fitado é per
   temporal, folds internos e políticas futuras de seleção, threshold e refit.
 - [`PHASE_3E_PREPROCESSING.md`](docs/PHASE_3E_PREPROCESSING.md): receita train-only,
   auditoria de categorias desconhecidas e validação real dos três folds internos.
+- [`PHASE_4A_LOGISTIC_BASELINE.md`](docs/PHASE_4A_LOGISTIC_BASELINE.md): primeira baseline,
+  resultados por fold, calibração diagnóstica e OOF temporal.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -287,7 +303,7 @@ esparsas; 2025 não é transformado e nenhum modelo ou transformer fitado é per
 
 As dependências estão organizadas no `pyproject.toml`:
 
-- principal: scikit-learn, usado na Fase 3E somente para preprocessing;
+- principal: scikit-learn, usado no preprocessing e na Regressão Logística baseline;
 - `ml`: XGBoost, Optuna, MLflow e SHAP, ainda reservados para fases futuras;
 - `viz`: JupyterLab, Plotly e Streamlit.
 
@@ -296,10 +312,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4 — Modelagem**, somente dentro do desenho congelado e recriando a
-receita train-only validada na Fase 3E dentro de cada pipeline. A seleção usará apenas os folds
-de 2021–2024; 2025 permanecerá intocado até a avaliação formal do pipeline final. Nenhum
-modelo foi criado até aqui.
+A próxima etapa é a **Fase 4B — Random Forest**, sob os mesmos folds e a mesma receita
+train-only. 2025 permanecerá intocado até a avaliação formal do pipeline final.
 
 ## Princípio metodológico
 

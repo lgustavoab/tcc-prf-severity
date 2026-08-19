@@ -26,6 +26,7 @@ prf-eda-temporal = "tcc_prf_severity.cli:eda_temporal_main"
 prf-verify-interim = "tcc_prf_severity.cli:verify_interim_main"
 prf-verify-analytical = "tcc_prf_severity.cli:verify_analytical_main"
 prf-validate-preprocessing = "tcc_prf_severity.cli:validate_preprocessing_main"
+prf-run-logistic-baseline = "tcc_prf_severity.cli:run_logistic_baseline_main"
 
 [dependency-groups]
 dev = [

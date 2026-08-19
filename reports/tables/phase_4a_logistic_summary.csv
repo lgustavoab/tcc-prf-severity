@@ -1,0 +1,12 @@
+key,value
+model_id,phase_4a_logistic_baseline
+fold_count,3
+primary_metric,Average Precision (AP)
+ap_unweighted_mean,0.3935082935577437
+ap_population_std,0.004878870165386994
+ap_fold3,0.3977855869271569
+mean_roc_auc,0.6243776293022905
+mean_brier_score,0.1948197255602965
+all_folds_converged,true
+final_test_used,false
+threshold_selected,false
