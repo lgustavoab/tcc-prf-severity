@@ -20,6 +20,7 @@ from tcc_prf_severity.data.analytical import (
 from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
+from tcc_prf_severity.modeling.final_refit import run_final_refit
 from tcc_prf_severity.modeling.logistic_baseline import run_logistic_baseline
 from tcc_prf_severity.modeling.model_comparison import run_model_comparison
 from tcc_prf_severity.modeling.model_selection import run_model_selection
@@ -280,6 +281,27 @@ def select_threshold_main() -> None:
     print("2025 utilizado: não")
     print("Refit realizado: não")
     print("Próximo passo: Fase 4G — refit 2021-2024")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def refit_final_model_main() -> None:
+    run = run_final_refit()
+    result = run.result
+    audit = result.audit
+    print("Fase 4G — Refit final")
+    print("Modelo: XGBoost")
+    print("Treino: 2021-2024")
+    print(f"Linhas: {audit.training_rows}")
+    print(f"Ocorrências graves: {audit.training_positive}")
+    print(f"Predictors: {audit.predictor_count}")
+    print(f"Features transformadas: {audit.transformed_feature_count}")
+    print(f"Boosting rounds: {audit.completed_boosting_rounds}/{audit.configured_boosting_rounds}")
+    print(f"Threshold congelado: {result.frozen_threshold}")
+    print(f"Pipeline: {result.artifact_path}")
+    print(f"SHA-256: {result.artifact_sha256}")
+    print("2025 utilizado: não")
+    print("Avaliação final realizada: não")
+    print("Próximo passo: Fase 4H — avaliação temporal final 2025")
     print(f"Tabelas: {run.table_paths[0].parent}")
 
 

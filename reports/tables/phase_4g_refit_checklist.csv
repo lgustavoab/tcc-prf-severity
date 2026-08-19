@@ -1,0 +1,17 @@
+check_id,check,status,evidence
+REF001,Modelo selecionado pela 4E é XGBoost 4C,PASS,phase_4c_xgboost_baseline
+REF002,Threshold 4F pertence ao mesmo modelo,PASS,phase_4c_xgboost_baseline
+REF003,Threshold permanece exatamente congelado,PASS,0.23723246157169342
+REF004,Desenvolvimento contém somente 2021-2024,PASS,"2021,2022,2023,2024"
+REF005,2025 está ausente do conjunto de fit,PASS,2025 reservado
+REF006,Linhas e IDs foram reconciliados,PASS,270095 linhas/IDs
+REF007,Predictors físicos permanecem congelados,PASS,22 predictors
+REF008,Preprocessing 3E foi reutilizado,PASS,phase_3e
+REF009,Configuração XGBoost corresponde à 4C,PASS,factory build_xgboost_pipeline
+REF010,Exatamente 300 rounds foram concluídos,PASS,300/300
+REF011,Pipeline final foi persistido,PASS,artifacts/models/phase_4g_xgboost_final_pipeline.pkl
+REF012,SHA-256 do pipeline foi calculado,PASS,c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351
+REF013,Nenhum tuning foi realizado,PASS,hyperparameter_tuning=false
+REF014,Threshold não foi recalculado,PASS,somente leitura da Fase 4F
+REF015,Avaliação final não foi realizada,PASS,final_evaluation_performed=false
+REF016,Nenhum resultado de 2025 foi produzido,PASS,final_test_used=false
