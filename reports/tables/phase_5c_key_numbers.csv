@@ -1,0 +1,67 @@
+number_id,topic,value,unit,source_artifact,target_section,rounding_recommendation,must_appear_in_text
+N001,população total,342624,occurrences,reports/tables/phase_3f_premodeling_checklist.csv,4.1,"integer with thousands separator",true
+N002,ocorrências graves,96857,occurrences,reports/tables/phase_3f_premodeling_checklist.csv,4.1,"integer with thousands separator",true
+N003,prevalência grave global,28.2692,percent,docs/TCC_RESEARCH_LOG.md,4.1,"2 decimals in prose; 4 if needed",true
+N004,ocorrências 2021,64567,occurrences,reports/tables/phase_2a_year_summary.csv,T1,"integer with thousands separator",false
+N005,ocorrências 2022,64606,occurrences,reports/tables/phase_2a_year_summary.csv,T1,"integer with thousands separator",false
+N006,ocorrências 2023,67766,occurrences,reports/tables/phase_2a_year_summary.csv,T1,"integer with thousands separator",false
+N007,ocorrências 2024,73156,occurrences,reports/tables/phase_2a_year_summary.csv,T1,"integer with thousands separator",false
+N008,ocorrências 2025,72529,occurrences,reports/tables/phase_2a_year_summary.csv,T1,"integer with thousands separator",false
+N009,prevalência grave 2021,28.060774,percent,reports/tables/phase_2a_year_summary.csv,T1,"2 decimals in prose; 4 in table",false
+N010,prevalência grave 2022,28.494257,percent,reports/tables/phase_2a_year_summary.csv,T1,"2 decimals in prose; 4 in table",false
+N011,prevalência grave 2023,28.3505,percent,reports/tables/phase_2a_year_summary.csv,T1,"2 decimals in prose; 4 in table",false
+N012,prevalência grave 2024,28.193176,percent,reports/tables/phase_2a_year_summary.csv,T1,"2 decimals in prose; 4 in table",false
+N013,prevalência grave 2025,28.254905,percent,reports/tables/phase_2a_year_summary.csv,T1,"2 decimals in prose; 4 in table",false
+N014,limites anuais da prevalência,"28.060774–28.494257",percent,reports/tables/phase_2a_year_summary.csv,4.1,"2 decimals in prose",true
+N015,Plena Noite,32.47255,percent,reports/tables/phase_5a_research_question_evidence.csv,F1,"2 decimals in prose; 4 in figure",false
+N016,Pleno dia,25.304737,percent,reports/tables/phase_5a_research_question_evidence.csv,F1,"2 decimals in prose; 4 in figure",false
+N017,diferença Plena Noite vs Pleno dia,7.167813,percentage_points,reports/tables/phase_5a_research_question_evidence.csv,4.2.1,"2 decimals in prose",true
+N018,Fim de semana,30.192457,percent,reports/tables/phase_5a_research_question_evidence.csv,F1,"2 decimals in prose; 4 in figure",false
+N019,Dias úteis,27.330336,percent,reports/tables/phase_5a_research_question_evidence.csv,F1,"2 decimals in prose; 4 in figure",false
+N020,hora 19,33.732337,percent,reports/tables/phase_2f_association_evidence_matrix.csv,F1,"2 decimals in prose; 4 in figure",false
+N021,hora 8,23.124346,percent,reports/tables/phase_2f_association_evidence_matrix.csv,F1,"2 decimals in prose; 4 in figure",false
+N022,Nordeste,35.917125,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N023,Sul,24.874032,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N024,MA,45.8117,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N025,SP,18.639426,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N026,pista Simples,33.711528,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N027,pista Dupla,23.351325,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N028,Nevoeiro/Neblina,31.501057,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N029,Garoa/Chuvisco,22.2644,percent,reports/tables/phase_5a_research_question_evidence.csv,F2,"2 decimals in prose; 4 in figure",false
+N030,AP média Regressão Logística,0.3935082935577437,average_precision,reports/tables/phase_4d_model_comparison.csv,4.3,"4 decimals in prose",true
+N031,AP média Random Forest,0.3959839275865431,average_precision,reports/tables/phase_4d_model_comparison.csv,4.3,"4 decimals in prose",true
+N032,AP média XGBoost,0.40081097458169895,average_precision,reports/tables/phase_4d_model_comparison.csv,4.3,"4 decimals in prose",true
+N033,delta RF menos LR,0.0024756340287994116,average_precision,reports/tables/phase_4d_pairwise_ap_deltas.csv,F4,"4 decimals in prose",false
+N034,delta XGB menos LR,0.00730268102395526,average_precision,reports/tables/phase_4d_pairwise_ap_deltas.csv,4.3,"4 decimals in prose",true
+N035,delta XGB menos RF,0.004827046995155848,average_precision,reports/tables/phase_4d_pairwise_ap_deltas.csv,F4,"4 decimals in prose",false
+N036,AP LR Fold 1 2022,0.3866809762501382,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N037,AP LR Fold 2 2023,0.3960583174959361,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N038,AP LR Fold 3 2024,0.3977855869271569,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N039,AP RF Fold 1 2022,0.3880957692713414,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N040,AP RF Fold 2 2023,0.3996726973944841,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N041,AP RF Fold 3 2024,0.4001833160938038,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N042,AP XGB Fold 1 2022,0.390374557377428,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N043,AP XGB Fold 2 2023,0.40496847114969603,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N044,AP XGB Fold 3 2024,0.4070898952179728,average_precision,reports/tables/phase_4d_fold_comparison.csv,F5,"4 decimals in figure",false
+N045,intervalo AP XGBoost nos folds,"0.390374557377428–0.4070898952179728",average_precision,reports/tables/phase_4d_fold_comparison.csv,4.4,"4 decimals in prose",true
+N046,AP 2025,0.3974456687131155,average_precision,reports/tables/phase_4h_final_evaluation.csv,4.5,"4 decimals in prose",true
+N047,ROC-AUC 2025,0.6285562620583193,roc_auc,reports/tables/phase_4h_final_evaluation.csv,4.5,"4 decimals in prose",true
+N048,Brier 2025,0.19382199321256413,brier_score,reports/tables/phase_4h_final_evaluation.csv,4.5,"4 decimals in prose",true
+N049,delta AP 2025 vs média interna,-0.003365305868583468,average_precision,reports/tables/phase_4h_development_comparison.csv,T2,"4 decimals with sign",true
+N050,delta ROC-AUC 2025 vs média interna,-0.0022936789354663922,roc_auc,reports/tables/phase_4h_development_comparison.csv,T2,"4 decimals with sign",false
+N051,delta Brier 2025 vs média interna,-0.00007547537507013313,brier_score,reports/tables/phase_4h_development_comparison.csv,T2,"4 to 6 decimals with sign",false
+N052,threshold congelado,0.23723246157169342,probability_threshold,reports/tables/phase_4f_threshold_selection.csv,4.6,"0.237232 in prose; exact in source",true
+N053,precision 2025,0.33159329140461213,precision,reports/tables/phase_4h_threshold_evaluation.csv,4.5; 4.6,"4 decimals in prose",true
+N054,recall 2025,0.7718245254477138,recall,reports/tables/phase_4h_threshold_evaluation.csv,4.5; 4.6,"4 decimals in prose",true
+N055,F1 2025,0.4638892554954321,f1,reports/tables/phase_4h_threshold_evaluation.csv,4.5; 4.6,"4 decimals in prose",true
+N056,TN 2025,20153,occurrences,reports/tables/phase_4h_threshold_evaluation.csv,F6,"integer with thousands separator",true
+N057,FP 2025,31883,occurrences,reports/tables/phase_4h_threshold_evaluation.csv,F6,"integer with thousands separator",true
+N058,FN 2025,4676,occurrences,reports/tables/phase_4h_threshold_evaluation.csv,F6,"integer with thousands separator",true
+N059,TP 2025,15817,occurrences,reports/tables/phase_4h_threshold_evaluation.csv,F6,"integer with thousands separator",true
+N060,top predictors,"uf; tipo_pista; hour; br; condicao_metereologica",ordered_predictor_list,reports/tables/phase_4i_global_feature_contributions.csv,4.7.2,"names as published",true
+N061,contribuição absoluta média de uf,0.30914061427705003,raw_margin,reports/tables/phase_4i_global_feature_contributions.csv,F8,"4 decimals in figure",false
+N062,contribuição absoluta média de tipo_pista,0.2156401333022573,raw_margin,reports/tables/phase_4i_global_feature_contributions.csv,F8,"4 decimals in figure",false
+N063,contribuição absoluta média de hour,0.21537897879567514,raw_margin,reports/tables/phase_4i_global_feature_contributions.csv,F8,"4 decimals in figure",false
+N064,contribuição absoluta média de br,0.11535052497091844,raw_margin,reports/tables/phase_4i_global_feature_contributions.csv,F8,"4 decimals in figure",false
+N065,contribuição absoluta média de condicao_metereologica,0.06993538475580058,raw_margin,reports/tables/phase_4i_global_feature_contributions.csv,F8,"4 decimals in figure",false
+N066,features OHE agregadas em br,125,transformed_features,reports/tables/phase_4i_global_feature_contributions.csv,4.7.2,"integer",true
