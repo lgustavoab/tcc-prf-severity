@@ -165,6 +165,25 @@ por H001. Os sete campos de leakage permanecem bloqueados.
 
 **Status:** confirmada; Fase 2 encerrada e modelagem não iniciada.
 
+### D008 — Auditoria de drift antes da preparação de dados
+
+**Data:** 19/08/2026.
+
+**Decisão:** comparar descritivamente 2021–2024 com 2025 para todas as variáveis sinalizadas
+na matriz 2F, aprendendo bins numéricos somente em 2021–2024 e sem criar split físico,
+dataset processed ou seleção final.
+
+**Justificativa:** a estabilidade do target não responde se as distribuições das features,
+seus suportes ou suas taxonomias permanecem comparáveis no holdout planejado.
+
+**Consequências:** a Fase 3B deverá definir política para categorias desconhecidas,
+representações redundantes e disponibilidade preditiva. TVD permanece magnitude descritiva,
+sem thresholds universais ou rótulos automáticos.
+
+**Origem:** [PHASE_3A_TEMPORAL_DRIFT.md](PHASE_3A_TEMPORAL_DRIFT.md).
+
+**Status:** confirmada.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -210,6 +229,30 @@ registros foi corrigido ou removido na fundação de dados.
 **Status:** confirmado.
 
 **Origem:** auditoria e [PHASE_1_ACCEPTANCE.md](PHASE_1_ACCEPTANCE.md).
+
+### R005 — Drift descritivo das features
+
+**Data:** 19/08/2026.
+
+**População e período:** 342.624 ocorrências; desenvolvimento planejado 2021–2024 comparado a
+2025, sem criação física de split.
+
+**Resultado:** as maiores TVDs categóricas foram observadas em `municipio` (0,089805),
+`tracado_via` (0,082051) e `causa_acidente` (0,079368). Entre as contínuas, com decis
+definidos apenas no desenvolvimento, `longitude` apresentou a maior TVD (0,019970). Cinco
+variáveis tiveram categorias não vistas em 2025, sempre com participação agregada inferior a
+0,3% por variável.
+
+**Método/origem:** [PHASE_3A_TEMPORAL_DRIFT.md](PHASE_3A_TEMPORAL_DRIFT.md) e tabelas
+`phase_3a_*` em `reports/tables/`.
+
+**Limitações:** magnitudes descritivas não medem causalidade, relevância preditiva ou impacto
+em desempenho de modelo; taxonomias não foram harmonizadas.
+
+**Possível uso no TCC:** justificar políticas de categorias desconhecidas e decisões de
+representação antes da preparação de dados.
+
+**Status:** confirmado.
 
 ## Achados exploratórios
 
@@ -482,11 +525,14 @@ modelo foi criado.
 **Fundamentação:** a Fase 2B encontrou recorrência em alguns resumos temporais e variação em
 outros. Isso não avalia as demais features nem demonstra ausência de drift.
 
-**Como avaliar:** antes da modelagem temporal, comparar as distribuições das features entre
-2021–2024 e 2025, com métricas adequadas ao tipo de variável e sem usar o teste final para
-decisões de desenvolvimento.
+**Como foi avaliada:** a Fase 3A comparou 2021–2024 com 2025 usando TVD categórica, bins
+numéricos definidos somente no desenvolvimento, categorias não vistas, cobertura de
+data/horário e prevalências multilabel. Foram observadas distribuições, cardinalidades e
+suportes diferentes, sobretudo em município, traçado e causa, apesar da baixa variação anual
+do target.
 
-**Status:** proposta; pendência futura, não apresentada como resultado.
+**Status:** apoiada por evidência descritiva; não submetida a teste inferencial e não
+apresentada como hipótese estatística provada.
 
 ## Limitações
 

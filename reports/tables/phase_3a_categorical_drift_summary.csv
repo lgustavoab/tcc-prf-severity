@@ -1,0 +1,17 @@
+variable,audit_method,tvd,development_categories,comparison_categories,shared_categories,new_categories_2025,missing_categories_2025,unseen_occurrences_2025,unseen_share_2025_percent,largest_change_category,largest_absolute_share_change_percentage_points,development_share_percent_for_largest_change,comparison_share_percent_for_largest_change
+municipio,categorical_tvd,0.089805376,2001,1844,1795,49,206,71,0.097891878,RIO DE JANEIRO,0.217084172,0.400599789,0.617683961
+tracado_via,high_cardinality_categorical_tvd,0.082051401,1046,605,437,168,609,198,0.272994251,Reta,2.32951836,57.890742146,55.561223786
+causa_acidente,categorical_tvd,0.079368254,76,69,69,0,7,0,0.0,Ausência de reação do condutor,3.535453171,12.277531979,15.812985151
+tipo_acidente,categorical_tvd,0.032081077,18,17,17,0,1,0,0.0,Saída de leito carroçável,1.542829638,15.618578648,14.075749011
+br,categorical_tvd,0.030241017,125,115,114,1,11,1,0.001378759,101,0.780317452,17.162850108,17.943167561
+uf,categorical_tvd,0.029849439,27,27,27,0,0,0,0.0,RJ,0.998391853,7.864269979,8.862661832
+condicao_metereologica,categorical_tvd,0.01961536,10,9,9,0,1,0,0.0,Céu Claro,1.874001503,62.065939762,63.939941265
+dia_semana,categorical_tvd,0.013844794,7,7,7,0,0,0,0.0,domingo,0.775354523,16.589718432,15.81436391
+veiculos,discrete_exact_tvd,0.013572801,27,21,18,3,9,3,0.004136277,1,1.181535224,33.743682778,32.562147555
+tipo_pista,categorical_tvd,0.011554241,3,3,3,0,0,0,0.0,Simples,1.155424105,49.04385494,47.888430835
+fase_dia,categorical_tvd,0.011510143,4,4,4,0,0,0,0.0,Pleno dia,1.151014349,54.516373868,55.667388217
+hour,categorical_tvd,0.010778689,24,24,24,0,0,0,0.0,7,0.245433158,6.073418612,6.31885177
+month_name,categorical_tvd,0.010448198,12,12,12,0,0,0,0.0,Novembro,0.395438465,8.165275181,8.560713646
+pessoas,discrete_exact_tvd,0.009196064,72,66,63,3,9,5,0.006893794,1,0.663078683,21.970417816,21.307339133
+uso_solo,categorical_tvd,0.005919192,2,2,2,0,0,0,0.0,Sim,0.591919157,43.450637739,42.858718582
+sentido_via,categorical_tvd,0.002277118,3,3,3,0,0,0,0.0,Decrescente,0.227711776,46.163386956,46.391098733

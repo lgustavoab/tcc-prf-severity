@@ -1,0 +1,23 @@
+variable,modeling_eligibility_status,audit_method,analyzed_directly,proxy_or_derivation,development_period,comparison_period,drift_metric,quality_note,requires_followup_3b
+data_inversa,candidata,calendar_coverage,true,month_name para sazonalidade,2021-2024,2025,coverage_consistency,Cobertura de calendário; sem TVD de datas completas.,true
+month_name,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+dia_semana,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+horario,candidata,derived_hour_proxy,false,hour,2021-2024,2025,coverage_consistency,Parseabilidade e consistência; distribuição avaliada por hour.,true
+hour,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+fase_dia,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+uf,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+br,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+km,candidata,development_decile_binned_tvd,true,"",2021-2024,2025,TVD,Bins definidos exclusivamente em 2021-2024.,true
+municipio,candidata_com_cautela,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+latitude,candidata_com_cautela,development_decile_binned_tvd,true,"",2021-2024,2025,TVD,Bins definidos exclusivamente em 2021-2024.,true
+longitude,candidata_com_cautela,development_decile_binned_tvd,true,"",2021-2024,2025,TVD,Bins definidos exclusivamente em 2021-2024.,true
+sentido_via,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+condicao_metereologica,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+tipo_pista,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+uso_solo,candidata,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+tracado_via,candidata_com_cautela,high_cardinality_categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; resultado reflete combinações.,true
+tracado_via_components,candidata_com_cautela,multilabel_prevalence_shift,false,decomposição validada de tracado_via,2021-2024,2025,prevalence_difference_pp,Componentes não mutuamente exclusivos; TVD exclusiva não aplicável.,true
+tipo_acidente,requer_decisao_metodologica,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+causa_acidente,requer_decisao_metodologica,categorical_tvd,true,"",2021-2024,2025,TVD,Strings originais preservadas; sem harmonização.,true
+pessoas,requer_decisao_metodologica,discrete_exact_tvd,true,"",2021-2024,2025,TVD,Valores exatos preservados; decisão metodológica pendente.,true
+veiculos,requer_decisao_metodologica,discrete_exact_tvd,true,"",2021-2024,2025,TVD,Valores exatos preservados; decisão metodológica pendente.,true

@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 2 — Análise Exploratória concluída e aceita.**
+**Fase 3A — Auditoria Temporal e Drift das Features concluída.**
 
 Nesta fase o projeto:
 
@@ -30,6 +30,9 @@ Nesta fase o projeto:
 - consolida oito achados centrais e separa evidência descritiva de elegibilidade preditiva;
 - encerra a EDA com uma síntese científica, uma matriz autoritativa de elegibilidade e um
   inventário de verificações temporais futuras;
+- audita as 22 variáveis sinalizadas comparando 2021–2024 com 2025, com TVD descritiva,
+  categorias não vistas, bins numéricos definidos somente no desenvolvimento e prevalências
+  multilabel de traçado;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
@@ -38,6 +41,8 @@ Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`docs/PHASE_1_ACCEPTANCE.md`](docs/PHASE_1_ACCEPTANCE.md). A síntese e o aceite da EDA estão
 em [`docs/PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md) e
 [`docs/PHASE_2_ACCEPTANCE.md`](docs/PHASE_2_ACCEPTANCE.md).
+Os métodos e resultados da auditoria temporal estão em
+[`docs/PHASE_3A_TEMPORAL_DRIFT.md`](docs/PHASE_3A_TEMPORAL_DRIFT.md).
 
 ## Requisitos
 
@@ -181,6 +186,16 @@ O comando verifica o interim e recalcula uma síntese das associações descriti
 matriz conceitual de elegibilidade para modelagem futura. Não cria features, divisão
 treino/teste, modelos ou dataset processed.
 
+## Auditoria temporal das features
+
+```powershell
+uv run prf-audit-temporal-drift
+```
+
+O comando verifica o interim, lê o inventário autoritativo da Fase 2F e compara as 22
+variáveis sinalizadas entre 2021–2024 e 2025. Gera sete tabelas e até três figuras sem criar
+split, dataset processed, encoding, seleção definitiva de features ou modelo.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -205,9 +220,9 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-Antes de criar dataset processed ou iniciar modelagem, o projeto deve definir o momento
-preditivo, avaliar drift nas 22 variáveis sinalizadas e resolver a elegibilidade de
-`tipo_acidente`, `causa_acidente`, `pessoas` e `veiculos`.
+A Fase 3B deve usar a auditoria temporal para definir momento preditivo, tratamento de
+categorias desconhecidas, representações redundantes e elegibilidade metodológica, ainda sem
+usar 2025 para aprender transformações.
 
 ## Princípio metodológico
 

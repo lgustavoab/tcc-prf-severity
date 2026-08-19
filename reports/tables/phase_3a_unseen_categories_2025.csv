@@ -1,0 +1,225 @@
+variable,category,occurrences_2025,share_2025_percent,first_year_observed,note
+br,431,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,POXOREU,17,0.0234389,2025,Categoria nova não tratada automaticamente como erro.
+municipio,CAMPO NOVO DE RONDONIA,3,0.004136277,2025,Categoria nova não tratada automaticamente como erro.
+municipio,CAMARAGIBE,2,0.002757518,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SAO JOAO DA LAGOA,2,0.002757518,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SATUBINHA,2,0.002757518,2025,Categoria nova não tratada automaticamente como erro.
+municipio,TANGARA DA SERRA,2,0.002757518,2025,Categoria nova não tratada automaticamente como erro.
+municipio,ALMENARA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,AMARALINA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,AMARGOSA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,ANTA GORDA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,ARROIO DO MEIO,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,BARRA DOS COQUEIROS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,BARREIRINHAS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,BONITO,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,BONOPOLIS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,BUIQUE,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,BURITI ALEGRE,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,CAMPINAS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,CARANAIBA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,CARIRE,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,COCOS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,FAZENDA NOVA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,GUARAQUECABA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,IACU,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,IGUATEMI,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,INACIO MARTINS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,IPIRA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,ITAUNA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,ITUTINGA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,MARIANA PIMENTEL,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,MUTUNOPOLIS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,NOVO SAO JOAQUIM,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,PAICANDU,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,PALMA SOLA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,PALMEIRAS DE GOIAS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,PINHAIS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,POCO DE JOSE DE MOURA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,PUXINANA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SANTA MERCEDES,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SANTA ROSA DO TOCANTINS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SAO CAETANO DE ODIVELAS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SAO JOSE DO DIVINO,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SAO MIGUEL DO PASSA QUATRO,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SARZEDO,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,SILVANOPOLIS,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,TAILANDIA,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,TAIO,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,TIBAU,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+municipio,TOME-ACU,1,0.001378759,2025,Categoria nova não tratada automaticamente como erro.
+pessoas,69,3,0.004136277,2025,Valor discreto exato; decisão de representação permanece para a Fase 3B.
+pessoas,71,1,0.001378759,2025,Valor discreto exato; decisão de representação permanece para a Fase 3B.
+pessoas,76,1,0.001378759,2025,Valor discreto exato; decisão de representação permanece para a Fase 3B.
+tracado_via,Retorno Regulamentado;Reta;Viaduto,5,0.006893794,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Em Obras;Desvio Temporário,3,0.004136277,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Rotatória;Interseção de Vias,3,0.004136277,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Declive;Rotatória,3,0.004136277,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Reta;Rotatória,3,0.004136277,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Interseção de Vias;Retorno Regulamentado;Reta,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Viaduto;Interseção de Vias,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Interseção de Vias;Em Obras;Desvio Temporário,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Viaduto;Rotatória,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Declive;Curva,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Declive;Reta,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Em Obras;Curva,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Em Obras;Viaduto;Reta,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Ponte;Curva,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Reta;Rotatória;Aclive,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Retorno Regulamentado;Reta;Aclive,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Retorno Regulamentado;Reta;Rotatória,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Aclive;Interseção de Vias;Retorno Regulamentado,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Declive;Desvio Temporário,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Desvio Temporário;Declive;Em Obras,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Em Obras;Declive;Desvio Temporário,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Em Obras;Reta,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Rotatória;Viaduto,2,0.002757518,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Curva;Interseção de Vias;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Curva;Túnel,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Desvio Temporário;Ponte;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Aclive;Interseção de Vias;Em Obras;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Em Obras;Viaduto;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Interseção de Vias;Aclive;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Interseção de Vias;Viaduto;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Rotatória;Declive;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Rotatória;Interseção de Vias;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Rotatória;Interseção de Vias;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Viaduto;Declive;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Curva;Viaduto;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Curva;Interseção de Vias;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Interseção de Vias;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Interseção de Vias;Retorno Regulamentado;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Interseção de Vias;Retorno Regulamentado;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Interseção de Vias;Viaduto;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Reta;Desvio Temporário,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Reta;Interseção de Vias;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Reta;Túnel,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Reta;Viaduto;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Retorno Regulamentado;Interseção de Vias;Rotatória;Desvio Temporário,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Rotatória;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Viaduto;Interseção de Vias;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Declive;Viaduto;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Aclive;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Curva;Aclive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Declive;Em Obras;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Declive;Viaduto;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Aclive;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Reta;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Reta;Interseção de Vias;Retorno Regulamentado;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Em Obras;Viaduto;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Interseção de Vias;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Interseção de Vias;Curva;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Reta;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Retorno Regulamentado;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Desvio Temporário;Retorno Regulamentado;Reta;Em Obras;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Aclive;Curva;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Aclive;Desvio Temporário;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Aclive;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Aclive;Viaduto;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Curva;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Declive;Reta;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Desvio Temporário;Aclive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Desvio Temporário;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Desvio Temporário;Declive;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Desvio Temporário;Rotatória;Interseção de Vias;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Desvio Temporário;Viaduto;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Interseção de Vias;Ponte,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Interseção de Vias;Reta;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Interseção de Vias;Retorno Regulamentado;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Interseção de Vias;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Reta;Declive;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Reta;Desvio Temporário;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Reta;Desvio Temporário;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Retorno Regulamentado;Aclive;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Rotatória;Interseção de Vias;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Túnel;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Viaduto;Desvio Temporário,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Em Obras;Viaduto;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Aclive;Em Obras;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Curva;Aclive;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Curva;Retorno Regulamentado;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Curva;Rotatória;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Declive;Reta;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Declive;Rotatória;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Em Obras;Reta;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Em Obras;Reta;Ponte,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Ponte;Curva;Aclive;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Reta;Aclive;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Reta;Viaduto;Aclive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Retorno Regulamentado;Aclive;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Retorno Regulamentado;Em Obras;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Retorno Regulamentado;Rotatória;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Rotatória;Declive;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Rotatória;Desvio Temporário,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Rotatória;Desvio Temporário;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Rotatória;Viaduto;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Túnel;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Viaduto;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Viaduto;Retorno Regulamentado;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Viaduto;Rotatória;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Interseção de Vias;Viaduto;Rotatória;Ponte,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Ponte;Desvio Temporário;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Ponte;Em Obras;Reta;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Ponte;Reta;Declive;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Ponte;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Aclive;Desvio Temporário;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Aclive;Em Obras;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Declive;Em Obras;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Declive;Retorno Regulamentado;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Declive;Rotatória;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Desvio Temporário;Túnel;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Em Obras;Declive;Desvio Temporário;Ponte,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Em Obras;Desvio Temporário;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Interseção de Vias;Túnel,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Ponte;Em Obras;Desvio Temporário,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Ponte;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Retorno Regulamentado;Aclive;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Retorno Regulamentado;Rotatória;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Retorno Regulamentado;Túnel;Rotatória;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Rotatória;Interseção de Vias;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Viaduto;Em Obras;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Viaduto;Interseção de Vias;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Reta;Viaduto;Interseção de Vias;Retorno Regulamentado;Rotatória;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Curva;Interseção de Vias;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Curva;Rotatória;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Curva;Túnel;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Desvio Temporário;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Aclive;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Aclive;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Aclive;Reta;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Aclive;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Curva;Rotatória;Viaduto;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Desvio Temporário;Em Obras;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Reta;Túnel;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Viaduto;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Interseção de Vias;Viaduto;Rotatória;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Reta;Interseção de Vias;Aclive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Reta;Interseção de Vias;Rotatória;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Reta;Rotatória;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Reta;Viaduto;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Rotatória;Reta;Interseção de Vias,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Retorno Regulamentado;Viaduto;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Desvio Temporário;Reta;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Interseção de Vias;Declive;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Ponte,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Reta;Aclive;Interseção de Vias;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Reta;Interseção de Vias;Aclive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Reta;Retorno Regulamentado;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Rotatória;Retorno Regulamentado;Declive;Viaduto;Curva,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Túnel;Aclive;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Túnel;Interseção de Vias;Viaduto,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Túnel;Interseção de Vias;Viaduto;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Curva;Declive;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Curva;Ponte,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Curva;Retorno Regulamentado;Declive,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Declive;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Interseção de Vias;Ponte;Reta;Em Obras,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Reta;Interseção de Vias;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Retorno Regulamentado;Interseção de Vias;Rotatória,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Retorno Regulamentado;Reta,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+tracado_via,Viaduto;Rotatória;Retorno Regulamentado,1,0.001378759,2025,Combinação original do campo multivalorado; não é erro automático.
+veiculos,21,1,0.001378759,2025,Valor discreto exato; decisão de representação permanece para a Fase 3B.
+veiculos,31,1,0.001378759,2025,Valor discreto exato; decisão de representação permanece para a Fase 3B.
+veiculos,82,1,0.001378759,2025,Valor discreto exato; decisão de representação permanece para a Fase 3B.
