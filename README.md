@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4I concluída — interpretação pós-avaliação do modelo final congelada.**
+**Fase 5A concluída — perguntas de pesquisa e evidências científicas consolidadas.**
 
 Nesta fase o projeto:
 
@@ -67,7 +67,9 @@ Nesta fase o projeto:
 - interpreta as predições finais com Tree SHAP nativo do XGBoost na escala de margem, com
   `uf`, `tipo_pista`, `hour`, `br` e `condicao_metereologica` nas cinco primeiras posições;
 - reconcilia as contribuições com as probabilities 4H com erro máximo `4,0788e-07`, sem
-  fit, novo threshold, seleção de features ou interpretação causal.
+  fit, novo threshold, seleção de features ou interpretação causal;
+- consolida uma pergunta principal e cinco perguntas específicas em um mapa rastreável de
+  métodos, evidências, respostas, cautelas e limitações, sem novo cálculo experimental.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -102,6 +104,8 @@ A avaliação temporal final está documentada em
 [`docs/PHASE_4H_FINAL_EVALUATION.md`](docs/PHASE_4H_FINAL_EVALUATION.md).
 A interpretação final está documentada em
 [`docs/PHASE_4I_FINAL_INTERPRETATION.md`](docs/PHASE_4I_FINAL_INTERPRETATION.md).
+A consolidação das perguntas de pesquisa está documentada em
+[`docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md`](docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md).
 
 ## Requisitos
 
@@ -412,6 +416,14 @@ maior contribuição absoluta média em 2025 foram `uf`, `tipo_pista`, `hour`, `
 explica o uso de informações pelo modelo e não representa causalidade, feature selection ou
 nova decisão experimental.
 
+## Consolidação das perguntas de pesquisa
+
+A Fase 5A organiza os resultados publicados das Fases 2–4 em cinco perguntas específicas:
+associações descritivas, capacidade preditiva, comparação entre famílias, consistência temporal
+e generalização em 2025. A síntese preserva AP como métrica principal, distingue ranking
+probabilístico de decisão por threshold e usa a interpretação 4I apenas como evidência
+complementar não causal. Nenhum modelo, predição, threshold ou teste estatístico foi executado.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -445,6 +457,8 @@ nova decisão experimental.
   métricas finais, threshold congelado, calibração e comparação temporal descritiva.
 - [`PHASE_4I_FINAL_INTERPRETATION.md`](docs/PHASE_4I_FINAL_INTERPRETATION.md): Tree SHAP
   nativo, contribuições globais e transformadas, análise dos erros e relação cautelosa com a EDA.
+- [`PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md`](docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md):
+  perguntas consolidadas, evidências rastreáveis, respostas curtas e limitações integradas.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -465,8 +479,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **consolidação científica das perguntas de pesquisa**, mapeando cada
-pergunta às evidências produzidas nas Fases 2–4 e preparando os resultados para o texto do TCC.
+A próxima etapa é a **seleção de tabelas e figuras e a estruturação da redação de Resultados e
+Discussão**, usando o mapa de evidências da Fase 5A.
 
 ## Princípio metodológico
 
