@@ -6,6 +6,7 @@ from tcc_prf_severity.analysis.occurrence_dynamics import run_occurrence_dynamic
 from tcc_prf_severity.analysis.road_environment import run_road_environment_analysis
 from tcc_prf_severity.analysis.severity_associations import run_severity_associations_analysis
 from tcc_prf_severity.analysis.temporal import run_temporal_analysis
+from tcc_prf_severity.analysis.temporal_drift import run_temporal_drift_analysis
 from tcc_prf_severity.config import (
     AUDIT_DIR,
     RAW_DIR,
@@ -299,3 +300,55 @@ def eda_severity_associations_main() -> None:
     print(f"Tabelas: {result.table_paths[0].parent}")
     print(f"Figuras: {result.figure_paths[0].parent}")
     print("Nenhum dataset de modelagem criado.")
+
+
+def audit_temporal_drift_main() -> None:
+    import polars as pl
+
+    result = run_temporal_drift_analysis()
+    analysis = result.analysis
+    categorical = analysis.categorical_drift_summary.row(0, named=True)
+    numeric = analysis.numeric_drift_summary.filter(
+        pl.col("audit_method") == "development_decile_binned_tvd"
+    ).row(0, named=True)
+    unseen = (
+        analysis.unseen_categories_2025.group_by("variable")
+        .agg(pl.col("share_2025_percent").sum().alias("share"))
+        .sort("share", descending=True)
+    )
+    type_row = analysis.categorical_drift_summary.filter(pl.col("variable") == "tipo_acidente").row(
+        0, named=True
+    )
+    cause_row = analysis.categorical_drift_summary.filter(
+        pl.col("variable") == "causa_acidente"
+    ).row(0, named=True)
+
+    print("Fase 3A concluída.")
+    print("Período de desenvolvimento auditado: 2021-2024")
+    print("Comparação temporal: 2025")
+    print(f"Features auditadas: {analysis.drift_inventory.height}")
+    print(f"Maior TVD categórica: {categorical['variable']} — {float(categorical['tvd']):.6f}")
+    print(
+        "Maior TVD numérica em bins: "
+        f"{numeric['variable']} — {float(numeric['distribution_tvd']):.6f}"
+    )
+    print(f"Variáveis com categorias unseen em 2025: {unseen.height}")
+    if not unseen.is_empty():
+        largest_unseen = unseen.row(0, named=True)
+        print(
+            "Maior share unseen em 2025: "
+            f"{largest_unseen['variable']} — {float(largest_unseen['share']):.6f}%"
+        )
+    print("Taxonomia:")
+    print(
+        f"  tipo_acidente: TVD={float(type_row['tvd']):.6f}; "
+        f"novas={type_row['new_categories_2025']}; ausentes={type_row['missing_categories_2025']}"
+    )
+    print(
+        f"  causa_acidente: TVD={float(cause_row['tvd']):.6f}; "
+        f"novas={cause_row['new_categories_2025']}; ausentes={cause_row['missing_categories_2025']}"
+    )
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")
+    print("Nenhum dataset de modelagem criado.")
+    print("Nenhuma feature foi selecionada definitivamente.")
