@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5A concluída — perguntas de pesquisa e evidências científicas consolidadas.**
+**Fase 5B concluída — plano final de tabelas e figuras congelado, ainda sem produção gráfica.**
 
 Nesta fase o projeto:
 
@@ -70,6 +70,8 @@ Nesta fase o projeto:
   fit, novo threshold, seleção de features ou interpretação causal;
 - consolida uma pergunta principal e cinco perguntas específicas em um mapa rastreável de
   métodos, evidências, respostas, cautelas e limitações, sem novo cálculo experimental.
+- inventaria 19 candidatos visuais e recomenda para o corpo e os métodos três tabelas e oito
+  figuras, separando itens de apêndice e de repositório sem recalcular resultados.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -106,6 +108,8 @@ A interpretação final está documentada em
 [`docs/PHASE_4I_FINAL_INTERPRETATION.md`](docs/PHASE_4I_FINAL_INTERPRETATION.md).
 A consolidação das perguntas de pesquisa está documentada em
 [`docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md`](docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md).
+O plano congelado de tabelas e figuras está documentado em
+[`docs/PHASE_5B_RESULTS_VISUAL_PLAN.md`](docs/PHASE_5B_RESULTS_VISUAL_PLAN.md).
 
 ## Requisitos
 
@@ -424,6 +428,20 @@ e generalização em 2025. A síntese preserva AP como métrica principal, disti
 probabilístico de decisão por threshold e usa a interpretação 4I apenas como evidência
 complementar não causal. Nenhum modelo, predição, threshold ou teste estatístico foi executado.
 
+## Plano de tabelas e figuras finais
+
+A Fase 5B rastreia 19 candidatos e congela uma recomendação para o corpo e os métodos de três
+tabelas e oito figuras, além de quatro itens de apêndice. A seleção privilegia cobertura das
+cinco perguntas de pesquisa, legibilidade, parcimônia, separação entre volume e proporção e
+interpretação não causal. Artefatos técnicos, tabelas completas e redundâncias permanecem no
+repositório ou no apêndice. Nenhuma figura foi gerada e nenhum resultado foi recalculado.
+
+Para uma eventual Fase 6, o plano reserva um dashboard 100% estático em Next.js, React e
+TypeScript, alimentado por JSON exportado pelo pipeline Python e com filtros executados no
+cliente. Métricas congeladas de modelagem serão apenas exibidas, sem recálculo; a hospedagem
+prevista é a Vercel. Essa arquitetura é somente uma decisão futura e não adiciona dependências
+nesta fase.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -459,6 +477,8 @@ complementar não causal. Nenhum modelo, predição, threshold ou teste estatís
   nativo, contribuições globais e transformadas, análise dos erros e relação cautelosa com a EDA.
 - [`PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md`](docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md):
   perguntas consolidadas, evidências rastreáveis, respostas curtas e limitações integradas.
+- [`PHASE_5B_RESULTS_VISUAL_PLAN.md`](docs/PHASE_5B_RESULTS_VISUAL_PLAN.md): inventário,
+  priorização, especificações e redundâncias do plano final de tabelas e figuras.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -479,8 +499,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **seleção de tabelas e figuras e a estruturação da redação de Resultados e
-Discussão**, usando o mapa de evidências da Fase 5A.
+A próxima etapa é a **Fase 5C — estruturação dos capítulos de Resultados e Discussão**, usando
+o plano congelado da Fase 5B antes da geração das figuras finais.
 
 ## Princípio metodológico
 
