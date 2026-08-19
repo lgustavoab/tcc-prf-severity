@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5D gerada — figuras e tabelas acadêmicas aguardam aprovação visual humana.**
+**Fase 5E.1 concluída — fundamentação bibliográfica verificável pronta para revisão.**
 
 Nesta fase o projeto:
 
@@ -76,6 +76,8 @@ Nesta fase o projeto:
   transições e fronteiras interpretativas, sem redigir o manuscrito final ou gerar figuras.
 - materializa nove figuras científicas em PNG/SVG e seis tabelas acadêmicas a partir de
   resultados congelados, sem executar análise, modelo, predição ou SHAP.
+- verifica 19 referências candidatas e cobre os oito temas bibliográficos L1–L8 com inventário,
+  mapas temático e de afirmações e limites de uso para a futura redação.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -118,6 +120,8 @@ A estrutura acadêmica de Resultados e Discussão está documentada em
 [`docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md`](docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md).
 Os critérios e outputs acadêmicos da Fase 5D estão documentados em
 [`docs/PHASE_5D_ACADEMIC_VISUALS.md`](docs/PHASE_5D_ACADEMIC_VISUALS.md).
+A fundamentação bibliográfica verificável está documentada em
+[`docs/PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md`](docs/PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md).
 
 ## Requisitos
 
@@ -464,11 +468,20 @@ foi produzida.
 A Fase 5D gerou nove figuras científicas, cada uma em PNG a 300 DPI e SVG, e seis tabelas CSV
 em `reports/figures/tcc/` e `reports/tables/tcc/`. A geração lê somente tabelas científicas
 versionadas; não carrega Parquet, pipeline ou predictions individuais. O contact sheet e o QA
-foram produzidos, mas a aprovação visual humana permanece pendente.
+foram produzidos, e a aprovação visual humana foi concluída antes da Fase 5E.1.
 
 ```powershell
 uv run python scripts/generate_phase_5d_academic_visuals.py
 ```
+
+## Fundamentação bibliográfica
+
+A Fase 5E.1 verificou 19 referências candidatas — 19 `VERIFIED` e nenhuma `UNRESOLVED` — e
+cobriu os oito temas L1–L8 definidos na Fase 5C. O inventário e os mapas de tema e afirmação
+registram fontes de verificação, uso planejado e fronteiras interpretativas, separando
+literatura aplicada de referências metodológicas. Nenhuma citação foi inserida no roteiro 5C e
+nenhuma análise foi reexecutada. O próximo passo é a Fase 5E.2, com a primeira redação de
+Resultados e Discussão usando somente fontes verificadas.
 
 ## Documentação científica
 
@@ -510,7 +523,9 @@ uv run python scripts/generate_phase_5d_academic_visuals.py
 - [`PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md`](docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md):
   roteiro de subseções, evidências, números, transições e limites interpretativos.
 - [`PHASE_5D_ACADEMIC_VISUALS.md`](docs/PHASE_5D_ACADEMIC_VISUALS.md): geração reproduzível,
-  padrão visual, outputs, prévias tabulares, QA e revisão humana pendente.
+  padrão visual, outputs, prévias tabulares, QA e revisão humana posteriormente concluída.
+- [`PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md`](docs/PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md): protocolo
+  de verificação, inventário, mapas bibliográficos e limites de uso para L1–L8.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
