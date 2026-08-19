@@ -536,6 +536,34 @@ Parquet, EDA, modelos, SHAP e threshold não foram acessados ou recalculados.
 **Status:** geração técnica concluída; 38 checks PASS e 0 FAIL. Aprovação visual humana ainda
 pendente. Após aprovação, próximo passo: Fase 5E — primeira redação de Resultados e Discussão.
 
+### D023 — Fundamentação bibliográfica verificável antes da redação
+
+**Data:** 19/08/2026.
+
+**Decisão:** substituir os oito placeholders L1–L8 da Fase 5C por um inventário enxuto de 19
+referências candidatas verificadas, acompanhado de mapas tema → referência e afirmação →
+referência. Somente entradas `VERIFIED` poderão sustentar a futura redação; referências sem DOI
+mantêm o campo vazio em vez de receber identificador inferido.
+
+**Justificativa:** a Discussão exige literatura aplicada à gravidade rodoviária e fundamentos
+metodológicos para exposição, validação temporal, ensembles, AP/precision-recall, calibração,
+threshold e SHAP. A rastreabilidade prévia reduz o risco de atribuição bibliográfica incorreta e
+preserva a separação entre resultados internos e contextualização externa.
+
+**Consequências:** L1–L8 ficaram cobertos por 19 referências `VERIFIED` e nenhuma
+`UNRESOLVED`. O núcleo aplicado inclui estudos internacionais de ML e um artigo brasileiro com
+dados de rodovias federais; o núcleo metodológico inclui fontes originais ou clássicas. Os
+artigos de Random Forest, XGBoost e SHAP são referências dos métodos, não evidência de
+superioridade. Exposição, ausência de causalidade, RQ4 sem tendência demonstrada, calibração
+descritiva e threshold não operacional permanecem limites explícitos. Nenhuma citação foi
+inserida no roteiro 5C e nenhum resultado foi recalculado.
+
+**Origem:** [PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md](PHASE_5E1_BIBLIOGRAPHIC_GROUNDING.md) e
+tabelas `phase_5e1_*` em `reports/tables/`.
+
+**Status:** confirmada; oito temas cobertos e 28 checks PASS. Próximo passo: Fase 5E.2 —
+redigir Resultados e Discussão usando somente referências verificadas e resultados congelados.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
