@@ -360,6 +360,32 @@ de 2025. O próximo passo é a Fase 4G.
 
 **Status:** confirmada; 17 checks PASS e 0 FAIL.
 
+### D016 — Materialização final antes da abertura de 2025
+
+**Data:** 19/08/2026.
+
+**Decisão:** refitar uma única vez o pipeline oficial 3E+4C em todo o desenvolvimento
+2021–2024 e congelar a materialização resultante para a Fase 4H. O fit usou 270.095
+ocorrências, 76.364 graves, 22 predictors e produziu 226 features transformadas; o XGBoost
+completou 300/300 rounds.
+
+**Justificativa:** modelo, hiperparâmetros, preprocessing, features e threshold já estavam
+selecionados. O refit integral incorpora todo o desenvolvimento sem reabrir decisões e impede
+novo treinamento após a futura abertura do holdout. O threshold `0.23723246157169342` foi
+somente lido e registrado.
+
+**Consequências:** o pipeline está em
+`artifacts/models/phase_4g_xgboost_final_pipeline.pkl`, com 1.204.426 bytes e SHA-256
+`c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`. O binário é local e
+ignorado pelo Git. A 4H deverá verificar esse SHA antes de desserializar e usar o mesmo objeto
+sem fit adicional. Não houve tuning, early stopping, métrica in-sample, transformação,
+predição ou avaliação de 2025.
+
+**Origem:** [PHASE_4G_FINAL_REFIT.md](PHASE_4G_FINAL_REFIT.md) e tabelas `phase_4g_*` em
+`reports/tables/`.
+
+**Status:** confirmada; 16 checks PASS e 0 FAIL.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -577,6 +603,33 @@ participou da decisão.
 `phase_4f_*` em `reports/tables/`.
 
 **Status:** confirmado; threshold congelado para a próxima etapa.
+
+### R011 — Refit final do pipeline selecionado
+
+**Data:** 19/08/2026.
+
+**População e período:** desenvolvimento completo 2021–2024, com 270.095 IDs únicos, 76.364
+graves e 193.731 não graves; prevalência positiva de 0,2827301505026009. O conjunto entregue
+ao fit não continha linhas de 2025.
+
+**Método:** um único `fit` do pipeline formado pelo preprocessing 3E e pela factory XGBoost
+4C, usando os 22 predictors físicos congelados. O preprocessor derivou 226 features e o
+classifier completou 300/300 rounds, sem tuning, early stopping ou mudança de configuração.
+
+**Resultado estrutural:** pipeline persistido com 1.204.426 bytes e SHA-256
+`c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`, sob Python 3.14.6,
+scikit-learn 1.9.0, XGBoost 3.3.0 e Polars 1.43.2. O threshold 4F permaneceu exatamente
+`0.23723246157169342`.
+
+**Limitações:** a Fase 4G não avaliou capacidade preditiva e não calculou métricas no treino.
+O pickle deve ser carregado apenas se produzido pelo projeto, considerado confiável e validado
+pelo SHA registrado. O hash identifica esta materialização, não equivalência universal entre
+resserializações.
+
+**Origem:** [PHASE_4G_FINAL_REFIT.md](PHASE_4G_FINAL_REFIT.md) e tabelas `phase_4g_*` em
+`reports/tables/`.
+
+**Status:** confirmado; pipeline congelado para a avaliação final 4H, sem uso de 2025.
 
 ## Achados exploratórios
 

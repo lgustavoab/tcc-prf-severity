@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4F concluída — threshold OOF temporal do XGBoost congelado.**
+**Fase 4G concluída — pipeline final refitado em 2021–2024 e congelado.**
 
 Nesta fase o projeto:
 
@@ -56,7 +56,11 @@ Nesta fase o projeto:
   mantendo refit e avaliação de 2025 para fases posteriores;
 - seleciona o threshold `0.23723246157169342` somente no OOF 2022–2024, elevando o F1 de
   `0,086164` no cutoff de referência 0,5 para `0,465309`, sem retreinar o XGBoost;
-- preserva 2025, não faz refit final e não persiste modelos fitados.
+- refita uma única vez o pipeline 3E+4C nas 270.095 observações de 2021–2024, com 76.364
+  graves, 22 predictors, 226 features transformadas e 300/300 rounds;
+- persiste o pipeline congelado com SHA-256
+  `c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`;
+- preserva 2025 sem transformação, predição, métrica ou avaliação final.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -85,6 +89,8 @@ A seleção formal está documentada em
 [`docs/PHASE_4E_MODEL_SELECTION.md`](docs/PHASE_4E_MODEL_SELECTION.md).
 A seleção do cutoff OOF está documentada em
 [`docs/PHASE_4F_THRESHOLD_SELECTION.md`](docs/PHASE_4F_THRESHOLD_SELECTION.md).
+O refit final está documentado em
+[`docs/PHASE_4G_FINAL_REFIT.md`](docs/PHASE_4G_FINAL_REFIT.md).
 
 ## Requisitos
 
@@ -352,6 +358,20 @@ métrica que selecionou o modelo; F1 seleciona apenas o cutoff binário. O thres
 OOF. No cutoff de referência 0,5, os valores são `0,571368`, `0,046595` e `0,086164`. Nenhum
 modelo é treinado, nenhum threshold anual é criado e 2025 não é acessado.
 
+## Refit final 2021–2024
+
+```powershell
+uv run prf-refit-final-model
+```
+
+O comando valida as seleções 4E/4F e os contratos 3C–4C, filtra somente 2021–2024 e executa
+um único fit da factory oficial `build_xgboost_pipeline`. Foram usadas 270.095 observações,
+76.364 graves e 22 predictors; o preprocessing produziu 226 features e o XGBoost completou
+300/300 rounds. O threshold 4F foi apenas registrado, sem recálculo. O pipeline local ignorado
+pelo Git possui SHA-256
+`c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`. Nenhuma métrica de
+treino ou resultado de 2025 foi produzido.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -379,6 +399,8 @@ modelo é treinado, nenhum threshold anual é criado e 2025 não é acessado.
   modelo selecionado, checklist e congelamento pós-seleção.
 - [`PHASE_4F_THRESHOLD_SELECTION.md`](docs/PHASE_4F_THRESHOLD_SELECTION.md): OOF auditado,
   busca exata, cutoff congelado e diagnósticos pooled e anuais.
+- [`PHASE_4G_FINAL_REFIT.md`](docs/PHASE_4G_FINAL_REFIT.md): refit único, auditoria estrutural,
+  persistência, SHA e proteção do holdout final.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -399,8 +421,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4G — refit 2021–2024** do XGBoost selecionado, mantendo o
-threshold 4F congelado. 2025 permanecerá intocado até a avaliação formal do pipeline final.
+A próxima etapa é a **Fase 4H — avaliação temporal final em 2025**, carregando o pipeline 4G
+após validar seu SHA e sem novo treinamento ou ajuste de threshold.
 
 ## Princípio metodológico
 
