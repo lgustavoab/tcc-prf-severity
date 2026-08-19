@@ -118,9 +118,10 @@ adotada usa diretamente as contagens dos estados físicos relevantes ao problema
 
 - `RAW`: arquivos oficiais de origem, imutáveis;
 - `INTERIM`: dados consolidados, tipados e validados, preservando o conteúdo analítico;
-- `PROCESSED`: ainda não criado e reservado para transformações analíticas futuras.
+- `PROCESSED`: dataset analítico principal materializado a partir do interim por derivações
+  determinísticas autorizadas e seleção explícita de colunas.
 
-**Status:** confirmada para `RAW` e `INTERIM`; planejada para `PROCESSED`.
+**Status:** confirmada para `RAW`, `INTERIM` e o artefato principal `PROCESSED` da Fase 3C.
 
 **Origem:** [INTERIM_DATASET.md](INTERIM_DATASET.md).
 
@@ -211,6 +212,29 @@ seleção por performance, thresholds, hiperparâmetros ou transformações.
 `reports/tables/phase_3b_feature_policy.csv`.
 
 **Status:** confirmada; nenhuma feature foi materializada e nenhum modelo foi iniciado.
+
+### D010 — Materialização determinística do dataset analítico principal
+
+**Data:** 19/08/2026.
+
+**Decisão:** materializar o conjunto principal congelado na 3B em um Parquet com `id`,
+`source_year` e `data_inversa` como metadata, `target_grave` como target e 22 predictors
+físicos. As 11 representações conceituais incluem 12 indicadores binários para os componentes
+de `tracado_via`.
+
+**Justificativa:** separar metadata, target e matriz futura de predictors torna as exclusões
+de leakage auditáveis e preserva rastreabilidade para o desenho temporal. Mês, hora e
+componentes de traçado são derivações determinísticas; nenhuma estatística é aprendida.
+
+**Consequências:** o cenário secundário não foi materializado. O artefato mantém as 342.624
+ocorrências, 96.857 graves e os anos 2021–2025, sem imputação, encoding, escala ou split. A
+Fase 3D poderá criar o desenho temporal sem redefinir a população ou a política de features.
+
+**Origem:** [PHASE_3C_ANALYTICAL_DATASET.md](PHASE_3C_ANALYTICAL_DATASET.md),
+`reports/tables/phase_3c_analytical_schema.csv` e
+`artifacts/processed/phase_3c_primary_analytical_manifest.json`.
+
+**Status:** confirmada; dataset principal materializado e machine learning não iniciado.
 
 ## Resultados consolidados
 

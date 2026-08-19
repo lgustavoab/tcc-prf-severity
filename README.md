@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 3B — Momento Preditivo e Política Final de Features concluída.**
+**Fase 3C — Dataset Analítico Principal concluída.**
 
 Nesta fase o projeto:
 
@@ -35,7 +35,9 @@ Nesta fase o projeto:
   multilabel de traçado;
 - congela o momento preditivo, 11 features/representações principais, quatro variáveis
   secundárias e as políticas anti-leakage, de redundância e categorias desconhecidas;
-- ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
+- materializa o dataset analítico principal com três metadados, o target preservado e 22
+  predictors físicos, incluindo 12 indicadores multilabel de `tracado_via`;
+- ainda não remove ou imputa registros, cria split, ajusta preprocessing ou inicia machine
   learning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
@@ -47,6 +49,8 @@ Os métodos e resultados da auditoria temporal estão em
 [`docs/PHASE_3A_TEMPORAL_DRIFT.md`](docs/PHASE_3A_TEMPORAL_DRIFT.md).
 A política final de features está em
 [`docs/PHASE_3B_FEATURE_POLICY.md`](docs/PHASE_3B_FEATURE_POLICY.md).
+O contrato materializado do dataset principal está em
+[`docs/PHASE_3C_ANALYTICAL_DATASET.md`](docs/PHASE_3C_ANALYTICAL_DATASET.md).
 
 ## Requisitos
 
@@ -200,6 +204,28 @@ O comando verifica o interim, lê o inventário autoritativo da Fase 2F e compar
 variáveis sinalizadas entre 2021–2024 e 2025. Gera sete tabelas e até três figuras sem criar
 split, dataset processed, encoding, seleção definitiva de features ou modelo.
 
+## Dataset analítico principal
+
+```powershell
+uv run prf-build-analytical
+uv run prf-verify-analytical
+```
+
+`prf-build-analytical` verifica o interim e o contrato 3B, aplica apenas derivações
+determinísticas e publica com rollback o Parquet, o esquema e o manifesto da Fase 3C.
+`prf-verify-analytical` confere o artefato existente e sua proveniência sem reconstruí-lo.
+
+Saídas locais e reproduzíveis:
+
+```text
+data/processed/prf_primary_analytical_2021_2025.parquet
+reports/tables/phase_3c_analytical_schema.csv
+artifacts/processed/phase_3c_primary_analytical_manifest.json
+```
+
+O Parquet contém 342.624 ocorrências e 26 colunas: três metadados, um target e 22 predictors
+físicos. Nenhum encoder, scaler, imputação, split ou modelo é criado.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -209,6 +235,8 @@ split, dataset processed, encoding, seleção definitiva de features ou modelo.
   desenvolvimento e 2025.
 - [`PHASE_3B_FEATURE_POLICY.md`](docs/PHASE_3B_FEATURE_POLICY.md): momento preditivo e contrato
   conceitual dos conjuntos principal e secundário.
+- [`PHASE_3C_ANALYTICAL_DATASET.md`](docs/PHASE_3C_ANALYTICAL_DATASET.md): materialização
+  determinística do conjunto principal, esquema, manifesto e verificações.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -228,9 +256,9 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A Fase 3C deverá materializar o dataset analítico e o split temporal conforme a política 3B,
-ajustando transformações somente em 2021–2024 e preservando 2025 para avaliação final. Nenhum
-dataset processed ou split foi criado até aqui.
+A Fase 3D deverá materializar o desenho temporal, mantendo 2021–2024 para desenvolvimento e
+2025 para avaliação final. O dataset analítico principal já existe, mas nenhum split físico,
+preprocessing aprendido ou modelo foi criado.
 
 ## Princípio metodológico
 

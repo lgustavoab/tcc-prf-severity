@@ -11,8 +11,15 @@ FIGURES_DIR = REPORTS_DIR / "figures"
 TABLES_DIR = REPORTS_DIR / "tables"
 AUDIT_DIR = ARTIFACTS_DIR / "audit"
 INTERIM_ARTIFACTS_DIR = ARTIFACTS_DIR / "interim"
+PROCESSED_ARTIFACTS_DIR = ARTIFACTS_DIR / "processed"
 INTERIM_PARQUET_PATH = INTERIM_DIR / "prf_accidents_2021_2025.parquet"
 INTERIM_MANIFEST_PATH = INTERIM_ARTIFACTS_DIR / "interim_manifest.json"
+PRIMARY_ANALYTICAL_PARQUET_PATH = PROCESSED_DIR / "prf_primary_analytical_2021_2025.parquet"
+PRIMARY_ANALYTICAL_MANIFEST_PATH = (
+    PROCESSED_ARTIFACTS_DIR / "phase_3c_primary_analytical_manifest.json"
+)
+PRIMARY_ANALYTICAL_SCHEMA_PATH = TABLES_DIR / "phase_3c_analytical_schema.csv"
+PRIMARY_FEATURE_CONTRACT_PATH = TABLES_DIR / "phase_3b_primary_feature_set.csv"
 
 EXPECTED_YEARS = tuple(range(2021, 2026))
 RAW_FILE_TEMPLATE = "datatran{year}.csv"

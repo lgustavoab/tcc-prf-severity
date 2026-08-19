@@ -13,6 +13,7 @@ dependencies = [
 [project.scripts]
 prf-audit = "tcc_prf_severity.cli:audit_main"
 prf-audit-temporal-drift = "tcc_prf_severity.cli:audit_temporal_drift_main"
+prf-build-analytical = "tcc_prf_severity.cli:build_analytical_main"
 prf-build-interim = "tcc_prf_severity.cli:build_interim_main"
 prf-eda-general = "tcc_prf_severity.cli:eda_general_main"
 prf-eda-geographic = "tcc_prf_severity.cli:eda_geographic_main"
@@ -21,6 +22,7 @@ prf-eda-road-environment = "tcc_prf_severity.cli:eda_road_environment_main"
 prf-eda-severity-associations = "tcc_prf_severity.cli:eda_severity_associations_main"
 prf-eda-temporal = "tcc_prf_severity.cli:eda_temporal_main"
 prf-verify-interim = "tcc_prf_severity.cli:verify_interim_main"
+prf-verify-analytical = "tcc_prf_severity.cli:verify_analytical_main"
 
 [dependency-groups]
 dev = [

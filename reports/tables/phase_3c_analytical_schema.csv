@@ -1,0 +1,27 @@
+column,role,conceptual_feature,source,derivation,dtype,nullable,allowed_values_note,included_in_model_matrix
+id,metadata,not_applicable,interim,preservada sem transformação,String,false,ID único da ocorrência.,false
+source_year,metadata,not_applicable,interim,preservada sem transformação,Int64,false,"2021, 2022, 2023, 2024 ou 2025.",false
+data_inversa,metadata,not_applicable,interim,preservada sem transformação,Date,false,"Data da ocorrência; metadata, não predictor.",false
+target_grave,target,target_grave,interim,preservado; definição validada contra mortos e feridos_graves,Boolean,false,Booleano definido por mortos > 0 ou feridos_graves > 0.,false
+month_name,predictor,month_name,data_inversa,derivado deterministicamente de data_inversa,String,false,Nome do mês em português derivado de data_inversa.,true
+dia_semana,predictor,dia_semana,interim,preservada sem transformação,String,false,Valor do contrato intermediário preservado sem imputação.,true
+hour,predictor,hour,horario,derivado deterministicamente de horario,Int64,false,Inteiro de 0 a 23 derivado de horario.,true
+uf,predictor,uf,interim,preservada sem transformação,String,false,Valor do contrato intermediário preservado sem imputação.,true
+br,predictor,br,interim,preservada sem transformação,Int64,false,"Valor observado preservado, inclusive br = 0.",true
+km,predictor,km,interim,preservada sem transformação,Float64,false,"Valor numérico observado preservado, inclusive km = 0.",true
+sentido_via,predictor,sentido_via,interim,preservada sem transformação,String,false,"Categoria observada preservada, inclusive Não Informado.",true
+condicao_metereologica,predictor,condicao_metereologica,interim,preservada sem transformação,String,false,"Categoria observada preservada, inclusive Ignorado.",true
+tipo_pista,predictor,tipo_pista,interim,preservada sem transformação,String,false,Valor do contrato intermediário preservado sem imputação.,true
+uso_solo,predictor,uso_solo,interim,preservada sem transformação,String,false,Valor do contrato intermediário preservado sem imputação.,true
+tracado_aclive,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Aclive,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_curva,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Curva,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_declive,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Declive,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_desvio_temporario,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Desvio Temporário,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_em_obras,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Em Obras,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_intersecao_de_vias,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Interseção de Vias,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_ponte,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Ponte,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_reta,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Reta,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_retorno_regulamentado,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Retorno Regulamentado,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_rotatoria,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Rotatória,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_tunel,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Túnel,UInt8,false,Indicador binário: 0 ou 1.,true
+tracado_viaduto,predictor,tracado_via_components,tracado_via,indicador determinístico da presença do componente Viaduto,UInt8,false,Indicador binário: 0 ou 1.,true
