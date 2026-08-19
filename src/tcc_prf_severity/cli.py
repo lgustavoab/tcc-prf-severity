@@ -11,6 +11,10 @@ from tcc_prf_severity.config import (
     AUDIT_DIR,
     RAW_DIR,
 )
+from tcc_prf_severity.data.analytical import (
+    build_primary_analytical_dataset,
+    verify_primary_analytical_dataset,
+)
 from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 
@@ -45,6 +49,36 @@ def verify_interim_main() -> None:
     print(f"Taxa de graves: {result.grave_rate:.2%}")
     print(f"SHA-256: {result.sha256}")
     print(f"RAW sources: {result.raw_sources_verified}/5 OK")
+    print("Manifesto: OK")
+
+
+def build_analytical_main() -> None:
+    result = build_primary_analytical_dataset()
+    print("Dataset analítico principal criado.")
+    print(f"Registros: {result.rows:,}".replace(",", "."))
+    print(f"Colunas: {result.columns}")
+    print(f"Predictors físicos: {result.predictor_columns}")
+    print(f"Graves: {result.graves:,}".replace(",", "."))
+    print(f"Taxa de graves: {result.grave_rate:.2%}")
+    print(f"Valores nulos: {sum(result.missingness.values()):,}".replace(",", "."))
+    print(f"Parquet: {result.parquet_path}")
+    print(f"Esquema: {result.schema_path}")
+    print(f"Manifesto: {result.manifest_path}")
+
+
+def verify_analytical_main() -> None:
+    result = verify_primary_analytical_dataset()
+    print("Dataset analítico principal verificado.")
+    print(f"Registros: {result.rows:,}".replace(",", "."))
+    print(f"Colunas: {result.columns}")
+    print(f"Predictors físicos: {result.predictor_columns}")
+    print(f"Graves: {result.graves:,}".replace(",", "."))
+    print(f"Taxa de graves: {result.grave_rate:.2%}")
+    print(f"IDs únicos: {result.unique_ids:,}".replace(",", "."))
+    print(f"Valores nulos: {sum(result.missingness.values()):,}".replace(",", "."))
+    print(f"SHA-256: {result.sha256}")
+    print("Contrato 3B: OK")
+    print("Esquema: OK")
     print("Manifesto: OK")
 
 
