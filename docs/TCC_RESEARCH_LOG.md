@@ -293,6 +293,24 @@ fitado foi persistido e nenhum modelo ou métrica preditiva foi produzido.
 
 **Status:** confirmada; receita validada antes da primeira modelagem.
 
+### D013 — Fechamento pré-modelagem da Fase 3
+
+**Data:** 19/08/2026.
+
+**Decisão:** encerrar a Fase 3 com o contrato pré-modelagem congelado e autorizar o início da
+modelagem principal na Fase 4. A autorização depende do checklist 3F integralmente aprovado e
+preserva população, features, folds, preprocessing, AP, threshold OOF, refit e fronteira de
+2025 definidos nas Fases 3A–3E.
+
+**Consequências:** a primeira modelagem deverá usar somente o conjunto principal e os folds de
+2021–2024. Nenhuma performance de 2025 poderá orientar decisões; o cenário secondary only
+continuará separado da conclusão principal.
+
+**Origem:** [PHASE_3_PREMODELING_ACCEPTANCE.md](PHASE_3_PREMODELING_ACCEPTANCE.md) e
+`reports/tables/phase_3f_premodeling_checklist.csv`.
+
+**Status:** confirmada; Fase 3 encerrada e Fase 4 autorizada.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

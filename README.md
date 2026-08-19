@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 3E — Pipeline de Preprocessing concluída.**
+**Fase 3F concluída — Fase 3 encerrada e aprovada para modelagem principal.**
 
 Nesta fase o projeto:
 
@@ -296,10 +296,10 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa poderá iniciar a primeira modelagem somente dentro do desenho congelado,
-recriando a receita train-only validada na Fase 3E dentro de cada pipeline. A seleção usará
-somente os folds de 2021–2024, e 2025 permanecerá intocado até a avaliação formal do pipeline
-final. Nenhum modelo foi criado até aqui.
+A próxima etapa é a **Fase 4 — Modelagem**, somente dentro do desenho congelado e recriando a
+receita train-only validada na Fase 3E dentro de cada pipeline. A seleção usará apenas os folds
+de 2021–2024; 2025 permanecerá intocado até a avaliação formal do pipeline final. Nenhum
+modelo foi criado até aqui.
 
 ## Princípio metodológico
 
