@@ -58,7 +58,8 @@ identificação de ocorrências graves.
 1. Consolidar e validar os registros da PRF de 2021 a 2025. **Concluído na Fase 1.**
 2. Caracterizar temporal e geograficamente as ocorrências. **Caracterizações temporal e
    geográfica concluídas nas Fases 2B e 2C.**
-3. Investigar fatores associados à gravidade. **Ainda não executado.**
+3. Investigar fatores associados à gravidade. **Síntese descritiva concluída na Fase 2F;
+   avaliação multivariada ainda não executada.**
 4. Definir operacionalmente uma variável-alvo de gravidade. **Concluído na Fase 1.**
 5. Treinar e comparar modelos de classificação. **Ainda não executado.**
 6. Avaliar os modelos com métricas adequadas ao problema. **Ainda não executado.**
@@ -411,6 +412,40 @@ ano, cinco com primeiro registro após 2021 e sete com último registro antes de
 explicitamente mudanças de rótulo; nenhuma harmonização foi feita nesta fase.
 
 **Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA026](EDA_FINDINGS.md#eda026--mudanças-observadas-nas-taxonomias-de-tipo-e-causa).
+
+### EDA029 — Síntese das associações descritivas centrais
+
+A Fase 2F consolidou oito comparações centrais. Os maiores contrastes foram Pedestre andava
+na pista versus Reação tardia ou ineficiente do condutor (51,4847 pontos percentuais),
+Atropelamento de Pedestre versus Colisão traseira (44,3469), Colisão frontal versus Colisão
+traseira (39,3855) e Transitar na contramão versus Reação tardia ou ineficiente do condutor
+(36,3042). Também foram centrais os contrastes de macrorregião, tipo de pista, fase do dia e
+fim de semana. Todas as categorias focais foram observadas nos cinco anos. A comparação de
+nove pessoas versus uma permaneceu como achado secundário, com os números preservados e a
+ressalva de associação parcialmente mecânica com a definição do target.
+
+**Relevância:** a síntese prioriza resultados para a escrita sem criar score, inferência
+causal ou medida de risco absoluto. As diferenças permanecem condicionadas às ocorrências
+registradas e sem denominador de exposição.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA029](EDA_FINDINGS.md#eda029--síntese-das-associações-descritivas-centrais-com-gravidade).
+
+### EDA030 — Separação entre evidência descritiva e elegibilidade preditiva
+
+A matriz conceitual classificou 13 variáveis como candidatas, cinco como candidatas com
+cautela, quatro como dependentes de decisão metodológica, três como exclusões administrativas
+e sete como exclusões por leakage. Tipo, causa, pessoas e veículos não foram automaticamente
+promovidos; as mudanças taxonômicas do EDA026 e a relação mecânica de `pessoas` com o target
+permanecem alertas explícitos. As 22 variáveis não excluídas foram inventariadas para futura
+verificação de drift. Tanto `tracado_via` quanto seus componentes derivados exigem cautela; a
+matriz de elegibilidade é a fonte autoritativa dos status, enquanto derivações puramente
+analíticas e categorias de qualidade não recebem elegibilidade independente.
+
+**Relevância:** relevância associativa e admissibilidade no momento preditivo são decisões
+distintas. A matriz planeja uma etapa futura; nenhum dataset processed, feature, split ou
+modelo foi criado.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA030](EDA_FINDINGS.md#eda030--achado-descritivo-e-elegibilidade-preditiva-são-decisões-separadas).
 
 ## Hipóteses
 

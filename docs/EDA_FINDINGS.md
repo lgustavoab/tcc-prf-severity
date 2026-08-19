@@ -1442,7 +1442,141 @@ verificado de 2021–2025.
 
 ## 2F — Associação com gravidade
 
-Nenhum achado registrado.
+### EDA029 — Síntese das associações descritivas centrais com gravidade
+
+**Data:** 18/08/2026.
+
+**Fase:** 2F — Associação com gravidade.
+
+**Pergunta:** quais características já analisadas apresentam associações descritivas
+relevantes e recorrentes com `target_grave` entre as ocorrências registradas?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025. Os
+cálculos foram reproduzidos diretamente do dataset interim verificado, sem usar os CSVs das
+fases anteriores como fonte primária.
+
+**Categorias ausentes/ignoradas:** `condicao_metereologica = Ignorado`, `sentido_via = Não
+Informado` e `br = 0` foram preservadas como métricas de qualidade e não entraram como
+evidência substantiva. Município e BR não participaram da comparação global principal por
+alta cardinalidade e dependência contextual.
+
+**Resultado absoluto:** a classificação editorial consolidou oito comparações centrais. Os
+maiores contrastes foram: Pedestre andava na pista (3.262 registros) versus Reação tardia ou
+ineficiente do condutor (46.901), 51,4847 pontos percentuais; Atropelamento de Pedestre
+(15.313) versus Colisão traseira (65.634), 44,3469 pontos; Colisão frontal (23.045) versus
+Colisão traseira, 39,3855 pontos; e Transitar na contramão (11.145) versus Reação tardia ou
+ineficiente do condutor, 36,3042 pontos.
+
+**Proporção/taxa:** entre os demais achados centrais, Nordeste versus Sul correspondeu a
+35,9171% versus 24,8740% (11,0431 pontos); pista Simples versus Dupla, 33,7115% versus
+23,3513% (10,3602 pontos); Plena Noite versus Pleno dia, 32,4726% versus 25,3047% (7,1678
+pontos); e fim de semana versus dias úteis, 30,1925% versus 27,3303% (2,8621 pontos).
+
+**Comparação:** nove pessoas versus uma permaneceu integralmente documentada como achado
+secundário: 49,0286% versus 18,7820%, diferença de 30,2466 pontos e amplitude anual de 8,8549
+pontos para nove pessoas. Os demais secundários incluíram Simples versus Múltipla (11,8435
+pontos), Ponte versus Rotatória (11,7443), 19h versus 8h (10,6080), Nevoeiro/Neblina versus
+Garoa/Chuvisco (9,2367), `uso_solo = Não` versus `Sim` (3,5738) e Maio versus Fevereiro
+(1,7401). A diferença MA versus SP (27,1723 pontos) foi classificada como contextual, assim
+como a amplitude anual global do target (0,4335 ponto), sem ordenar dimensões por um score
+matemático.
+
+**Estabilidade entre anos:** todas as comparações centrais focais foram observadas nos cinco
+anos. As amplitudes anuais das categorias focais foram 0,8746 ponto para pista Simples,
+0,9888 para fim de semana, 1,2550 para Colisão frontal, 1,2865 para Plena Noite, 1,6144 para
+Atropelamento de Pedestre, 1,9628 para Transitar na contramão, 2,4035 para Nordeste, 3,5371
+para Pedestre andava na pista. Nenhum limiar arbitrário foi usado para declarar estabilidade.
+
+**Interpretação:** os registros sustentam contrastes descritivos relevantes e recorrentes em
+dimensões temporais, geográficas, de via e da dinâmica da ocorrência. A priorização
+`central`, `secundário`, `contextual` ou `qualidade/metodológico` é editorial e serve à futura
+escrita científica.
+
+**O que NÃO podemos concluir:** as diferenças não demonstram causalidade, não medem exposição
+ao tráfego, não estimam o risco de sofrer acidente e não aprovam automaticamente variáveis
+para modelagem. Em especial, a associação de `pessoas` é parcialmente mecânica em razão da
+definição do target no nível da ocorrência.
+
+**Limitações:** tipo, causa, pessoas e veículos podem incorporar informação conhecida durante
+ou após a ocorrência. As comparações são não ajustadas e podem refletir composição entre
+variáveis. Categorias especiais e pequenas amostras exigem leitura separada.
+
+**Figura:** `../reports/figures/phase_2f_selected_severe_rate_comparisons.png`.
+
+**Tabela:** `../reports/tables/phase_2f_association_evidence_matrix.csv`,
+`../reports/tables/phase_2f_core_findings.csv` e
+`../reports/tables/phase_2f_temporal_consistency_summary.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/severity_associations.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** síntese da EDA associativa e seleção editorial dos contrastes que
+merecem discussão, sempre com linguagem não causal.
+
+**Status:** confirmado.
+
+### EDA030 — Achado descritivo e elegibilidade preditiva são decisões separadas
+
+**Data:** 18/08/2026.
+
+**Fase:** 2F — Associação com gravidade.
+
+**Pergunta:** quais variáveis podem seguir para avaliação futura e quais exigem cautela,
+decisão metodológica ou exclusão antes da modelagem?
+
+**População analisada:** inventário conceitual de 32 variáveis originais ou derivadas em
+memória. Nenhum dataset de modelagem, feature, `X/y` ou split foi criado.
+
+**Categorias ausentes/ignoradas:** não aplicável; a matriz avalia variáveis, não filtra
+registros. Categorias especiais continuam preservadas como qualidade de dados.
+
+**Resultado absoluto:** 13 variáveis foram classificadas como `candidata`: `data_inversa`,
+`month_name`, `dia_semana`, `horario`, `hour`, `fase_dia`, `uf`, `br`, `km`, `sentido_via`,
+`condicao_metereologica`, `tipo_pista` e `uso_solo`. Município, latitude, longitude,
+`tracado_via` e seus componentes derivados foram as cinco `candidata_com_cautela`. O campo
+original é multivalorado, tem alta cardinalidade aparente pelas combinações e não deve ser
+tratado ingenuamente como 1.214 categorias independentes.
+
+**Proporção/taxa:** não aplicável; a classificação não é um score e não decorre somente da
+magnitude das taxas observadas.
+
+**Comparação:** `tipo_acidente`, `causa_acidente`, `pessoas` e `veiculos` receberam
+`requer_decisao_metodologica`; `regional`, `delegacia` e `uop`,
+`excluir_administrativa`; e `mortos`, `feridos_graves`, `feridos_leves`, `feridos`, `ilesos`,
+`ignorados` e `classificacao_acidente`, `excluir_por_leakage`.
+
+**Estabilidade entre anos:** as 22 variáveis candidatas, candidatas com cautela ou sujeitas a
+decisão metodológica foram marcadas para futura verificação de drift. O inventário registra a
+união de 18 categorias de tipo, 16 presentes nos cinco anos, e 76 categorias de causa, 65
+presentes nos cinco anos, retomando o diagnóstico do EDA026 sem harmonização.
+
+**Interpretação:** relevância descritiva não equivale a disponibilidade no momento preditivo.
+A matriz de elegibilidade é a fonte autoritativa dessa classificação conceitual. A matriz de
+evidências apenas replica seus status quando há correspondência direta; `weekday_group` e
+`macroregion`, derivações puramente analíticas fora do inventário, ficam sem status próprio.
+As linhas de qualidade `Ignorado`, `Não Informado` e `br = 0` também ficam sem status, pois a
+eventual candidatura pertence à variável original, não à categoria especial. A triagem
+mantém separados EDA, preparação de dados e ML.
+
+**O que NÃO podemos concluir:** o status `candidata` não garante inclusão, capacidade
+preditiva, ausência de drift ou disponibilidade operacional. Nenhuma variável foi selecionada
+por desempenho de modelo.
+
+**Limitações:** o momento operacional da futura previsão ainda precisa ser definido. A
+representação de campos de alta cardinalidade, multivalorados e com taxonomia variável não
+foi implementada.
+
+**Figura:** não aplicável.
+
+**Tabela:** `../reports/tables/phase_2f_modeling_eligibility_matrix.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/severity_associations.py`, decisões D005 e
+D006 e limitação L003.
+
+**Possível uso no TCC:** justificar seleção de features, exclusões por leakage e avaliação de
+drift antes da modelagem.
+
+**Status:** confirmado.
 
 ## 2G — Síntese
 

@@ -4,6 +4,7 @@ from tcc_prf_severity.analysis.general import run_general_analysis
 from tcc_prf_severity.analysis.geographic import run_geographic_analysis
 from tcc_prf_severity.analysis.occurrence_dynamics import run_occurrence_dynamics_analysis
 from tcc_prf_severity.analysis.road_environment import run_road_environment_analysis
+from tcc_prf_severity.analysis.severity_associations import run_severity_associations_analysis
 from tcc_prf_severity.analysis.temporal import run_temporal_analysis
 from tcc_prf_severity.config import (
     AUDIT_DIR,
@@ -266,3 +267,35 @@ def eda_occurrence_dynamics_main() -> None:
     )
     print(f"Tabelas: {result.table_paths[0].parent}")
     print(f"Figuras: {result.figure_paths[0].parent}")
+
+
+def eda_severity_associations_main() -> None:
+    result = run_severity_associations_analysis()
+    analysis = result.analysis
+    evidence = analysis.association_evidence_matrix
+    eligibility = analysis.modeling_eligibility_matrix
+    priorities = {
+        str(row["scientific_priority"]): int(row["len"])
+        for row in evidence.group_by("scientific_priority").len().iter_rows(named=True)
+    }
+    statuses = {
+        str(row["modeling_eligibility_status"]): int(row["len"])
+        for row in eligibility.group_by("modeling_eligibility_status").len().iter_rows(named=True)
+    }
+    largest = analysis.core_findings.row(0, named=True)
+
+    print("Fase 2F concluída.")
+    print(f"Achados centrais: {priorities.get('central', 0)}")
+    print(f"Achados secundários: {priorities.get('secundário', 0)}")
+    print(
+        "Maior contraste central: "
+        f"{largest['category_or_comparison']} — "
+        f"{float(largest['absolute_difference_percentage_points']):.2f} p.p."
+    )
+    print(f"Persistência temporal: {largest['temporal_consistency_note']}")
+    print(f"Features candidatas: {statuses.get('candidata', 0)}")
+    print(f"Candidatas com cautela: {statuses.get('candidata_com_cautela', 0)}")
+    print(f"Excluídas por leakage: {statuses.get('excluir_por_leakage', 0)}")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")
+    print("Nenhum dataset de modelagem criado.")

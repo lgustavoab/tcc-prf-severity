@@ -165,6 +165,17 @@ veículos. Não há harmonização, bins, remoção de outliers ou dataset proce
 são permitidas na EDA associativa, mas sua elegibilidade para ML será decidida separadamente
 devido à disponibilidade temporal e ao risco de leakage.
 
+## EDA — Associação com gravidade
+
+```powershell
+uv run prf-eda-severity-associations
+```
+
+O comando verifica o interim e recalcula uma síntese das associações descritivas das Fases
+2A–2E com `target_grave`. Ele gera quatro tabelas consolidadas e uma figura, incluindo uma
+matriz conceitual de elegibilidade para modelagem futura. Não cria features, divisão
+treino/teste, modelos ou dataset processed.
+
 ## Documentação científica
 
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
