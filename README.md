@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5B concluída — plano final de tabelas e figuras congelado, ainda sem produção gráfica.**
+**Fase 5C concluída — estrutura dos capítulos de Resultados e Discussão definida.**
 
 Nesta fase o projeto:
 
@@ -72,6 +72,8 @@ Nesta fase o projeto:
   métodos, evidências, respostas, cautelas e limitações, sem novo cálculo experimental.
 - inventaria 19 candidatos visuais e recomenda para o corpo e os métodos três tabelas e oito
   figuras, separando itens de apêndice e de repositório sem recalcular resultados.
+- organiza 18 subseções de Resultados e Discussão, com evidências, números, cautelas,
+  transições e fronteiras interpretativas, sem redigir o manuscrito final ou gerar figuras.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -110,6 +112,8 @@ A consolidação das perguntas de pesquisa está documentada em
 [`docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md`](docs/PHASE_5A_RESEARCH_QUESTION_SYNTHESIS.md).
 O plano congelado de tabelas e figuras está documentado em
 [`docs/PHASE_5B_RESULTS_VISUAL_PLAN.md`](docs/PHASE_5B_RESULTS_VISUAL_PLAN.md).
+A estrutura acadêmica de Resultados e Discussão está documentada em
+[`docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md`](docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md).
 
 ## Requisitos
 
@@ -442,6 +446,15 @@ cliente. Métricas congeladas de modelagem serão apenas exibidas, sem recálcul
 prevista é a Vercel. Essa arquitetura é somente uma decisão futura e não adiciona dependências
 nesta fase.
 
+## Estrutura de Resultados e Discussão
+
+A Fase 5C separa explicitamente apresentação e interpretação em 10 subseções planejadas de
+Resultados e oito de Discussão. Cada seção possui RQ, evidência versionada, elemento visual,
+mensagem, cautela e transição. F8 foi posicionada no fim de Resultados para apresentar o
+ranking e será retomada na Discussão apenas para interpretação; F7 permanece opcional e M1/M2
+continuam na Metodologia. Nenhuma figura, referência bibliográfica ou redação final completa
+foi produzida.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -479,6 +492,8 @@ nesta fase.
   perguntas consolidadas, evidências rastreáveis, respostas curtas e limitações integradas.
 - [`PHASE_5B_RESULTS_VISUAL_PLAN.md`](docs/PHASE_5B_RESULTS_VISUAL_PLAN.md): inventário,
   priorização, especificações e redundâncias do plano final de tabelas e figuras.
+- [`PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md`](docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md):
+  roteiro de subseções, evidências, números, transições e limites interpretativos.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -499,8 +514,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 5C — estruturação dos capítulos de Resultados e Discussão**, usando
-o plano congelado da Fase 5B antes da geração das figuras finais.
+A próxima etapa é a **Fase 5D — geração das figuras e tabelas acadêmicas selecionadas**, usando
+os planos congelados das Fases 5B e 5C sem recalcular resultados científicos.
 
 ## Princípio metodológico
 

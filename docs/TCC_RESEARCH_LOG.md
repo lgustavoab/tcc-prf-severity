@@ -486,6 +486,31 @@ resultados congelados de modelagem serão apenas apresentados, nunca recalculado
 **Status:** confirmada; 23 checks PASS e 0 FAIL. Próximo passo: Fase 5C — estruturar os
 capítulos de Resultados e Discussão conforme o plano congelado.
 
+### D021 — Separação estrutural entre Resultados e Discussão
+
+**Data:** 19/08/2026.
+
+**Decisão:** organizar o roteiro acadêmico em dez subseções planejadas de Resultados e oito de
+Discussão. Resultados apresenta observações, métricas e comparações; Discussão integra os
+achados, examina limites e trata significado metodológico sem repetir tabelas e figuras.
+
+**Justificativa:** as cinco RQs e o plano visual já estavam congelados, mas a redação final
+precisa de fronteiras explícitas entre evidência e interpretação. Cada subseção recebeu
+objetivo, RQ, fonte, visual, números, mensagem, cautela e transição. F8 fica no final de
+Resultados para apresentar o ranking e é retomada em Discussão somente para interpretar sua
+convergência parcial com a EDA; F7 permanece opcional e M1/M2 continuam na Metodologia.
+
+**Consequências:** foram materializados um mapa de 18 subseções, 27 vínculos de evidência, 66
+números publicados e uma política editorial de arredondamento. Pontos que exigem literatura
+foram marcados sem inventar referências. Nenhuma análise, figura ou redação integral do
+manuscrito foi produzida; a arquitetura estática planejada para a Fase 6 permanece inalterada.
+
+**Origem:** [PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md](PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md)
+e tabelas `phase_5c_*` em `reports/tables/`.
+
+**Status:** confirmada; 26 checks PASS e 0 FAIL. Próximo passo: Fase 5D — gerar as figuras e
+tabelas acadêmicas selecionadas.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
