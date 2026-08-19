@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4G concluída — pipeline final refitado em 2021–2024 e congelado.**
+**Fase 4H concluída — avaliação temporal final em 2025 materializada.**
 
 Nesta fase o projeto:
 
@@ -60,7 +60,10 @@ Nesta fase o projeto:
   graves, 22 predictors, 226 features transformadas e 300/300 rounds;
 - persiste o pipeline congelado com SHA-256
   `c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`;
-- preserva 2025 sem transformação, predição, métrica ou avaliação final.
+- avalia uma única vez o pipeline congelado em 72.529 ocorrências de 2025, obtendo AP
+  `0,397446`, ROC-AUC `0,628556` e Brier `0,193822`;
+- aplica sem alteração o threshold `0.23723246157169342`, com precision `0,331593`, recall
+  `0,771825` e F1 `0,463889`, e persiste as predições finais sem retreinamento ou tuning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -91,6 +94,8 @@ A seleção do cutoff OOF está documentada em
 [`docs/PHASE_4F_THRESHOLD_SELECTION.md`](docs/PHASE_4F_THRESHOLD_SELECTION.md).
 O refit final está documentado em
 [`docs/PHASE_4G_FINAL_REFIT.md`](docs/PHASE_4G_FINAL_REFIT.md).
+A avaliação temporal final está documentada em
+[`docs/PHASE_4H_FINAL_EVALUATION.md`](docs/PHASE_4H_FINAL_EVALUATION.md).
 
 ## Requisitos
 
@@ -372,6 +377,21 @@ pelo Git possui SHA-256
 `c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`. Nenhuma métrica de
 treino ou resultado de 2025 foi produzido.
 
+## Avaliação temporal final em 2025
+
+```powershell
+uv run prf-evaluate-final-2025
+```
+
+O comando valida o SHA do pipeline antes de carregá-lo e avalia exclusivamente as 72.529
+ocorrências de 2025. A AP final foi `0,3974456687131155`, a ROC-AUC
+`0,6285562620583193` e o Brier `0,19382199321256413`. No threshold congelado pela 4F,
+precision, recall e F1 foram `0,33159329140461213`, `0,7718245254477138` e
+`0,4638892554954321`. As predições locais têm SHA-256
+`411b5113060b19c3cc9da5fe1a6cddcf8a7d7662fe73102a6f3fdb2b05b88375`. A comparação com o
+desenvolvimento é descritiva; nenhum modelo, hiperparâmetro, predictor, preprocessing ou
+threshold foi alterado após a observação do holdout.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -401,6 +421,8 @@ treino ou resultado de 2025 foi produzido.
   busca exata, cutoff congelado e diagnósticos pooled e anuais.
 - [`PHASE_4G_FINAL_REFIT.md`](docs/PHASE_4G_FINAL_REFIT.md): refit único, auditoria estrutural,
   persistência, SHA e proteção do holdout final.
+- [`PHASE_4H_FINAL_EVALUATION.md`](docs/PHASE_4H_FINAL_EVALUATION.md): abertura do holdout,
+  métricas finais, threshold congelado, calibração e comparação temporal descritiva.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -421,8 +443,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4H — avaliação temporal final em 2025**, carregando o pipeline 4G
-após validar seu SHA e sem novo treinamento ou ajuste de threshold.
+A próxima etapa é a **Fase 4I — interpretação e análise final**, reutilizando as predições
+congeladas pela 4H sem novo treinamento ou ajuste de threshold.
 
 ## Princípio metodológico
 

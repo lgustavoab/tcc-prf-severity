@@ -34,6 +34,7 @@ prf-compare-models = "tcc_prf_severity.cli:compare_models_main"
 prf-select-model = "tcc_prf_severity.cli:select_model_main"
 prf-select-threshold = "tcc_prf_severity.cli:select_threshold_main"
 prf-refit-final-model = "tcc_prf_severity.cli:refit_final_model_main"
+prf-evaluate-final-2025 = "tcc_prf_severity.cli:evaluate_final_2025_main"
 
 [dependency-groups]
 dev = [

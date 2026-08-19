@@ -20,6 +20,7 @@ from tcc_prf_severity.data.analytical import (
 from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
+from tcc_prf_severity.modeling.final_evaluation import run_final_evaluation
 from tcc_prf_severity.modeling.final_refit import run_final_refit
 from tcc_prf_severity.modeling.logistic_baseline import run_logistic_baseline
 from tcc_prf_severity.modeling.model_comparison import run_model_comparison
@@ -302,6 +303,43 @@ def refit_final_model_main() -> None:
     print("2025 utilizado: não")
     print("Avaliação final realizada: não")
     print("Próximo passo: Fase 4H — avaliação temporal final 2025")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def evaluate_final_2025_main() -> None:
+    run = run_final_evaluation()
+    result = run.result
+    metrics = result.probability_metrics
+    frozen = result.frozen_threshold_metrics
+    reference = result.reference_threshold_metrics
+    print("Fase 4H — Avaliação temporal final")
+    print("Modelo: XGBoost")
+    print("Treinado em: 2021-2024")
+    print(f"Pipeline SHA: {result.model_sha256}")
+    print("Holdout: 2025")
+    print(f"Linhas: {frozen.rows}")
+    print(f"Graves: {frozen.actual_positive}")
+    print(f"Average Precision: {metrics.average_precision:.6f}")
+    print(f"ROC-AUC: {metrics.roc_auc:.6f}")
+    print(f"Brier: {metrics.brier_score:.6f}")
+    print(f"Threshold congelado: {frozen.threshold}")
+    print(f"Precision: {frozen.precision:.6f}")
+    print(f"Recall: {frozen.recall:.6f}")
+    print(f"F1: {frozen.f1:.6f}")
+    print("Referência 0.5:")
+    print(f"Precision: {reference.precision:.6f}")
+    print(f"Recall: {reference.recall:.6f}")
+    print(f"F1: {reference.f1:.6f}")
+    print("Comparação descritiva:")
+    print(f"AP vs média interna: {metrics.average_precision - result.references.ap_mean:+.6f}")
+    print(f"AP vs Fold 3: {metrics.average_precision - result.references.ap_fold3:+.6f}")
+    print(f"F1 vs OOF: {frozen.f1 - result.references.oof_f1:+.6f}")
+    print("Modelo retreinado: não")
+    print("Threshold alterado: não")
+    print("2025 utilizado: sim — exclusivamente como avaliação final")
+    print("Próximo passo: Fase 4I — interpretação e análise final")
+    print(f"Predictions: {result.predictions_path}")
+    print(f"Predictions SHA-256: {result.predictions_sha256}")
     print(f"Tabelas: {run.table_paths[0].parent}")
 
 

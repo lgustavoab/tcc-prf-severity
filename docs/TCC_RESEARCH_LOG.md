@@ -386,6 +386,31 @@ predição ou avaliação de 2025.
 
 **Status:** confirmada; 16 checks PASS e 0 FAIL.
 
+### D017 — Abertura única do holdout temporal de 2025
+
+**Data:** 19/08/2026.
+
+**Decisão:** avaliar uma única vez o pipeline 4G congelado sobre 2025, depois de validar seu
+SHA-256, sem fit, tuning, calibração, alteração de predictors, preprocessing, modelo ou
+threshold. O cutoff `0.23723246157169342` permaneceu o operacional; 0,5 foi calculado apenas
+como referência descritiva.
+
+**Justificativa:** 2025 é o teste temporal final e não participou da seleção do modelo, do
+threshold ou do refit. Embora já tivesse sido usado em EDA e drift estrutural, sua performance
+preditiva permaneceu fora de todas as decisões congeladas em 4E–4G.
+
+**Consequências:** a avaliação contém 72.529 IDs, 20.493 graves e 52.036 não graves. A AP foi
+`0.3974456687131155`, a ROC-AUC `0.6285562620583193` e o Brier
+`0.19382199321256413`. No threshold congelado, precision, recall e F1 foram
+`0.33159329140461213`, `0.7718245254477138` e `0.4638892554954321`. O desempenho observado
+em 2025 foi utilizado exclusivamente para avaliação temporal final e não motivou alteração do
+modelo, hiperparâmetros, conjunto de atributos, pré-processamento ou limiar de decisão.
+
+**Origem:** [PHASE_4H_FINAL_EVALUATION.md](PHASE_4H_FINAL_EVALUATION.md) e tabelas
+`phase_4h_*` em `reports/tables/`.
+
+**Status:** confirmada; 25 checks PASS e 0 FAIL. Próximo passo: Fase 4I.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -630,6 +655,34 @@ resserializações.
 `reports/tables/`.
 
 **Status:** confirmado; pipeline congelado para a avaliação final 4H, sem uso de 2025.
+
+### R012 — Avaliação temporal final em 2025
+
+**Data:** 19/08/2026.
+
+**População e período:** 72.529 ocorrências e IDs únicos de 2025, sendo 20.493 graves e
+52.036 não graves, com prevalência positiva de `0.2825490493457789`.
+
+**Método:** carregamento do pipeline 4G somente após confirmação do SHA-256
+`c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351`; uma única coleção de
+probabilidades, sem fit, tuning ou calibrador. AP foi a métrica primária, ROC-AUC e Brier foram
+secundárias, e o threshold 4F foi aplicado sem alteração.
+
+**Resultado:** AP=`0.3974456687131155`, ROC-AUC=`0.6285562620583193` e
+Brier=`0.19382199321256413`. No threshold congelado, precision=`0.33159329140461213`,
+recall=`0.7718245254477138` e F1=`0.4638892554954321`, com TN=20.153, FP=31.883, FN=4.676 e
+TP=15.817. Os deltas contra a média interna foram -0,003365 em AP, -0,002294 em ROC-AUC e
+-0,000075 em Brier; o delta de F1 contra o OOF foi -0,001419. São comparações descritivas.
+
+**Limitações:** 2025 não foi estruturalmente cego à EDA e ao drift, cobre apenas um ano
+posterior e não sustenta inferência causal. O modelo estima gravidade entre ocorrências já
+registradas, não risco de ocorrência de acidente. Nenhuma decisão foi reaberta após o
+resultado.
+
+**Origem:** [PHASE_4H_FINAL_EVALUATION.md](PHASE_4H_FINAL_EVALUATION.md),
+`phase_4h_final_evaluation.csv` e demais tabelas `phase_4h_*`.
+
+**Status:** confirmado; avaliação final concluída e predições congeladas para a Fase 4I.
 
 ## Achados exploratórios
 

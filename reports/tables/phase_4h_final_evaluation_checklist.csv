@@ -1,0 +1,26 @@
+check_id,check,status,evidence
+EVA001,Manifesto 4G está válido,PASS,refit_status=completed
+EVA002,Pipeline congelado existe,PASS,artifacts/models/phase_4g_xgboost_final_pipeline.pkl
+EVA003,SHA coincide antes do load,PASS,c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351
+EVA004,Pipeline está fitado,PASS,check_is_fitted aprovado
+EVA005,Modelo é o XGBoost selecionado,PASS,phase_4c_xgboost_baseline
+EVA006,Pipeline possui 300 rounds,PASS,300/300
+EVA007,Threshold 4F coincide exatamente,PASS,0.23723246157169342
+EVA008,Holdout contém somente 2025,PASS,2025
+EVA009,2021-2024 estão ausentes,PASS,ausentes
+EVA010,Linhas e IDs foram reconciliados,PASS,72529 linhas/IDs
+EVA011,Predictors permanecem congelados,PASS,22 predictors
+EVA012,Target final é válido,PASS,Boolean
+EVA013,Probabilidades finais são válidas,PASS,72529 probabilidades
+EVA014,AP usa average_precision_score,PASS,sklearn.metrics.average_precision_score
+EVA015,Mesmo threshold 4F foi aplicado,PASS,0.23723246157169342
+EVA016,Threshold 0.5 é somente referência,PASS,reference_0_5
+EVA017,Nenhum threshold foi selecionado,PASS,threshold_reselected=false
+EVA018,Nenhum fit foi executado,PASS,model_retrained=false
+EVA019,Nenhum tuning foi executado,PASS,hyperparameter_tuning=false
+EVA020,Nenhum calibrador foi treinado,PASS,calibration_model_fitted=false
+EVA021,Predictions 2025 foram persistidas,PASS,data/processed/phase_4h_final_2025_predictions.parquet
+EVA022,SHA das predictions foi calculado,PASS,411b5113060b19c3cc9da5fe1a6cddcf8a7d7662fe73102a6f3fdb2b05b88375
+EVA023,Comparação é somente descritiva,PASS,sem pass/fail de performance
+EVA024,Teste final foi utilizado,PASS,final_test_used=true
+EVA025,Avaliação final foi realizada,PASS,final_evaluation_performed=true
