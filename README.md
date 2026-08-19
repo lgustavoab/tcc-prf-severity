@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 3C — Dataset Analítico Principal concluída.**
+**Fase 3D — Desenho Experimental e Particionamento Temporal concluída.**
 
 Nesta fase o projeto:
 
@@ -37,8 +37,11 @@ Nesta fase o projeto:
   secundárias e as políticas anti-leakage, de redundância e categorias desconhecidas;
 - materializa o dataset analítico principal com três metadados, o target preservado e 22
   predictors físicos, incluindo 12 indicadores multilabel de `tracado_via`;
-- ainda não remove ou imputa registros, cria split, ajusta preprocessing ou inicia machine
-  learning.
+- congela desenvolvimento em 2021–2024, avaliação final em 2025 e três folds internos
+  expanding-window, sem duplicar o dataset em arquivos de treino/teste;
+- define previamente Average Precision (AP), agregação entre folds, threshold por OOF e
+  refit final;
+- ainda não remove ou imputa registros, ajusta preprocessing ou inicia machine learning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -51,6 +54,8 @@ A política final de features está em
 [`docs/PHASE_3B_FEATURE_POLICY.md`](docs/PHASE_3B_FEATURE_POLICY.md).
 O contrato materializado do dataset principal está em
 [`docs/PHASE_3C_ANALYTICAL_DATASET.md`](docs/PHASE_3C_ANALYTICAL_DATASET.md).
+O desenho experimental temporal está em
+[`docs/PHASE_3D_EXPERIMENTAL_DESIGN.md`](docs/PHASE_3D_EXPERIMENTAL_DESIGN.md).
 
 ## Requisitos
 
@@ -226,6 +231,18 @@ artifacts/processed/phase_3c_primary_analytical_manifest.json
 O Parquet contém 342.624 ocorrências e 26 colunas: três metadados, um target e 22 predictors
 físicos. Nenhum encoder, scaler, imputação, split ou modelo é criado.
 
+## Desenho experimental temporal
+
+```powershell
+uv run prf-design-experiment
+```
+
+O comando verifica o interim e o dataset analítico, obtém os 22 predictors pelo esquema 3C e
+materializa três tabelas pequenas. O desenvolvimento cobre 2021–2024; 2025 fica reservado à
+avaliação final. Os folds internos são `2021 -> 2022`, `2021–2022 -> 2023` e
+`2021–2023 -> 2024`. Não há split aleatório, cópia completa do dataset, fitting ou cálculo de
+performance.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -237,6 +254,8 @@ físicos. Nenhum encoder, scaler, imputação, split ou modelo é criado.
   conceitual dos conjuntos principal e secundário.
 - [`PHASE_3C_ANALYTICAL_DATASET.md`](docs/PHASE_3C_ANALYTICAL_DATASET.md): materialização
   determinística do conjunto principal, esquema, manifesto e verificações.
+- [`PHASE_3D_EXPERIMENTAL_DESIGN.md`](docs/PHASE_3D_EXPERIMENTAL_DESIGN.md): fronteira
+  temporal, folds internos e políticas futuras de seleção, threshold e refit.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -256,9 +275,9 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A Fase 3D deverá materializar o desenho temporal, mantendo 2021–2024 para desenvolvimento e
-2025 para avaliação final. O dataset analítico principal já existe, mas nenhum split físico,
-preprocessing aprendido ou modelo foi criado.
+A próxima etapa poderá iniciar o preprocessing e a primeira modelagem somente dentro do
+desenho congelado: qualquer fit deverá ocorrer no treino de cada fold, e 2025 permanecerá
+intocado até a avaliação formal do pipeline final. Nenhum modelo foi criado até aqui.
 
 ## Princípio metodológico
 

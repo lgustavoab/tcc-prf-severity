@@ -1,0 +1,4 @@
+fold,train_years,validation_year,train_rows,validation_rows,train_severe,validation_severe,train_severe_rate_percent,validation_severe_rate_percent
+1,2021,2022,64567,64606,18118,18409,28.060774,28.494257
+2,"2021,2022",2023,129173,67766,36527,19212,28.277581,28.3505
+3,"2021,2022,2023",2024,196939,73156,55739,20625,28.302672,28.193176
