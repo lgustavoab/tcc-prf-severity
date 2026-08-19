@@ -20,6 +20,7 @@ PRIMARY_ANALYTICAL_MANIFEST_PATH = (
 )
 PRIMARY_ANALYTICAL_SCHEMA_PATH = TABLES_DIR / "phase_3c_analytical_schema.csv"
 PRIMARY_FEATURE_CONTRACT_PATH = TABLES_DIR / "phase_3b_primary_feature_set.csv"
+TEMPORAL_FOLDS_PATH = TABLES_DIR / "phase_3d_temporal_folds.csv"
 
 EXPECTED_YEARS = tuple(range(2021, 2026))
 RAW_FILE_TEMPLATE = "datatran{year}.csv"

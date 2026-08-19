@@ -18,6 +18,7 @@ from tcc_prf_severity.data.analytical import (
 from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
+from tcc_prf_severity.modeling.preprocessing import run_preprocessing_validation
 
 
 def audit_main() -> None:
@@ -100,6 +101,31 @@ def design_experiment_main() -> None:
     print("Threshold: definido futuramente somente por OOF de 2022-2024")
     print("Nenhum modelo treinado.")
     print("2025 não foi usado para fitting ou otimização.")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+
+
+def validate_preprocessing_main() -> None:
+    result = run_preprocessing_validation()
+    validation = result.validation
+    groups = validation.groups
+    print("Fase 3E concluída.")
+    print(f"Folds validados: {len(validation.folds)}")
+    print("2025 utilizado: não")
+    print(f"Categóricas: {len(groups.categorical)}")
+    print(f"Numéricas: {len(groups.numeric)}")
+    print(f"Binárias: {len(groups.binary)}")
+    print(f"Predictors físicos: {len(groups.predictors)}")
+    for fold in validation.folds:
+        years = "-".join((str(fold.fit_years[0]), str(fold.fit_years[-1])))
+        if len(fold.fit_years) == 1:
+            years = str(fold.fit_years[0])
+        print(
+            f"Fold {fold.fold}: train {years} -> validation {fold.validation_year}; "
+            f"features transformadas: {fold.output_feature_count}; sparse: sim"
+        )
+    print("Unknown categories foram toleradas e auditadas.")
+    print("Nenhum modelo treinado.")
+    print("Nenhum preprocessor fitado foi persistido.")
     print(f"Tabelas: {result.table_paths[0].parent}")
 
 

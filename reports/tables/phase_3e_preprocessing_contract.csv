@@ -1,0 +1,4 @@
+group,source_features,transformer,learned_parameters,fit_scope,unknown_policy,output_type,notes
+categorical,"month_name,dia_semana,hour,uf,br,sentido_via,condicao_metereologica,tipo_pista,uso_solo",OneHotEncoder,categories_,fold_train_only,handle_unknown=ignore; audit_separately,sparse one-hot columns,drop=None; min_frequency=None; max_categories=None; all train categories preserved
+numeric,km,StandardScaler,mean_; scale_; var_,fold_train_only,not_applicable,scaled numeric column in sparse combined matrix,"km only; no bins, clipping, log, winsorization or imputation"
+binary,"tracado_aclive,tracado_curva,tracado_declive,tracado_desvio_temporario,tracado_em_obras,tracado_intersecao_de_vias,tracado_ponte,tracado_reta,tracado_retorno_regulamentado,tracado_rotatoria,tracado_tunel,tracado_viaduto",passthrough,none,not_applicable,strict_binary_0_1_validation,unchanged binary columns in sparse combined matrix,"no encoding, scaling or imputation"
