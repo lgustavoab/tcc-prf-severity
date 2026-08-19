@@ -1,0 +1,12 @@
+candidate,decision,reason,covered_by
+Gráfico isolado de prevalência grave anual,REPOSITORY_ONLY,"A variação é pequena e a tabela anual comunica simultaneamente volume, graves e prevalência.",T1
+Um gráfico separado para cada contraste da RQ1,EXCLUDED,"Geraria excesso visual e repetição de estrutura para comparações curtas.",F1; F2
+Tabela extensa de todas as associações no corpo,APPENDIX,"Seria densa e misturaria dimensões distintas; o corpo precisa apenas dos contrastes centrais.",F1; F2; A4
+Ranking das 226 features SHAP no corpo,REPOSITORY_ONLY,"Ilegível em página acadêmica e sujeito a interpretação indevida de níveis isolados.",F8; A1; R1
+Top 15 features transformadas no corpo,APPENDIX,"Mistura níveis categóricos, variável numérica e binárias; predictor agregado é mais comunicável.",F8; A1
+Distribuição de scores por outcome no corpo,APPENDIX,"A mensagem central de recall e falsos positivos já é coberta pela matriz de confusão.",F6; A2
+Tabela dos 10 bins de calibração no corpo,REPOSITORY_ONLY,"A curva é mais adequada para comunicar calibração e a tabela permanece como fonte técnica.",F7; R2
+Tabela completa com todas as métricas por fold no corpo,APPENDIX,"AP média e AP por fold respondem RQ3/RQ4 com menor carga cognitiva.",F4; F5; A3
+Manifestos hashes e checklists no texto acadêmico,REPOSITORY_ONLY,"São essenciais para auditoria do repositório, mas não respondem diretamente às RQs.",R3
+Mapas coropléticos de UF ou BR,EXCLUDED,"Podem sugerir risco geográfico sem denominadores de exposição e não acrescentam à comparação selecionada.",F2
+Gráficos técnicos de drift na seção de Resultados,REPOSITORY_ONLY,"Drift sustentou decisões metodológicas; não é resposta central após a avaliação final.",M1; discussão de limitações

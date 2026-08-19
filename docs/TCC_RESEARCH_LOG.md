@@ -459,6 +459,33 @@ e tabelas `phase_5a_*` em `reports/tables/`.
 **Status:** confirmada; 20 checks PASS e 0 FAIL. Próximo passo: selecionar evidências, tabelas
 e figuras para os capítulos de Resultados e Discussão.
 
+### D020 — Congelamento do plano de tabelas e figuras finais
+
+**Data:** 19/08/2026.
+
+**Decisão:** inventariar 19 candidatos e classificá-los em sete `ESSENTIAL`, dois `USEFUL`,
+quatro `APPENDIX`, quatro `REPOSITORY_ONLY` e dois `ESSENTIAL_METHODS`. Para o corpo e os
+métodos, recomendar três tabelas e oito figuras; sob restrição de espaço, a figura de
+calibração pode ser removida, reduzindo o núcleo a sete figuras. Quatro itens permanecem
+planejados para o apêndice.
+
+**Justificativa:** a apresentação final deve responder às cinco perguntas com rastreabilidade,
+sem multiplicar gráficos redundantes nem transportar artefatos técnicos para o texto
+científico. O plano separa volume de proporção, métodos de resultados, evidência descritiva de
+interpretação causal e corpo principal de material suplementar.
+
+**Consequências:** cada item selecionado recebeu fonte, seção, mensagem, cautela e especificação
+de produção futura. Nenhuma figura foi criada e nenhum resultado das Fases 2–4 foi recalculado.
+Para uma eventual Fase 6, ficam registrados Next.js, React e TypeScript, arquitetura 100%
+estática com JSON produzido pelo pipeline Python, filtros no cliente e hospedagem na Vercel;
+resultados congelados de modelagem serão apenas apresentados, nunca recalculados no dashboard.
+
+**Origem:** [PHASE_5B_RESULTS_VISUAL_PLAN.md](PHASE_5B_RESULTS_VISUAL_PLAN.md) e tabelas
+`phase_5b_*` em `reports/tables/`.
+
+**Status:** confirmada; 23 checks PASS e 0 FAIL. Próximo passo: Fase 5C — estruturar os
+capítulos de Resultados e Discussão conforme o plano congelado.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
