@@ -17,6 +17,7 @@ from tcc_prf_severity.data.analytical import (
 )
 from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
+from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
 
 
 def audit_main() -> None:
@@ -80,6 +81,26 @@ def verify_analytical_main() -> None:
     print("Contrato 3B: OK")
     print("Esquema: OK")
     print("Manifesto: OK")
+
+
+def design_experiment_main() -> None:
+    result = run_experimental_design()
+    design = result.design
+    print("Fase 3D concluída.")
+    print("Desenvolvimento: 2021-2024")
+    print("Avaliação temporal final: 2025")
+    print("Folds internos:")
+    for fold in design.folds:
+        train = "-".join((str(fold.train_years[0]), str(fold.train_years[-1])))
+        if len(fold.train_years) == 1:
+            train = str(fold.train_years[0])
+        print(f"{fold.fold}: {train} -> {fold.validation_year}")
+    print(f"Predictors físicos: {len(design.predictors)}")
+    print(f"Métrica principal futura: {PRIMARY_METRIC}")
+    print("Threshold: definido futuramente somente por OOF de 2022-2024")
+    print("Nenhum modelo treinado.")
+    print("2025 não foi usado para fitting ou otimização.")
+    print(f"Tabelas: {result.table_paths[0].parent}")
 
 
 def eda_general_main() -> None:

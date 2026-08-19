@@ -236,6 +236,38 @@ Fase 3D poderá criar o desenho temporal sem redefinir a população ou a polít
 
 **Status:** confirmada; dataset principal materializado e machine learning não iniciado.
 
+### D011 — Desenho experimental temporal anterior à modelagem
+
+**Data:** 19/08/2026.
+
+**Decisão:** usar 2021–2024 como desenvolvimento e 2025 exclusivamente como avaliação
+temporal final. A validação interna será expanding-window: 2021 valida em 2022, 2021–2022
+valida em 2023 e 2021–2023 valida em 2024.
+
+**Justificativa:** a separação cronológica representa generalização futura e impede que
+observações posteriores participem do fitting. Average Precision (AP), calculada futuramente
+para `target_grave=True` pela definição operacional de
+`sklearn.metrics.average_precision_score`, é congelada como métrica principal antes de
+qualquer modelo. O ranking usará a média aritmética não ponderada das APs dos três folds,
+acompanhada do desvio padrão e do resultado do Fold 3; não usará o melhor fold isolado nem uma
+AP única sobre validações OOF concatenadas.
+
+**Política de threshold e refit:** o threshold futuro maximizará F1 da classe grave usando
+somente previsões OOF temporais concatenadas de 2022–2024; empates priorizam maior recall e
+depois menor threshold. Esse pool OOF serve ao threshold, não ao ranking de modelos. Após a
+seleção pelos folds, o pipeline será refitado em 2021–2024 e aplicado uma única vez a 2025 com
+threshold congelado.
+
+**Consequências:** transformações aprendidas serão ajustadas somente no treino de cada fold.
+2025 não poderá selecionar features, representação, modelo, hiperparâmetros, threshold,
+calibração ou preprocessing. A exploração estrutural anterior de 2025 permanece registrada
+como limitação; nenhum modelo ou performance foi produzido na 3D.
+
+**Origem:** [PHASE_3D_EXPERIMENTAL_DESIGN.md](PHASE_3D_EXPERIMENTAL_DESIGN.md) e tabelas
+`phase_3d_*` em `reports/tables/`.
+
+**Status:** confirmada; desenho congelado antes da primeira modelagem.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
