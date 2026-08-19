@@ -1,0 +1,27 @@
+check_id,area,check,expected,observed,status,evidence
+F3F-001,fundacao,Dataset interim válido,Contrato baseline manifesto e hashes RAW aprovados,342624 linhas; 32 colunas; 96857 graves; RAW 5/5 OK,PASS,prf-verify-interim
+F3F-002,fundacao,Dataset analítico válido,Artefato esquema manifesto e contrato 3B consistentes,342624 linhas; 26 colunas; esquema e manifesto OK,PASS,prf-verify-analytical
+F3F-003,fundacao,IDs únicos,Uma ocorrência por ID,342624 IDs únicos em 342624 ocorrências,PASS,prf-verify-analytical
+F3F-004,fundacao,População e target preservados,342624 ocorrências e 96857 graves,342624 ocorrências e 96857 graves,PASS,phase_3d_partition_summary.csv
+F3F-005,populacao,Partições de desenvolvimento e final,2021-2024 com 270095 linhas e 76364 graves; 2025 com 72529 linhas e 20493 graves,Desenvolvimento 270095/76364; final 72529/20493,PASS,phase_3d_partition_summary.csv
+F3F-006,features,Representações conceituais principais,11 representações autorizadas,11 representações no contrato principal,PASS,phase_3b_primary_feature_set.csv
+F3F-007,features,Predictors físicos,22 colunas predictor incluídas em X,22 predictors físicos,PASS,phase_3c_analytical_schema.csv
+F3F-008,features,Metadata e target fora de X,"id; source_year; data_inversa; target_grave excluídos","4 colunas com included_in_model_matrix=false",PASS,phase_3c_analytical_schema.csv
+F3F-009,features,Leakage ausente de X,"mortos; feridos_graves; feridos_leves; feridos; ilesos; ignorados; classificacao_acidente ausentes",0 campos de leakage entre predictors,PASS,PHASE_3C_ANALYTICAL_DATASET.md
+F3F-010,features,Administrativas ausentes de X,"regional; delegacia; uop ausentes",0 campos administrativos entre predictors,PASS,PHASE_3C_ANALYTICAL_DATASET.md
+F3F-011,features,Secondary only ausentes do cenário principal,"tipo_acidente; causa_acidente; pessoas; veiculos ausentes",0 campos secondary_only entre predictors,PASS,PHASE_3C_ANALYTICAL_DATASET.md
+F3F-012,features,Representações redundantes ausentes de X,"horario; fase_dia; municipio; latitude; longitude; tracado_via bruto ausentes",0 representações redundantes listadas entre predictors,PASS,PHASE_3C_ANALYTICAL_DATASET.md
+F3F-013,tempo,Folds temporais corretos,"2021->2022; 2021-2022->2023; 2021-2023->2024",3 folds correspondentes ao contrato,PASS,phase_3d_temporal_folds.csv
+F3F-014,tempo,Ordem temporal e disjunção,Treino sempre anterior e sem overlap com validação,Todos os anos de treino antecedem o único ano de validação de cada fold,PASS,phase_3d_temporal_folds.csv
+F3F-015,tempo,2025 ausente dos folds internos,2025 reservado após congelamento,2025 não aparece em train_years nem validation_year,PASS,phase_3d_temporal_folds.csv
+F3F-016,preprocessing,Bloco categórico train-only,9 categóricas com OneHotEncoder e fit somente no treino,9 categóricas; OneHotEncoder; fold_train_only,PASS,phase_3e_preprocessing_contract.csv
+F3F-017,preprocessing,Encoding tolerante a unknown,handle_unknown=ignore sem drop ou agrupamento raro,"handle_unknown=ignore; drop=None; min_frequency=None; max_categories=None",PASS,phase_3e_preprocessing_contract.csv
+F3F-018,preprocessing,Bloco numérico train-only,Somente km com StandardScaler fit no treino,km; StandardScaler; fold_train_only,PASS,phase_3e_preprocessing_contract.csv
+F3F-019,preprocessing,Bloco binário passthrough,12 indicadores tracado_* binários sem parâmetros aprendidos,12 indicadores; passthrough; learned_parameters=none,PASS,phase_3e_preprocessing_contract.csv
+F3F-020,preprocessing,Transformações proibidas ausentes,Sem imputer target encoding rare grouping feature selection PCA ou balanceamento,Nenhuma transformação proibida integra a receita 3E,PASS,PHASE_3E_PREPROCESSING.md
+F3F-021,preprocessing,Qualidade das matrizes,Zero nulls; saída sparse; zero valores não finitos,0 nulls na entrada; csr_matrix nos 3 folds; 0 não finitos,PASS,prf-verify-analytical + phase_3e_fold_preprocessing_summary.csv
+F3F-022,preprocessing,Fit isolado e sem persistência,Validação não participa do fit e nenhum preprocessor fitado é salvo,fit_scope_verified=true nos 3 folds; nenhum pickle/joblib/transformer persistido,PASS,phase_3e_fold_preprocessing_summary.csv + PHASE_3E_PREPROCESSING.md
+F3F-023,experimento,Métrica primária congelada,AP para target_grave=True via average_precision_score; média não ponderada + desvio padrão + Fold 3,Contrato registra Average Precision (AP) e unweighted_mean_AP_plus_std_and_latest_fold,PASS,phase_3d_experimental_contract.csv
+F3F-024,experimento,Threshold futuro congelado,OOF 2022-2024; maximizar F1 grave; desempate recall e menor threshold; 2025 proibido,Contrato registra temporal_OOF_2022_2024 e higher_recall_then_lower_threshold,PASS,phase_3d_experimental_contract.csv
+F3F-025,experimento,Política de refit congelada,Novo pipeline fit em 2021-2024 após seleção e aplicado uma vez a 2025,Contrato registra final_refit_period=2021-2024 e no_optimization_or_fit_on_2025,PASS,phase_3d_experimental_contract.csv
+F3F-026,execucao,Nenhum ML executado antes do aceite,Sem classifier predição performance threshold ou avaliação preditiva de 2025,Fases 3A-3F encerradas sem modelo ou métrica preditiva,PASS,PHASE_3D_EXPERIMENTAL_DESIGN.md + PHASE_3E_PREPROCESSING.md
