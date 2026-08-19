@@ -1,0 +1,4 @@
+tipo_pista,total_occurrences,severe_occurrences,non_severe_occurrences,severe_rate_percent,dataset_share_percent
+Simples,167198,56365,110833,33.711528,48.799267
+Dupla,143585,33529,110056,23.351325,41.907455
+Múltipla,31841,6963,24878,21.868032,9.293278

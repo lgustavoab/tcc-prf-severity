@@ -859,9 +859,310 @@ de 2021–2025.
 
 **Status:** confirmado.
 
-## 2D — Via e ambiente
+## Fase 2D — Via e ambiente
 
-Nenhum achado registrado.
+### EDA018 — Tipo de pista e proporção de ocorrências graves
+
+**Data:** 18/08/2026.
+
+**Fase:** 2D — Via e ambiente.
+
+**Pergunta:** como volume e proporção de graves se distribuem entre os tipos de pista?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025.
+
+**Categorias ausentes/ignoradas:** nenhuma; foram preservadas Simples, Dupla e Múltipla.
+
+**Resultado absoluto:** pista Simples concentrou 167.198 registros e 56.365 graves; Dupla,
+143.585 e 33.529; Múltipla, 31.841 e 6.963.
+
+**Proporção/taxa:** as proporções graves foram 33,7115%, 23,3513% e 21,8680%,
+respectivamente. As participações no dataset foram 48,7993%, 41,9075% e 9,2933%.
+
+**Comparação:** pista Simples reuniu o maior volume e a maior proporção de graves entre as
+três categorias.
+
+**Estabilidade entre anos:** Simples apresentou a maior proporção em todos os anos, variando
+de 33,2019% a 34,0765% (amplitude de 0,8746 ponto percentual). As amplitudes de Dupla e
+Múltipla foram 0,8383 e 0,8273 ponto.
+
+**Interpretação:** existe contraste descritivo persistente entre os tipos de pista nas
+ocorrências registradas.
+
+**O que NÃO podemos concluir:** o contraste não demonstra efeito causal do tipo de pista nem
+estima risco absoluto de acidente ou de gravidade ao trafegar.
+
+**Limitações:** não há denominador de exposição rodoviária nem controle por região, fluxo,
+velocidade, composição dos veículos ou outros fatores.
+
+**Figura:** `../reports/figures/phase_2d_severe_rate_by_road_type.png`.
+
+**Tabela:** `../reports/tables/phase_2d_road_type_summary.csv`,
+`../reports/tables/phase_2d_road_type_by_year.csv` e
+`../reports/tables/phase_2d_environment_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/road_environment.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** motivar análise associativa posterior com controle das demais
+variáveis e validação temporal.
+
+**Status:** confirmado.
+
+### EDA019 — Uso do solo conforme o campo da PRF
+
+**Data:** 18/08/2026.
+
+**Fase:** 2D — Via e ambiente.
+
+**Pergunta:** como o campo `uso_solo` se relaciona descritivamente com a gravidade?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025.
+
+**Categorias ausentes/ignoradas:** nenhuma; foram preservadas as categorias `Não` e `Sim`.
+
+**Resultado absoluto:** `Não` reuniu 194.181 registros, dos quais 57.900 graves; `Sim`
+reuniu 148.443, dos quais 38.957 graves.
+
+**Proporção/taxa:** as proporções graves foram 29,8175% em `Não` e 26,2437% em `Sim`; as
+participações no dataset foram 56,6747% e 43,3253%.
+
+**Comparação:** `Não` apresentou proporção 3,5738 pontos percentuais maior que `Sim`.
+
+**Estabilidade entre anos:** `Não` manteve a maior proporção em todos os anos; sua amplitude
+foi 0,3614 ponto percentual, ante 0,6360 em `Sim`.
+
+**Interpretação:** as duas categorias do campo apresentam diferença descritiva pequena e
+recorrente no período.
+
+**O que NÃO podemos concluir:** `Sim` e `Não` não foram reinterpretados automaticamente como
+urbano e rural, e a diferença não demonstra causalidade nem risco absoluto.
+
+**Limitações:** a semântica é a registrada pela PRF e não há denominador de exposição ou
+ajuste por fatores de confusão.
+
+**Figura:** `../reports/figures/phase_2d_severe_rate_by_land_use.png`.
+
+**Tabela:** `../reports/tables/phase_2d_land_use_summary.csv`,
+`../reports/tables/phase_2d_land_use_by_year.csv` e
+`../reports/tables/phase_2d_environment_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/road_environment.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** variável contextual a ser avaliada com sua codificação original.
+
+**Status:** confirmado.
+
+### EDA020 — Sentido da via e preservação de Não Informado
+
+**Data:** 18/08/2026.
+
+**Fase:** 2D — Via e ambiente.
+
+**Pergunta:** qual é a distribuição de volume e gravidade por sentido da via?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025.
+
+**Categorias ausentes/ignoradas:** `Não Informado` foi preservado como categoria explícita.
+
+**Resultado absoluto:** Crescente reuniu 183.409 registros e 53.013 graves; Decrescente,
+158.332 e 43.763; Não Informado, 883 e 81.
+
+**Proporção/taxa:** as proporções graves foram 28,9043%, 27,6400% e 9,1733%; Não Informado
+representou 0,2577% do dataset.
+
+**Comparação:** Crescente e Decrescente diferiram 1,2642 ponto percentual; Não Informado teve
+volume muito menor.
+
+**Estabilidade entre anos:** as amplitudes anuais foram 0,7490 ponto em Crescente, 0,7309 em
+Decrescente e 8,1683 em Não Informado; a última deve ser lida junto de seu baixo volume.
+
+**Interpretação:** a direção nominal apresenta pequena diferença descritiva entre as duas
+categorias informadas.
+
+**O que NÃO podemos concluir:** Crescente ou Decrescente não possuem significado causal para
+gravidade e não representam, isoladamente, condições de segurança.
+
+**Limitações:** Não Informado é pouco frequente; não há exposição por sentido nem controle de
+características da via e do tráfego.
+
+**Figura:** não aplicável; a tabela é suficiente para o contraste.
+
+**Tabela:** `../reports/tables/phase_2d_direction_summary.csv`,
+`../reports/tables/phase_2d_direction_by_year.csv` e
+`../reports/tables/phase_2d_environment_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/road_environment.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** documentação de qualidade e avaliação contextual posterior.
+
+**Status:** confirmado.
+
+### EDA021 — Condição meteorológica, tamanho amostral e categorias raras
+
+**Data:** 18/08/2026.
+
+**Fase:** 2D — Via e ambiente.
+
+**Pergunta:** como volume e proporção grave variam entre as categorias meteorológicas?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025; todas as
+dez categorias do contrato foram mantidas na tabela completa.
+
+**Categorias ausentes/ignoradas:** `Ignorado` foi preservado com 4.492 registros. Granizo
+(n=11) e Neve (n=8) foram preservados, mas não destacados por taxa. `Ignorado` também foi
+excluído somente dos destaques por não representar uma condição meteorológica observada.
+
+**Resultado absoluto:** Céu Claro concentrou 214.012 registros e 62.867 graves; Nublado,
+54.014 e 14.971; Chuva, 34.396 e 8.285. Como aspecto de qualidade, `Ignorado` teve 1.552
+graves em 4.492 registros. Entre condições informadas com n≥500, Nevoeiro/Neblina teve 894
+graves em 2.838 e Vento, 186 em 593.
+
+**Proporção/taxa:** `Ignorado` apresentou 34,5503%, registrada como métrica de ausência
+semântica, não como efeito meteorológico. Entre condições informadas elegíveis ao destaque,
+as maiores proporções foram 31,5011% em Nevoeiro/Neblina e 31,3659% em Vento. Céu Claro teve
+29,3755%; Nublado, 27,7169%; Sol, 26,8196%; Chuva, 24,0871%; Garoa/Chuvisco, 22,2644%.
+
+**Comparação:** o corte editorial `n >= 500` evitou destacar Granizo e Neve, cujas taxas se
+baseiam em apenas 11 e 8 observações. `Ignorado` foi excluído por ausência de conteúdo
+meteorológico. Nenhuma dessas regras removeu categorias da análise completa, anual ou de
+estabilidade.
+
+**Estabilidade entre anos:** amplitudes foram pequenas nas categorias volumosas Céu Claro
+(0,5941 ponto), Nublado (0,9225), Sol (0,9768) e Chuva (1,3658); categorias menores foram
+mais variáveis, incluindo Vento (7,5321) e Ignorado (6,7986).
+
+**Interpretação:** tamanho amostral e qualidade de registro são indispensáveis para ler as
+diferenças meteorológicas observadas. A taxa de `Ignorado` caracteriza informação ausente e
+não recebe interpretação substantiva como condição meteorológica.
+
+**O que NÃO podemos concluir:** as proporções não medem o risco de acidente sob cada condição
+nem demonstram que a meteorologia causou a gravidade.
+
+**Limitações:** não há exposição por condição meteorológica; `Ignorado` não é condição física;
+categorias raras geram taxas instáveis. O limiar de 500 é editorial, não científico universal.
+
+**Figura:** `../reports/figures/phase_2d_severe_rate_by_weather.png`.
+
+**Tabela:** `../reports/tables/phase_2d_weather_summary.csv`,
+`../reports/tables/phase_2d_weather_by_year.csv`,
+`../reports/tables/phase_2d_weather_severe_rate_n500.csv` e
+`../reports/tables/phase_2d_environment_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/road_environment.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** fundamentar critérios de amostra e tratamento explícito de categorias
+raras ou desconhecidas.
+
+**Status:** confirmado.
+
+### EDA022 — Componentes multivalorados de traçado da via
+
+**Data:** 18/08/2026.
+
+**Fase:** 2D — Via e ambiente.
+
+**Pergunta:** quais componentes básicos aparecem em `tracado_via` e como se distribuem volume
+e proporção grave?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, com
+separação analítica em memória pelo delimitador `;`.
+
+**Categorias ausentes/ignoradas:** nenhum token desconhecido foi encontrado. Foram confirmados
+Aclive, Curva, Declive, Desvio Temporário, Em Obras, Interseção de Vias, Ponte, Reta, Retorno
+Regulamentado, Rotatória, Túnel e Viaduto.
+
+**Resultado absoluto:** Reta apareceu em 241.869 ocorrências, Curva em 62.755, Declive em
+32.735, Aclive em 25.085 e Interseção de Vias em 22.802. A soma das contagens foi 418.561,
+75.937 acima do total do dataset, pois uma ocorrência pode conter vários componentes.
+
+**Proporção/taxa:** Reta esteve em 70,5931% das ocorrências; Curva, 18,3160%; Declive, 9,5542%.
+Entre componentes com n≥500, Ponte apresentou 31,7514% de graves (1.124/3.540), Declive
+31,3487% (10.262/32.735) e Aclive 29,7668% (7.467/25.085).
+
+**Comparação:** os componentes foram ordenados por volume na tabela completa; `n >= 500` foi
+usado somente nos destaques de taxa. Túnel (n=190) permaneceu na tabela, mas não no destaque.
+
+**Estabilidade entre anos:** entre componentes volumosos, as amplitudes foram 0,8387 ponto em
+Reta, 1,3939 em Curva, 2,0138 em Declive e 1,9174 em Aclive. Categorias menores foram mais
+instáveis, como Desvio Temporário (7,9765) e Túnel (21,0221).
+
+**Interpretação:** `tracado_via` representa combinações multivaloradas, não aproximadamente
+1.214 tipos independentes. As contagens de componentes não são mutuamente exclusivas; o
+percentual significa ocorrências que contêm o componente, não participação exclusiva.
+
+**O que NÃO podemos concluir:** os contrastes não demonstram efeito causal do traçado nem
+estimam risco absoluto de acidente ou gravidade.
+
+**Limitações:** não há denominador de exposição por componente, e combinações entre componentes
+podem refletir contextos distintos não controlados nesta análise.
+
+**Figura:** `../reports/figures/phase_2d_severe_rate_by_road_layout_component.png`.
+
+**Tabela:** `../reports/tables/phase_2d_road_layout_component_summary.csv`,
+`../reports/tables/phase_2d_road_layout_component_by_year.csv`,
+`../reports/tables/phase_2d_road_layout_component_severe_rate_n500.csv` e
+`../reports/tables/phase_2d_road_layout_tokens.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/road_environment.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** definir representação multirrótulo adequada antes de qualquer análise
+associativa ou preparação de features.
+
+**Status:** confirmado.
+
+### EDA023 — Estabilidade descritiva das dimensões de via e ambiente
+
+**Data:** 18/08/2026.
+
+**Fase:** 2D — Via e ambiente.
+
+**Pergunta:** os contrastes consolidados de via e ambiente se repetem entre 2021 e 2025?
+
+**População analisada:** todas as 342.624 ocorrências, estratificadas por ano e pelas
+categorias da Fase 2D.
+
+**Categorias ausentes/ignoradas:** categorias raras e especiais foram mantidas; seus volumes
+devem acompanhar as amplitudes.
+
+**Resultado absoluto:** foram calculados mínimo, máximo, amplitude e número de anos observados
+para cada categoria de tipo de pista, uso do solo, sentido, meteorologia e componente de
+traçado.
+
+**Proporção/taxa:** Simples liderou tipo de pista e `Não` liderou uso do solo nos cinco anos,
+com amplitudes de 0,8746 e 0,3614 ponto percentual. Nas categorias meteorológicas volumosas,
+as amplitudes ficaram entre 0,5941 e 1,3658 ponto; Reta variou 0,8387 ponto.
+
+**Comparação:** categorias volumosas tenderam a variações anuais menores que categorias raras;
+por exemplo, Túnel variou 21,0221 pontos e Neve, 33,3333, com amostras muito pequenas.
+
+**Estabilidade entre anos:** a tabela registra diretamente mínimo, máximo e amplitude, sem
+criar índice composto ou classificar automaticamente categorias como estáveis.
+
+**Interpretação:** os padrões mais volumosos foram descritivamente recorrentes, enquanto
+amplitudes de grupos raros não devem ser separadas de seus tamanhos amostrais.
+
+**O que NÃO podemos concluir:** recorrência temporal não elimina confundimento, não demonstra
+causalidade e não garante estabilidade futura ou ausência de drift.
+
+**Limitações:** cinco pontos anuais oferecem caracterização simples; não foram feitos testes
+inferenciais, ajuste de composição ou validação de exposição.
+
+**Figura:** não aplicável; a tabela preserva todas as categorias e medidas.
+
+**Tabela:** `../reports/tables/phase_2d_environment_stability.csv` e tabelas `*_by_year.csv`
+da Fase 2D.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/road_environment.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** orientar validação temporal futura sem antecipar decisões de ML.
+
+**Status:** confirmado.
 
 ## 2E — Dinâmica das ocorrências
 

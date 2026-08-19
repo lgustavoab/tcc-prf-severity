@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 2C — Padrões geográficos das ocorrências registradas.**
+**Fase 2D — Via e ambiente das ocorrências registradas.**
 
 Nesta fase o projeto:
 
@@ -23,6 +23,8 @@ Nesta fase o projeto:
 - caracteriza volume anual, estabilidade do target, nulidade e cardinalidade básica;
 - caracteriza mês, dia da semana, hora e fase do dia, incluindo estabilidade descritiva anual;
 - caracteriza macrorregião, UF, BR e município, separando volume de proporção grave;
+- caracteriza tipo de pista, uso do solo, sentido, meteorologia e componentes multivalorados
+  de traçado, separando volume, proporção grave, amostra e estabilidade anual;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
@@ -135,6 +137,19 @@ uv run prf-eda-geographic
 O comando verifica o interim, deriva macrorregião somente em memória e gera 15 tabelas e seis
 figuras geográficas. As tabelas completas preservam `br = 0` e todas as categorias; rankings
 de taxa de BR e município usam `n >= 500` apenas como critério editorial de destaque.
+
+## EDA — Via e ambiente
+
+```powershell
+uv run prf-eda-road-environment
+```
+
+O comando verifica o interim sem reconstruí-lo e gera 14 tabelas e quatro figuras sobre tipo
+de pista, uso do solo, sentido, meteorologia e componentes de `tracado_via`. A separação dos
+componentes ocorre somente em memória; suas contagens não são mutuamente exclusivas. O corte
+`n >= 500` é apenas um critério editorial para destaques de taxa em meteorologia e traçado;
+`Ignorado` permanece nas tabelas completas, mas não é tratado como condição meteorológica
+informada nesses destaques.
 
 ## Documentação científica
 
