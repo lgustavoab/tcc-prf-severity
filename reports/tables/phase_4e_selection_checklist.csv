@@ -1,0 +1,14 @@
+check_id,check,expected,observed,status,evidence
+SEL001,exatamente três modelos,3 modelos esperados,3 modelos,PASS,phase_4d_model_comparison.csv
+SEL002,exatamente três folds,"folds 1,2,3 para cada modelo","folds=[1, 2, 3]; linhas=9",PASS,phase_4d_fold_comparison.csv
+SEL003,2025 ausente das validações internas,"2022,2023,2024","2022,2023,2024",PASS,phase_4d_fold_comparison.csv
+SEL004,métrica primária congelada,Average Precision (AP),Average Precision (AP),PASS,phase_3d_experimental_contract.csv
+SEL005,agregação principal congelada,unweighted_mean_AP_plus_std_and_latest_fold,unweighted_mean_AP_plus_std_and_latest_fold,PASS,phase_3d_experimental_contract.csv
+SEL006,rank primário único,um modelo com rank 1,1 modelo(s),PASS,phase_4d_model_comparison.csv
+SEL007,rank e argmax da AP média coincidem,mesmo model_id,phase_4c_xgboost_baseline,PASS,phase_4d_model_comparison.csv
+SEL008,summaries 4D consistentes,"folds, médias, std e métricas reconciliados",consistente,PASS,phase_4d_*
+SEL009,selecionado possui contrato versionado,contrato compatível,compatível,PASS,phase_4c_xgboost_model_contract.csv
+SEL010,nenhum threshold selecionado,false,false,PASS,escopo da Fase 4E
+SEL011,nenhum refit realizado,false,false,PASS,escopo da Fase 4E
+SEL012,nenhum tuning posterior,false,false,PASS,escopo da Fase 4E
+SEL013,nenhum resultado de 2025,2025_reserved,no_optimization_or_fit_on_2025,PASS,contrato 3D e tabelas 4D

@@ -1,0 +1,26 @@
+key,value
+selection_status,selected
+selected_model_id,phase_4c_xgboost_baseline
+selected_model_family,xgboost_gradient_boosted_trees
+selected_model_role,baseline_candidate
+selection_metric,Average Precision
+selection_aggregation,unweighted_fold_mean
+selected_ap_fold1,0.390374557377428
+selected_ap_fold2,0.40496847114969603
+selected_ap_fold3,0.4070898952179728
+selected_ap_unweighted_mean,0.40081097458169895
+selected_ap_population_std,0.007430307892479644
+selected_mean_roc_auc,0.6308499409937857
+selected_mean_brier_score,0.19389746858763426
+primary_metric_rank,1
+ap_fold3_rank,1
+ap_std_rank,3
+delta_vs_logistic_ap_mean,0.00730268102395526
+delta_vs_random_forest_ap_mean,0.004827046995155848
+development_period,2021-2024
+internal_validation_years,"2022,2023,2024"
+final_test_year,2025_reserved
+final_test_used,false
+threshold_selected,false
+refit_performed,false
+hyperparameter_tuning_after_comparison,false
