@@ -1,0 +1,2 @@
+candidate_count,maximum_f1,number_of_candidates_at_maximum_f1,tie_break_recall_applied,tie_break_lower_threshold_applied,selected_threshold,selected_recall,selected_f1
+202207,0.46530870405989,1,false,false,0.23723246157169342,0.7704563403495519,0.46530870405989
