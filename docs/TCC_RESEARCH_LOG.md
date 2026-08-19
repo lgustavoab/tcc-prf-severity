@@ -381,6 +381,30 @@ representação antes da preparação de dados.
 
 **Status:** confirmado.
 
+### R006 — Primeira modelagem: Regressão Logística baseline
+
+**Data:** 19/08/2026.
+
+**População e período:** três folds temporais internos, com fit progressivo em 2021–2023 e
+validações separadas em 2022, 2023 e 2024. Nenhuma predição ou métrica de 2025 foi consultada.
+
+**Método:** pipeline train-only da Fase 3E seguido por `LogisticRegression` com
+`solver="newton-cholesky"`, `C=1.0`, `l1_ratio=0.0`, `class_weight=None`, intercepto, tolerância
+`1e-4` e `max_iter=500`. A configuração foi única, sem tuning.
+
+**Resultado:** as APs foram 0,386681, 0,396058 e 0,397786. A média aritmética não ponderada foi
+0,393508 e o desvio padrão populacional, 0,004879. Os três folds convergiram em três iterações.
+ROC-AUC, Brier, métricas no corte fixo 0,5 e calibração foram registrados como diagnósticos;
+nenhum threshold foi selecionado.
+
+**Limitações:** trata-se de uma baseline linear e não de modelo vencedor. O corte 0,5 é apenas
+referência, o resultado não é causal e 2025 continua reservado ao pipeline final congelado.
+
+**Origem:** [PHASE_4A_LOGISTIC_BASELINE.md](PHASE_4A_LOGISTIC_BASELINE.md) e tabelas
+`phase_4a_logistic_*` em `reports/tables/`.
+
+**Status:** confirmado; primeira baseline executada sem refit final ou consulta a 2025.
+
 ## Achados exploratórios
 
 ### EDA001 — Distribuição anual do volume

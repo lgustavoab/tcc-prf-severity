@@ -1,0 +1,17 @@
+key,value
+model_family,logistic_regression
+role,baseline
+solver,newton-cholesky
+regularization,L2
+C,1.0
+l1_ratio,0.0
+class_weight,none
+fit_intercept,true
+tol,1e-4
+max_iter,500
+preprocessing,phase_3e
+validation,expanding_window_3_folds
+primary_metric,Average Precision
+model_selection_aggregation,unweighted_fold_mean
+threshold_policy,not_selected_0.5_reference_only
+final_test_year,2025_reserved
