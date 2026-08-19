@@ -1,5 +1,7 @@
 from typing import Any
 
+import polars as pl
+
 from tcc_prf_severity.analysis.general import run_general_analysis
 from tcc_prf_severity.analysis.geographic import run_geographic_analysis
 from tcc_prf_severity.analysis.occurrence_dynamics import run_occurrence_dynamics_analysis
@@ -20,6 +22,7 @@ from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_
 from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
 from tcc_prf_severity.modeling.logistic_baseline import run_logistic_baseline
 from tcc_prf_severity.modeling.model_comparison import run_model_comparison
+from tcc_prf_severity.modeling.model_selection import run_model_selection
 from tcc_prf_severity.modeling.preprocessing import run_preprocessing_validation
 from tcc_prf_severity.modeling.random_forest_baseline import run_random_forest_baseline
 from tcc_prf_severity.modeling.xgboost_baseline import (
@@ -227,6 +230,32 @@ def compare_models_main() -> None:
     print(f"Maior AP Fold 3 observada: {labels[str(largest_fold3['model_id'])]}")
     print("Seleção final realizada: não")
     print("2025 utilizado: não")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def select_model_main() -> None:
+    run = run_model_selection()
+    result = run.result
+    labels = {
+        "phase_4a_logistic_baseline": "Logistic Regression",
+        "phase_4b_random_forest_baseline": "Random Forest",
+        "phase_4c_xgboost_baseline": "XGBoost",
+    }
+    selected = result.comparison.filter(pl.col("model_id") == result.selected_model_id).row(
+        0, named=True
+    )
+    print("Fase 4E — Seleção formal")
+    print("Critério: Average Precision — média não ponderada dos 3 folds")
+    for row in result.comparison.iter_rows(named=True):
+        print(f"{labels[str(row['model_id'])]}: AP média {float(row['ap_unweighted_mean']):.6f}")
+    print(f"Modelo selecionado: {labels[result.selected_model_id]}")
+    print("Motivo: maior AP média não ponderada nos folds internos.")
+    print(f"AP Fold 3: {float(selected['ap_fold3']):.6f}")
+    print(f"AP std: {float(selected['ap_population_std']):.6f}")
+    print("2025 utilizado: não")
+    print("Threshold selecionado: não")
+    print("Refit realizado: não")
+    print("Próximo passo: Fase 4F — threshold OOF")
     print(f"Tabelas: {run.table_paths[0].parent}")
 
 

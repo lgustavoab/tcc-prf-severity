@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4D concluída — comparação temporal formal das três famílias consolidada.**
+**Fase 4E concluída — XGBoost formalmente selecionado para as próximas etapas.**
 
 Nesta fase o projeto:
 
@@ -52,6 +52,8 @@ Nesta fase o projeto:
   de 0,400811 e desvio padrão populacional de 0,007430, sem seleção entre famílias;
 - compara formalmente as três famílias nos mesmos folds: APs médias de 0,393508, 0,395984 e
   0,400811, com ranks apenas descritivos e sem selecionar o modelo final;
+- seleciona formalmente XGBoost pela maior AP média não ponderada nos três folds internos,
+  mantendo threshold, refit e avaliação de 2025 para fases posteriores;
 - preserva 2025, não seleciona threshold, não faz refit final e não persiste modelos fitados.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
@@ -77,6 +79,8 @@ O XGBoost baseline está documentado em
 [`docs/PHASE_4C_XGBOOST.md`](docs/PHASE_4C_XGBOOST.md).
 A comparação temporal está documentada em
 [`docs/PHASE_4D_MODEL_COMPARISON.md`](docs/PHASE_4D_MODEL_COMPARISON.md).
+A seleção formal está documentada em
+[`docs/PHASE_4E_MODEL_SELECTION.md`](docs/PHASE_4E_MODEL_SELECTION.md).
 
 ## Requisitos
 
@@ -320,6 +324,17 @@ prevalências, dimensões e contratos são comparáveis e gera quatro tabelas co
 comparação registra AP por fold, média, dispersão, Fold 3, métricas secundárias e deltas, sem
 treinar modelos, usar 2025, calcular threshold ou realizar a seleção final.
 
+## Seleção formal do modelo
+
+```powershell
+uv run prf-select-model
+```
+
+O comando lê somente os resultados consolidados da 4D e os contratos versionados, reconcilia
+rank e maior AP média e publica a seleção após 13 verificações substantivas. XGBoost foi
+selecionado exclusivamente pela maior AP média não ponderada (`0,400811`). Nenhum OOF,
+threshold, refit, tuning posterior ou resultado de 2025 participa desta fase.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -343,6 +358,8 @@ treinar modelos, usar 2025, calcular threshold ou realizar a seleção final.
   rounds completos, resultados por fold, calibração diagnóstica e OOF temporal.
 - [`PHASE_4D_MODEL_COMPARISON.md`](docs/PHASE_4D_MODEL_COMPARISON.md): comparabilidade,
   resultados consolidados, estabilidade e deltas descritivos das três famílias.
+- [`PHASE_4E_MODEL_SELECTION.md`](docs/PHASE_4E_MODEL_SELECTION.md): regra pré-especificada,
+  modelo selecionado, checklist e congelamento pós-seleção.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -363,8 +380,9 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4E — Seleção formal do modelo**, usando somente os resultados
-internos consolidados. 2025 permanecerá intocado até a avaliação formal do pipeline final.
+A próxima etapa é a **Fase 4F — seleção de threshold**, usando somente o OOF temporal de
+2022–2024 do XGBoost selecionado. 2025 permanecerá intocado até a avaliação formal do
+pipeline final.
 
 ## Princípio metodológico
 

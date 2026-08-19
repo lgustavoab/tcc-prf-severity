@@ -311,6 +311,31 @@ continuará separado da conclusão principal.
 
 **Status:** confirmada; Fase 3 encerrada e Fase 4 autorizada.
 
+### D014 — Seleção formal do XGBoost
+
+**Data:** 19/08/2026.
+
+**Decisão:** selecionar `phase_4c_xgboost_baseline`, família
+`xgboost_gradient_boosted_trees`, exclusivamente por apresentar a maior AP média aritmética
+não ponderada nos três folds internos: 0,400811, frente a 0,395984 da Random Forest e
+0,393508 da Logistic Regression. O `primary_metric_rank=1` é único e coincide com o argmax
+recalculado da AP média.
+
+**Justificativa:** Average Precision e sua média não ponderada foram congeladas antes da
+modelagem como métrica e agregação principais. AP std, Fold 3, ROC-AUC e Brier são
+complementares e não causam a seleção. Os deltas médios descritivos do XGBoost são
+0,00730268102395526 contra Logistic Regression e 0,004827046995155848 contra Random Forest;
+não houve teste de significância ou score composto.
+
+**Consequências:** família, configuração 4C, preprocessing 3E, features 3B/3C e desenho 3D
+ficam congelados sem tuning posterior. 2025 permanece reservado; nenhum OOF foi carregado,
+nenhum threshold foi selecionado e nenhum refit foi realizado. O próximo passo é a Fase 4F.
+
+**Origem:** [PHASE_4E_MODEL_SELECTION.md](PHASE_4E_MODEL_SELECTION.md),
+`phase_4e_model_selection.csv` e `phase_4e_selection_checklist.csv`.
+
+**Status:** confirmada; 13 checks PASS e 0 FAIL.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -498,8 +523,8 @@ paralelo da Random Forest não afeta as métricas reproduzidas nem esta comparab
 **Origem:** [PHASE_4D_MODEL_COMPARISON.md](PHASE_4D_MODEL_COMPARISON.md) e tabelas
 `phase_4d_*` em `reports/tables/`.
 
-**Status:** confirmado; comparação descritiva concluída, sem seleção final. A decisão pertence
-à Fase 4E.
+**Status:** confirmado; comparação descritiva concluída. A seleção posterior está registrada
+na decisão D014.
 
 ## Achados exploratórios
 
