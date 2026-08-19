@@ -337,8 +337,30 @@ def test_export_preserves_unmanaged_json_inside_data_directory(tmp_path: Path) -
     assert unmanaged.read_text(encoding="utf-8") == '{"owner":"human"}\n'
 
 
-def test_phase_6b_does_not_create_frontend_scaffolding() -> None:
-    assert not (PROJECT_ROOT / "dashboard/package.json").exists()
-    assert not (PROJECT_ROOT / "dashboard/tsconfig.json").exists()
-    assert not (PROJECT_ROOT / "dashboard/src").exists()
-    assert not (PROJECT_ROOT / "dashboard/node_modules").exists()
+def test_export_preserves_existing_frontend_outside_data_directory(tmp_path: Path) -> None:
+    dashboard = tmp_path / "dashboard"
+    output = dashboard / "public" / "data"
+    frontend_files = {
+        dashboard / "package.json": b'{"name":"frontend-sentinel"}\n',
+        dashboard / "package-lock.json": b'{"lockfileVersion":3}\n',
+        dashboard / "next.config.ts": b'export default { output: "export" };\n',
+        dashboard / "src" / "sentinel.tsx": b"export const sentinel = true;\n",
+    }
+    for path, content in frontend_files.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(content)
+
+    before = {
+        path.relative_to(dashboard): path.read_bytes()
+        for path in dashboard.rglob("*")
+        if path.is_file() and output not in path.parents
+    }
+
+    export_dashboard_data(generated_at=FIXED_GENERATED_AT, output_dir=output)
+
+    after = {
+        path.relative_to(dashboard): path.read_bytes()
+        for path in dashboard.rglob("*")
+        if path.is_file() and output not in path.parents
+    }
+    assert after == before

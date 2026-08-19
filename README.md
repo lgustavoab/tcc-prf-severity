@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 6B concluída — dados estáticos do dashboard exportados e auditados; frontend ainda não iniciado.**
+**Fase 6C concluída — fundação Next.js estática criada sobre os dados auditados do dashboard.**
 
 Nesta fase o projeto:
 
@@ -517,11 +517,11 @@ necessárias antes da integração definitiva ao manuscrito.
 
 ## Arquitetura do dashboard estático
 
-A Fase 6A definiu a arquitetura e a Fase 6B materializou os JSONs determinísticos, auditados e
-versionados em `dashboard/public/data/`. O manifesto registra fontes, row counts, tamanhos e
-SHA-256; as agregações temporal e contextual permanecem fisicamente separadas. Resultados de
-modelos, validação, limiar e interpretação foram copiados das fontes congeladas, sem
-recomputação. A aplicação Next.js/React/TypeScript ainda não foi criada.
+A Fase 6A definiu a arquitetura, a Fase 6B materializou os JSONs determinísticos e a Fase 6C
+criou a aplicação Next.js/React/TypeScript com App Router e static export. O frontend lê
+somente `dashboard/public/data/`, mantém os escopos temporal e contextual independentes,
+implementa filtros locais, UF → BR, navegação acessível e páginas congeladas sem recortes
+populacionais. As visualizações científicas finais permanecem reservadas à Fase 6D.
 
 ## Documentação científica
 
@@ -578,6 +578,8 @@ recomputação. A aplicação Next.js/React/TypeScript ainda não foi criada.
   estática, contratos de dados, rotas, filtros, fronteiras científicas e plano das Fases 6B–6E.
 - [`PHASE_6B_DASHBOARD_DATA_EXPORT.md`](docs/PHASE_6B_DASHBOARD_DATA_EXPORT.md): exportador,
   JSONs, manifesto, hashes, reconciliação, determinismo e limites da camada estática de dados.
+- [`PHASE_6C_DASHBOARD_SHELL.md`](docs/PHASE_6C_DASHBOARD_SHELL.md): aplicação Next.js,
+  rotas, componentes, dados tipados, filtros locais, acessibilidade e static export.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -598,8 +600,8 @@ grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-A próxima etapa do dashboard é a **Fase 6C — infraestrutura web estática**, que poderá criar o
-frontend Next.js/React/TypeScript e consumir os JSONs auditados sem recalcular ciência.
+A próxima etapa é a Fase 6D, que integrará as visualizações científicas aos placeholders e aos
+dados já tipados da fundação estática.
 
 ## Princípio metodológico
 

@@ -673,6 +673,35 @@ cobre 14 partes, e duas execuções com o mesmo `generated_at` foram byte a byte
 ROC-AUC e Brier nas nove combinações modelo/fold, 50 checks PASS e 0 FAIL. Próxima etapa:
 Fase 6C — infraestrutura do frontend estático, sem reabrir os resultados científicos.
 
+### D028 — Fundação estática e tipada do dashboard
+
+**Data:** 19/08/2026.
+
+**Decisão:** implementar a aplicação em Next.js 16.3.1, React 19.2.8 e TypeScript 6.0.3 com
+App Router, CSS nativo e `output: "export"`. As oito rotas da 6A consomem exclusivamente os
+JSONs 6B por uma camada tipada e centralizada; não existe backend, API, inferência ou runtime
+Python.
+
+**Justificativa:** a infraestrutura de interface deve permanecer separada da produção dos
+resultados científicos. Guards leves confirmam schema e identidade do asset, enquanto a
+validação científica continua no pipeline Python. Estados locais preservam YEAR da home, os
+escopos TEMPORAL e CONTEXTUAL independentes e a dependência UF → BR publicada.
+
+**Consequências:** oito rotas foram exportadas estaticamente, páginas congeladas não possuem
+filtros populacionais e os placeholders identificam explicitamente o trabalho reservado à
+6D. A aplicação inclui navegação responsiva, skip link, estados de loading/error/empty,
+caveat de exposição e tipos dos 14 assets físicos, sem biblioteca de gráficos ou cálculo de
+AP, ROC-AUC, Brier, SHAP, threshold ou matriz.
+
+**Origem:** [PHASE_6C_DASHBOARD_SHELL.md](PHASE_6C_DASHBOARD_SHELL.md), `dashboard/src/` e
+tabelas `phase_6c_*` em `reports/tables/`.
+
+**Status:** implementação frontend aprovada em lint, typecheck, build e static export; aceite
+global confirmado com 55 checks PASS e 0 FAIL e 378 testes Python aprovados. A adaptação de
+compatibilidade preserva a lógica científica da exportação 6B e verifica byte a byte que ela
+não altera arquivos frontend existentes fora de `dashboard/public/data`. Próxima etapa: Fase
+6D.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

@@ -8,7 +8,6 @@ import json
 import math
 import os
 import shutil
-import subprocess
 import tempfile
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
@@ -24,7 +23,6 @@ from tcc_prf_severity.dashboard.contracts import (
     ASSOCIATION_CAVEAT,
     CONTEXTUAL_DIMENSIONS,
     DATA_PERIOD,
-    EXPECTED_BRANCH,
     EXPLORATORY_MEASURES,
     EXPOSURE_CAVEAT,
     FROZEN_RESULT_CAVEAT,
@@ -1094,17 +1092,6 @@ def _write_csv_bundle(
     _publish_bytes(reports_dir, serialized)
 
 
-def _current_branch(project_root: Path) -> str:
-    completed = subprocess.run(
-        ["git", "branch", "--show-current"],
-        cwd=project_root,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return completed.stdout.strip()
-
-
 def _hash_files(paths: Iterable[Path]) -> dict[Path, str]:
     return {path: sha256_file(path) for path in paths if path.is_file()}
 
@@ -1122,21 +1109,8 @@ def _checklist_rows(
     statuses = {f"{asset['asset_id']}:{asset['part_id']}" for asset in assets}
     all_sources = {source for asset in assets for source in asset["source_artifacts"]}
     protected_after = _hash_files(protected_before)
-    no_frontend = not any(
-        (project_root / relative).exists()
-        for relative in (
-            "dashboard/package.json",
-            "dashboard/package-lock.json",
-            "dashboard/pnpm-lock.yaml",
-            "dashboard/yarn.lock",
-            "dashboard/tsconfig.json",
-            "dashboard/src",
-            "dashboard/node_modules",
-        )
-    )
     largest = max(asset["size_bytes"] for asset in assets)
     checks: list[tuple[str, bool, str]] = [
-        ("branch correta", _current_branch(project_root) == EXPECTED_BRANCH, EXPECTED_BRANCH),
         (
             "contrato 6A lido",
             all((project_root / path).is_file() for path in PHASE_6A_CONTRACTS),
@@ -1148,8 +1122,6 @@ def _checklist_rows(
             "hashes antes/depois",
         ),
         ("dashboard/public/data criado", output_dir.is_dir(), str(output_dir)),
-        ("nenhum frontend criado", no_frontend, "somente public/data"),
-        ("nenhuma dependência Node", no_frontend, "sem manifests ou node_modules"),
         (
             "nenhuma dependência Python nova",
             protected_after == dict(protected_before),

@@ -1,0 +1,9 @@
+route,page_name,implemented,page_status,data_assets,has_population_filters,filter_scope,static_exported,visualization_status,status
+/,Visão Geral,true,MIXED,OVERVIEW,true,YEAR_LOCAL,true,FOUNDATION_ONLY,PASS
+/exploracao,Exploração,true,EXPLORATORY,EXPLORATION_temporal; EXPLORATION_contextual,true,TEMPORAL_LOCAL | CONTEXTUAL_LOCAL,true,FOUNDATION_ONLY,PASS
+/geografia,Geografia,true,EXPLORATORY,GEOGRAPHY,true,GEOGRAPHY_LOCAL_YEAR_UF_BR,true,FOUNDATION_ONLY,PASS
+/modelos,Modelos,true,FROZEN_RESULT,MODEL_COMPARISON; FINAL_2025; CALIBRATION_2025,false,NONE,true,FOUNDATION_ONLY,PASS
+/validacao-temporal,Validação Temporal,true,FROZEN_RESULT,TEMPORAL_VALIDATION,false,NONE,true,FOUNDATION_ONLY,PASS
+/limiar,Limiar de Decisão,true,FROZEN_RESULT,THRESHOLD_2025,false,NONE,true,FOUNDATION_ONLY,PASS
+/interpretacao,Interpretação,true,FROZEN_RESULT,INTERPRETATION_source_predictors; INTERPRETATION_transformed_top15,false,NONE,true,FOUNDATION_ONLY,PASS
+/metodologia,Metodologia,true,DOCUMENTATION,META; METHODOLOGY_DESIGN; METHODOLOGY_FEATURES,false,NONE,true,FOUNDATION_ONLY,PASS
