@@ -1,0 +1,91 @@
+dimension,category,years_observed,total_occurrences,minimum_annual_rate_percent,maximum_annual_rate_percent,range_percentage_points,priority_for_narrative
+accident_type,Atropelamento de Animal,5,5598,25.836576,31.25,5.413424,true
+accident_type,Atropelamento de Pedestre,5,15313,67.157344,68.771708,1.614364,true
+accident_type,Capotamento,5,7661,19.641715,21.061644,1.419929,true
+accident_type,Colisão com objeto,5,24761,20.61293,21.608925,0.995995,true
+accident_type,Colisão frontal,5,23045,62.278481,63.533525,1.255044,true
+accident_type,Colisão lateral mesmo sentido,5,34602,19.298912,20.782484,1.483572,true
+accident_type,Colisão lateral sentido oposto,5,9582,32.957746,37.360595,4.402849,true
+accident_type,Colisão transversal,5,43190,32.647842,33.628871,0.981029,true
+accident_type,Colisão traseira,5,65634,22.923264,24.519499,1.596235,true
+accident_type,Derramamento de carga,5,629,5.454545,14.018692,8.564147,true
+accident_type,Engavetamento,5,5780,10.436433,15.767974,5.331541,true
+accident_type,Eventos atípicos,5,1477,23.220974,28.093645,4.872671,true
+accident_type,Incêndio,5,7430,0.112931,0.478469,0.365538,true
+accident_type,Queda de ocupante de veículo,5,15251,21.826087,25.289129,3.463042,true
+accident_type,Saída de leito carroçável,5,52394,21.640344,22.401802,0.761458,true
+accident_type,Tombamento,5,29582,21.596413,24.122807,2.526394,true
+cause,Acessar a via sem observar a presença dos outros veículos,5,31168,32.351698,33.398927,1.047229,true
+cause,Acesso irregular,5,3519,30.181818,37.1669,6.985082,true
+cause,Acostamento em desnível,5,890,17.44186,24.705882,7.264022,true
+cause,Acumulo de areia ou detritos sobre o pavimento,5,1344,17.532468,23.104693,5.572225,true
+cause,Acumulo de água sobre o pavimento,5,2809,15.09434,18.867925,3.773585,true
+cause,Acumulo de óleo sobre o pavimento,5,987,10.638298,21.604938,10.96664,true
+cause,Afundamento ou ondulação no pavimento,5,933,22.485207,32.022472,9.537265,true
+cause,Animais na Pista,5,6590,25.06812,28.963893,3.895773,true
+cause,Ausência de reação do condutor,5,44630,25.992589,27.134013,1.141424,true
+cause,Ausência de sinalização,5,997,29.775281,36.144578,6.369297,true
+cause,Avarias e/ou desgaste excessivo no pneu,5,6114,17.436306,20.357751,2.921445,true
+cause,Carga excessiva e/ou mal acondicionada,5,1400,9.84252,18.794326,8.951806,true
+cause,Chuva,5,5637,18.689956,21.265378,2.575422,true
+cause,Condutor Dormindo,5,10822,26.544944,29.13085,2.585906,true
+cause,Condutor deixou de manter distância do veículo da frente,5,22601,17.228464,18.966689,1.738225,true
+cause,Condutor desrespeitou a iluminação vermelha do semáforo,5,1373,25.39185,31.330472,5.938622,true
+cause,Condutor usando celular,5,683,19.834711,34.375,14.540289,true
+cause,Conversão proibida,5,4565,34.201586,35.812357,1.610771,true
+cause,Curva acentuada,5,1213,22.38806,31.527094,9.139034,true
+cause,Declive acentuado,5,137,26.315789,40.0,13.684211,false
+cause,Deficiência do Sistema de Iluminação/Sinalização,5,885,37.373737,48.087432,10.713695,true
+cause,Deixar de acionar o farol da motocicleta (ou similar),5,68,33.333333,53.846154,20.512821,false
+cause,Demais Fenômenos da natureza,5,417,14.634146,18.390805,3.756659,false
+cause,Demais falhas mecânicas ou elétricas,5,15126,10.310192,12.068966,1.758774,true
+cause,Demais falhas na via,5,1307,22.222222,26.356589,4.134367,true
+cause,Desrespeitar a preferência no cruzamento,5,7139,26.033691,29.243354,3.209663,true
+cause,Desvio temporário,5,205,22.222222,41.025641,18.803419,false
+cause,Entrada inopinada do pedestre,5,3326,66.620112,70.710572,4.09046,true
+cause,Estacionar ou parar em local proibido,5,839,30.21978,39.455782,9.236002,true
+cause,Faixas de trânsito com largura insuficiente,5,63,11.111111,37.5,26.388889,false
+cause,Falta de acostamento,5,373,31.818182,43.333333,11.515151,false
+cause,Falta de elemento de contenção que evite a saída do leito carroçável,5,380,20.338983,32.835821,12.496838,false
+cause,Faróis desregulados,5,38,0.0,80.0,80.0,false
+cause,Frear bruscamente,5,1927,12.849162,18.49866,5.649498,true
+cause,Fumaça,5,174,13.513514,25.806452,12.292938,false
+cause,Iluminação deficiente,5,793,40.764331,48.484848,7.720517,true
+cause,Ingestão de substâncias psicoativas pelo condutor,5,406,16.129032,24.096386,7.967354,false
+cause,Ingestão de álcool e/ou substâncias psicoativas pelo pedestre,3,778,30.639731,36.40553,5.765799,false
+cause,Ingestão de álcool ou de substâncias psicoativas pelo pedestre,3,280,47.222222,56.140351,8.918129,false
+cause,Ingestão de álcool pelo condutor,5,20077,19.568533,22.469471,2.900938,true
+cause,Mal súbito do condutor,5,2784,30.656934,34.798535,4.141601,true
+cause,Manobra de mudança de faixa,5,19442,22.634462,25.006722,2.37226,true
+cause,Modificação proibida,5,59,9.090909,45.454545,36.363636,false
+cause,Neblina,5,295,18.0,34.567901,16.567901,false
+cause,Objeto estático sobre o leito carroçável,5,1844,22.222222,30.075188,7.852966,true
+cause,Obras na pista,3,340,22.368421,35.964912,13.596491,false
+cause,Obstrução na via,3,238,23.148148,36.111111,12.962963,false
+cause,Participar de racha,5,72,38.461538,85.714286,47.252748,false
+cause,Pedestre - Ingestão de álcool/ substâncias psicoativas,3,323,25.0,61.333333,36.333333,false
+cause,Pedestre andava na pista,5,3262,74.257426,77.794562,3.537136,true
+cause,Pedestre cruzava a pista fora da faixa,5,2867,62.095238,69.879518,7.78428,true
+cause,Pista Escorregadia,5,3015,16.729323,20.550459,3.821136,true
+cause,Pista em desnível,3,180,13.513514,21.518987,8.005473,false
+cause,Pista esburacada,5,1660,26.724138,29.539295,2.815157,true
+cause,Problema com o freio,5,1480,20.205479,24.444444,4.238965,true
+cause,Problema na suspensão,5,268,9.859155,21.052632,11.193477,false
+cause,Reação tardia ou ineficiente do condutor,5,46901,22.98361,24.866117,1.882507,true
+cause,Redutor de velocidade em desacordo,5,39,0.0,37.5,37.5,false
+cause,Restrição de visibilidade em curvas horizontais,5,114,21.428571,28.0,6.571429,false
+cause,Restrição de visibilidade em curvas verticais,5,53,25.0,57.142857,32.142857,false
+cause,Retorno proibido,5,1604,28.615385,36.54485,7.929465,true
+cause,Semáforo com defeito,5,42,14.285714,37.5,23.214286,false
+cause,Sinalização encoberta,5,19,0.0,66.666667,66.666667,false
+cause,Sinalização mal posicionada,5,243,25.0,30.555556,5.555556,false
+cause,Sistema de drenagem ineficiente,5,12,0.0,50.0,50.0,false
+cause,Suicídio (presumido),3,438,78.074866,85.263158,7.188292,false
+cause,Trafegar com motocicleta (ou similar) entre as faixas,5,5391,24.301887,26.348808,2.046921,true
+cause,Transitar na calçada,5,54,27.272727,44.444444,17.171717,false
+cause,Transitar na contramão,5,11145,58.866279,60.829103,1.962824,true
+cause,Transitar no Acostamento,3,1257,40.983607,44.176707,3.1931,false
+cause,Transtornos Mentais (exceto suicidio),3,138,32.142857,35.59322,3.450363,false
+cause,Ultrapassagem Indevida,5,8333,45.561434,47.231638,1.670204,true
+cause,Velocidade Incompatível,5,24420,30.434783,32.191781,1.756998,true
+cause,Área urbana sem a presença de local apropriado para a travessia de pedestres,5,446,51.960784,66.666667,14.705883,false

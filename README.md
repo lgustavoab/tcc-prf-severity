@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 2D — Via e ambiente das ocorrências registradas.**
+**Fase 2E — Dinâmica das ocorrências registradas.**
 
 Nesta fase o projeto:
 
@@ -25,6 +25,8 @@ Nesta fase o projeto:
 - caracteriza macrorregião, UF, BR e município, separando volume de proporção grave;
 - caracteriza tipo de pista, uso do solo, sentido, meteorologia e componentes multivalorados
   de traçado, separando volume, proporção grave, amostra e estabilidade anual;
+- caracteriza tipo e causa registrados, mudanças de taxonomia e distribuições exatas de
+  pessoas e veículos, sem decidir sua elegibilidade futura como features;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
@@ -150,6 +152,18 @@ componentes ocorre somente em memória; suas contagens não são mutuamente excl
 `n >= 500` é apenas um critério editorial para destaques de taxa em meteorologia e traçado;
 `Ignorado` permanece nas tabelas completas, mas não é tratado como condição meteorológica
 informada nesses destaques.
+
+## EDA — Dinâmica das ocorrências
+
+```powershell
+uv run prf-eda-occurrence-dynamics
+```
+
+O comando verifica o interim sem reconstruí-lo e gera 17 tabelas e seis figuras sobre tipo de
+acidente, causa registrada pela PRF, mudanças de taxonomia e contagens exatas de pessoas e
+veículos. Não há harmonização, bins, remoção de outliers ou dataset processed. Essas variáveis
+são permitidas na EDA associativa, mas sua elegibilidade para ML será decidida separadamente
+devido à disponibilidade temporal e ao risco de leakage.
 
 ## Documentação científica
 

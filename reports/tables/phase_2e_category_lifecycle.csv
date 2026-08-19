@@ -1,0 +1,95 @@
+dimension,category,first_year,last_year,years_observed,total_occurrences,present_all_years,exclusive_to_one_year,appears_after_period_start,disappears_before_period_end
+accident_type,Atropelamento de Animal,2021,2025,5,5598,true,false,false,false
+accident_type,Atropelamento de Pedestre,2021,2025,5,15313,true,false,false,false
+accident_type,Capotamento,2021,2025,5,7661,true,false,false,false
+accident_type,Colisão com objeto,2021,2025,5,24761,true,false,false,false
+accident_type,Colisão frontal,2021,2025,5,23045,true,false,false,false
+accident_type,Colisão lateral,2021,2021,1,676,false,true,false,true
+accident_type,Colisão lateral mesmo sentido,2021,2025,5,34602,true,false,false,false
+accident_type,Colisão lateral sentido oposto,2021,2025,5,9582,true,false,false,false
+accident_type,Colisão transversal,2021,2025,5,43190,true,false,false,false
+accident_type,Colisão traseira,2021,2025,5,65634,true,false,false,false
+accident_type,Derramamento de carga,2021,2025,5,629,true,false,false,false
+accident_type,Engavetamento,2021,2025,5,5780,true,false,false,false
+accident_type,Eventos atípicos,2021,2025,5,1477,true,false,false,false
+accident_type,Incêndio,2021,2025,5,7430,true,false,false,false
+accident_type,Queda de ocupante de veículo,2021,2025,5,15251,true,false,false,false
+accident_type,Saída de leito carroçável,2021,2025,5,52394,true,false,false,false
+accident_type,Sinistro pessoal de trânsito,2024,2025,2,19,false,false,true,false
+accident_type,Tombamento,2021,2025,5,29582,true,false,false,false
+cause,Acessar a via sem observar a presença dos outros veículos,2021,2025,5,31168,true,false,false,false
+cause,Acesso irregular,2021,2025,5,3519,true,false,false,false
+cause,Acostamento em desnível,2021,2025,5,890,true,false,false,false
+cause,Acumulo de areia ou detritos sobre o pavimento,2021,2025,5,1344,true,false,false,false
+cause,Acumulo de água sobre o pavimento,2021,2025,5,2809,true,false,false,false
+cause,Acumulo de óleo sobre o pavimento,2021,2025,5,987,true,false,false,false
+cause,Afundamento ou ondulação no pavimento,2021,2025,5,933,true,false,false,false
+cause,Animais na Pista,2021,2025,5,6590,true,false,false,false
+cause,Ausência de reação do condutor,2021,2025,5,44630,true,false,false,false
+cause,Ausência de sinalização,2021,2025,5,997,true,false,false,false
+cause,Avarias e/ou desgaste excessivo no pneu,2021,2025,5,6114,true,false,false,false
+cause,Carga excessiva e/ou mal acondicionada,2021,2025,5,1400,true,false,false,false
+cause,Chuva,2021,2025,5,5637,true,false,false,false
+cause,Condutor Dormindo,2021,2025,5,10822,true,false,false,false
+cause,Condutor deixou de manter distância do veículo da frente,2021,2025,5,22601,true,false,false,false
+cause,Condutor desrespeitou a iluminação vermelha do semáforo,2021,2025,5,1373,true,false,false,false
+cause,Condutor usando celular,2021,2025,5,683,true,false,false,false
+cause,Conversão proibida,2021,2025,5,4565,true,false,false,false
+cause,Curva acentuada,2021,2025,5,1213,true,false,false,false
+cause,Declive acentuado,2021,2025,5,137,true,false,false,false
+cause,Deficiência do Sistema de Iluminação/Sinalização,2021,2025,5,885,true,false,false,false
+cause,Deixar de acionar o farol da motocicleta (ou similar),2021,2025,5,68,true,false,false,false
+cause,Demais Fenômenos da natureza,2021,2025,5,417,true,false,false,false
+cause,Demais falhas mecânicas ou elétricas,2021,2025,5,15126,true,false,false,false
+cause,Demais falhas na via,2021,2025,5,1307,true,false,false,false
+cause,Desrespeitar a preferência no cruzamento,2021,2025,5,7139,true,false,false,false
+cause,Desvio temporário,2021,2025,5,205,true,false,false,false
+cause,Entrada inopinada do pedestre,2021,2025,5,3326,true,false,false,false
+cause,Estacionar ou parar em local proibido,2021,2025,5,839,true,false,false,false
+cause,Faixas de trânsito com largura insuficiente,2021,2025,5,63,true,false,false,false
+cause,Falta de acostamento,2021,2025,5,373,true,false,false,false
+cause,Falta de elemento de contenção que evite a saída do leito carroçável,2021,2025,5,380,true,false,false,false
+cause,Faróis desregulados,2021,2025,5,38,true,false,false,false
+cause,Frear bruscamente,2021,2025,5,1927,true,false,false,false
+cause,Fumaça,2021,2025,5,174,true,false,false,false
+cause,Iluminação deficiente,2021,2025,5,793,true,false,false,false
+cause,Ingestão de substâncias psicoativas pelo condutor,2021,2025,5,406,true,false,false,false
+cause,Ingestão de álcool e/ou substâncias psicoativas pelo pedestre,2021,2023,3,778,false,false,false,true
+cause,Ingestão de álcool ou de substâncias psicoativas pelo pedestre,2021,2023,3,280,false,false,false,true
+cause,Ingestão de álcool pelo condutor,2021,2025,5,20077,true,false,false,false
+cause,Mal súbito do condutor,2021,2025,5,2784,true,false,false,false
+cause,Manobra de mudança de faixa,2021,2025,5,19442,true,false,false,false
+cause,Modificação proibida,2021,2025,5,59,true,false,false,false
+cause,Neblina,2021,2025,5,295,true,false,false,false
+cause,Objeto estático sobre o leito carroçável,2021,2025,5,1844,true,false,false,false
+cause,Obras na pista,2021,2023,3,340,false,false,false,true
+cause,Obstrução Via tentativa Assalto,2023,2023,1,10,false,true,true,true
+cause,Obstrução na via,2021,2023,3,238,false,false,false,true
+cause,Participar de racha,2021,2025,5,72,true,false,false,false
+cause,Pedestre - Ingestão de álcool/ substâncias psicoativas,2023,2025,3,323,false,false,true,false
+cause,Pedestre andava na pista,2021,2025,5,3262,true,false,false,false
+cause,Pedestre cruzava a pista fora da faixa,2021,2025,5,2867,true,false,false,false
+cause,Pista Escorregadia,2021,2025,5,3015,true,false,false,false
+cause,Pista em desnível,2021,2023,3,180,false,false,false,true
+cause,Pista esburacada,2021,2025,5,1660,true,false,false,false
+cause,Problema com o freio,2021,2025,5,1480,true,false,false,false
+cause,Problema na suspensão,2021,2025,5,268,true,false,false,false
+cause,Reação tardia ou ineficiente do condutor,2021,2025,5,46901,true,false,false,false
+cause,Redutor de velocidade em desacordo,2021,2025,5,39,true,false,false,false
+cause,Restrição de visibilidade em curvas horizontais,2021,2025,5,114,true,false,false,false
+cause,Restrição de visibilidade em curvas verticais,2021,2025,5,53,true,false,false,false
+cause,Retorno proibido,2021,2025,5,1604,true,false,false,false
+cause,Semáforo com defeito,2021,2025,5,42,true,false,false,false
+cause,Sinalização encoberta,2021,2025,5,19,true,false,false,false
+cause,Sinalização mal posicionada,2021,2025,5,243,true,false,false,false
+cause,Sistema de drenagem ineficiente,2021,2025,5,12,true,false,false,false
+cause,Suicídio (presumido),2023,2025,3,438,false,false,true,false
+cause,Trafegar com motocicleta (ou similar) entre as faixas,2021,2025,5,5391,true,false,false,false
+cause,Transitar na calçada,2021,2025,5,54,true,false,false,false
+cause,Transitar na contramão,2021,2025,5,11145,true,false,false,false
+cause,Transitar no Acostamento,2023,2025,3,1257,false,false,true,false
+cause,Transitar no acostamento,2021,2022,2,823,false,false,false,true
+cause,Transtornos Mentais (exceto suicidio),2023,2025,3,138,false,false,true,false
+cause,Ultrapassagem Indevida,2021,2025,5,8333,true,false,false,false
+cause,Velocidade Incompatível,2021,2025,5,24420,true,false,false,false
+cause,Área urbana sem a presença de local apropriado para a travessia de pedestres,2021,2025,5,446,true,false,false,false

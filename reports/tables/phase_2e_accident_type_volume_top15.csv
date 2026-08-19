@@ -1,0 +1,16 @@
+tipo_acidente,total_occurrences,severe_occurrences,severe_rate_percent
+Colisão traseira,65634,15538,23.673706
+Saída de leito carroçável,52394,11565,22.073138
+Colisão transversal,43190,14238,32.965964
+Colisão lateral mesmo sentido,34602,6901,19.943934
+Tombamento,29582,6916,23.379082
+Colisão com objeto,24761,5216,21.065385
+Colisão frontal,23045,14532,63.059232
+Atropelamento de Pedestre,15313,10416,68.020636
+Queda de ocupante de veículo,15251,3614,23.696807
+Colisão lateral sentido oposto,9582,3399,35.472761
+Capotamento,7661,1572,20.519514
+Incêndio,7430,23,0.309556
+Engavetamento,5780,738,12.768166
+Atropelamento de Animal,5598,1609,28.742408
+Eventos atípicos,1477,368,24.915369

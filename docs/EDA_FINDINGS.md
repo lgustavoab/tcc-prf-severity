@@ -1164,9 +1164,281 @@ verificado de 2021–2025.
 
 **Status:** confirmado.
 
-## 2E — Dinâmica das ocorrências
+## Fase 2E — Dinâmica das ocorrências
 
-Nenhum achado registrado.
+As quatro variáveis desta seção podem ser conhecidas ou consolidadas apenas durante ou após a
+ocorrência. Seu uso aqui é exclusivamente descritivo/associativo e não implica elegibilidade
+automática como features de modelos futuros. Essa elegibilidade será decidida separadamente,
+considerando disponibilidade temporal e risco de leakage. Não foram usados `mortos`,
+`feridos`, `feridos_graves`, `feridos_leves`, `ilesos`, `ignorados` ou
+`classificacao_acidente` como variáveis explicativas.
+
+### EDA024 — Volume e gravidade por tipo de acidente registrado
+
+**Data:** 18/08/2026.
+
+**Fase:** 2E — Dinâmica das ocorrências.
+
+**Pergunta:** quais tipos de acidente registrados concentram volume e quais apresentam maior
+proporção de graves?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025.
+
+**Categorias ausentes/ignoradas:** nenhuma categoria foi harmonizada, combinada ou removida;
+as 18 strings observadas foram preservadas.
+
+**Resultado absoluto:** Colisão traseira teve 65.634 registros e 15.538 graves; Saída de leito
+carroçável, 52.394 e 11.565; Colisão transversal, 43.190 e 14.238. Entre tipos com n≥500,
+Atropelamento de Pedestre teve 10.416 graves em 15.313 registros e Colisão frontal, 14.532 em
+23.045.
+
+**Proporção/taxa:** entre os tipos elegíveis ao destaque, Atropelamento de Pedestre apresentou
+68,0206% de graves, Colisão frontal 63,0592%, Colisão lateral sentido oposto 35,4728% e
+Colisão transversal 32,9660%.
+
+**Comparação:** o maior volume não coincidiu com a maior proporção. O corte `n >= 500` foi
+aplicado apenas ao destaque de taxa, sem retirar categorias da tabela completa.
+
+**Estabilidade entre anos:** Atropelamento de Pedestre esteve nos cinco anos e variou de
+67,1573% a 68,7717% (amplitude 1,6144 ponto percentual); Colisão frontal variou de 62,2785%
+a 63,5335% (1,2550 ponto). A estabilidade foi calculada somente para categorias presentes em
+pelo menos três anos.
+
+**Interpretação:** existem diferenças descritivas persistentes entre os tipos registrados nas
+ocorrências, com separação clara entre volume e proporção grave.
+
+**O que NÃO podemos concluir:** o tipo registrado não demonstra causalidade, não mede risco
+absoluto e não é automaticamente uma feature disponível antes ou no momento de uma previsão.
+
+**Limitações:** tipo de acidente pode depender da dinâmica e da classificação posterior da
+ocorrência; não houve controle por exposição ou pelas demais características.
+
+**Figura:** `../reports/figures/phase_2e_accident_type_volume_top15.png` e
+`../reports/figures/phase_2e_accident_type_severe_rate_top15_n500.png`.
+
+**Tabela:** `../reports/tables/phase_2e_accident_type_summary.csv`,
+`../reports/tables/phase_2e_accident_type_by_year.csv` e tabelas top 15 correspondentes.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/occurrence_dynamics.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** caracterização associativa da dinâmica, sujeita à avaliação futura de
+disponibilidade temporal e leakage.
+
+**Status:** confirmado.
+
+### EDA025 — Volume e gravidade por causa registrada pela PRF
+
+**Data:** 18/08/2026.
+
+**Fase:** 2E — Dinâmica das ocorrências.
+
+**Pergunta:** quais categorias registradas em `causa_acidente` concentram volume e quais
+apresentam maior proporção de graves?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025.
+
+**Categorias ausentes/ignoradas:** nenhuma das 76 strings foi harmonizada, combinada ou
+removida; a análise trata o campo como causa registrada pela PRF, não como causalidade
+científica demonstrada.
+
+**Resultado absoluto:** Reação tardia ou ineficiente do condutor teve 46.901 registros e
+11.223 graves; Ausência de reação do condutor, 44.630 e 11.912; Acessar a via sem observar a
+presença dos outros veículos, 31.168 e 10.244. Entre categorias com n≥500, Pedestre andava na
+pista teve 2.460 graves em 3.262 registros.
+
+**Proporção/taxa:** Pedestre andava na pista apresentou 75,4139% de graves; Entrada inopinada
+do pedestre, 68,7312%; Pedestre cruzava a pista fora da faixa, 66,4806%; Transitar na
+contramão, 60,2333%.
+
+**Comparação:** as categorias de maior volume não foram as mesmas com maiores proporções. O
+threshold editorial foi aplicado somente ao ranking de taxa.
+
+**Estabilidade entre anos:** Pedestre andava na pista esteve nos cinco anos e variou de
+74,2574% a 77,7946% (amplitude 3,5371 pontos); Transitar na contramão variou de 58,8663% a
+60,8291% (1,9628 ponto). Algumas categorias com menor volume apresentaram amplitudes maiores.
+
+**Interpretação:** as categorias registradas apresentam associações descritivas marcantes com
+gravidade, mas representam a classificação registrada no boletim.
+
+**O que NÃO podemos concluir:** a causa registrada não prova que a categoria provocou a
+gravidade e não deve ser chamada de classificação de perigo ou de risco individual.
+
+**Limitações:** o campo pode incorporar conhecimento posterior à ocorrência, pode variar com
+práticas de registro e exige avaliação específica de leakage antes de eventual modelagem.
+
+**Figura:** `../reports/figures/phase_2e_cause_volume_top15.png` e
+`../reports/figures/phase_2e_cause_severe_rate_top15_n500.png`.
+
+**Tabela:** `../reports/tables/phase_2e_cause_summary.csv`,
+`../reports/tables/phase_2e_cause_by_year.csv` e tabelas top 15 correspondentes.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/occurrence_dynamics.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** discutir associação descritiva e a separação entre campo registrado e
+inferência causal.
+
+**Status:** confirmado.
+
+### EDA026 — Mudanças observadas nas taxonomias de tipo e causa
+
+**Data:** 18/08/2026.
+
+**Fase:** 2E — Dinâmica das ocorrências.
+
+**Pergunta:** as taxonomias observadas de `tipo_acidente` e `causa_acidente` permaneceram
+iguais entre 2021 e 2025?
+
+**População analisada:** todas as categorias observadas nas 342.624 ocorrências, sem
+harmonização textual.
+
+**Categorias ausentes/ignoradas:** ausência em um ano foi tratada como não observação daquela
+string no ano, sem concluir equivalência com outra categoria semelhante.
+
+**Resultado absoluto:** `tipo_acidente` apresentou 17, 16, 16, 17 e 17 categorias por ano; a
+união teve 18, sendo 16 presentes nos cinco anos e uma exclusiva de um ano. Colisão lateral
+apareceu somente em 2021 (676 registros), enquanto Sinistro pessoal de trânsito apareceu em
+2024–2025 (19). `causa_acidente` apresentou 71, 71, 75, 69 e 69 categorias; a união teve 76,
+65 presentes nos cinco anos e uma exclusiva de um ano.
+
+**Proporção/taxa:** não aplicável; este é um diagnóstico de taxonomia.
+
+**Comparação:** em causa, cinco categorias tiveram primeiro registro após 2021 e sete tiveram
+último registro antes de 2025. Exemplos preservados incluem `Transitar no acostamento`
+(2021–2022) e `Transitar no Acostamento` (2023–2025), sem decidir que sejam equivalentes.
+
+**Estabilidade entre anos:** o lifecycle registra primeiro ano, último ano e número de anos
+observados; a tabela de taxas inclui somente categorias presentes em pelo menos três anos.
+
+**Interpretação:** as taxonomias observadas mudaram ao longo do período, sobretudo em causa.
+Essa mudança precisa ser considerada antes de comparações longitudinais ou preparação futura.
+
+**O que NÃO podemos concluir:** sem referência externa, não se pode atribuir automaticamente
+as mudanças a revisão formal de taxonomia, erro, mera grafia ou mudança substantiva.
+
+**Limitações:** o diagnóstico usa igualdade exata das strings e deliberadamente não harmoniza
+rótulos semelhantes.
+
+**Figura:** não aplicável; tabelas preservam detalhes sem simplificação visual.
+
+**Tabela:** `../reports/tables/phase_2e_taxonomy_diagnostics.csv`,
+`../reports/tables/phase_2e_category_lifecycle.csv` e
+`../reports/tables/phase_2e_category_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/occurrence_dynamics.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** justificar tratamento temporal explícito das categorias e impedir
+harmonização não documentada.
+
+**Status:** confirmado.
+
+### EDA027 — Pessoas envolvidas, cauda e proporção grave
+
+**Data:** 18/08/2026.
+
+**Fase:** 2E — Dinâmica das ocorrências.
+
+**Pergunta:** como a contagem registrada de pessoas envolvidas se relaciona descritivamente
+com gravidade?
+
+**População analisada:** todas as 342.624 ocorrências; 75 valores exatos observados, sem bins,
+remoção ou winsorização.
+
+**Categorias ausentes/ignoradas:** não aplicável; `pessoas` é não nula e ≥1 pelo contrato. As
+métricas não foram derivadas dos campos de vítimas.
+
+**Resultado absoluto:** mínimo 1, P25 2, mediana 2, média 2,5733, P75 3, P90 4, P95 5, P99 8 e
+máximo 95. Houve 2.993 registros acima de P99. Os valores de 1 a 9 tiveram pelo menos 500
+ocorrências cada.
+
+**Proporção/taxa:** entre valores elegíveis, a proporção grave foi 18,7820% com uma pessoa
+(14.048/74.795), 27,1340% com duas (37.605/138.590), 32,7845% com três
+(22.858/69.722) e chegou a 49,0286% com nove (429/875).
+
+**Comparação:** a associação observada é real no dataset: entre os valores exatos elegíveis,
+as proporções cresceram monotonicamente de 18,7820% com uma pessoa até 49,0286% com nove. A
+tabela completa preserva toda a cauda, inclusive valores com amostras pequenas.
+
+**Estabilidade entre anos:** não avaliada para cada contagem nesta fase.
+
+**Interpretação:** há associação descritiva entre maior número registrado de pessoas e maior
+proporção grave entre os valores com amostra suficiente. Como `target_grave` é definido no
+nível da ocorrência por `(mortos > 0) OR (feridos_graves > 0)`, ocorrências com mais pessoas
+possuem, por construção, mais oportunidades para que ao menos uma satisfaça a condição do
+target. Parte da associação pode, portanto, ser mecanicamente influenciada por essa definição.
+
+**O que NÃO podemos concluir:** o crescimento observado não deve ser interpretado diretamente
+como efeito causal do número de pessoas sobre a gravidade. `pessoas` pode ser consolidada após
+a ocorrência e exige cautela adicional antes de qualquer seleção futura de features.
+
+**Limitações:** a relação mecânica com a definição do target e o conhecimento potencialmente
+pós-ocorrência tornam `pessoas` especialmente suscetível a leakage e endogeneidade. Existem
+18.538 divergências conhecidas na decomposição de pessoas, preservadas como métrica de
+qualidade.
+
+**Figura:** `../reports/figures/phase_2e_people_distribution.png`.
+
+**Tabela:** `../reports/tables/phase_2e_people_distribution.csv`,
+`../reports/tables/phase_2e_people_summary_statistics.csv` e
+`../reports/tables/phase_2e_people_severe_rate_n500.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/occurrence_dynamics.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** caracterização da dinâmica e alerta de disponibilidade/leakage.
+
+**Status:** confirmado.
+
+### EDA028 — Veículos envolvidos, cauda e proporção grave
+
+**Data:** 18/08/2026.
+
+**Fase:** 2E — Dinâmica das ocorrências.
+
+**Pergunta:** como a contagem registrada de veículos envolvidos se relaciona descritivamente
+com gravidade?
+
+**População analisada:** todas as 342.624 ocorrências; 30 valores exatos observados, sem bins,
+remoção ou winsorização.
+
+**Categorias ausentes/ignoradas:** não aplicável; `veiculos` é não nula e ≥1 pelo contrato.
+
+**Resultado absoluto:** mínimo 1, P25 1, mediana 2, média 1,9865, P75 2, P90 3, P95 4, P99 6 e
+máximo 131. Houve 2.230 registros acima de P99. Os valores de 1 a 7 tiveram pelo menos 500
+ocorrências cada.
+
+**Proporção/taxa:** entre valores elegíveis, uma unidade apresentou 20,4720% de graves
+(23.493/114.757), duas 30,9446% (50.294/162.529), três 33,8377% (13.798/40.777), quatro
+35,8181% (5.199/14.515) e cinco 40,3329% (2.326/5.767); seis e sete tiveram 39,0434% e 39,9%.
+
+**Comparação:** houve aumento de uma a cinco unidades, mas os valores elegíveis de cinco a
+sete não formam sequência estritamente crescente. A distribuição exata preserva a cauda.
+
+**Estabilidade entre anos:** não avaliada para cada contagem nesta fase.
+
+**Interpretação:** existe associação descritiva entre a contagem de veículos e gravidade, sem
+supor forma linear.
+
+**O que NÃO podemos concluir:** a contagem não demonstra causalidade e não está aprovada como
+feature; valores máximos não foram classificados automaticamente como erros.
+
+**Limitações:** `veiculos` integra a dinâmica da ocorrência e pode não estar disponível no
+momento relevante para uma previsão futura; valores raros têm taxas instáveis.
+
+**Figura:** `../reports/figures/phase_2e_vehicle_distribution.png`.
+
+**Tabela:** `../reports/tables/phase_2e_vehicle_distribution.csv`,
+`../reports/tables/phase_2e_vehicle_summary_statistics.csv` e
+`../reports/tables/phase_2e_vehicle_severe_rate_n500.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/occurrence_dynamics.py`, dataset interim
+verificado de 2021–2025.
+
+**Possível uso no TCC:** caracterização da dinâmica e alerta de disponibilidade/leakage.
+
+**Status:** confirmado.
 
 ## 2F — Associação com gravidade
 
