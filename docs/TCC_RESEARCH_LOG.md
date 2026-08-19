@@ -56,9 +56,8 @@ identificação de ocorrências graves.
 ## Objetivos específicos
 
 1. Consolidar e validar os registros da PRF de 2021 a 2025. **Concluído na Fase 1.**
-2. Caracterizar temporal e geograficamente as ocorrências. **Iniciado na Fase 2A com a
-   caracterização anual geral; padrões temporais detalhados e geográficos ainda não foram
-   executados.**
+2. Caracterizar temporal e geograficamente as ocorrências. **Caracterização temporal concluída
+   na Fase 2B; padrões geográficos ainda não foram executados.**
 3. Investigar fatores associados à gravidade. **Ainda não executado.**
 4. Definir operacionalmente uma variável-alvo de gravidade. **Concluído na Fase 1.**
 5. Treinar e comparar modelos de classificação. **Ainda não executado.**
@@ -226,10 +225,71 @@ capacidade preditiva.
 
 **Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA004](EDA_FINDINGS.md#eda004--cardinalidade-das-principais-variáveis-categóricas).
 
+### EDA007 — Concentração temporal no fim de semana
+
+Sábado e domingo reuniram 112.389 ocorrências, das quais 33.933 foram graves (30,1925%),
+enquanto os dias úteis reuniram 230.235 ocorrências e 62.924 graves (27,3303%). Domingo
+liderou a proporção grave em quatro dos cinco anos e sábado em 2025. A diferença é descritiva,
+condicionada às ocorrências registradas, e não mede exposição ou causalidade.
+
+**Relevância:** caracteriza uma associação temporal diretamente ligada à pergunta da pesquisa
+e recomenda avaliar calendário e estabilidade anual na modelagem futura.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA007](EDA_FINDINGS.md#eda007--concentração-no-fim-de-semana-e-proporção-de-graves).
+
+### EDA008 — Padrão horário de volume e gravidade
+
+18h concentrou o maior volume em todos os cinco anos (25.569 registros no consolidado). A
+proporção de graves variou de 23,1243% às 8h a 33,7323% às 19h; a maior taxa anual alternou
+entre 19h e 21h. Cada destaque de taxa foi examinado com seu tamanho amostral, sem usar fluxo
+veicular como denominador.
+
+**Relevância:** a recorrência do padrão e a variação anual apoiam a avaliação futura de hora
+como feature, sujeita a análise de drift e disponibilidade.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA008](EDA_FINDINGS.md#eda008--padrão-horário-de-volume-e-gravidade).
+
+### EDA009 — Fase do dia e proporção de graves
+
+`Pleno dia` concentrou 187.621 registros e apresentou 25,3047% de graves. `Plena Noite`
+reuniu 119.581 registros e apresentou 32,4726% de graves, liderando essa proporção em cada um
+dos cinco anos. O resultado é uma associação descritiva e não demonstra efeito causal da
+fase do dia.
+
+**Relevância:** é pertinente à discussão da pesquisa e à futura avaliação de redundância entre
+`fase_dia` e hora.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA009](EDA_FINDINGS.md#eda009--distribuição-por-fase-do-dia).
+
+### EDA010 — Estabilidade descritiva dos padrões temporais
+
+Dezembro liderou o volume mensal, 18h o volume horário, `Pleno dia` o volume por fase e
+`Plena Noite` a proporção grave por fase nos cinco anos. Em contraste, o mês de maior taxa
+variou entre quatro categorias e a hora de maior taxa alternou entre 19h e 21h. As amplitudes
+anuais foram registradas sem limiar arbitrário de classificação.
+
+**Relevância:** fornece evidência metodológica para preservar validação temporal e avaliar
+drift por variável antes da modelagem.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA010](EDA_FINDINGS.md#eda010--recorrência-e-variação-dos-padrões-temporais-entre-anos).
+
 ## Hipóteses
 
-Nenhuma hipótese analítica foi registrada até o momento. Hipóteses futuras devem ser
-identificadas com IDs `Hxxx` e não podem ser apresentadas como resultados.
+### H001 — Estabilidade temporal das features
+
+**Data:** 18/08/2026.
+
+**Hipótese metodológica:** a estabilidade da prevalência de `target_grave` observada na Fase
+2A não implica estabilidade das distribuições das variáveis explicativas.
+
+**Fundamentação:** a Fase 2B encontrou recorrência em alguns resumos temporais e variação em
+outros. Isso não avalia as demais features nem demonstra ausência de drift.
+
+**Como avaliar:** antes da modelagem temporal, comparar as distribuições das features entre
+2021–2024 e 2025, com métricas adequadas ao tipo de variável e sem usar o teste final para
+decisões de desenvolvimento.
+
+**Status:** proposta; pendência futura, não apresentada como resultado.
 
 ## Limitações
 
@@ -274,10 +334,10 @@ explicitamente quantificadas e consideradas nas análises.
 
 ## Figuras e tabelas associadas
 
-A Fase 2A produziu as figuras `phase_2a_occurrences_by_year.png` e
-`phase_2a_severe_rate_by_year.png`, além das tabelas de resumo anual, qualidade, cardinalidade
-e categorias especiais em `reports/`. Cada artefato está associado aos IDs EDA correspondentes
-em [EDA_FINDINGS.md](EDA_FINDINGS.md).
+As Fases 2A e 2B produziram figuras e tabelas versionadas em `reports/`. A Fase 2B acrescentou
+sete figuras temporais, nove resumos consolidados/anuais e uma tabela de estabilidade. Cada
+artefato científico está associado aos IDs EDA correspondentes em
+[EDA_FINDINGS.md](EDA_FINDINGS.md).
 
 ## Templates para registros futuros
 

@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 2A — Caracterização geral das ocorrências registradas.**
+**Fase 2B — Padrões temporais das ocorrências registradas.**
 
 Nesta fase o projeto:
 
@@ -21,6 +21,7 @@ Nesta fase o projeto:
 - registra proveniência, hashes e versões em um manifesto;
 - verifica o Parquet e sua proveniência sem reconstruir ou modificar os artefatos;
 - caracteriza volume anual, estabilidade do target, nulidade e cardinalidade básica;
+- caracteriza mês, dia da semana, hora e fase do dia, incluindo estabilidade descritiva anual;
 - ainda não remove ou imputa registros, faz análises causais, feature engineering ou machine
   learning.
 
@@ -114,6 +115,16 @@ O comando verifica o interim e gera quatro tabelas em `reports/tables/` e duas f
 científicas em `reports/figures/`. A lógica numérica oficial está em
 `src/tcc_prf_severity/analysis/general.py`.
 
+## EDA — Padrões temporais
+
+```powershell
+uv run prf-eda-temporal
+```
+
+O comando verifica o interim sem reconstruí-lo e gera dez tabelas temporais em
+`reports/tables/` e sete figuras científicas em `reports/figures/`. As derivações de mês e hora
+existem somente em memória; nenhum dataset processed é criado.
+
 ## Documentação científica
 
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
@@ -130,7 +141,7 @@ As dependências das fases futuras já estão separadas no `pyproject.toml`:
 - `ml`: scikit-learn, XGBoost, Optuna, MLflow e SHAP;
 - `viz`: JupyterLab, Plotly e Streamlit.
 
-Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2A. Os grupos
+Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2. Os grupos
 `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Princípio metodológico
