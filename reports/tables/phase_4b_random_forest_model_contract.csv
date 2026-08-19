@@ -1,0 +1,21 @@
+key,value
+model_family,random_forest
+role,baseline_candidate
+n_estimators,300
+criterion,gini
+max_depth,20
+min_samples_split,2
+min_samples_leaf,5
+max_features,sqrt
+bootstrap,true
+oob_score,false
+random_state,42
+class_weight,none
+max_samples,none
+preprocessing,phase_3e
+validation,expanding_window_3_folds
+primary_metric,Average Precision
+model_selection_aggregation,unweighted_fold_mean
+threshold_policy,not_selected_0.5_reference_only
+final_test_year,2025_reserved
+hyperparameter_tuning,false

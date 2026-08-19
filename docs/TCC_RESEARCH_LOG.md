@@ -405,6 +405,34 @@ referência, o resultado não é causal e 2025 continua reservado ao pipeline fi
 
 **Status:** confirmado; primeira baseline executada sem refit final ou consulta a 2025.
 
+### R007 — Random Forest baseline
+
+**Data:** 19/08/2026.
+
+**População e período:** três folds temporais internos, com fit progressivo em 2021–2023 e
+validações separadas em 2022, 2023 e 2024. Nenhuma transformação, predição ou métrica de 2025
+foi realizada.
+
+**Método:** pipeline train-only da Fase 3E seguido por `RandomForestClassifier` com 300
+árvores, Gini, profundidade máxima 20, `min_samples_leaf=5`, `max_features="sqrt"`, bootstrap,
+`random_state=42`, sem pesos de classe e sem OOB. A configuração foi única e congelada, sem
+tuning.
+
+**Resultado:** as APs foram 0,388096, 0,399673 e 0,400183. A média aritmética não ponderada foi
+0,395984 e o desvio padrão populacional, 0,005582. As 300 árvores de cada fold atingiram
+profundidade máxima 20; as médias de nós foram 1.862,927, 2.775,713 e 3.592,353. ROC-AUC,
+Brier, métricas no corte fixo 0,5 e calibração foram registrados como diagnósticos; nenhum
+threshold foi selecionado.
+
+**Limitações:** trata-se de uma baseline não otimizada, não de modelo vencedor. A estrutura
+das árvores é diagnóstico, não regra de seleção; não houve interpretação de importância de
+features, refit final ou consulta a 2025.
+
+**Origem:** [PHASE_4B_RANDOM_FOREST.md](PHASE_4B_RANDOM_FOREST.md) e tabelas
+`phase_4b_random_forest_*` em `reports/tables/`.
+
+**Status:** confirmado; segunda baseline executada sem comparação formal entre modelos.
+
 ## Achados exploratórios
 
 ### EDA001 — Distribuição anual do volume
