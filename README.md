@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4B concluída — Random Forest baseline executada nos três folds temporais.**
+**Fase 4C concluída — XGBoost baseline executado nos três folds temporais.**
 
 Nesta fase o projeto:
 
@@ -48,6 +48,8 @@ Nesta fase o projeto:
   desvio padrão populacional de 0,004879;
 - executa uma Random Forest de configuração fixa, também sem tuning: AP média não ponderada
   de 0,395984 e desvio padrão populacional de 0,005582, sem comparação formal entre modelos;
+- executa XGBoost 3.3.0 com configuração fixa e 300 rounds por fold: AP média não ponderada
+  de 0,400811 e desvio padrão populacional de 0,007430, ainda sem ranking entre famílias;
 - preserva 2025, não seleciona threshold, não faz refit final e não persiste modelos fitados.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
@@ -69,6 +71,8 @@ A primeira baseline preditiva está documentada em
 [`docs/PHASE_4A_LOGISTIC_BASELINE.md`](docs/PHASE_4A_LOGISTIC_BASELINE.md).
 A Random Forest baseline está documentada em
 [`docs/PHASE_4B_RANDOM_FOREST.md`](docs/PHASE_4B_RANDOM_FOREST.md).
+O XGBoost baseline está documentado em
+[`docs/PHASE_4C_XGBOOST.md`](docs/PHASE_4C_XGBOOST.md).
 
 ## Requisitos
 
@@ -290,6 +294,17 @@ preprocessing train-only. As APs foram 0,388096, 0,399673 e 0,400183; a média n
 foi 0,395984. Métricas no corte 0,5, calibração e estrutura das árvores são apenas
 diagnósticos: não houve tuning, seleção de threshold, refit, uso de 2025 ou escolha de modelo.
 
+## XGBoost baseline
+
+```powershell
+uv run prf-run-xgboost-baseline
+```
+
+O comando executa XGBoost 3.3.0 com configuração fixa, o mesmo preprocessing train-only e
+exatamente 300 rounds nos três folds. As APs foram 0,390375, 0,404968 e 0,407090; a média não
+ponderada foi 0,400811. Não houve tuning, early stopping, seleção de threshold, refit, uso de
+2025 ou escolha de modelo.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -309,6 +324,8 @@ diagnósticos: não houve tuning, seleção de threshold, refit, uso de 2025 ou 
   resultados por fold, calibração diagnóstica e OOF temporal.
 - [`PHASE_4B_RANDOM_FOREST.md`](docs/PHASE_4B_RANDOM_FOREST.md): configuração fixa da floresta,
   resultados por fold, estrutura das árvores, calibração diagnóstica e OOF temporal.
+- [`PHASE_4C_XGBOOST.md`](docs/PHASE_4C_XGBOOST.md): versão e configuração fixas do boosting,
+  rounds completos, resultados por fold, calibração diagnóstica e OOF temporal.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -320,8 +337,8 @@ diagnósticos: não houve tuning, seleção de threshold, refit, uso de 2025 ou 
 
 As dependências estão organizadas no `pyproject.toml`:
 
-- principal: scikit-learn, usado no preprocessing e nas baselines logística e Random Forest;
-- `ml`: XGBoost, Optuna, MLflow e SHAP, ainda reservados para fases futuras;
+- principal: scikit-learn e XGBoost 3.3.0, usados no preprocessing e nas três baselines;
+- `ml`: Optuna, MLflow e SHAP, ainda reservados para fases futuras;
 - `viz`: JupyterLab, Plotly e Streamlit.
 
 Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2. Os grupos
@@ -329,8 +346,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4C — XGBoost**, sob os mesmos folds e a mesma receita
-train-only. 2025 permanecerá intocado até a avaliação formal do pipeline final.
+A próxima etapa é a **Fase 4D — Comparação temporal dos modelos**, usando somente os folds
+internos já executados. 2025 permanecerá intocado até a avaliação formal do pipeline final.
 
 ## Princípio metodológico
 

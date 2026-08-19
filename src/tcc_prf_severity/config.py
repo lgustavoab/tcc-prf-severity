@@ -27,6 +27,7 @@ LOGISTIC_OOF_PREDICTIONS_PATH = PROCESSED_DIR / "phase_4a_logistic_oof_predictio
 RANDOM_FOREST_OOF_PREDICTIONS_PATH = (
     PROCESSED_DIR / "phase_4b_random_forest_oof_predictions.parquet"
 )
+XGBOOST_OOF_PREDICTIONS_PATH = PROCESSED_DIR / "phase_4c_xgboost_oof_predictions.parquet"
 
 EXPECTED_YEARS = tuple(range(2021, 2026))
 RAW_FILE_TEMPLATE = "datatran{year}.csv"

@@ -1,0 +1,15 @@
+key,value
+model_id,phase_4c_xgboost_baseline
+fold_count,3
+primary_metric,Average Precision (AP)
+ap_unweighted_mean,0.40081097458169895
+ap_population_std,0.007430307892479644
+ap_fold3,0.4070898952179728
+mean_roc_auc,0.6308499409937857
+mean_brier_score,0.19389746858763426
+all_folds_completed,true
+all_boosting_rounds_completed,true
+final_test_used,false
+threshold_selected,false
+hyperparameter_tuning_used,false
+early_stopping_used,false
