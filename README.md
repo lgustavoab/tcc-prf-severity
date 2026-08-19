@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4E concluída — XGBoost formalmente selecionado para as próximas etapas.**
+**Fase 4F concluída — threshold OOF temporal do XGBoost congelado.**
 
 Nesta fase o projeto:
 
@@ -53,8 +53,10 @@ Nesta fase o projeto:
 - compara formalmente as três famílias nos mesmos folds: APs médias de 0,393508, 0,395984 e
   0,400811, com ranks apenas descritivos e sem selecionar o modelo final;
 - seleciona formalmente XGBoost pela maior AP média não ponderada nos três folds internos,
-  mantendo threshold, refit e avaliação de 2025 para fases posteriores;
-- preserva 2025, não seleciona threshold, não faz refit final e não persiste modelos fitados.
+  mantendo refit e avaliação de 2025 para fases posteriores;
+- seleciona o threshold `0.23723246157169342` somente no OOF 2022–2024, elevando o F1 de
+  `0,086164` no cutoff de referência 0,5 para `0,465309`, sem retreinar o XGBoost;
+- preserva 2025, não faz refit final e não persiste modelos fitados.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -81,6 +83,8 @@ A comparação temporal está documentada em
 [`docs/PHASE_4D_MODEL_COMPARISON.md`](docs/PHASE_4D_MODEL_COMPARISON.md).
 A seleção formal está documentada em
 [`docs/PHASE_4E_MODEL_SELECTION.md`](docs/PHASE_4E_MODEL_SELECTION.md).
+A seleção do cutoff OOF está documentada em
+[`docs/PHASE_4F_THRESHOLD_SELECTION.md`](docs/PHASE_4F_THRESHOLD_SELECTION.md).
 
 ## Requisitos
 
@@ -335,6 +339,19 @@ rank e maior AP média e publica a seleção após 13 verificações substantiva
 selecionado exclusivamente pela maior AP média não ponderada (`0,400811`). Nenhum OOF,
 threshold, refit, tuning posterior ou resultado de 2025 participa desta fase.
 
+## Seleção do threshold OOF
+
+```powershell
+uv run prf-select-threshold
+```
+
+O comando valida a seleção 4E e o OOF do XGBoost 4C, usa como candidatos exatamente os
+scores únicos observados em 2022–2024 e maximiza F1 da classe grave. AP continua sendo a
+métrica que selecionou o modelo; F1 seleciona apenas o cutoff binário. O threshold congelado
+é `0.23723246157169342`, com precision `0,333301`, recall `0,770456` e F1 `0,465309` no pool
+OOF. No cutoff de referência 0,5, os valores são `0,571368`, `0,046595` e `0,086164`. Nenhum
+modelo é treinado, nenhum threshold anual é criado e 2025 não é acessado.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -360,6 +377,8 @@ threshold, refit, tuning posterior ou resultado de 2025 participa desta fase.
   resultados consolidados, estabilidade e deltas descritivos das três famílias.
 - [`PHASE_4E_MODEL_SELECTION.md`](docs/PHASE_4E_MODEL_SELECTION.md): regra pré-especificada,
   modelo selecionado, checklist e congelamento pós-seleção.
+- [`PHASE_4F_THRESHOLD_SELECTION.md`](docs/PHASE_4F_THRESHOLD_SELECTION.md): OOF auditado,
+  busca exata, cutoff congelado e diagnósticos pooled e anuais.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -380,9 +399,8 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4F — seleção de threshold**, usando somente o OOF temporal de
-2022–2024 do XGBoost selecionado. 2025 permanecerá intocado até a avaliação formal do
-pipeline final.
+A próxima etapa é a **Fase 4G — refit 2021–2024** do XGBoost selecionado, mantendo o
+threshold 4F congelado. 2025 permanecerá intocado até a avaliação formal do pipeline final.
 
 ## Princípio metodológico
 

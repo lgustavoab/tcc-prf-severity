@@ -1,0 +1,18 @@
+check_id,check,status,evidence
+THR001,Modelo selecionado é o XGBoost 4C,PASS,phase_4c_xgboost_baseline
+THR002,OOF 4C existe e foi carregado,PASS,205528 linhas
+THR003,OOF contém somente 2022-2024,PASS,"2022,2023,2024"
+THR004,2025 está ausente,PASS,2025 reservado
+THR005,IDs são únicos,PASS,205528 IDs
+THR006,Ano e fold seguem o contrato,PASS,2022→1; 2023→2; 2024→3
+THR007,"Probabilidades são finitas e pertencem a [0,1]",PASS,válidas
+THR008,Targets são booleanos,PASS,Boolean
+THR009,Candidatos equivalem aos scores únicos,PASS,202207 candidatos
+THR010,Seleção maximiza F1 positivo,PASS,F1=0.46530870405989
+THR011,Desempate segue recall e menor threshold,PASS,comparação exata por inteiros
+THR012,Existe exatamente um threshold final,PASS,0.23723246157169342
+THR013,Threshold 0.5 é somente referência,PASS,não inserido como candidato especial
+THR014,Não há threshold específico por ano,PASS,um cutoff congelado
+THR015,Nenhum modelo foi treinado,PASS,somente OOF existente
+THR016,Nenhum refit foi realizado,PASS,refit=false
+THR017,2025 não foi usado,PASS,final_test_used=false

@@ -336,6 +336,30 @@ nenhum threshold foi selecionado e nenhum refit foi realizado. O próximo passo 
 
 **Status:** confirmada; 13 checks PASS e 0 FAIL.
 
+### D015 — Threshold OOF temporal do XGBoost
+
+**Data:** 19/08/2026.
+
+**Decisão:** congelar o threshold `0.23723246157169342` para transformar a probabilidade do
+XGBoost 4C em decisão `target_grave=True`. A busca usou os 202.207 scores únicos do OOF
+concatenado de 2022–2024 e a regra `probabilidade >= threshold`.
+
+**Justificativa:** conforme o contrato 3D, o objetivo foi maximizar o F1 positivo, comparado
+exatamente como `2TP / (2TP + FP + FN)`. Empates seriam resolvidos por maior recall e depois
+menor threshold; o máximo observado teve um único candidato. AP permanece a métrica que
+selecionou o modelo, enquanto F1 seleciona somente o cutoff.
+
+**Consequências:** no OOF pooled, precision, recall e F1 são 0,333301, 0,770456 e 0,465309,
+contra 0,571368, 0,046595 e 0,086164 no cutoff de referência 0,5. O mesmo threshold foi
+aplicado apenas como diagnóstico em 2022, 2023 e 2024. O XGBoost/configuração 4C,
+preprocessing e features permanecem congelados; não houve treinamento, tuning, refit ou uso
+de 2025. O próximo passo é a Fase 4G.
+
+**Origem:** [PHASE_4F_THRESHOLD_SELECTION.md](PHASE_4F_THRESHOLD_SELECTION.md) e tabelas
+`phase_4f_*` em `reports/tables/`.
+
+**Status:** confirmada; 17 checks PASS e 0 FAIL.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -525,6 +549,34 @@ paralelo da Random Forest não afeta as métricas reproduzidas nem esta comparab
 
 **Status:** confirmado; comparação descritiva concluída. A seleção posterior está registrada
 na decisão D014.
+
+### R010 — Threshold OOF do modelo selecionado
+
+**Data:** 19/08/2026.
+
+**População e período:** 205.528 previsões OOF e IDs únicos do XGBoost, exclusivamente das
+validações temporais de 2022, 2023 e 2024. A materialização usada possui SHA-256
+`28925211b1542c2c7965b8b45cd6b5f360389f200ea197de57f9068f777a6bdb`.
+
+**Método:** busca `O(n log n)` sobre 202.207 probabilidades únicas, agrupando scores iguais e
+acumulando a matriz de confusão. F1 foi comparado por frações inteiras, sem grid, tolerância
+de empate ou inclusão especial do cutoff 0,5.
+
+**Resultado:** o threshold `0.23723246157169342` obteve precision 0,33330114898136526,
+recall 0,7704563403495519 e F1 0,46530870405989, com TN=57.517, FP=89.765, FN=13.370 e
+TP=44.876. Em 0,5, precision=0,5713684210526315, recall=0,04659547436733853 e
+F1=0,08616420090164455. Os F1 anuais no cutoff congelado foram 0,463337 em 2022, 0,466830
+em 2023 e 0,465596 em 2024.
+
+**Limitações:** o cutoff é ótimo apenas segundo F1 no OOF temporal de desenvolvimento e não
+incorpora custos operacionais nem garante validade universal. A perda de precision e o aumento
+de falsos positivos devem ser considerados na interpretação futura. Nenhum resultado de 2025
+participou da decisão.
+
+**Origem:** [PHASE_4F_THRESHOLD_SELECTION.md](PHASE_4F_THRESHOLD_SELECTION.md) e tabelas
+`phase_4f_*` em `reports/tables/`.
+
+**Status:** confirmado; threshold congelado para a próxima etapa.
 
 ## Achados exploratórios
 

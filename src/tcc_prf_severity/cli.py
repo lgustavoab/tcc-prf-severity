@@ -25,6 +25,7 @@ from tcc_prf_severity.modeling.model_comparison import run_model_comparison
 from tcc_prf_severity.modeling.model_selection import run_model_selection
 from tcc_prf_severity.modeling.preprocessing import run_preprocessing_validation
 from tcc_prf_severity.modeling.random_forest_baseline import run_random_forest_baseline
+from tcc_prf_severity.modeling.threshold_selection import run_threshold_selection
 from tcc_prf_severity.modeling.xgboost_baseline import (
     EXPECTED_XGBOOST_VERSION,
     run_xgboost_baseline,
@@ -256,6 +257,29 @@ def select_model_main() -> None:
     print("Threshold selecionado: não")
     print("Refit realizado: não")
     print("Próximo passo: Fase 4F — threshold OOF")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def select_threshold_main() -> None:
+    run = run_threshold_selection()
+    result = run.result
+    selected = result.search.selected
+    reference = result.reference
+    print("Fase 4F — Threshold OOF")
+    print("Modelo: XGBoost")
+    print(f"OOF: 2022-2024; {selected.rows} ocorrências")
+    print("Objetivo: maximizar F1 da classe grave")
+    print(f"Threshold selecionado: {selected.threshold}")
+    print(f"Precision: {selected.precision:.6f}")
+    print(f"Recall: {selected.recall:.6f}")
+    print(f"F1: {selected.f1:.6f}")
+    print("Referência 0.5:")
+    print(f"F1: {reference.f1:.6f}")
+    print(f"Recall: {reference.recall:.6f}")
+    print(f"Precision: {reference.precision:.6f}")
+    print("2025 utilizado: não")
+    print("Refit realizado: não")
+    print("Próximo passo: Fase 4G — refit 2021-2024")
     print(f"Tabelas: {run.table_paths[0].parent}")
 
 
