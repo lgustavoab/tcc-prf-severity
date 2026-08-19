@@ -2,6 +2,7 @@ from typing import Any
 
 from tcc_prf_severity.analysis.general import run_general_analysis
 from tcc_prf_severity.analysis.geographic import run_geographic_analysis
+from tcc_prf_severity.analysis.road_environment import run_road_environment_analysis
 from tcc_prf_severity.analysis.temporal import run_temporal_analysis
 from tcc_prf_severity.config import (
     AUDIT_DIR,
@@ -156,5 +157,54 @@ def eda_geographic_main() -> None:
         f"{municipality_rate['municipality_label']} — {rate(municipality_rate)}"
     )
     print(f"BR 0: {count(br_zero['total_occurrences'])} registros preservados.")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")
+
+
+def eda_road_environment_main() -> None:
+    import polars as pl
+
+    result = run_road_environment_analysis()
+    analysis = result.analysis
+
+    def highest_rate(table: pl.DataFrame) -> dict[str, Any]:
+        return table.sort("severe_rate_percent", descending=True).row(0, named=True)
+
+    def count(value: Any) -> str:
+        return f"{int(value):,}".replace(",", ".")
+
+    def rate(row: dict[str, Any]) -> str:
+        return f"{float(row['severe_rate_percent']):.2f}% (n={count(row['total_occurrences'])})"
+
+    road_type = highest_rate(analysis.road_type_summary)
+    land_use = highest_rate(analysis.land_use_summary)
+    direction = highest_rate(analysis.direction_summary)
+    weather = analysis.weather_rate_highlights.row(0, named=True)
+    layout_volume = analysis.road_layout_component_summary.row(0, named=True)
+    layout_rate = analysis.road_layout_component_rate_highlights.row(0, named=True)
+    not_informed = analysis.direction_summary.filter(pl.col("sentido_via") == "Não Informado").row(
+        0, named=True
+    )
+    rows = int(analysis.road_type_summary.get_column("total_occurrences").sum())
+
+    print("Fase 2D concluída.")
+    print(f"Registros: {count(rows)}")
+    print(f"Tipo de pista com maior proporção grave: {road_type['tipo_pista']} — {rate(road_type)}")
+    print(f"Uso do solo com maior proporção grave: {land_use['uso_solo']} — {rate(land_use)}")
+    print(f"Sentido com maior proporção grave: {direction['sentido_via']} — {rate(direction)}")
+    print(f"Não Informado em sentido: {count(not_informed['total_occurrences'])} registros.")
+    print(
+        "Meteorologia informada com maior proporção entre n>=500: "
+        f"{weather['condicao_metereologica']} — {rate(weather)}"
+    )
+    print(
+        f"Componente de traçado com maior volume: {layout_volume['road_layout_component']} "
+        f"({count(layout_volume['total_occurrences'])})"
+    )
+    print(
+        "Componente com maior proporção entre n>=500: "
+        f"{layout_rate['road_layout_component']} — {rate(layout_rate)}"
+    )
+    print(f"Tokens de traçado confirmados: {analysis.road_layout_tokens.height}")
     print(f"Tabelas: {result.table_paths[0].parent}")
     print(f"Figuras: {result.figure_paths[0].parent}")

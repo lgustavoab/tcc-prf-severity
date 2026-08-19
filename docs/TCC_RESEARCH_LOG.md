@@ -332,6 +332,52 @@ mostra que o limiar é editorial, não universal ou científico.
 
 **Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA016](EDA_FINDINGS.md#eda016--destaques-de-taxa-com-critério-editorial-de-amostra).
 
+### EDA018 — Contraste persistente por tipo de pista
+
+Pista Simples concentrou 167.198 registros e apresentou 56.365 graves (33,7115%), ante
+23,3513% em Dupla e 21,8680% em Múltipla. Simples manteve a maior proporção nos cinco anos,
+com amplitude de 0,8746 ponto percentual.
+
+**Relevância:** o contraste é recorrente e diretamente relacionado às características da via,
+mas exige futura análise multivariada, sem interpretação causal ou de risco absoluto.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA018](EDA_FINDINGS.md#eda018--tipo-de-pista-e-proporção-de-ocorrências-graves).
+
+### EDA021 — Meteorologia requer leitura conjunta de taxa e amostra
+
+`Ignorado` apresentou 34,5503% de graves em 4.492 registros, mas caracteriza ausência
+semântica e não uma condição meteorológica observada. Entre condições informadas com pelo
+menos 500 registros, Nevoeiro/Neblina apresentou 31,5011% e Vento 31,3659%. Granizo (n=11)
+e Neve (n=8) foram mantidos na tabela completa, mas excluídos dos destaques pelo tamanho.
+
+**Relevância:** documenta que categorias raras e desconhecidas exigem cautela, separa ausência
+de informação de condições observadas e exige tamanho amostral em toda comparação.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA021](EDA_FINDINGS.md#eda021--condição-meteorológica-tamanho-amostral-e-categorias-raras).
+
+### EDA022 — Representação multivalorada de traçado da via
+
+Foram confirmados 12 componentes básicos em `tracado_via`. Reta ocorreu em 241.869 registros,
+Curva em 62.755 e Declive em 32.735. As contagens somaram 418.561 porque uma ocorrência pode
+conter vários componentes; portanto, elas não são mutuamente exclusivas.
+
+**Relevância:** o campo não deve ser tratado como aproximadamente 1.214 categorias completas
+independentes. Sua eventual preparação deverá preservar a natureza multirrótulo e evitar
+chamar o percentual de cada componente de participação exclusiva.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA022](EDA_FINDINGS.md#eda022--componentes-multivalorados-de-traçado-da-via).
+
+### EDA023 — Recorrência temporal em categorias volumosas de via e ambiente
+
+Simples liderou tipo de pista e `Não` liderou uso do solo em todos os anos. Categorias
+volumosas como Céu Claro, Nublado, Chuva e Reta apresentaram amplitudes anuais entre 0,5941 e
+1,3658 ponto percentual, enquanto categorias raras foram substancialmente mais variáveis.
+
+**Relevância:** reforça que estabilidade temporal e tamanho amostral deverão ser avaliados
+conjuntamente; recorrência descritiva não garante ausência de drift nem estabilidade futura.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA023](EDA_FINDINGS.md#eda023--estabilidade-descritiva-das-dimensões-de-via-e-ambiente).
+
 ## Hipóteses
 
 ### H001 — Estabilidade temporal das features
@@ -393,10 +439,11 @@ explicitamente quantificadas e consideradas nas análises.
 
 ## Figuras e tabelas associadas
 
-As Fases 2A, 2B e 2C produziram figuras e tabelas versionadas em `reports/`. A Fase 2C
-acrescentou seis figuras geográficas e 15 tabelas, incluindo resumos completos, destaques,
-estabilidade, sensibilidade do threshold e cobertura de coordenadas. Cada artefato científico
-está associado aos IDs EDA correspondentes em [EDA_FINDINGS.md](EDA_FINDINGS.md).
+As Fases 2A, 2B, 2C e 2D produziram figuras e tabelas versionadas em `reports/`. A Fase 2D
+acrescentou quatro figuras e 14 tabelas de via e ambiente, incluindo resumos completos,
+desagregações anuais, estabilidade, destaques com controle editorial de amostra e os tokens
+de `tracado_via`. Cada artefato científico está associado aos IDs EDA correspondentes em
+[EDA_FINDINGS.md](EDA_FINDINGS.md).
 
 ## Templates para registros futuros
 

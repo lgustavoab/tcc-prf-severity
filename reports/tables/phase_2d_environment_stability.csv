@@ -1,0 +1,31 @@
+dimension,category,years_observed,minimum_annual_rate_percent,maximum_annual_rate_percent,range_percentage_points
+road_type,Múltipla,5,21.473596,22.300916,0.82732
+road_type,Simples,5,33.200289,34.074872,0.874583
+road_type,Dupla,5,23.000325,23.838607,0.838282
+land_use,Sim,5,25.915101,26.551076,0.635975
+land_use,Não,5,29.688254,30.049604,0.36135
+direction,Não Informado,5,6.451613,14.619883,8.16827
+direction,Crescente,5,28.464442,29.213483,0.749041
+direction,Decrescente,5,27.253544,27.98447,0.730926
+weather,Granizo,4,0.0,50.0,50.0
+weather,Chuva,5,23.660248,25.026069,1.365821
+weather,Ignorado,5,30.3,37.09856,6.79856
+weather,Sol,5,26.353314,27.330134,0.97682
+weather,Céu Claro,5,29.070394,29.664474,0.59408
+weather,Vento,5,27.884615,35.416667,7.532052
+weather,Nublado,5,27.332873,28.255356,0.922483
+weather,Nevoeiro/Neblina,5,29.098361,33.90411,4.805749
+weather,Garoa/Chuvisco,5,20.785303,24.227441,3.442138
+weather,Neve,5,0.0,33.333333,33.333333
+road_layout_component,Aclive,5,28.807406,30.724781,1.917375
+road_layout_component,Retorno Regulamentado,5,24.746571,26.963351,2.21678
+road_layout_component,Desvio Temporário,5,23.602484,31.578947,7.976463
+road_layout_component,Interseção de Vias,5,26.864407,27.852004,0.987597
+road_layout_component,Curva,5,27.464509,28.858447,1.393938
+road_layout_component,Rotatória,5,19.303424,20.915713,1.612289
+road_layout_component,Viaduto,5,22.169438,25.40074,3.231302
+road_layout_component,Declive,5,30.378219,32.392027,2.013808
+road_layout_component,Ponte,5,29.890644,34.828496,4.937852
+road_layout_component,Túnel,5,17.073171,38.095238,21.022067
+road_layout_component,Em Obras,5,27.655889,31.922612,4.266723
+road_layout_component,Reta,5,28.390823,29.229542,0.838719
