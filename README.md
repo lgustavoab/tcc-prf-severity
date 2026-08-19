@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 3D — Desenho Experimental e Particionamento Temporal concluída.**
+**Fase 3E — Pipeline de Preprocessing concluída.**
 
 Nesta fase o projeto:
 
@@ -41,7 +41,11 @@ Nesta fase o projeto:
   expanding-window, sem duplicar o dataset em arquivos de treino/teste;
 - define previamente Average Precision (AP), agregação entre folds, threshold por OOF e
   refit final;
-- ainda não remove ou imputa registros, ajusta preprocessing ou inicia machine learning.
+- valida nos três folds uma receita train-only com nove categóricas em one-hot, `km`
+  padronizado e 12 indicadores de traçado em passthrough;
+- tolera e audita categorias desconhecidas sem aprender vocabulário da validação ou de 2025;
+- ainda não remove ou imputa registros, persiste transformers fitados ou inicia machine
+  learning.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -56,6 +60,8 @@ O contrato materializado do dataset principal está em
 [`docs/PHASE_3C_ANALYTICAL_DATASET.md`](docs/PHASE_3C_ANALYTICAL_DATASET.md).
 O desenho experimental temporal está em
 [`docs/PHASE_3D_EXPERIMENTAL_DESIGN.md`](docs/PHASE_3D_EXPERIMENTAL_DESIGN.md).
+O contrato e a auditoria do preprocessing estão em
+[`docs/PHASE_3E_PREPROCESSING.md`](docs/PHASE_3E_PREPROCESSING.md).
 
 ## Requisitos
 
@@ -243,6 +249,18 @@ avaliação final. Os folds internos são `2021 -> 2022`, `2021–2022 -> 2023` 
 `2021–2023 -> 2024`. Não há split aleatório, cópia completa do dataset, fitting ou cálculo de
 performance.
 
+## Validação do preprocessing
+
+```powershell
+uv run prf-validate-preprocessing
+```
+
+O comando verifica o dataset analítico e os folds da 3D, cria um `ColumnTransformer` novo por
+fold e ajusta cada encoder/scaler somente no respectivo treino. As nove categóricas usam
+one-hot com categorias desconhecidas toleradas e auditadas, somente `km` usa
+`StandardScaler`, e os 12 indicadores `tracado_*` seguem por passthrough. As matrizes ficam
+esparsas; 2025 não é transformado e nenhum modelo ou transformer fitado é persistido.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -256,6 +274,8 @@ performance.
   determinística do conjunto principal, esquema, manifesto e verificações.
 - [`PHASE_3D_EXPERIMENTAL_DESIGN.md`](docs/PHASE_3D_EXPERIMENTAL_DESIGN.md): fronteira
   temporal, folds internos e políticas futuras de seleção, threshold e refit.
+- [`PHASE_3E_PREPROCESSING.md`](docs/PHASE_3E_PREPROCESSING.md): receita train-only,
+  auditoria de categorias desconhecidas e validação real dos três folds internos.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -265,9 +285,10 @@ performance.
 
 ## Grupos planejados
 
-As dependências das fases futuras já estão separadas no `pyproject.toml`:
+As dependências estão organizadas no `pyproject.toml`:
 
-- `ml`: scikit-learn, XGBoost, Optuna, MLflow e SHAP;
+- principal: scikit-learn, usado na Fase 3E somente para preprocessing;
+- `ml`: XGBoost, Optuna, MLflow e SHAP, ainda reservados para fases futuras;
 - `viz`: JupyterLab, Plotly e Streamlit.
 
 Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2. Os grupos
@@ -275,9 +296,10 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa poderá iniciar o preprocessing e a primeira modelagem somente dentro do
-desenho congelado: qualquer fit deverá ocorrer no treino de cada fold, e 2025 permanecerá
-intocado até a avaliação formal do pipeline final. Nenhum modelo foi criado até aqui.
+A próxima etapa poderá iniciar a primeira modelagem somente dentro do desenho congelado,
+recriando a receita train-only validada na Fase 3E dentro de cada pipeline. A seleção usará
+somente os folds de 2021–2024, e 2025 permanecerá intocado até a avaliação formal do pipeline
+final. Nenhum modelo foi criado até aqui.
 
 ## Princípio metodológico
 

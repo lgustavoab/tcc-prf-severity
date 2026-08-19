@@ -1,0 +1,4 @@
+fold,train_years,validation_year,train_rows,validation_rows,input_predictor_count,output_feature_count,categorical_output_count,numeric_output_count,binary_output_count,sparse_output,matrix_format,fit_scope_verified,train_non_finite_count,validation_non_finite_count,unknown_feature_occurrences,validation_rows_with_any_unknown,notes
+1,2021,2022,64567,64606,22,215,202,1,12,true,csr_matrix,true,0,0,12,12,unknown_feature_occurrences soma linhas por feature; validation_rows_with_any_unknown deduplica linhas entre features
+2,"2021,2022",2023,129173,67766,22,220,207,1,12,true,csr_matrix,true,0,0,3,3,unknown_feature_occurrences soma linhas por feature; validation_rows_with_any_unknown deduplica linhas entre features
+3,"2021,2022,2023",2024,196939,73156,22,223,210,1,12,true,csr_matrix,true,0,0,3,3,unknown_feature_occurrences soma linhas por feature; validation_rows_with_any_unknown deduplica linhas entre features

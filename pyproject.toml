@@ -8,6 +8,7 @@ dependencies = [
     "matplotlib",
     "polars",
     "pandera[polars]",
+    "scikit-learn>=1.9.0",
 ]
 
 [project.scripts]
@@ -24,6 +25,7 @@ prf-eda-severity-associations = "tcc_prf_severity.cli:eda_severity_associations_
 prf-eda-temporal = "tcc_prf_severity.cli:eda_temporal_main"
 prf-verify-interim = "tcc_prf_severity.cli:verify_interim_main"
 prf-verify-analytical = "tcc_prf_severity.cli:verify_analytical_main"
+prf-validate-preprocessing = "tcc_prf_severity.cli:validate_preprocessing_main"
 
 [dependency-groups]
 dev = [
@@ -34,7 +36,6 @@ dev = [
 ml = [
     "mlflow",
     "optuna",
-    "scikit-learn",
     "shap",
     "xgboost",
 ]

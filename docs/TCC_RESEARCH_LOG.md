@@ -268,6 +268,31 @@ como limitação; nenhum modelo ou performance foi produzido na 3D.
 
 **Status:** confirmada; desenho congelado antes da primeira modelagem.
 
+### D012 — Preprocessing train-only por fold temporal
+
+**Data:** 19/08/2026.
+
+**Decisão:** construir uma instância independente de `ColumnTransformer` por fold, ajustada
+somente no treino. As nove variáveis categóricas — incluindo `hour` e `br` por sua semântica
+— usam `OneHotEncoder(handle_unknown="ignore")`; somente `km` usa `StandardScaler`; os 12
+indicadores `tracado_*` seguem por passthrough.
+
+**Justificativa:** vocabulários e estatísticas aprendidos globalmente introduziriam informação
+da validação no treino. A política train-only preserva a ordem temporal, tolera mudança de
+categorias sem escondê-la da auditoria e mantém uma representação comum para futuros modelos
+lineares e de árvore.
+
+**Consequências:** cada fold pode ter dimensionalidade diferente. Os três folds produziram
+matrizes CSR esparsas com 215, 220 e 223 features, respectivamente, e nenhum valor não finito.
+Categorias desconhecidas ocorreram somente em `br`, afetando 12, 3 e 3 linhas das validações.
+Não há imputer, vocabulário global, uso de target ou transformação de 2025. Nenhum preprocessor
+fitado foi persistido e nenhum modelo ou métrica preditiva foi produzido.
+
+**Origem:** [PHASE_3E_PREPROCESSING.md](PHASE_3E_PREPROCESSING.md) e tabelas
+`phase_3e_*` em `reports/tables/`.
+
+**Status:** confirmada; receita validada antes da primeira modelagem.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

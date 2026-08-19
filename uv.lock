@@ -2739,6 +2739,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "pandera", extra = ["polars"] },
     { name = "polars" },
+    { name = "scikit-learn" },
 ]
 
 [package.dev-dependencies]
@@ -2750,7 +2751,6 @@ dev = [
 ml = [
     { name = "mlflow" },
     { name = "optuna" },
-    { name = "scikit-learn" },
     { name = "shap" },
     { name = "xgboost" },
 ]
@@ -2765,6 +2765,7 @@ requires-dist = [
     { name = "matplotlib" },
     { name = "pandera", extras = ["polars"] },
     { name = "polars" },
+    { name = "scikit-learn", specifier = ">=1.9.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -2776,7 +2777,6 @@ dev = [
 ml = [
     { name = "mlflow" },
     { name = "optuna" },
-    { name = "scikit-learn" },
     { name = "shap" },
     { name = "xgboost" },
 ]
