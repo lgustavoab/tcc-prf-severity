@@ -21,6 +21,7 @@ from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
 from tcc_prf_severity.modeling.final_evaluation import run_final_evaluation
+from tcc_prf_severity.modeling.final_interpretation import run_final_interpretation
 from tcc_prf_severity.modeling.final_refit import run_final_refit
 from tcc_prf_severity.modeling.logistic_baseline import run_logistic_baseline
 from tcc_prf_severity.modeling.model_comparison import run_model_comparison
@@ -340,6 +341,42 @@ def evaluate_final_2025_main() -> None:
     print("Próximo passo: Fase 4I — interpretação e análise final")
     print(f"Predictions: {result.predictions_path}")
     print(f"Predictions SHA-256: {result.predictions_sha256}")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def interpret_final_model_main() -> None:
+    run = run_final_interpretation()
+    result = run.result
+    summary = {str(row["key"]): str(row["value"]) for row in result.summary.iter_rows(named=True)}
+
+    print("Fase 4I — Interpretação final")
+    print("Modelo: XGBoost")
+    print("População interpretada: 2025 — pós-avaliação final")
+    print(f"Observações: {result.contract.final_rows}")
+    print(f"Predictors: {result.global_contributions.height}")
+    print(f"Features transformadas: {result.transformed_contributions.height}")
+    print("Método: XGBoost native Tree SHAP / pred_contribs")
+    print("Escala: margem bruta do modelo")
+    print(
+        "Reconciliação máxima com probabilities: "
+        f"{summary['maximum_probability_reconciliation_error']}"
+    )
+    print("Top predictors:")
+    for row in result.global_contributions.head(5).iter_rows(named=True):
+        print(
+            f"{row['rank']}. {row['source_predictor']} — "
+            f"{float(row['mean_abs_margin_contribution']):.12f}"
+        )
+    print("Erros:")
+    print(f"TP {result.contract.tp}")
+    print(f"FP {result.contract.fp}")
+    print(f"FN {result.contract.fn}")
+    print(f"TN {result.contract.tn}")
+    print("Modelo alterado: não")
+    print("Threshold alterado: não")
+    print("Feature selection: não")
+    print("Interpretação causal: não")
+    print("Próximo passo: consolidação científica das perguntas de pesquisa e do TCC")
     print(f"Tabelas: {run.table_paths[0].parent}")
 
 

@@ -411,6 +411,30 @@ modelo, hiperparâmetros, conjunto de atributos, pré-processamento ou limiar de
 
 **Status:** confirmada; 25 checks PASS e 0 FAIL. Próximo passo: Fase 4I.
 
+### D018 — Interpretação pós-avaliação sem reabertura experimental
+
+**Data:** 19/08/2026.
+
+**Decisão:** interpretar o pipeline final sobre as 72.529 ocorrências de 2025 por contribuições
+Tree SHAP nativas do XGBoost (`pred_contribs=True`), na escala de margem bruta, agregando as
+226 features em 22 predictors e reutilizando as decisões congeladas da 4H para TP/FP/FN/TN.
+
+**Justificativa:** a avaliação final já estava concluída. A interpretação deve explicar quais
+informações o modelo utilizou sem produzir nova avaliação, fit, tuning, calibrador, threshold
+ou seleção de features. A identidade aditiva foi reconciliada com as probabilities 4H com erro
+máximo `4.0788276994829786e-07`, abaixo da tolerância explícita de `1e-6`.
+
+**Consequências:** `uf`, `tipo_pista`, `hour`, `br` e `condicao_metereologica` foram os cinco
+predictors de maior contribuição absoluta média. O ranking é interpretativo, multivariado e
+não causal. Modelo, preprocessing, features, hiperparâmetros, threshold e predictions 4H
+permaneceram inalterados.
+
+**Origem:** [PHASE_4I_FINAL_INTERPRETATION.md](PHASE_4I_FINAL_INTERPRETATION.md) e tabelas
+`phase_4i_*` em `reports/tables/`.
+
+**Status:** confirmada; 25 checks PASS e 0 FAIL. Próximo passo: consolidar as perguntas de
+pesquisa e mapear cada pergunta às evidências produzidas nas Fases 2–4.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
@@ -683,6 +707,34 @@ resultado.
 `phase_4h_final_evaluation.csv` e demais tabelas `phase_4h_*`.
 
 **Status:** confirmado; avaliação final concluída e predições congeladas para a Fase 4I.
+
+### R013 — Contribuições do modelo e distribuição dos erros em 2025
+
+**Data:** 19/08/2026.
+
+**População e método:** 72.529 ocorrências de 2025, após a avaliação final, interpretadas com
+Tree SHAP nativo para 226 features transformadas e agregadas em 22 predictors. As contribuições
+são aditivas na margem bruta e reconciliaram com as probabilidades oficiais com erro absoluto
+máximo de `4.0788276994829786e-07` e médio de `8.79821110029995e-08`.
+
+**Resultado:** as contribuições absolutas médias foram 0,309141 para `uf`, 0,215640 para
+`tipo_pista`, 0,215379 para `hour`, 0,115351 para `br` e 0,069935 para
+`condicao_metereologica`. Entre features transformadas, destacaram-se `tipo_pista_Simples`,
+`km`, `uf_RJ`, `uf_RS` e `uf_SP`. As decisões congeladas mantiveram TP=15.817, FP=31.883,
+FN=4.676 e TN=20.153; as medianas de score foram 0,331816, 0,307983, 0,204486 e 0,195533,
+respectivamente.
+
+**Interpretação e limitações:** `uf`, `tipo_pista` e `hour` também haviam apresentado variação
+descritiva na EDA, mas a convergência não confirma causalidade. O ranking pode diferir de
+associações univariadas por interações, não linearidades, redundância, cardinalidade e
+composição da população. A base contém somente ocorrências registradas e não estima risco de
+ocorrência de acidente.
+
+**Origem:** [PHASE_4I_FINAL_INTERPRETATION.md](PHASE_4I_FINAL_INTERPRETATION.md),
+`phase_4i_global_feature_contributions.csv`, `phase_4i_transformed_feature_contributions.csv`
+e `phase_4i_error_analysis.csv`.
+
+**Status:** confirmado; interpretação pós-avaliação concluída sem alteração retrospectiva.
 
 ## Achados exploratórios
 

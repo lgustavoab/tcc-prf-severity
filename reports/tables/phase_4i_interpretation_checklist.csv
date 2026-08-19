@@ -1,0 +1,26 @@
+check,status,details
+phase_4h_completed,PASS,evaluation_status=completed
+phase_4h_did_not_modify_model,PASS,model_retrained=false
+pipeline_sha_valid,PASS,c9379d5d150dde80615740de750a49b887869a5f56343ce9b967d51937033351
+predictions_sha_valid,PASS,411b5113060b19c3cc9da5fe1a6cddcf8a7d7662fe73102a6f3fdb2b05b88375
+pipeline_fitted,PASS,pipeline 4G validado antes da interpretação
+boosting_rounds,PASS,300 rounds
+predictor_count,PASS,22
+transformed_feature_count,PASS,226
+feature_mapping_complete,PASS,226 features mapeadas sem duplicação
+pred_contribs_columns,PASS,227
+bias_separated,PASS,última coluna tratada como bias
+probabilities_reconciled,PASS,4.0788276994829786e-07
+global_table_rows,PASS,22
+transformed_table_rows,PASS,226
+global_shares_reconciled,PASS,1.0000000000000002
+frozen_threshold_preserved,PASS,0.23723246157169342
+confusion_matrix_reconciled,PASS,"{'TP': 15817, 'FP': 31883, 'FN': 4676, 'TN': 20153}"
+no_fit,PASS,nenhum fit/fit_transform executado
+no_tuning,PASS,nenhum tuning executado
+no_new_threshold,PASS,decisões 4H reutilizadas
+no_calibration,PASS,nenhum calibrador executado
+no_feature_selection,PASS,ranking somente interpretativo
+no_retrospective_change,PASS,estado 4E-4H preservado
+non_causal_interpretation,PASS,contribuição não é efeito causal
+post_final_evaluation,PASS,população 2025 já avaliada e congelada
