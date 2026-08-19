@@ -1,4 +1,7 @@
+from typing import Any
+
 from tcc_prf_severity.analysis.general import run_general_analysis
+from tcc_prf_severity.analysis.temporal import run_temporal_analysis
 from tcc_prf_severity.config import (
     AUDIT_DIR,
     RAW_DIR,
@@ -56,5 +59,53 @@ def eda_general_main() -> None:
     print(f"Taxa global: {stability.weighted_global_rate_percent:.2f}%")
     print(f"Menor taxa anual: {stability.minimum_annual_rate_percent:.2f}%")
     print(f"Maior taxa anual: {stability.maximum_annual_rate_percent:.2f}%")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")
+
+
+def eda_temporal_main() -> None:
+    result = run_temporal_analysis()
+    analysis = result.analysis
+
+    def maximum(table: object, metric: str) -> dict[str, Any]:
+        import polars as pl
+
+        if not isinstance(table, pl.DataFrame):
+            raise TypeError("Resumo temporal inválido.")
+        return table.sort(metric, descending=True).row(0, named=True)
+
+    def count(value: Any) -> str:
+        return f"{int(value):,}".replace(",", ".")
+
+    def rate(row: dict[str, Any]) -> str:
+        return f"{float(row['severe_rate_percent']):.2f}% (n={count(row['total_occurrences'])})"
+
+    month_volume = maximum(analysis.month_summary, "total_occurrences")
+    month_rate = maximum(analysis.month_summary, "severe_rate_percent")
+    weekday_volume = maximum(analysis.weekday_summary, "total_occurrences")
+    weekday_rate = maximum(analysis.weekday_summary, "severe_rate_percent")
+    hour_volume = maximum(analysis.hour_summary, "total_occurrences")
+    hour_rate = maximum(analysis.hour_summary, "severe_rate_percent")
+    phase_rate = maximum(analysis.day_phase_summary, "severe_rate_percent")
+    rows = int(analysis.month_summary.get_column("total_occurrences").sum())
+
+    print("Fase 2B concluída.")
+    print(f"Registros: {count(rows)}")
+    print("Período: 2021-2025")
+    print(
+        f"Mês com maior volume: {month_volume['month_name']} "
+        f"({count(month_volume['total_occurrences'])})"
+    )
+    print(f"Mês com maior proporção grave: {month_rate['month_name']} — {rate(month_rate)}")
+    print(
+        f"Dia com maior volume: {weekday_volume['dia_semana']} "
+        f"({count(weekday_volume['total_occurrences'])})"
+    )
+    print(f"Dia com maior proporção grave: {weekday_rate['dia_semana']} — {rate(weekday_rate)}")
+    print(
+        f"Hora com maior volume: {hour_volume['hour']}h ({count(hour_volume['total_occurrences'])})"
+    )
+    print(f"Hora com maior proporção grave: {hour_rate['hour']}h — {rate(hour_rate)}")
+    print(f"Fase do dia com maior proporção grave: {phase_rate['fase_dia']} — {rate(phase_rate)}")
     print(f"Tabelas: {result.table_paths[0].parent}")
     print(f"Figuras: {result.figure_paths[0].parent}")

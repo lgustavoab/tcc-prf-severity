@@ -208,9 +208,308 @@ variáveis em fases posteriores.
 
 **Status:** confirmado.
 
-## 2B — Padrões temporais
+## Fase 2B — Padrões temporais
 
-Nenhum achado registrado.
+### EDA005 — Distribuição mensal do volume de ocorrências registradas
+
+**Data:** 18/08/2026.
+
+**Fase:** 2B — Padrões temporais.
+
+**Pergunta:** em quais meses houve maior e menor volume de ocorrências registradas?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros.
+
+**Categorias ausentes/ignoradas:** nenhuma; todas as 12 categorias mensais estavam presentes.
+
+**Resultado absoluto:** dezembro apresentou 31.674 registros e fevereiro, 25.166. Após
+normalização pela quantidade real de dias-calendário do período, dezembro permaneceu com o
+maior valor (204,35 registros/dia), enquanto janeiro apresentou o menor (174,50 registros/dia).
+
+**Proporção/taxa:** dezembro representou 9,2445% do dataset e fevereiro, 7,3451%. A medida por
+dia-calendário é uma normalização descritiva, não uma taxa de risco ou exposição ao tráfego.
+
+**Comparação:** dezembro teve 6.508 registros a mais que fevereiro e foi o mês de maior volume
+em cada um dos cinco anos (5.847 em 2021; 5.838 em 2022; 6.614 em 2023; 6.587 em 2024; e
+6.788 em 2025).
+
+**Estabilidade entre anos:** a liderança de dezembro em volume foi recorrente nos cinco anos.
+
+**Interpretação:** no período analisado, houve maior concentração de registros em dezembro,
+inclusive após controlar apenas a duração dos meses.
+
+**O que NÃO podemos concluir:** maior volume mensal não significa maior risco de acidente ou
+efeito causal do mês.
+
+**Limitações:** meses têm durações diferentes e não há denominador de fluxo veicular mensal.
+
+**Figura:** `../reports/figures/phase_2b_occurrences_by_month.png`.
+
+**Tabela:** `../reports/tables/phase_2b_month_summary.csv` e
+`../reports/tables/phase_2b_month_by_year.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/temporal.py`, dataset interim verificado de
+2021–2025.
+
+**Possível uso no TCC:** caracterização descritiva da sazonalidade do volume registrado.
+
+**Status:** confirmado.
+
+### EDA006 — Variação mensal da proporção de ocorrências graves
+
+**Data:** 18/08/2026.
+
+**Fase:** 2B — Padrões temporais.
+
+**Pergunta:** a proporção de ocorrências graves varia entre os meses?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros.
+
+**Categorias ausentes/ignoradas:** nenhuma.
+
+**Resultado absoluto:** maio reuniu 8.394 graves entre 28.914 registros; fevereiro reuniu
+6.868 graves entre 25.166 registros.
+
+**Proporção/taxa:** a maior proporção consolidada ocorreu em maio (29,0309%) e a menor em
+fevereiro (27,2908%), diferença descritiva de 1,7401 ponto percentual.
+
+**Comparação:** o mês com maior proporção não foi o mesmo em todos os anos: maio liderou em
+2021 e 2025, setembro em 2022, junho em 2023 e agosto em 2024.
+
+**Estabilidade entre anos:** as amplitudes anuais por mês variaram de 0,5552 ponto percentual
+em agosto a 2,4980 em junho. A mudança da categoria líder recomenda cautela ao resumir a
+dimensão por um único mês.
+
+**Interpretação:** há diferenças descritivas moderadas entre os meses, mas o topo mensal não
+foi recorrente nos cinco anos.
+
+**O que NÃO podemos concluir:** as diferenças não demonstram efeito causal do mês nem
+probabilidade individual de uma ocorrência grave.
+
+**Limitações:** não há controle de exposição, composição das viagens ou outros fatores que
+possam variar ao longo do ano.
+
+**Figura:** `../reports/figures/phase_2b_severe_rate_by_month.png`.
+
+**Tabela:** `../reports/tables/phase_2b_month_summary.csv`,
+`../reports/tables/phase_2b_month_by_year.csv` e
+`../reports/tables/phase_2b_temporal_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/temporal.py`, dataset interim verificado de
+2021–2025.
+
+**Possível uso no TCC:** descrição da associação temporal e justificativa para avaliar
+estabilidade antes da modelagem.
+
+**Status:** confirmado.
+
+### EDA007 — Concentração no fim de semana e proporção de graves
+
+**Data:** 18/08/2026.
+
+**Fase:** 2B — Padrões temporais.
+
+**Pergunta:** quais dias concentram mais registros e como dias úteis e fim de semana diferem
+descritivamente na proporção de graves?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros.
+
+**Categorias ausentes/ignoradas:** nenhuma; os sete dias estavam presentes.
+
+**Resultado absoluto:** domingo teve 56.278 registros e 17.093 graves, seguido por sábado com
+56.111 registros e 16.840 graves. Terça-feira teve o menor volume, com 42.283 registros.
+Agregados, os dias úteis reuniram 230.235 registros e 62.924 graves; o fim de semana, 112.389
+registros e 33.933 graves.
+
+**Proporção/taxa:** domingo apresentou 30,3724% de graves e quarta-feira, 26,9935%. A proporção
+foi 30,1925% no fim de semana e 27,3303% nos dias úteis, diferença de 2,8621 pontos
+percentuais.
+
+**Comparação:** domingo liderou a proporção de graves de 2021 a 2024; em 2025, sábado foi a
+categoria mais alta. Em volume, sábado ou domingo liderou em todos os anos.
+
+**Estabilidade entre anos:** a taxa de domingo oscilou apenas 0,5406 ponto percentual entre
+os anos; sábado variou 1,5028. O padrão consolidado de valores mais altos no fim de semana foi
+recorrente, embora a liderança entre sábado e domingo tenha mudado.
+
+**Interpretação:** entre as ocorrências registradas, houve maior concentração de registros e
+maior fração de graves no fim de semana.
+
+**O que NÃO podemos concluir:** o resultado não mostra que o fim de semana causa gravidade ou
+que trafegar nesses dias tenha maior risco individual.
+
+**Limitações:** não há quantidade de veículos, viagens ou veículo-quilômetro por dia da
+semana; a composição das ocorrências pode diferir entre categorias.
+
+**Figura:** `../reports/figures/phase_2b_occurrences_by_weekday.png` e
+`../reports/figures/phase_2b_severe_rate_by_weekday.png`.
+
+**Tabela:** `../reports/tables/phase_2b_weekday_summary.csv`,
+`../reports/tables/phase_2b_weekday_by_year.csv` e
+`../reports/tables/phase_2b_weekday_group_summary.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/temporal.py`, dataset interim verificado de
+2021–2025.
+
+**Possível uso no TCC:** caracterização temporal e avaliação futura de variáveis de calendário.
+
+**Status:** confirmado.
+
+### EDA008 — Padrão horário de volume e gravidade
+
+**Data:** 18/08/2026.
+
+**Fase:** 2B — Padrões temporais.
+
+**Pergunta:** como volume e proporção de graves se distribuem pelas 24 horas?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros.
+
+**Categorias ausentes/ignoradas:** nenhuma; todas as horas de 0 a 23 estavam presentes.
+
+**Resultado absoluto:** 18h concentrou 25.569 registros e 8.144 graves, maior volume entre as
+24 horas. O menor volume ocorreu às 2h, com 5.798 registros. A maior proporção consolidada foi
+às 19h, com 7.496 graves em 22.222 registros; a menor, às 8h, com 3.976 graves em 17.194.
+
+**Proporção/taxa:** as taxas variaram de 23,1243% às 8h a 33,7323% às 19h, amplitude
+consolidada de 10,6080 pontos percentuais.
+
+**Comparação:** 18h foi a hora de maior volume em cada um dos cinco anos. A maior taxa anual
+alternou entre 19h (2022 e 2024) e 21h (2021, 2023 e 2025).
+
+**Estabilidade entre anos:** as amplitudes anuais por hora variaram de 0,9785 ponto percentual
+às 7h a 4,5926 às 5h. Apesar da variação pontual, os maiores valores anuais permaneceram na
+faixa noturna de 19h–21h.
+
+**Interpretação:** o volume apresenta picos às 7h e, de forma mais acentuada, entre 17h e 19h;
+a fração de graves é menor no período diurno central e mais alta em várias horas noturnas.
+
+**O que NÃO podemos concluir:** nenhuma hora pode ser descrita como mais perigosa; as taxas
+são condicionadas às ocorrências registradas e não ao total de veículos circulando.
+
+**Limitações:** falta denominador horário de exposição; análises por hora não controlam outras
+características das ocorrências.
+
+**Figura:** `../reports/figures/phase_2b_occurrences_by_hour.png` e
+`../reports/figures/phase_2b_severe_rate_by_hour.png`.
+
+**Tabela:** `../reports/tables/phase_2b_hour_summary.csv`,
+`../reports/tables/phase_2b_hour_by_year.csv` e
+`../reports/tables/phase_2b_temporal_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/temporal.py`, dataset interim verificado de
+2021–2025.
+
+**Possível uso no TCC:** fundamentação descritiva para considerar hora como variável temporal
+e avaliar sua estabilidade na modelagem futura.
+
+**Status:** confirmado.
+
+### EDA009 — Distribuição por fase do dia
+
+**Data:** 18/08/2026.
+
+**Fase:** 2B — Padrões temporais.
+
+**Pergunta:** como as categorias existentes de `fase_dia` se comportam em volume e gravidade?
+
+**População analisada:** todas as 342.624 ocorrências registradas entre 2021 e 2025, sem
+filtros.
+
+**Categorias ausentes/ignoradas:** nenhuma; as quatro categorias contratuais estavam presentes
+e foram ordenadas semanticamente como Amanhecer, Pleno dia, Anoitecer e Plena Noite.
+
+**Resultado absoluto:** `Pleno dia` reuniu 187.621 registros e 47.477 graves; `Plena Noite`,
+119.581 registros e 38.831 graves; `Anoitecer`, 18.821 e 5.486; `Amanhecer`, 16.601 e 5.063.
+
+**Proporção/taxa:** `Pleno dia` concentrou 54,7600% dos registros e apresentou 25,3047% de
+graves. `Plena Noite` concentrou 34,9015% e apresentou a maior proporção de graves, 32,4726%.
+A diferença entre essas taxas foi 7,1678 pontos percentuais.
+
+**Comparação:** `Pleno dia` liderou o volume em todos os anos e `Plena Noite` liderou a
+proporção de graves em todos.
+
+**Estabilidade entre anos:** a taxa de `Pleno dia` variou 0,5931 ponto percentual e a de
+`Plena Noite`, 1,2865. `Amanhecer` apresentou a maior amplitude entre as fases, 3,0377 pontos.
+
+**Interpretação:** entre os registros, o período diurno concentrou mais ocorrências, enquanto
+a categoria noturna apresentou maior fração de graves de forma recorrente.
+
+**O que NÃO podemos concluir:** a noite não pode ser apresentada como causa de gravidade ou
+como risco para quem trafega.
+
+**Limitações:** não há fluxo veicular por fase do dia e a categoria não substitui a hora exata
+nem controla outros atributos da ocorrência.
+
+**Figura:** `../reports/figures/phase_2b_severe_rate_by_day_phase.png`.
+
+**Tabela:** `../reports/tables/phase_2b_day_phase_summary.csv`,
+`../reports/tables/phase_2b_day_phase_by_year.csv` e
+`../reports/tables/phase_2b_temporal_stability.csv`.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/temporal.py`, dataset interim verificado de
+2021–2025.
+
+**Possível uso no TCC:** discussão descritiva e avaliação futura da redundância entre hora e
+fase do dia.
+
+**Status:** confirmado.
+
+### EDA010 — Recorrência e variação dos padrões temporais entre anos
+
+**Data:** 18/08/2026.
+
+**Fase:** 2B — Padrões temporais.
+
+**Pergunta:** os principais padrões temporais foram recorrentes entre 2021 e 2025?
+
+**População analisada:** todas as 342.624 ocorrências registradas, estratificadas pelos cinco
+anos e por mês, dia da semana, hora e fase do dia.
+
+**Categorias ausentes/ignoradas:** nenhuma; cada categoria foi observada nos cinco anos.
+
+**Resultado absoluto:** dezembro liderou o volume mensal nos cinco anos; 18h liderou o volume
+horário nos cinco; `Pleno dia` liderou o volume por fase nos cinco; e `Plena Noite` liderou a
+proporção grave por fase nos cinco.
+
+**Proporção/taxa:** as menores amplitudes anuais observadas foram 0,5406 ponto percentual para
+domingo, 0,5552 para agosto, 0,5931 para `Pleno dia` e 0,9785 para 7h. As maiores amplitudes em
+cada dimensão foram 2,4980 para junho, 2,1092 para sexta-feira, 4,5926 para 5h e 3,0377 para
+`Amanhecer`.
+
+**Comparação:** mês com maior taxa variou entre quatro categorias; dia com maior taxa foi
+domingo em quatro anos e sábado em um; hora com maior taxa alternou entre 19h e 21h; fase com
+maior taxa permaneceu `Plena Noite`.
+
+**Estabilidade entre anos:** há forte recorrência descritiva nos líderes de volume e na
+hierarquia das fases do dia, mas maior variação na identidade do mês e da hora com maior taxa.
+Não foi aplicada classificação automática de estabilidade.
+
+**Interpretação:** os resultados sustentam a análise temporal descritiva, mas também indicam
+que a estabilidade deve ser examinada por feature antes de qualquer modelagem temporal.
+
+**O que NÃO podemos concluir:** amplitudes pequenas não demonstram invariância estatística, e
+amplitudes maiores não provam drift estrutural ou causalidade.
+
+**Limitações:** a comparação é descritiva, sem testes inferenciais, ajuste por composição ou
+denominadores de exposição.
+
+**Figura:** não aplicável; as figuras consolidadas EDA005–EDA009 complementam a evidência.
+
+**Tabela:** `../reports/tables/phase_2b_temporal_stability.csv` e tabelas ano × categoria da
+Fase 2B.
+
+**Código/origem:** `src/tcc_prf_severity/analysis/temporal.py`, dataset interim verificado de
+2021–2025.
+
+**Possível uso no TCC:** seção metodológica sobre validação temporal e motivação para análise
+futura de drift.
+
+**Status:** confirmado.
 
 ## 2C — Padrões geográficos
 
