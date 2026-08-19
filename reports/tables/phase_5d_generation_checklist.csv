@@ -1,0 +1,39 @@
+check,status,details
+correct_branch,PASS,Branch observada: analysis/phase-5d-academic-visuals.
+frozen_sources_used,PASS,Somente CSVs versionados definidos em SOURCE_SPECS.
+no_model_trained,PASS,O gerador não importa módulos de modelagem.
+no_prediction_executed,PASS,Nenhuma prediction individual é carregada.
+no_shap_executed,PASS,Somente resumos 4I já publicados são lidos.
+no_threshold_recalculated,PASS,Threshold lido das tabelas 4F/4H.
+no_eda_executed,PASS,Contrastes lidos da matriz 2F congelada.
+no_drift_executed,PASS,Nenhum artefato de drift é recalculado.
+m1_generated,PASS,Timeline metodológica gerada.
+m2_generated,PASS,Tabela metodológica gerada.
+t1_generated,PASS,Caracterização da população gerada.
+f1_generated,PASS,Contrastes temporais gerados.
+f2_generated,PASS,Contrastes contextuais gerados.
+f4_generated,PASS,AP média gerada.
+f5_generated,PASS,AP por fold gerada.
+t2_generated,PASS,Avaliação final gerada.
+f6_generated,PASS,Matriz de confusão gerada.
+f7_generated,PASS,Calibração opcional gerada.
+f8_generated,PASS,Contribuições agregadas geradas.
+a1_generated,PASS,Top 15 transformadas gerado.
+a2_generated,PASS,Resumo de scores gerado.
+a3_generated,PASS,Métricas por fold geradas.
+a4_generated,PASS,Contrastes de apêndice gerados.
+f3_not_generated,PASS,F3 permanece excluído por redundância.
+png_300_dpi,PASS,Todas as figuras científicas usam savefig(dpi=300).
+svg_present,PASS,SVG vetorial presente.
+model_colors_consistent,PASS,F4 e F5 reutilizam MODEL_COLORS.
+f4_axis_not_misleading,PASS,F4 usa eixo de 0 a 1.
+f5_scale_disclosed,PASS,F5 informa escala ampliada de 0.35 a 0.45.
+f6_not_transposed,PASS,Linhas reais e colunas preditas são explicitadas.
+f7_no_recalibration,PASS,Bins publicados plotados sem ajuste.
+f8_non_causal,PASS,Nota explicita contribuição preditiva não causal.
+rounding_visual_only,PASS,Dados integrais alimentam marcas; rótulos são formatados.
+sources_not_modified,PASS,Outputs usam nomes e diretórios distintos das fontes.
+contact_sheet_generated,PASS,Contact sheet marcada REVIEW ONLY.
+manual_review_pending,PASS,Artefatos gerados e aguardando revisão humana.
+code_tested,PASS,Testes focados integram a suíte pytest.
+uv_lock_consistent,PASS,Matplotlib já era dependência direta; lock não foi alterado.

@@ -511,6 +511,31 @@ e tabelas `phase_5c_*` em `reports/tables/`.
 **Status:** confirmada; 26 checks PASS e 0 FAIL. Próximo passo: Fase 5D — gerar as figuras e
 tabelas acadêmicas selecionadas.
 
+### D022 — Materialização reproduzível dos artefatos acadêmicos
+
+**Data:** 19/08/2026.
+
+**Decisão:** gerar nove figuras científicas em PNG a 300 DPI e SVG, seis tabelas acadêmicas
+em CSV e uma contact sheet exclusiva para revisão. F3 permanece excluída por redundância; F7
+continua `USEFUL` e condicional no manuscrito; A1–A4 permanecem em apêndice.
+
+**Justificativa:** o plano 5B e a estrutura 5C exigiam uma camada de apresentação comum e
+reproduzível. O gerador valida os schemas e lê somente CSVs científicos congelados. Eixos,
+cores, arredondamento e notas foram definidos para evitar amplificação visual, causalidade ou
+mistura entre ranking e decisão.
+
+**Consequências:** os outputs foram escritos em `reports/figures/tcc/` e
+`reports/tables/tcc/`, com manifesto, QA e checklist. A primeira inspeção visual levou apenas
+ao espaçamento dos rótulos de F5; nenhum valor foi alterado. Pipeline, predictions individuais,
+Parquet, EDA, modelos, SHAP e threshold não foram acessados ou recalculados.
+
+**Origem:** [PHASE_5D_ACADEMIC_VISUALS.md](PHASE_5D_ACADEMIC_VISUALS.md),
+`phase_5d_output_manifest.csv`, `phase_5d_visual_qa.csv` e
+`phase_5d_generation_checklist.csv`.
+
+**Status:** geração técnica concluída; 38 checks PASS e 0 FAIL. Aprovação visual humana ainda
+pendente. Após aprovação, próximo passo: Fase 5E — primeira redação de Resultados e Discussão.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
