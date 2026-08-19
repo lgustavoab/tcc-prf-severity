@@ -3,7 +3,6 @@
 from dataclasses import dataclass
 
 SCHEMA_VERSION = "1"
-EXPECTED_BRANCH = "feat/phase-6b-dashboard-data-export"
 DATA_PERIOD = {"start_year": 2021, "end_year": 2025}
 SOURCE_SCOPE = "Acidentes registrados pela PRF em rodovias federais, 2021-2025."
 TARGET_DEFINITION = "target_grave = (mortos > 0) OR (feridos_graves > 0)"

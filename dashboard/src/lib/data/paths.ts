@@ -1,0 +1,17 @@
+export const DATA_PATHS = {
+  manifest: "/data/manifest.json",
+  meta: "/data/meta.json",
+  overview: "/data/overview/summary.json",
+  explorationTemporal: "/data/exploration/temporal.json",
+  explorationContextual: "/data/exploration/contextual.json",
+  geography: "/data/geography/geography.json",
+  modelComparison: "/data/models/model_comparison.json",
+  temporalValidation: "/data/validation/temporal_validation.json",
+  final2025: "/data/models/final_2025.json",
+  calibration2025: "/data/models/calibration_2025.json",
+  threshold2025: "/data/threshold/threshold_2025.json",
+  interpretationSource: "/data/interpretation/source_predictors.json",
+  interpretationTransformed: "/data/interpretation/transformed_top15.json",
+  methodologyDesign: "/data/methodology/design.json",
+  methodologyFeatures: "/data/methodology/features.json",
+} as const;

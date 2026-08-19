@@ -1,0 +1,18 @@
+component,path,category,client_component,responsibility,scientific_role,reusable,status
+Navigation,dashboard/src/components/layout/navigation.tsx,layout,true,Navegação das oito rotas com estado ativo,NONE,true,PASS
+YearSelect,dashboard/src/components/filters/year-select.tsx,filters,false,Seleção local de ano em agregações aprovadas,EXPLORATORY_CONTROL,true,PASS
+MultiSelectFilter,dashboard/src/components/filters/multi-select-filter.tsx,filters,false,Multisseleção acessível com padrão todas,EXPLORATORY_CONTROL,true,PASS
+LoadingState,dashboard/src/components/feedback/loading-state.tsx,feedback,false,Mensagem textual de carregamento,NONE,true,PASS
+ErrorState,dashboard/src/components/feedback/error-state.tsx,feedback,false,Mensagem acessível de erro de integração,NONE,true,PASS
+EmptyState,dashboard/src/components/feedback/empty-state.tsx,feedback,false,Mensagem de ausência de registros,NONE,true,PASS
+VisualizationPlaceholder,dashboard/src/components/feedback/visualization-placeholder.tsx,feedback,false,Reserva honesta para visualizações 6D,NO_NEW_RESULT,true,PASS
+PageHeader,dashboard/src/components/scientific/page-header.tsx,scientific,false,Título descrição e status científico,STATUS_DISCLOSURE,true,PASS
+ScientificCaveat,dashboard/src/components/scientific/scientific-caveat.tsx,scientific,false,Cautela de exposição obrigatória,EXPOSURE_CAVEAT,true,PASS
+OverviewFoundation,dashboard/src/components/scientific/overview-foundation.tsx,scientific,true,Resumo publicado e YEAR local,EXPLORATORY_PRESENTATION,false,PASS
+ExplorationFoundation,dashboard/src/components/scientific/exploration-foundation.tsx,scientific,true,Escopos TEMPORAL e CONTEXTUAL independentes,EXPLORATORY_PRESENTATION,false,PASS
+GeographyFoundation,dashboard/src/components/scientific/geography-foundation.tsx,scientific,true,YEAR UF BR e dependência UF para BR,EXPLORATORY_PRESENTATION,false,PASS
+ModelsFoundation,dashboard/src/components/scientific/models-foundation.tsx,scientific,true,Integração dos três assets de modelos,FROZEN_PRESENTATION,false,PASS
+TemporalValidationFoundation,dashboard/src/components/scientific/temporal-validation-foundation.tsx,scientific,true,Apresentação dos nove resultados modelo e fold,FROZEN_PRESENTATION,false,PASS
+ThresholdFoundation,dashboard/src/components/scientific/threshold-foundation.tsx,scientific,true,Ponto de operação e matriz somente leitura,FROZEN_PRESENTATION,false,PASS
+InterpretationFoundation,dashboard/src/components/scientific/interpretation-foundation.tsx,scientific,true,Alternância entre duas visões publicadas,FROZEN_PRESENTATION,false,PASS
+MethodologyFoundation,dashboard/src/components/scientific/methodology-foundation.tsx,scientific,true,Síntese de contratos metodológicos,DOCUMENTATION,false,PASS

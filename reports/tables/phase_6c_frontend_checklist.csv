@@ -1,0 +1,56 @@
+check_id,check,status,evidence
+D6C001,branch correta,PASS,feat/phase-6c-dashboard-shell
+D6C002,contratos 6A lidos,PASS,documento e cinco matrizes
+D6C003,contratos 6B lidos,PASS,documento inventário checklist reconciliação e JSONs
+D6C004,Node compatível,PASS,22.19.0 atende Next >=20.9.0
+D6C005,npm disponível,PASS,10.9.3
+D6C006,versions verificadas,PASS,npm registry consultado em 2026-08-19
+D6C007,stable Next instalado,PASS,16.3.1
+D6C008,stable React instalado,PASS,19.2.8
+D6C009,TypeScript instalado,PASS,6.0.3 estável e compatível
+D6C010,ESLint instalado,PASS,9.39.5 estável e compatível
+D6C011,package lock criado,PASS,dashboard/package-lock.json
+D6C012,static export configurado,PASS,output export
+D6C013,App Router criado,PASS,dashboard/src/app
+D6C014,8 rotas criadas,PASS,8 de 8
+D6C015,layout criado,PASS,layout.tsx e globals.css
+D6C016,navegação criada,PASS,NAV_ITEMS e next/link
+D6C017,skip link criado,PASS,Pular para o conteúdo principal
+D6C018,metadata criada,PASS,title e description estáticos
+D6C019,data paths centralizados,PASS,DATA_PATHS
+D6C020,fetch helper criado,PASS,response.ok e erro compreensível
+D6C021,schema version guard criado,PASS,schema_version igual a 1
+D6C022,tipos dos 14 JSONs físicos cobertos,PASS,interfaces alinhadas aos schemas 6B
+D6C023,loading state criado,PASS,LoadingState textual
+D6C024,error state criado,PASS,ErrorState com role alert
+D6C025,empty state criado,PASS,EmptyState
+D6C026,scientific caveat criado,PASS,texto obrigatório preservado
+D6C027,overview YEAR local,PASS,linha global ou anual publicada
+D6C028,TEMPORAL local,PASS,YEAR WEEKDAY HOUR
+D6C029,CONTEXTUAL local,PASS,YEAR ROAD_TYPE WEATHER LAND_USE
+D6C030,TEMPORAL e CONTEXTUAL independentes,PASS,estados separados
+D6C031,geography YEAR UF BR,PASS,controles locais
+D6C032,UF para BR implementado,PASS,br_by_uf e limpeza de BR
+D6C033,frozen pages sem filtros populacionais,PASS,quatro páginas somente apresentação
+D6C034,threshold sem slider,PASS,ponto de operação somente leitura
+D6C035,interpretation sem SHAP novo,PASS,duas visões publicadas
+D6C036,nenhuma biblioteca de gráfico,PASS,dependencies limitadas
+D6C037,nenhuma API route,PASS,ausente
+D6C038,nenhum backend,PASS,ausente
+D6C039,nenhuma Server Action,PASS,ausente
+D6C040,nenhum middleware ou proxy,PASS,ausente
+D6C041,nenhuma inferência,PASS,ausente
+D6C042,nenhum cálculo de AP,PASS,apenas apresentação
+D6C043,nenhum cálculo de ROC,PASS,apenas apresentação
+D6C044,nenhum cálculo de Brier,PASS,apenas apresentação
+D6C045,nenhum cálculo de SHAP,PASS,apenas apresentação
+D6C046,JSONs 6B inalterados,PASS,SHA-256 antes e depois idênticos
+D6C047,lógica científica Python 6B preservada,PASS,compatibilidade de coexistência sem mudança em assets schemas ou métricas
+D6C048,pyproject inalterado,PASS,sem diff
+D6C049,uv.lock inalterado,PASS,uv lock check
+D6C050,lint PASS,PASS,npm run lint
+D6C051,typecheck PASS,PASS,npm run typecheck
+D6C052,build PASS,PASS,npm run build com 8 rotas estáticas
+D6C053,static export check PASS,PASS,8 rotas e 5 assets essenciais
+D6C054,Python tests PASS,PASS,378 testes passaram
+D6C055,nenhum deploy executado,PASS,local only
