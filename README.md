@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 4A concluída — Regressão Logística baseline executada nos três folds temporais.**
+**Fase 4B concluída — Random Forest baseline executada nos três folds temporais.**
 
 Nesta fase o projeto:
 
@@ -46,6 +46,8 @@ Nesta fase o projeto:
 - tolera e audita categorias desconhecidas sem aprender vocabulário da validação ou de 2025;
 - executa a primeira baseline logística sem tuning: AP média não ponderada de 0,393508 e
   desvio padrão populacional de 0,004879;
+- executa uma Random Forest de configuração fixa, também sem tuning: AP média não ponderada
+  de 0,395984 e desvio padrão populacional de 0,005582, sem comparação formal entre modelos;
 - preserva 2025, não seleciona threshold, não faz refit final e não persiste modelos fitados.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
@@ -65,6 +67,8 @@ O contrato e a auditoria do preprocessing estão em
 [`docs/PHASE_3E_PREPROCESSING.md`](docs/PHASE_3E_PREPROCESSING.md).
 A primeira baseline preditiva está documentada em
 [`docs/PHASE_4A_LOGISTIC_BASELINE.md`](docs/PHASE_4A_LOGISTIC_BASELINE.md).
+A Random Forest baseline está documentada em
+[`docs/PHASE_4B_RANDOM_FOREST.md`](docs/PHASE_4B_RANDOM_FOREST.md).
 
 ## Requisitos
 
@@ -275,6 +279,17 @@ calibração diagnóstica e previsões OOF de 2022–2024. As APs foram 0,386681
 0,397786; a média não ponderada foi 0,393508. O corte 0,5 é somente referência: nenhum
 threshold foi selecionado, nenhum refit foi feito e 2025 permaneceu fora da execução.
 
+## Random Forest baseline
+
+```powershell
+uv run prf-run-random-forest-baseline
+```
+
+O comando executa uma Random Forest fixa com 300 árvores nos mesmos três folds e com o mesmo
+preprocessing train-only. As APs foram 0,388096, 0,399673 e 0,400183; a média não ponderada
+foi 0,395984. Métricas no corte 0,5, calibração e estrutura das árvores são apenas
+diagnósticos: não houve tuning, seleção de threshold, refit, uso de 2025 ou escolha de modelo.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -292,6 +307,8 @@ threshold foi selecionado, nenhum refit foi feito e 2025 permaneceu fora da exec
   auditoria de categorias desconhecidas e validação real dos três folds internos.
 - [`PHASE_4A_LOGISTIC_BASELINE.md`](docs/PHASE_4A_LOGISTIC_BASELINE.md): primeira baseline,
   resultados por fold, calibração diagnóstica e OOF temporal.
+- [`PHASE_4B_RANDOM_FOREST.md`](docs/PHASE_4B_RANDOM_FOREST.md): configuração fixa da floresta,
+  resultados por fold, estrutura das árvores, calibração diagnóstica e OOF temporal.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -303,7 +320,7 @@ threshold foi selecionado, nenhum refit foi feito e 2025 permaneceu fora da exec
 
 As dependências estão organizadas no `pyproject.toml`:
 
-- principal: scikit-learn, usado no preprocessing e na Regressão Logística baseline;
+- principal: scikit-learn, usado no preprocessing e nas baselines logística e Random Forest;
 - `ml`: XGBoost, Optuna, MLflow e SHAP, ainda reservados para fases futuras;
 - `viz`: JupyterLab, Plotly e Streamlit.
 
@@ -312,7 +329,7 @@ Matplotlib é uma dependência principal da geração das figuras científicas d
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 4B — Random Forest**, sob os mesmos folds e a mesma receita
+A próxima etapa é a **Fase 4C — XGBoost**, sob os mesmos folds e a mesma receita
 train-only. 2025 permanecerá intocado até a avaliação formal do pipeline final.
 
 ## Princípio metodológico

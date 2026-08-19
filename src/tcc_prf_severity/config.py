@@ -24,6 +24,9 @@ TEMPORAL_FOLDS_PATH = TABLES_DIR / "phase_3d_temporal_folds.csv"
 EXPERIMENTAL_CONTRACT_PATH = TABLES_DIR / "phase_3d_experimental_contract.csv"
 PREPROCESSING_CONTRACT_PATH = TABLES_DIR / "phase_3e_preprocessing_contract.csv"
 LOGISTIC_OOF_PREDICTIONS_PATH = PROCESSED_DIR / "phase_4a_logistic_oof_predictions.parquet"
+RANDOM_FOREST_OOF_PREDICTIONS_PATH = (
+    PROCESSED_DIR / "phase_4b_random_forest_oof_predictions.parquet"
+)
 
 EXPECTED_YEARS = tuple(range(2021, 2026))
 RAW_FILE_TEMPLATE = "datatran{year}.csv"

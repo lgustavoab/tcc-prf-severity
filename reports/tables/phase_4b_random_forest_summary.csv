@@ -1,0 +1,13 @@
+key,value
+model_id,phase_4b_random_forest_baseline
+fold_count,3
+primary_metric,Average Precision (AP)
+ap_unweighted_mean,0.3959839275865431
+ap_population_std,0.00558166427201829
+ap_fold3,0.4001833160938038
+mean_roc_auc,0.6261012009282653
+mean_brier_score,0.19518315938755074
+all_folds_completed,true
+final_test_used,false
+threshold_selected,false
+hyperparameter_tuning_used,false
