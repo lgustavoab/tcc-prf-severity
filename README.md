@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5F concluída tecnicamente — Resultados e Discussão revisados, com aprovação humana ainda pendente.**
+**Fase 6A concluída documentalmente — arquitetura do dashboard estático congelada para revisão.**
 
 Nesta fase o projeto:
 
@@ -82,6 +82,8 @@ Nesta fase o projeto:
   bibliográfica e parágrafo–evidência, sem executar nova análise científica.
 - revisa cientificamente e editorialmente esses capítulos, preservando todos os números e as
   19 referências verificadas, com auditorias de terminologia, números, citações e revisão.
+- inicia a Fase 6 com a arquitetura `Python → JSON versionado → Next.js` e separa páginas
+  exploratórias de resultados científicos congelados, sem implementar frontend ou exportador.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -132,6 +134,8 @@ A primeira redação acadêmica e seu relatório de rastreabilidade estão em
 A versão revisada e o relatório da Fase 5F estão em
 [`docs/PHASE_5F_RESULTS_DISCUSSION_REVISED.md`](docs/PHASE_5F_RESULTS_DISCUSSION_REVISED.md) e
 [`docs/PHASE_5F_SCIENTIFIC_REVISION.md`](docs/PHASE_5F_SCIENTIFIC_REVISION.md).
+A arquitetura documental do dashboard está em
+[`docs/PHASE_6A_DASHBOARD_ARCHITECTURE.md`](docs/PHASE_6A_DASHBOARD_ARCHITECTURE.md).
 
 ## Requisitos
 
@@ -508,6 +512,14 @@ foram preservados, e as auditorias de terminologia, números, citações e revis
 falhas. Nenhuma nova análise foi executada. A leitura e a aprovação humanas ainda são
 necessárias antes da integração definitiva ao manuscrito.
 
+## Arquitetura do dashboard estático
+
+A Fase 6A definiu que a futura aplicação ficará em `dashboard/` e consumirá JSONs
+determinísticos, auditados e versionados produzidos por Python/Polars. O frontend planejado usa
+Next.js, React e TypeScript com exportação estática, sem backend, banco ou inferência. Filtros
+ficam restritos às páginas exploratórias; resultados de modelos, validação, limiar e
+interpretação permanecem congelados. A pasta e a aplicação ainda não foram criadas.
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -559,6 +571,8 @@ necessárias antes da integração definitiva ao manuscrito.
   revisada dos capítulos de Resultados e Discussão.
 - [`PHASE_5F_SCIENTIFIC_REVISION.md`](docs/PHASE_5F_SCIENTIFIC_REVISION.md): escopo, política
   terminológica, preservação científica, auditorias e pendências de revisão humana.
+- [`PHASE_6A_DASHBOARD_ARCHITECTURE.md`](docs/PHASE_6A_DASHBOARD_ARCHITECTURE.md): arquitetura
+  estática, contratos de dados, rotas, filtros, fronteiras científicas e plano das Fases 6B–6E.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -579,9 +593,8 @@ grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-A próxima etapa é a **revisão humana da versão 5F e sua integração ao manuscrito completo**,
-com normalização final de referências e numeração global dos elementos acadêmicos, sem reabrir
-resultados congelados.
+A próxima etapa do dashboard é a **Fase 6B — exportação determinística dos JSONs e do
+manifesto**, com testes de schema, proveniência e hashes antes da criação do frontend.
 
 ## Princípio metodológico
 

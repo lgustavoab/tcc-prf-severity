@@ -619,6 +619,33 @@ recalculada ou modificada.
 integração com Introdução, Metodologia e Conclusão, normalização bibliográfica institucional e
 numeração definitiva dos elementos acadêmicos.
 
+### D026 — Arquitetura estática e fronteira científica do dashboard
+
+**Data:** 19/08/2026.
+
+**Decisão:** localizar a futura aplicação em `dashboard/` e adotar o fluxo
+`artefatos científicos → Python/Polars → JSONs versionados → Next.js/React`. O site será
+estático, sem backend, banco, inferência, Python ou modelo em runtime. Resultados científicos
+congelados e agregações exploratórias terão contratos e páginas separados.
+
+**Justificativa:** o dashboard deve comunicar o estudo sem se tornar um segundo ambiente
+analítico nem introduzir dependência do ambiente científico no deploy. JSONs auditados e um
+manifesto comum preservam proveniência, enquanto filtros locais evitam alterar o experimento
+congelado.
+
+**Consequências:** foram definidas oito rotas, oito filtros com campos confirmados no schema
+3C, 12 assets lógicos e uma matriz de fronteira. Somente Visão Geral, Exploração e Geografia
+aceitarão filtros; Modelos, Validação Temporal, Limiar, Interpretação e Metodologia não reagirão
+a recortes populacionais. O navegador não receberá ocorrências individuais e não recalculará
+AP, ROC-AUC, Brier, limiar, matriz de confusão, SHAP ou inferência. O caveat de ausência de
+exposição será obrigatório nas páginas pertinentes.
+
+**Origem:** [PHASE_6A_DASHBOARD_ARCHITECTURE.md](PHASE_6A_DASHBOARD_ARCHITECTURE.md) e
+tabelas `phase_6a_*` em `reports/tables/`.
+
+**Status:** arquitetura documental congelada para revisão; implementação não iniciada. Próxima
+etapa: Fase 6B — exportador Python/Polars, JSONs versionados, manifesto e testes.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset
