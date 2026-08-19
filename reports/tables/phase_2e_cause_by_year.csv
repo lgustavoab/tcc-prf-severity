@@ -1,0 +1,356 @@
+source_year,causa_acidente,total_occurrences,severe_occurrences,severe_rate_percent
+2021,Reação tardia ou ineficiente do condutor,6909,1718,24.866117
+2021,Velocidade Incompatível,6742,2065,30.628894
+2021,Ausência de reação do condutor,5615,1468,26.144256
+2021,Acessar a via sem observar a presença dos outros veículos,5198,1705,32.801077
+2021,Condutor deixou de manter distância do veículo da frente,5120,890,17.382812
+2021,Ingestão de álcool pelo condutor,4589,898,19.568533
+2021,Manobra de mudança de faixa,3719,930,25.006722
+2021,Demais falhas mecânicas ou elétricas,2726,329,12.068966
+2021,Condutor Dormindo,2311,626,27.087841
+2021,Transitar na contramão,1781,1074,60.3032
+2021,Desrespeitar a preferência no cruzamento,1749,510,29.15952
+2021,Ultrapassagem Indevida,1649,752,45.603396
+2021,Chuva,1286,268,20.839813
+2021,Avarias e/ou desgaste excessivo no pneu,1256,219,17.436306
+2021,Animais na Pista,1214,338,27.841845
+2021,Conversão proibida,874,313,35.812357
+2021,Trafegar com motocicleta (ou similar) entre as faixas,820,215,26.219512
+2021,Pedestre andava na pista,701,522,74.46505
+2021,Pista Escorregadia,680,137,20.147059
+2021,Mal súbito do condutor,632,210,33.227848
+2021,Pedestre cruzava a pista fora da faixa,595,397,66.722689
+2021,Entrada inopinada do pedestre,577,408,70.710572
+2021,Acumulo de água sobre o pavimento,573,94,16.404887
+2021,Acesso irregular,550,166,30.181818
+2021,Frear bruscamente,452,62,13.716814
+2021,Transitar no acostamento,446,192,43.049327
+2021,Objeto estático sobre o leito carroçável,379,92,24.274406
+2021,Problema com o freio,360,88,24.444444
+2021,Pista esburacada,349,99,28.366762
+2021,Curva acentuada,325,79,24.307692
+2021,Condutor desrespeitou a iluminação vermelha do semáforo,319,81,25.39185
+2021,Carga excessiva e/ou mal acondicionada,313,35,11.182109
+2021,Retorno proibido,301,110,36.54485
+2021,Ingestão de álcool e/ou substâncias psicoativas pelo pedestre,297,91,30.639731
+2021,Acumulo de areia ou detritos sobre o pavimento,252,48,19.047619
+2021,Demais falhas na via,224,51,22.767857
+2021,Acostamento em desnível,205,46,22.439024
+2021,Ausência de sinalização,189,68,35.978836
+2021,Deficiência do Sistema de Iluminação/Sinalização,183,88,48.087432
+2021,Afundamento ou ondulação no pavimento,181,43,23.756906
+2021,Iluminação deficiente,161,76,47.204969
+2021,Acumulo de óleo sobre o pavimento,161,24,14.906832
+2021,Obras na pista,150,41,27.333333
+2021,Estacionar ou parar em local proibido,147,58,39.455782
+2021,Condutor usando celular,125,28,22.4
+2021,Ingestão de álcool ou de substâncias psicoativas pelo pedestre,114,64,56.140351
+2021,Área urbana sem a presença de local apropriado para a travessia de pedestres,111,64,57.657658
+2021,Obstrução na via,108,25,23.148148
+2021,Falta de acostamento,101,33,32.673267
+2021,Ingestão de substâncias psicoativas pelo condutor,99,22,22.222222
+2021,Demais Fenômenos da natureza,84,14,16.666667
+2021,Pista em desnível,79,17,21.518987
+2021,Falta de elemento de contenção que evite a saída do leito carroçável,74,17,22.972973
+2021,Problema na suspensão,57,7,12.280702
+2021,Desvio temporário,55,15,27.272727
+2021,Neblina,50,14,28.0
+2021,Sinalização mal posicionada,48,12,25.0
+2021,Declive acentuado,40,13,32.5
+2021,Fumaça,37,5,13.513514
+2021,Restrição de visibilidade em curvas horizontais,25,7,28.0
+2021,Faixas de trânsito com largura insuficiente,16,6,37.5
+2021,Deixar de acionar o farol da motocicleta (ou similar),14,6,42.857143
+2021,Restrição de visibilidade em curvas verticais,12,3,25.0
+2021,Transitar na calçada,11,4,36.363636
+2021,Redutor de velocidade em desacordo,9,2,22.222222
+2021,Faróis desregulados,9,2,22.222222
+2021,Semáforo com defeito,8,3,37.5
+2021,Modificação proibida,8,3,37.5
+2021,Participar de racha,7,6,85.714286
+2021,Sistema de drenagem ineficiente,3,1,33.333333
+2021,Sinalização encoberta,3,1,33.333333
+2022,Reação tardia ou ineficiente do condutor,8418,2070,24.590164
+2022,Ausência de reação do condutor,7556,1964,25.992589
+2022,Acessar a via sem observar a presença dos outros veículos,5590,1867,33.398927
+2022,Velocidade Incompatível,5003,1540,30.781531
+2022,Ingestão de álcool pelo condutor,4350,933,21.448276
+2022,Condutor deixou de manter distância do veículo da frente,4336,773,17.827491
+2022,Manobra de mudança de faixa,3581,882,24.629992
+2022,Demais falhas mecânicas ou elétricas,2685,316,11.769088
+2022,Condutor Dormindo,2165,577,26.65127
+2022,Transitar na contramão,2064,1215,58.866279
+2022,Ultrapassagem Indevida,1593,738,46.327684
+2022,Desrespeitar a preferência no cruzamento,1467,429,29.243354
+2022,Animais na Pista,1274,369,28.963893
+2022,Avarias e/ou desgaste excessivo no pneu,1174,239,20.357751
+2022,Chuva,1138,242,21.265378
+2022,Conversão proibida,822,293,35.644769
+2022,Trafegar com motocicleta (ou similar) entre as faixas,797,210,26.348808
+2022,Entrada inopinada do pedestre,716,477,66.620112
+2022,Pedestre andava na pista,662,515,77.794562
+2022,Acesso irregular,660,226,34.242424
+2022,Pista Escorregadia,617,107,17.341977
+2022,Acumulo de água sobre o pavimento,597,111,18.592965
+2022,Pedestre cruzava a pista fora da faixa,581,406,69.879518
+2022,Mal súbito do condutor,524,168,32.061069
+2022,Pista esburacada,474,132,27.848101
+2022,Frear bruscamente,394,62,15.736041
+2022,Transitar no acostamento,377,171,45.35809
+2022,Objeto estático sobre o leito carroçável,333,74,22.222222
+2022,Carga excessiva e/ou mal acondicionada,295,46,15.59322
+2022,Problema com o freio,292,59,20.205479
+2022,Retorno proibido,271,94,34.686347
+2022,Ingestão de álcool e/ou substâncias psicoativas pelo pedestre,264,83,31.439394
+2022,Condutor desrespeitou a iluminação vermelha do semáforo,262,74,28.244275
+2022,Demais falhas na via,258,68,26.356589
+2022,Curva acentuada,251,72,28.685259
+2022,Acumulo de areia ou detritos sobre o pavimento,226,43,19.026549
+2022,Deficiência do Sistema de Iluminação/Sinalização,198,74,37.373737
+2022,Ausência de sinalização,183,55,30.054645
+2022,Afundamento ou ondulação no pavimento,178,57,32.022472
+2022,Acostamento em desnível,172,30,17.44186
+2022,Acumulo de óleo sobre o pavimento,162,35,21.604938
+2022,Estacionar ou parar em local proibido,153,48,31.372549
+2022,Iluminação deficiente,147,70,47.619048
+2022,Condutor usando celular,121,24,19.834711
+2022,Obras na pista,114,41,35.964912
+2022,Área urbana sem a presença de local apropriado para a travessia de pedestres,102,53,51.960784
+2022,Obstrução na via,94,27,28.723404
+2022,Falta de elemento de contenção que evite a saída do leito carroçável,93,27,29.032258
+2022,Falta de acostamento,85,34,40.0
+2022,Ingestão de substâncias psicoativas pelo condutor,83,20,24.096386
+2022,Demais Fenômenos da natureza,82,12,14.634146
+2022,Neblina,81,28,34.567901
+2022,Pista em desnível,74,10,13.513514
+2022,Ingestão de álcool ou de substâncias psicoativas pelo pedestre,72,34,47.222222
+2022,Problema na suspensão,71,7,9.859155
+2022,Desvio temporário,40,12,30.0
+2022,Sinalização mal posicionada,36,11,30.555556
+2022,Declive acentuado,34,11,32.352941
+2022,Fumaça,33,6,18.181818
+2022,Restrição de visibilidade em curvas horizontais,28,6,21.428571
+2022,Faixas de trânsito com largura insuficiente,14,2,14.285714
+2022,Participar de racha,13,5,38.461538
+2022,Deixar de acionar o farol da motocicleta (ou similar),13,7,53.846154
+2022,Restrição de visibilidade em curvas verticais,13,7,53.846154
+2022,Transitar na calçada,11,3,27.272727
+2022,Modificação proibida,11,1,9.090909
+2022,Semáforo com defeito,10,2,20.0
+2022,Redutor de velocidade em desacordo,8,3,37.5
+2022,Faróis desregulados,7,2,28.571429
+2022,Sinalização encoberta,2,0,0.0
+2022,Sistema de drenagem ineficiente,1,0,0.0
+2023,Reação tardia ou ineficiente do condutor,9855,2352,23.866058
+2023,Ausência de reação do condutor,9326,2528,27.107013
+2023,Acessar a via sem observar a presença dos outros veículos,6325,2099,33.185771
+2023,Condutor deixou de manter distância do veículo da frente,4272,736,17.228464
+2023,Velocidade Incompatível,4240,1303,30.731132
+2023,Manobra de mudança de faixa,3913,919,23.485817
+2023,Ingestão de álcool pelo condutor,3599,715,19.86663
+2023,Demais falhas mecânicas ou elétricas,2940,325,11.054422
+2023,Transitar na contramão,2364,1438,60.829103
+2023,Condutor Dormindo,2094,610,29.13085
+2023,Ultrapassagem Indevida,1620,751,46.358025
+2023,Animais na Pista,1329,382,28.743416
+2023,Desrespeitar a preferência no cruzamento,1306,340,26.033691
+2023,Avarias e/ou desgaste excessivo no pneu,1270,232,18.267717
+2023,Trafegar com motocicleta (ou similar) entre as faixas,1123,288,25.645592
+2023,Chuva,1048,218,20.801527
+2023,Conversão proibida,883,302,34.201586
+2023,Acesso irregular,713,265,37.1669
+2023,Entrada inopinada do pedestre,706,483,68.413598
+2023,Pedestre andava na pista,629,471,74.880763
+2023,Pedestre cruzava a pista fora da faixa,594,391,65.824916
+2023,Acumulo de água sobre o pavimento,579,94,16.234888
+2023,Mal súbito do condutor,534,179,33.520599
+2023,Pista Escorregadia,532,89,16.729323
+2023,Frear bruscamente,373,69,18.49866
+2023,Pista esburacada,369,109,29.539295
+2023,Retorno proibido,325,93,28.615385
+2023,Objeto estático sobre o leito carroçável,321,77,23.987539
+2023,Problema com o freio,299,62,20.735786
+2023,Acumulo de areia ou detritos sobre o pavimento,277,64,23.104693
+2023,Transitar no Acostamento,271,114,42.066421
+2023,Demais falhas na via,270,60,22.222222
+2023,Carga excessiva e/ou mal acondicionada,254,25,9.84252
+2023,Ausência de sinalização,249,90,36.144578
+2023,Condutor desrespeitou a iluminação vermelha do semáforo,233,73,31.330472
+2023,Curva acentuada,233,57,24.463519
+2023,Ingestão de álcool e/ou substâncias psicoativas pelo pedestre,217,79,36.40553
+2023,Afundamento ou ondulação no pavimento,199,55,27.638191
+2023,Acumulo de óleo sobre o pavimento,188,20,10.638298
+2023,Acostamento em desnível,170,42,24.705882
+2023,Iluminação deficiente,163,72,44.171779
+2023,Estacionar ou parar em local proibido,162,55,33.950617
+2023,Deficiência do Sistema de Iluminação/Sinalização,161,69,42.857143
+2023,Condutor usando celular,128,44,34.375
+2023,Ingestão de álcool ou de substâncias psicoativas pelo pedestre,94,45,47.87234
+2023,Ingestão de substâncias psicoativas pelo condutor,89,21,23.595506
+2023,Área urbana sem a presença de local apropriado para a travessia de pedestres,88,55,62.5
+2023,Falta de elemento de contenção que evite a saída do leito carroçável,87,28,32.183908
+2023,Demais Fenômenos da natureza,80,14,17.5
+2023,Obras na pista,76,17,22.368421
+2023,Falta de acostamento,66,21,31.818182
+2023,Suicídio (presumido),61,48,78.688525
+2023,Problema na suspensão,57,7,12.280702
+2023,Neblina,48,13,27.083333
+2023,Sinalização mal posicionada,46,13,28.26087
+2023,Desvio temporário,39,16,41.025641
+2023,Obstrução na via,36,13,36.111111
+2023,Transtornos Mentais (exceto suicidio),28,9,32.142857
+2023,Pista em desnível,27,4,14.814815
+2023,Fumaça,27,4,14.814815
+2023,Declive acentuado,25,10,40.0
+2023,Restrição de visibilidade em curvas horizontais,20,5,25.0
+2023,Modificação proibida,15,4,26.666667
+2023,Transitar na calçada,12,4,33.333333
+2023,Deixar de acionar o farol da motocicleta (ou similar),11,5,45.454545
+2023,Redutor de velocidade em desacordo,11,2,18.181818
+2023,Participar de racha,10,5,50.0
+2023,Obstrução Via tentativa Assalto,10,1,10.0
+2023,Faixas de trânsito com largura insuficiente,9,1,11.111111
+2023,Sinalização encoberta,9,1,11.111111
+2023,Faróis desregulados,8,1,12.5
+2023,Restrição de visibilidade em curvas verticais,8,3,37.5
+2023,Semáforo com defeito,7,1,14.285714
+2023,Pedestre - Ingestão de álcool/ substâncias psicoativas,4,1,25.0
+2023,Sistema de drenagem ineficiente,2,1,50.0
+2024,Reação tardia ou ineficiente do condutor,10920,2601,23.818681
+2024,Ausência de reação do condutor,10664,2840,26.631658
+2024,Acessar a via sem observar a presença dos outros veículos,6958,2277,32.724921
+2024,Condutor deixou de manter distância do veículo da frente,4460,844,18.923767
+2024,Velocidade Incompatível,4347,1323,30.434783
+2024,Manobra de mudança de faixa,4213,968,22.976501
+2024,Ingestão de álcool pelo condutor,3854,798,20.70576
+2024,Demais falhas mecânicas ou elétricas,3390,405,11.946903
+2024,Transitar na contramão,2461,1481,60.178789
+2024,Condutor Dormindo,2136,567,26.544944
+2024,Ultrapassagem Indevida,1701,775,45.561434
+2024,Animais na Pista,1468,368,25.06812
+2024,Desrespeitar a preferência no cruzamento,1358,365,26.877761
+2024,Trafegar com motocicleta (ou similar) entre as faixas,1326,335,25.263952
+2024,Avarias e/ou desgaste excessivo no pneu,1238,244,19.709208
+2024,Chuva,1145,214,18.689956
+2024,Conversão proibida,968,341,35.227273
+2024,Acesso irregular,828,276,33.333333
+2024,Pedestre andava na pista,664,502,75.60241
+2024,Entrada inopinada do pedestre,660,455,68.939394
+2024,Pista Escorregadia,641,117,18.25273
+2024,Acumulo de água sobre o pavimento,583,110,18.867925
+2024,Pedestre cruzava a pista fora da faixa,572,386,67.482517
+2024,Mal súbito do condutor,548,168,30.656934
+2024,Transitar no Acostamento,488,200,40.983607
+2024,Objeto estático sobre o leito carroçável,399,120,30.075188
+2024,Retorno proibido,382,128,33.507853
+2024,Frear bruscamente,350,51,14.571429
+2024,Condutor desrespeitou a iluminação vermelha do semáforo,291,84,28.865979
+2024,Carga excessiva e/ou mal acondicionada,282,53,18.794326
+2024,Problema com o freio,282,61,21.631206
+2024,Acumulo de areia ou detritos sobre o pavimento,281,56,19.928826
+2024,Demais falhas na via,280,73,26.071429
+2024,Acumulo de óleo sobre o pavimento,248,37,14.919355
+2024,Pista esburacada,236,64,27.118644
+2024,Curva acentuada,201,45,22.38806
+2024,Ausência de sinalização,198,64,32.323232
+2024,Estacionar ou parar em local proibido,195,74,37.948718
+2024,Suicídio (presumido),187,146,78.074866
+2024,Deficiência do Sistema de Iluminação/Sinalização,178,78,43.820225
+2024,Acostamento em desnível,176,43,24.431818
+2024,Afundamento ou ondulação no pavimento,169,38,22.485207
+2024,Pedestre - Ingestão de álcool/ substâncias psicoativas,169,95,56.213018
+2024,Iluminação deficiente,165,80,48.484848
+2024,Condutor usando celular,120,36,30.0
+2024,Demais Fenômenos da natureza,87,16,18.390805
+2024,Ingestão de substâncias psicoativas pelo condutor,73,15,20.547945
+2024,Falta de elemento de contenção que evite a saída do leito carroçável,67,22,32.835821
+2024,Neblina,66,21,31.818182
+2024,Área urbana sem a presença de local apropriado para a travessia de pedestres,64,40,62.5
+2024,Falta de acostamento,61,20,32.786885
+2024,Sinalização mal posicionada,52,13,25.0
+2024,Transtornos Mentais (exceto suicidio),51,18,35.294118
+2024,Fumaça,46,7,15.217391
+2024,Problema na suspensão,45,7,15.555556
+2024,Desvio temporário,26,9,34.615385
+2024,Participar de racha,20,12,60.0
+2024,Declive acentuado,19,5,26.315789
+2024,Restrição de visibilidade em curvas horizontais,18,4,22.222222
+2024,Deixar de acionar o farol da motocicleta (ou similar),15,7,46.666667
+2024,Modificação proibida,14,4,28.571429
+2024,Faixas de trânsito com largura insuficiente,12,2,16.666667
+2024,Semáforo com defeito,9,2,22.222222
+2024,Transitar na calçada,9,4,44.444444
+2024,Restrição de visibilidade em curvas verticais,7,4,57.142857
+2024,Faróis desregulados,5,4,80.0
+2024,Sistema de drenagem ineficiente,4,1,25.0
+2024,Sinalização encoberta,3,2,66.666667
+2024,Redutor de velocidade em desacordo,3,0,0.0
+2025,Ausência de reação do condutor,11469,3112,27.134013
+2025,Reação tardia ou ineficiente do condutor,10799,2482,22.98361
+2025,Acessar a via sem observar a presença dos outros veículos,7097,2296,32.351698
+2025,Condutor deixou de manter distância do veículo da frente,4413,837,18.966689
+2025,Velocidade Incompatível,4088,1316,32.191781
+2025,Manobra de mudança de faixa,4016,909,22.634462
+2025,Ingestão de álcool pelo condutor,3685,828,22.469471
+2025,Demais falhas mecânicas ou elétricas,3385,349,10.310192
+2025,Transitar na contramão,2475,1505,60.808081
+2025,Condutor Dormindo,2116,571,26.984877
+2025,Ultrapassagem Indevida,1770,836,47.231638
+2025,Trafegar com motocicleta (ou similar) entre as faixas,1325,322,24.301887
+2025,Animais na Pista,1305,342,26.206897
+2025,Desrespeitar a preferência no cruzamento,1259,365,28.991263
+2025,Avarias e/ou desgaste excessivo no pneu,1176,209,17.772109
+2025,Chuva,1020,195,19.117647
+2025,Conversão proibida,1018,361,35.46169
+2025,Acesso irregular,768,251,32.682292
+2025,Entrada inopinada do pedestre,667,463,69.415292
+2025,Pedestre andava na pista,606,450,74.257426
+2025,Mal súbito do condutor,546,190,34.798535
+2025,Pista Escorregadia,545,112,20.550459
+2025,Pedestre cruzava a pista fora da faixa,525,326,62.095238
+2025,Transitar no Acostamento,498,220,44.176707
+2025,Acumulo de água sobre o pavimento,477,72,15.09434
+2025,Objeto estático sobre o leito carroçável,412,96,23.300971
+2025,Frear bruscamente,358,46,12.849162
+2025,Retorno proibido,325,116,35.692308
+2025,Acumulo de areia ou detritos sobre o pavimento,308,54,17.532468
+2025,Demais falhas na via,275,72,26.181818
+2025,Condutor desrespeitou a iluminação vermelha do semáforo,268,71,26.492537
+2025,Carga excessiva e/ou mal acondicionada,256,39,15.234375
+2025,Problema com o freio,247,53,21.45749
+2025,Pista esburacada,232,62,26.724138
+2025,Acumulo de óleo sobre o pavimento,228,37,16.22807
+2025,Afundamento ou ondulação no pavimento,206,57,27.669903
+2025,Curva acentuada,203,64,31.527094
+2025,Suicídio (presumido),190,162,85.263158
+2025,Condutor usando celular,189,43,22.751323
+2025,Estacionar ou parar em local proibido,182,55,30.21978
+2025,Ausência de sinalização,178,53,29.775281
+2025,Acostamento em desnível,167,31,18.562874
+2025,Deficiência do Sistema de Iluminação/Sinalização,165,69,41.818182
+2025,Iluminação deficiente,157,64,40.764331
+2025,Pedestre - Ingestão de álcool/ substâncias psicoativas,150,92,61.333333
+2025,Demais Fenômenos da natureza,84,13,15.47619
+2025,Área urbana sem a presença de local apropriado para a travessia de pedestres,81,54,66.666667
+2025,Ingestão de substâncias psicoativas pelo condutor,62,10,16.129032
+2025,Sinalização mal posicionada,61,16,26.229508
+2025,Falta de acostamento,60,26,43.333333
+2025,Falta de elemento de contenção que evite a saída do leito carroçável,59,12,20.338983
+2025,Transtornos Mentais (exceto suicidio),59,21,35.59322
+2025,Neblina,50,9,18.0
+2025,Desvio temporário,45,10,22.222222
+2025,Problema na suspensão,38,8,21.052632
+2025,Fumaça,31,8,25.806452
+2025,Restrição de visibilidade em curvas horizontais,23,5,21.73913
+2025,Participar de racha,22,16,72.727273
+2025,Declive acentuado,19,5,26.315789
+2025,Deixar de acionar o farol da motocicleta (ou similar),15,5,33.333333
+2025,Restrição de visibilidade em curvas verticais,13,5,38.461538
+2025,Faixas de trânsito com largura insuficiente,12,2,16.666667
+2025,Modificação proibida,11,5,45.454545
+2025,Transitar na calçada,11,3,27.272727
+2025,Faróis desregulados,9,0,0.0
+2025,Semáforo com defeito,8,2,25.0
+2025,Redutor de velocidade em desacordo,8,3,37.5
+2025,Sinalização encoberta,2,0,0.0
+2025,Sistema de drenagem ineficiente,2,0,0.0

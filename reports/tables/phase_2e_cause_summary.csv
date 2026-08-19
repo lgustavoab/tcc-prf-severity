@@ -1,0 +1,77 @@
+causa_acidente,total_occurrences,severe_occurrences,non_severe_occurrences,severe_rate_percent,dataset_share_percent
+Reação tardia ou ineficiente do condutor,46901,11223,35678,23.929127,13.688767
+Ausência de reação do condutor,44630,11912,32718,26.690567,13.025941
+Acessar a via sem observar a presença dos outros veículos,31168,10244,20924,32.867043,9.096853
+Velocidade Incompatível,24420,7547,16873,30.904996,7.127347
+Condutor deixou de manter distância do veículo da frente,22601,4080,18521,18.052299,6.596444
+Ingestão de álcool pelo condutor,20077,4172,15905,20.779997,5.859776
+Manobra de mudança de faixa,19442,4608,14834,23.701265,5.674442
+Demais falhas mecânicas ou elétricas,15126,1724,13402,11.397594,4.414752
+Transitar na contramão,11145,6713,4432,60.233288,3.252837
+Condutor Dormindo,10822,2951,7871,27.268527,3.158564
+Ultrapassagem Indevida,8333,3852,4481,46.225849,2.432112
+Desrespeitar a preferência no cruzamento,7139,2009,5130,28.141196,2.083625
+Animais na Pista,6590,1799,4791,27.298938,1.923391
+Avarias e/ou desgaste excessivo no pneu,6114,1143,4971,18.694799,1.784463
+Chuva,5637,1137,4500,20.170303,1.645244
+Trafegar com motocicleta (ou similar) entre as faixas,5391,1370,4021,25.412725,1.573445
+Conversão proibida,4565,1610,2955,35.268346,1.332364
+Acesso irregular,3519,1184,2335,33.645922,1.027073
+Entrada inopinada do pedestre,3326,2286,1040,68.731209,0.970743
+Pedestre andava na pista,3262,2460,802,75.413857,0.952064
+Pista Escorregadia,3015,562,2453,18.640133,0.879973
+Pedestre cruzava a pista fora da faixa,2867,1906,961,66.480642,0.836777
+Acumulo de água sobre o pavimento,2809,481,2328,17.123532,0.819849
+Mal súbito do condutor,2784,915,1869,32.866379,0.812553
+Frear bruscamente,1927,290,1637,15.049299,0.562424
+Objeto estático sobre o leito carroçável,1844,459,1385,24.89154,0.538199
+Pista esburacada,1660,466,1194,28.072289,0.484496
+Retorno proibido,1604,541,1063,33.72818,0.468152
+Problema com o freio,1480,323,1157,21.824324,0.43196
+Carga excessiva e/ou mal acondicionada,1400,198,1202,14.142857,0.408611
+Condutor desrespeitou a iluminação vermelha do semáforo,1373,383,990,27.89512,0.400731
+Acumulo de areia ou detritos sobre o pavimento,1344,265,1079,19.717262,0.392267
+Demais falhas na via,1307,324,983,24.789594,0.381468
+Transitar no Acostamento,1257,534,723,42.4821,0.366874
+Curva acentuada,1213,317,896,26.133553,0.354032
+Ausência de sinalização,997,330,667,33.099298,0.29099
+Acumulo de óleo sobre o pavimento,987,153,834,15.50152,0.288071
+Afundamento ou ondulação no pavimento,933,250,683,26.795284,0.27231
+Acostamento em desnível,890,192,698,21.573034,0.25976
+Deficiência do Sistema de Iluminação/Sinalização,885,378,507,42.711864,0.258301
+Estacionar ou parar em local proibido,839,290,549,34.564958,0.244875
+Transitar no acostamento,823,363,460,44.106926,0.240205
+Iluminação deficiente,793,362,431,45.649433,0.231449
+Ingestão de álcool e/ou substâncias psicoativas pelo pedestre,778,253,525,32.51928,0.227071
+Condutor usando celular,683,175,508,25.622255,0.199344
+Área urbana sem a presença de local apropriado para a travessia de pedestres,446,266,180,59.641256,0.130172
+Suicídio (presumido),438,356,82,81.278539,0.127837
+Demais Fenômenos da natureza,417,69,348,16.546763,0.121708
+Ingestão de substâncias psicoativas pelo condutor,406,88,318,21.674877,0.118497
+Falta de elemento de contenção que evite a saída do leito carroçável,380,106,274,27.894737,0.110909
+Falta de acostamento,373,134,239,35.924933,0.108866
+Obras na pista,340,99,241,29.117647,0.099234
+Pedestre - Ingestão de álcool/ substâncias psicoativas,323,188,135,58.204334,0.094272
+Neblina,295,85,210,28.813559,0.0861
+Ingestão de álcool ou de substâncias psicoativas pelo pedestre,280,143,137,51.071429,0.081722
+Problema na suspensão,268,36,232,13.432836,0.07822
+Sinalização mal posicionada,243,65,178,26.748971,0.070923
+Obstrução na via,238,65,173,27.310924,0.069464
+Desvio temporário,205,62,143,30.243902,0.059832
+Pista em desnível,180,31,149,17.222222,0.052536
+Fumaça,174,30,144,17.241379,0.050785
+Transtornos Mentais (exceto suicidio),138,48,90,34.782609,0.040277
+Declive acentuado,137,44,93,32.116788,0.039986
+Restrição de visibilidade em curvas horizontais,114,27,87,23.684211,0.033273
+Participar de racha,72,44,28,61.111111,0.021014
+Deixar de acionar o farol da motocicleta (ou similar),68,30,38,44.117647,0.019847
+Faixas de trânsito com largura insuficiente,63,13,50,20.634921,0.018388
+Modificação proibida,59,17,42,28.813559,0.01722
+Transitar na calçada,54,18,36,33.333333,0.015761
+Restrição de visibilidade em curvas verticais,53,22,31,41.509434,0.015469
+Semáforo com defeito,42,10,32,23.809524,0.012258
+Redutor de velocidade em desacordo,39,10,29,25.641026,0.011383
+Faróis desregulados,38,9,29,23.684211,0.011091
+Sinalização encoberta,19,4,15,21.052632,0.005545
+Sistema de drenagem ineficiente,12,3,9,25.0,0.003502
+Obstrução Via tentativa Assalto,10,1,9,10.0,0.002919

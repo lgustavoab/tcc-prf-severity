@@ -1,0 +1,84 @@
+source_year,tipo_acidente,total_occurrences,severe_occurrences,severe_rate_percent
+2021,Colisão traseira,12315,2823,22.923264
+2021,Saída de leito carroçável,10657,2359,22.135685
+2021,Colisão transversal,8021,2658,33.138013
+2021,Tombamento,5575,1204,21.596413
+2021,Colisão lateral mesmo sentido,5572,1158,20.782484
+2021,Colisão com objeto,4910,1026,20.89613
+2021,Colisão frontal,4345,2706,62.278481
+2021,Atropelamento de Pedestre,2912,1973,67.754121
+2021,Queda de ocupante de veículo,2594,656,25.289129
+2021,Capotamento,1752,369,21.061644
+2021,Colisão lateral sentido oposto,1609,560,34.804226
+2021,Incêndio,1174,5,0.425894
+2021,Engavetamento,1054,110,10.436433
+2021,Atropelamento de Animal,978,296,30.265849
+2021,Colisão lateral,676,134,19.822485
+2021,Eventos atípicos,267,62,23.220974
+2021,Derramamento de carga,156,19,12.179487
+2022,Colisão traseira,12090,2820,23.325062
+2022,Saída de leito carroçável,10502,2346,22.338602
+2022,Colisão transversal,8008,2693,33.628871
+2022,Colisão lateral mesmo sentido,6239,1248,20.003206
+2022,Tombamento,5514,1316,23.866522
+2022,Colisão com objeto,4764,982,20.61293
+2022,Colisão frontal,4467,2798,62.637117
+2022,Atropelamento de Pedestre,3045,2075,68.144499
+2022,Queda de ocupante de veículo,2756,672,24.383164
+2022,Colisão lateral sentido oposto,1775,585,32.957746
+2022,Capotamento,1563,307,19.641715
+2022,Incêndio,1305,4,0.306513
+2022,Atropelamento de Animal,1072,335,31.25
+2022,Engavetamento,1021,132,12.928501
+2022,Eventos atípicos,339,81,23.893805
+2022,Derramamento de carga,146,15,10.273973
+2023,Colisão traseira,12909,3018,23.379038
+2023,Saída de leito carroçável,10199,2230,21.864889
+2023,Colisão transversal,8470,2774,32.750885
+2023,Colisão lateral mesmo sentido,7004,1372,19.588806
+2023,Tombamento,5700,1375,24.122807
+2023,Colisão com objeto,4860,1002,20.617284
+2023,Colisão frontal,4632,2941,63.493092
+2023,Atropelamento de Pedestre,3132,2137,68.231162
+2023,Queda de ocupante de veículo,3102,766,24.693746
+2023,Colisão lateral sentido oposto,2018,721,35.728444
+2023,Capotamento,1504,301,20.013298
+2023,Incêndio,1463,7,0.478469
+2023,Engavetamento,1248,150,12.019231
+2023,Atropelamento de Animal,1130,340,30.088496
+2023,Eventos atípicos,285,72,25.263158
+2023,Derramamento de carga,110,6,5.454545
+2024,Colisão traseira,13960,3356,24.040115
+2024,Saída de leito carroçável,10827,2343,21.640344
+2024,Colisão transversal,9385,3064,32.647842
+2024,Colisão lateral mesmo sentido,7902,1525,19.298912
+2024,Tombamento,6442,1532,23.781434
+2024,Colisão com objeto,5118,1102,21.531848
+2024,Colisão frontal,4862,3089,63.533525
+2024,Queda de ocupante de veículo,3349,767,22.902359
+2024,Atropelamento de Pedestre,3167,2178,68.771708
+2024,Colisão lateral sentido oposto,2028,729,35.946746
+2024,Incêndio,1717,5,0.291206
+2024,Capotamento,1469,307,20.89857
+2024,Atropelamento de Animal,1285,332,25.836576
+2024,Engavetamento,1224,193,15.767974
+2024,Eventos atípicos,299,84,28.093645
+2024,Derramamento de carga,110,12,10.909091
+2024,Sinistro pessoal de trânsito,12,7,58.333333
+2025,Colisão traseira,14360,3521,24.519499
+2025,Saída de leito carroçável,10209,2287,22.401802
+2025,Colisão transversal,9306,3049,32.763808
+2025,Colisão lateral mesmo sentido,7885,1598,20.266328
+2025,Tombamento,6351,1489,23.445127
+2025,Colisão com objeto,5109,1104,21.608925
+2025,Colisão frontal,4739,2998,63.262292
+2025,Queda de ocupante de veículo,3450,753,21.826087
+2025,Atropelamento de Pedestre,3057,2053,67.157344
+2025,Colisão lateral sentido oposto,2152,804,37.360595
+2025,Incêndio,1771,2,0.112931
+2025,Capotamento,1373,288,20.975965
+2025,Engavetamento,1233,153,12.408759
+2025,Atropelamento de Animal,1133,306,27.007944
+2025,Eventos atípicos,287,69,24.041812
+2025,Derramamento de carga,107,15,14.018692
+2025,Sinistro pessoal de trânsito,7,4,57.142857

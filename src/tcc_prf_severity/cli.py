@@ -2,6 +2,7 @@ from typing import Any
 
 from tcc_prf_severity.analysis.general import run_general_analysis
 from tcc_prf_severity.analysis.geographic import run_geographic_analysis
+from tcc_prf_severity.analysis.occurrence_dynamics import run_occurrence_dynamics_analysis
 from tcc_prf_severity.analysis.road_environment import run_road_environment_analysis
 from tcc_prf_severity.analysis.temporal import run_temporal_analysis
 from tcc_prf_severity.config import (
@@ -206,5 +207,62 @@ def eda_road_environment_main() -> None:
         f"{layout_rate['road_layout_component']} — {rate(layout_rate)}"
     )
     print(f"Tokens de traçado confirmados: {analysis.road_layout_tokens.height}")
+    print(f"Tabelas: {result.table_paths[0].parent}")
+    print(f"Figuras: {result.figure_paths[0].parent}")
+
+
+def eda_occurrence_dynamics_main() -> None:
+    import polars as pl
+
+    result = run_occurrence_dynamics_analysis()
+    analysis = result.analysis
+
+    def count(value: Any) -> str:
+        return f"{int(value):,}".replace(",", ".")
+
+    def rate(row: dict[str, Any]) -> str:
+        return f"{float(row['severe_rate_percent']):.2f}% (n={count(row['total_occurrences'])})"
+
+    accident_type_volume = analysis.accident_type_volume_top15.row(0, named=True)
+    accident_type_rate = analysis.accident_type_severe_rate_top15.row(0, named=True)
+    cause_volume = analysis.cause_volume_top15.row(0, named=True)
+    cause_rate = analysis.cause_severe_rate_top15.row(0, named=True)
+    people = analysis.people_summary_statistics.row(0, named=True)
+    vehicles = analysis.vehicle_summary_statistics.row(0, named=True)
+    cause_taxonomy = analysis.taxonomy_diagnostics.filter(pl.col("dimension") == "cause")
+    cause_annual = cause_taxonomy.filter(pl.col("scope") == "year").sort("source_year")
+    cause_period = cause_taxonomy.filter(pl.col("scope") == "period").row(0, named=True)
+    rows = int(analysis.accident_type_summary.get_column("total_occurrences").sum())
+
+    print("Fase 2E concluída.")
+    print(f"Registros: {count(rows)}")
+    print(
+        f"Tipo com maior volume: {accident_type_volume['tipo_acidente']} "
+        f"({count(accident_type_volume['total_occurrences'])})"
+    )
+    print(
+        "Tipo com maior proporção entre n>=500: "
+        f"{accident_type_rate['tipo_acidente']} — {rate(accident_type_rate)}"
+    )
+    print(
+        f"Causa registrada com maior volume: {cause_volume['causa_acidente']} "
+        f"({count(cause_volume['total_occurrences'])})"
+    )
+    print(
+        "Causa com maior proporção entre n>=500: "
+        f"{cause_rate['causa_acidente']} — {rate(cause_rate)}"
+    )
+    print("Categorias de causa registradas:")
+    for row in cause_annual.iter_rows(named=True):
+        print(f"  {row['source_year']}: {row['distinct_categories']}")
+    print(f"  União 2021-2025: {cause_period['union_categories']}")
+    print(
+        f"Pessoas: mediana {people['median']:.0f}; P95 {people['p95']:.0f}; "
+        f"máximo {people['maximum']:.0f}."
+    )
+    print(
+        f"Veículos: mediana {vehicles['median']:.0f}; P95 {vehicles['p95']:.0f}; "
+        f"máximo {vehicles['maximum']:.0f}."
+    )
     print(f"Tabelas: {result.table_paths[0].parent}")
     print(f"Figuras: {result.figure_paths[0].parent}")

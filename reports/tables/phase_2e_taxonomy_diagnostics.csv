@@ -1,0 +1,13 @@
+dimension,scope,source_year,distinct_categories,union_categories,categories_present_all_years,categories_exclusive_one_year,categories_first_observed_in_year,categories_last_observed_in_year,categories_appearing_after_start,categories_disappearing_before_end
+accident_type,period,,,18,16,1,,,1,1
+accident_type,year,2021,17,,,,17,1,,
+accident_type,year,2022,16,,,,0,0,,
+accident_type,year,2023,16,,,,0,0,,
+accident_type,year,2024,17,,,,1,0,,
+accident_type,year,2025,17,,,,0,17,,
+cause,period,,,76,65,1,,,5,7
+cause,year,2021,71,,,,71,0,,
+cause,year,2022,71,,,,0,1,,
+cause,year,2023,75,,,,5,6,,
+cause,year,2024,69,,,,0,0,,
+cause,year,2025,69,,,,0,69,,

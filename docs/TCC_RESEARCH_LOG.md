@@ -378,6 +378,40 @@ conjuntamente; recorrência descritiva não garante ausência de drift nem estab
 
 **Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA023](EDA_FINDINGS.md#eda023--estabilidade-descritiva-das-dimensões-de-via-e-ambiente).
 
+### EDA024 — Tipo de acidente separa volume e proporção grave
+
+Colisão traseira concentrou 65.634 registros, enquanto Atropelamento de Pedestre apresentou a
+maior proporção entre tipos com n≥500: 10.416 graves em 15.313 registros (68,0206%), seguido
+de Colisão frontal (63,0592%). Ambos estiveram nos cinco anos e tiveram amplitudes anuais de
+1,6144 e 1,2550 ponto percentual.
+
+**Relevância:** os contrastes são persistentes e relacionados à dinâmica, mas o tipo pode ser
+conhecido ou consolidado após a ocorrência; aplica-se a separação EDA/modelagem da D005.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA024](EDA_FINDINGS.md#eda024--volume-e-gravidade-por-tipo-de-acidente-registrado).
+
+### EDA025 — Causa registrada apresenta contrastes descritivos marcantes
+
+Reação tardia ou ineficiente do condutor teve o maior volume (46.901). Entre categorias com
+n≥500, Pedestre andava na pista apresentou 2.460 graves em 3.262 registros (75,4139%), e
+Transitar na contramão, 6.713 em 11.145 (60,2333%). Essas categorias estiveram nos cinco anos.
+
+**Relevância:** o campo possui associação descritiva forte com gravidade, mas é uma causa
+registrada pela PRF, não causalidade científica demonstrada, e exige avaliação de leakage.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA025](EDA_FINDINGS.md#eda025--volume-e-gravidade-por-causa-registrada-pela-prf).
+
+### EDA026 — Taxonomias variam no período
+
+`tipo_acidente` teve 18 categorias na união, 16 presentes nos cinco anos e uma exclusiva de
+um ano. `causa_acidente` teve 76 na união, 65 presentes nos cinco anos, uma exclusiva de um
+ano, cinco com primeiro registro após 2021 e sete com último registro antes de 2025.
+
+**Relevância:** comparações temporais e preparação futura deverão preservar ou tratar
+explicitamente mudanças de rótulo; nenhuma harmonização foi feita nesta fase.
+
+**Status:** confirmado. **Origem:** [EDA_FINDINGS.md — EDA026](EDA_FINDINGS.md#eda026--mudanças-observadas-nas-taxonomias-de-tipo-e-causa).
+
 ## Hipóteses
 
 ### H001 — Estabilidade temporal das features
@@ -419,11 +453,15 @@ observacional e não causal.
 
 ### L003 — Variáveis determinadas após a ocorrência
 
-**Limitação:** variáveis como `causa_acidente` e `tipo_acidente` podem ser definidas ou
-consolidadas após a ocorrência.
+**Limitação:** variáveis como `causa_acidente`, `tipo_acidente` e `pessoas` podem ser definidas
+ou consolidadas durante ou após a ocorrência. Além disso, como `target_grave` vale verdadeiro
+quando há ao menos um morto ou ferido grave na ocorrência, um número maior de pessoas oferece
+mais oportunidades para satisfazer mecanicamente a definição do target.
 
-**Consequência:** são úteis para EDA, mas exigirão avaliação específica de disponibilidade
-temporal e leakage antes de eventual uso em ML.
+**Consequência:** essas variáveis são úteis para EDA, mas exigirão avaliação específica de
+disponibilidade temporal e leakage antes de eventual uso em ML. `pessoas` requer cautela
+adicional: sua associação crescente com o target não deve ser tomada diretamente como efeito
+causal nem como evidência suficiente para selecioná-la como feature.
 
 **Status:** ativa.
 
@@ -439,10 +477,10 @@ explicitamente quantificadas e consideradas nas análises.
 
 ## Figuras e tabelas associadas
 
-As Fases 2A, 2B, 2C e 2D produziram figuras e tabelas versionadas em `reports/`. A Fase 2D
-acrescentou quatro figuras e 14 tabelas de via e ambiente, incluindo resumos completos,
-desagregações anuais, estabilidade, destaques com controle editorial de amostra e os tokens
-de `tracado_via`. Cada artefato científico está associado aos IDs EDA correspondentes em
+As Fases 2A a 2E produziram figuras e tabelas versionadas em `reports/`. A Fase 2E acrescentou
+seis figuras e 17 tabelas, incluindo resumos completos de tipo e causa, diagnósticos de
+taxonomia, lifecycle, estabilidade e distribuições exatas de pessoas e veículos. Cada
+artefato científico está associado aos IDs EDA correspondentes em
 [EDA_FINDINGS.md](EDA_FINDINGS.md).
 
 ## Templates para registros futuros

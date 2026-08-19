@@ -1,0 +1,2 @@
+variable,minimum,p25,median,mean,p75,p90,p95,p99,maximum,occurrences_above_p99
+veiculos,1.0,1.0,2.0,1.9865158307649202,2.0,3.0,4.0,6.0,131.0,2230
