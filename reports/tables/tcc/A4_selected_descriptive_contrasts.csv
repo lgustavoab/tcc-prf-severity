@@ -1,0 +1,10 @@
+Dimensão,Comparação,Valor A,Valor B,Diferença publicada,Cautela interpretativa,Fonte
+Fase do dia,Plena Noite vs Pleno dia,32.472550%,25.304737%,7.167813 p.p.,Sem exposição horária ou controle multivariado; não mede risco de acidente.,phase_5a_research_question_evidence.csv#E001
+Grupo de dias,Fim de semana vs Dias úteis,30.192457%,27.330336%,2.862121 p.p.,O agrupamento não controla volume de circulação ou composição das ocorrências.,phase_5a_research_question_evidence.csv#E002
+Hora registrada,19h vs 8h,33.732337%,23.124346%,10.607991 p.p.,Sem exposição horária ou controle multivariado; não mede risco de acidente.,phase_2f_association_evidence_matrix.csv
+Macrorregião,Nordeste vs Sul,35.917125%,24.874032%,11.043093 p.p.,Macrorregião deriva de UF e não há denominador de exposição.,phase_5a_research_question_evidence.csv#E003
+Unidade da Federação,MA vs SP,45.811700%,18.639426%,27.172274 p.p.,"Não permite ordenar segurança das UFs; contexto, registro e exposição diferem.",phase_5a_research_question_evidence.csv#E004
+Tipo de pista,Pista Simples vs Dupla,33.711528%,23.351325%,10.360203 p.p.,"Não controla geografia, tráfego, velocidade ou exposição rodoviária.",phase_5a_research_question_evidence.csv#E005
+Condição meteorológica,Nevoeiro/Neblina vs Garoa/Chuvisco,31.501057%,22.264400%,9.236657 p.p.,Ignorado não é condição física; ausência de exposição e categorias pequenas limitam a leitura.,phase_5a_research_question_evidence.csv#E006
+Tipo registrado,Atropelamento de Pedestre vs Colisão traseira,68.020636%,23.673706%,44.346930 p.p.,Podem ser conhecidos ou consolidados após a ocorrência e possuem cautelas de taxonomia; não foram autorizados automaticamente no conjunto principal.,phase_5a_research_question_evidence.csv#E007; phase_2f_association_evidence_matrix.csv
+Causa registrada,Pedestre andava na pista vs Reação tardia ou ineficiente do condutor,75.413857%,23.929127%,51.484730 p.p.,Podem ser conhecidos ou consolidados após a ocorrência e possuem cautelas de taxonomia; não foram autorizados automaticamente no conjunto principal.,phase_5a_research_question_evidence.csv#E007; phase_2f_association_evidence_matrix.csv

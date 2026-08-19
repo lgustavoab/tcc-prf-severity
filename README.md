@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 5C concluída — estrutura dos capítulos de Resultados e Discussão definida.**
+**Fase 5D gerada — figuras e tabelas acadêmicas aguardam aprovação visual humana.**
 
 Nesta fase o projeto:
 
@@ -74,6 +74,8 @@ Nesta fase o projeto:
   figuras, separando itens de apêndice e de repositório sem recalcular resultados.
 - organiza 18 subseções de Resultados e Discussão, com evidências, números, cautelas,
   transições e fronteiras interpretativas, sem redigir o manuscrito final ou gerar figuras.
+- materializa nove figuras científicas em PNG/SVG e seis tabelas acadêmicas a partir de
+  resultados congelados, sem executar análise, modelo, predição ou SHAP.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -114,6 +116,8 @@ O plano congelado de tabelas e figuras está documentado em
 [`docs/PHASE_5B_RESULTS_VISUAL_PLAN.md`](docs/PHASE_5B_RESULTS_VISUAL_PLAN.md).
 A estrutura acadêmica de Resultados e Discussão está documentada em
 [`docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md`](docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md).
+Os critérios e outputs acadêmicos da Fase 5D estão documentados em
+[`docs/PHASE_5D_ACADEMIC_VISUALS.md`](docs/PHASE_5D_ACADEMIC_VISUALS.md).
 
 ## Requisitos
 
@@ -455,6 +459,17 @@ ranking e será retomada na Discussão apenas para interpretação; F7 permanece
 continuam na Metodologia. Nenhuma figura, referência bibliográfica ou redação final completa
 foi produzida.
 
+## Figuras e tabelas acadêmicas
+
+A Fase 5D gerou nove figuras científicas, cada uma em PNG a 300 DPI e SVG, e seis tabelas CSV
+em `reports/figures/tcc/` e `reports/tables/tcc/`. A geração lê somente tabelas científicas
+versionadas; não carrega Parquet, pipeline ou predictions individuais. O contact sheet e o QA
+foram produzidos, mas a aprovação visual humana permanece pendente.
+
+```powershell
+uv run python scripts/generate_phase_5d_academic_visuals.py
+```
+
 ## Documentação científica
 
 - [`PHASE_2_EDA_SYNTHESIS.md`](docs/PHASE_2_EDA_SYNTHESIS.md): síntese científica e resposta
@@ -494,6 +509,8 @@ foi produzida.
   priorização, especificações e redundâncias do plano final de tabelas e figuras.
 - [`PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md`](docs/PHASE_5C_RESULTS_DISCUSSION_STRUCTURE.md):
   roteiro de subseções, evidências, números, transições e limites interpretativos.
+- [`PHASE_5D_ACADEMIC_VISUALS.md`](docs/PHASE_5D_ACADEMIC_VISUALS.md): geração reproduzível,
+  padrão visual, outputs, prévias tabulares, QA e revisão humana pendente.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -509,13 +526,13 @@ As dependências estão organizadas no `pyproject.toml`:
 - `ml`: Optuna, MLflow e SHAP, ainda reservados para fases futuras;
 - `viz`: JupyterLab, Plotly e Streamlit.
 
-Matplotlib é uma dependência principal da geração das figuras científicas da Fase 2. Os grupos
-`ml` e `viz` permanecem reservados para fases futuras.
+Matplotlib é uma dependência principal da geração das figuras científicas das Fases 2 e 5D. Os
+grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-A próxima etapa é a **Fase 5D — geração das figuras e tabelas acadêmicas selecionadas**, usando
-os planos congelados das Fases 5B e 5C sem recalcular resultados científicos.
+Após aprovação visual humana, a próxima etapa é a **Fase 5E — primeira redação de Resultados e
+Discussão**, usando os artefatos acadêmicos sem recalcular resultados científicos.
 
 ## Princípio metodológico
 

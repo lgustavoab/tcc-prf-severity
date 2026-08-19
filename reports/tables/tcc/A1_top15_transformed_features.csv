@@ -1,0 +1,16 @@
+Rank,Feature transformada,Contribuição absoluta média
+1,categorical__tipo_pista_Simples,0.16333748430331746
+2,numeric__km,0.05342911061350782
+3,categorical__uf_RJ,0.049295763042818096
+4,categorical__uf_RS,0.04558408870262294
+5,categorical__uf_SP,0.039741662093391916
+6,categorical__tipo_pista_Dupla,0.03763496880374983
+7,categorical__uf_SC,0.037616869136038206
+8,binary__tracado_reta,0.03534370390834038
+9,categorical__condicao_metereologica_Chuva,0.0273973269826363
+10,binary__tracado_declive,0.026401786513688824
+11,categorical__hour_19,0.024655146976092217
+12,categorical__hour_18,0.02037337809631397
+13,categorical__br_116,0.020146821814230047
+14,categorical__uf_PE,0.018949463187857958
+15,categorical__condicao_metereologica_Céu Claro,0.01884140629201051

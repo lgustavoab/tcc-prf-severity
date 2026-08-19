@@ -1,0 +1,5 @@
+Grupo,Predictors físicos,Representações conceituais,Preprocessing,Política adicional
+Categóricas,9,9,"OneHotEncoder(handle_unknown=""ignore"")",Vocabulário aprendido somente no treino
+Numérica,1,1,StandardScaler,Parâmetros aprendidos somente no treino
+Binárias de traçado,12,1,passthrough,Validação binária 0/1
+Total,22,11,ColumnTransformer,remainder=drop
