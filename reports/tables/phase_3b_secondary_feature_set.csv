@@ -1,0 +1,5 @@
+feature,source,representation,rationale,expected_future_preprocessing
+tipo_acidente,interim,categorical_late_context,Tipo final depende da dinâmica ocorrida e não pertence ao momento estrito.,Encoder fit somente em 2021-2024 e tolerante a unknown; resultado sempre separado do principal.
+causa_acidente,interim,categorical_investigated_cause,Causa registrada depende de apuração posterior e pode incorporar conhecimento tardio.,Preservar taxonomia; encoder fit somente em 2021-2024; resultado sempre separado do principal.
+pessoas,interim,discrete_late_count,Contagem pode ser consolidada depois e tem relação parcialmente mecânica com o target.,Transformação fit somente em 2021-2024; documentar cautela mecânica e resultado separado.
+veiculos,interim,discrete_late_count,Contagem final pode não estar disponível no registro inicial.,Transformação fit somente em 2021-2024; resultado sempre separado do principal.

@@ -1,0 +1,12 @@
+feature,source,representation,rationale,expected_future_preprocessing
+month_name,data_inversa,categorical_month,Mês sazonal reprodutível derivável de informação temporal assumida no cenário.,Derivar após o split lógico; encoder fit somente em 2021-2024 e tolerante a unknown.
+dia_semana,interim,categorical_weekday,Representação semanal compatível com o momento preditivo conceitual e sem duplicata escolhida.,Encoder categórico fit somente em 2021-2024.
+hour,horario,categorical_hour_0_23,Representação horária derivável de informação temporal assumida no cenário sem usar o horário exato.,Derivar após o split lógico; encoder fit somente em 2021-2024.
+uf,interim,categorical_state,Contexto geográfico agregado com suporte completo.,Encoder categórico fit somente em 2021-2024.
+br,interim,categorical_road_identifier,Identificador rodoviário substantivo com política explícita para unknown e BR 0.,Encoder tolerante a unknown e fit somente em 2021-2024.
+km,interim,continuous_road_position,Posição ao longo da BR sem coordenadas precisas redundantes.,Transformação numérica fit somente em 2021-2024; não reutilizar automaticamente bins da 3A.
+sentido_via,interim,categorical_direction,Contexto plausivelmente observável no momento definido com preservação de Não Informado como ausência semântica.,Preservar Não Informado; encoder tolerante a unknown e fit somente em 2021-2024.
+condicao_metereologica,interim,categorical_weather,Contexto ambiental plausivelmente observável no momento definido com preservação de Ignorado como ausência semântica.,Preservar Ignorado; encoder tolerante a unknown e fit somente em 2021-2024.
+tipo_pista,interim,categorical_road_type,Característica substantiva da infraestrutura viária.,Encoder categórico fit somente em 2021-2024.
+uso_solo,interim,categorical_land_use,Campo contextual preservado sem reinterpretação urbano/rural.,Encoder categórico fit somente em 2021-2024.
+tracado_via_components,tracado_via,multilabel_binary_components,Componentes semanticamente estáveis substituem combinações brutas de alta cardinalidade.,Materializar indicadores binários multilabel somente na Fase 3C e ajustar no desenvolvimento.
