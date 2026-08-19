@@ -472,6 +472,35 @@ interpretação de importância de features, refit final ou consulta a 2025.
 
 **Status:** confirmado; terceira família executada sem comparação formal entre modelos.
 
+### R009 — Comparação temporal formal das três famílias
+
+**Data:** 19/08/2026.
+
+**População e período:** resultados publicados dos três folds internos, com validações em
+2022, 2023 e 2024. Nenhum dataset, OOF ou resultado de 2025 foi consultado.
+
+**Método:** consolidação das tabelas versionadas de Logistic Regression, Random Forest e
+XGBoost após validar folds, anos, tamanhos, prevalências, dimensões transformadas, métrica,
+agregação e ausência de teste final ou threshold selecionado. Não houve retreinamento, teste
+estatístico, score composto ou nova decisão baseada em OOF.
+
+**Resultado:** as APs médias não ponderadas foram 0,393508 para Logistic Regression, 0,395984
+para Random Forest e 0,400811 para XGBoost. Descritivamente, XGBoost apresentou a maior média
+e a maior AP no Fold 3; Logistic Regression apresentou o menor desvio padrão populacional
+(0,004879); Random Forest ficou intermediária em AP média. Os deltas médios foram 0,002476
+de Logistic para Random Forest, 0,007303 de Logistic para XGBoost e 0,004827 de Random Forest
+para XGBoost.
+
+**Limitações:** os ranks e deltas organizam três folds observados e não demonstram
+significância estatística, causalidade ou superioridade definitiva. A variação bitwise do OOF
+paralelo da Random Forest não afeta as métricas reproduzidas nem esta comparabilidade.
+
+**Origem:** [PHASE_4D_MODEL_COMPARISON.md](PHASE_4D_MODEL_COMPARISON.md) e tabelas
+`phase_4d_*` em `reports/tables/`.
+
+**Status:** confirmado; comparação descritiva concluída, sem seleção final. A decisão pertence
+à Fase 4E.
+
 ## Achados exploratórios
 
 ### EDA001 — Distribuição anual do volume

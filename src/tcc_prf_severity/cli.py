@@ -19,6 +19,7 @@ from tcc_prf_severity.data.audit import run_audit
 from tcc_prf_severity.data.interim import build_interim_dataset, verify_interim_dataset
 from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_experimental_design
 from tcc_prf_severity.modeling.logistic_baseline import run_logistic_baseline
+from tcc_prf_severity.modeling.model_comparison import run_model_comparison
 from tcc_prf_severity.modeling.preprocessing import run_preprocessing_validation
 from tcc_prf_severity.modeling.random_forest_baseline import run_random_forest_baseline
 from tcc_prf_severity.modeling.xgboost_baseline import (
@@ -204,6 +205,28 @@ def run_xgboost_baseline_main() -> None:
     print("Early stopping: não")
     print(f"OOF: {run.oof_path}")
     print(f"OOF SHA-256: {run.oof_sha256}")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def compare_models_main() -> None:
+    run = run_model_comparison()
+    comparison = run.result.model_comparison
+    labels = {
+        "phase_4a_logistic_baseline": "Logistic Regression",
+        "phase_4b_random_forest_baseline": "Random Forest",
+        "phase_4c_xgboost_baseline": "XGBoost",
+    }
+    print("Fase 4D — Comparação de modelos")
+    for row in comparison.iter_rows(named=True):
+        print(f"{labels[str(row['model_id'])]}: AP média {float(row['ap_unweighted_mean']):.6f}")
+    largest_mean = comparison.sort("ap_unweighted_mean", descending=True).row(0, named=True)
+    smallest_std = comparison.sort("ap_population_std").row(0, named=True)
+    largest_fold3 = comparison.sort("ap_fold3", descending=True).row(0, named=True)
+    print(f"Maior AP média observada: {labels[str(largest_mean['model_id'])]}")
+    print(f"Menor AP std observada: {labels[str(smallest_std['model_id'])]}")
+    print(f"Maior AP Fold 3 observada: {labels[str(largest_fold3['model_id'])]}")
+    print("Seleção final realizada: não")
+    print("2025 utilizado: não")
     print(f"Tabelas: {run.table_paths[0].parent}")
 
 

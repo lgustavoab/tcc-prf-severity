@@ -30,6 +30,7 @@ prf-validate-preprocessing = "tcc_prf_severity.cli:validate_preprocessing_main"
 prf-run-logistic-baseline = "tcc_prf_severity.cli:run_logistic_baseline_main"
 prf-run-random-forest-baseline = "tcc_prf_severity.cli:run_random_forest_baseline_main"
 prf-run-xgboost-baseline = "tcc_prf_severity.cli:run_xgboost_baseline_main"
+prf-compare-models = "tcc_prf_severity.cli:compare_models_main"
 
 [dependency-groups]
 dev = [
