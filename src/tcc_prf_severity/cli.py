@@ -21,6 +21,10 @@ from tcc_prf_severity.modeling.experimental_design import PRIMARY_METRIC, run_ex
 from tcc_prf_severity.modeling.logistic_baseline import run_logistic_baseline
 from tcc_prf_severity.modeling.preprocessing import run_preprocessing_validation
 from tcc_prf_severity.modeling.random_forest_baseline import run_random_forest_baseline
+from tcc_prf_severity.modeling.xgboost_baseline import (
+    EXPECTED_XGBOOST_VERSION,
+    run_xgboost_baseline,
+)
 
 
 def audit_main() -> None:
@@ -172,6 +176,32 @@ def run_random_forest_baseline_main() -> None:
     print("2025 utilizado: não")
     print("Threshold selecionado: não")
     print("Tuning realizado: não")
+    print(f"OOF: {run.oof_path}")
+    print(f"OOF SHA-256: {run.oof_sha256}")
+    print(f"Tabelas: {run.table_paths[0].parent}")
+
+
+def run_xgboost_baseline_main() -> None:
+    run = run_xgboost_baseline()
+    result = run.result
+    summary = {str(row["key"]): str(row["value"]) for row in result.summary.iter_rows(named=True)}
+    print("Fase 4C — XGBoost")
+    print(f"XGBoost: {EXPECTED_XGBOOST_VERSION}")
+    for fold in result.fold_results:
+        train = "-".join((str(fold.train_years[0]), str(fold.train_years[-1])))
+        if len(fold.train_years) == 1:
+            train = str(fold.train_years[0])
+        print(
+            f"Fold {fold.fold}: {train} -> {fold.validation_year}; "
+            f"AP: {fold.average_precision:.6f}; rounds: {fold.completed_boosting_rounds}"
+        )
+    print(f"AP média não ponderada: {float(summary['ap_unweighted_mean']):.6f}")
+    print(f"AP desvio padrão populacional: {float(summary['ap_population_std']):.6f}")
+    print("300 rounds completos: sim")
+    print("2025 utilizado: não")
+    print("Threshold selecionado: não")
+    print("Tuning realizado: não")
+    print("Early stopping: não")
     print(f"OOF: {run.oof_path}")
     print(f"OOF SHA-256: {run.oof_sha256}")
     print(f"Tabelas: {run.table_paths[0].parent}")

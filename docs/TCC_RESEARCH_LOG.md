@@ -415,8 +415,8 @@ foi realizada.
 
 **Método:** pipeline train-only da Fase 3E seguido por `RandomForestClassifier` com 300
 árvores, Gini, profundidade máxima 20, `min_samples_leaf=5`, `max_features="sqrt"`, bootstrap,
-`random_state=42`, sem pesos de classe e sem OOB. A configuração foi única e congelada, sem
-tuning.
+`random_state=42`, `n_jobs=-1`, sem pesos de classe e sem OOB. A configuração foi única e
+congelada, sem tuning.
 
 **Resultado:** as APs foram 0,388096, 0,399673 e 0,400183. A média aritmética não ponderada foi
 0,395984 e o desvio padrão populacional, 0,005582. As 300 árvores de cada fold atingiram
@@ -424,14 +424,53 @@ profundidade máxima 20; as médias de nós foram 1.862,927, 2.775,713 e 3.592,3
 Brier, métricas no corte fixo 0,5 e calibração foram registrados como diagnósticos; nenhum
 threshold foi selecionado.
 
+**Auditoria de reprodutibilidade:** duas reexecuções preservaram exatamente IDs, targets,
+folds e anos. Entre 205.528 probabilidades, 89.588 não foram bitwise idênticas;
+`max_abs_difference=3.3306690738754696e-16`,
+`mean_abs_difference=2.4697206337636872e-17`, percentil 99 absoluto de
+`1.1102230246251565e-16` e `RMSE=4.0536620258397663e-17`. AP, ROC-AUC e Brier foram
+exatamente iguais em todos os folds, a AP média foi exatamente igual e zero decisões no
+corte 0,5 mudaram.
+
 **Limitações:** trata-se de uma baseline não otimizada, não de modelo vencedor. A estrutura
 das árvores é diagnóstico, não regra de seleção; não houve interpretação de importância de
-features, refit final ou consulta a 2025.
+features, refit final ou consulta a 2025. A variação observada é compatível com ruído numérico
+de ponto flutuante na execução paralela, não com divergência preditiva substantiva. O SHA-256
+identifica uma materialização específica do OOF; equivalência científica entre reexecuções
+paralelas não exige Parquets bitwise idênticos e deve considerar estrutura, targets,
+probabilidades numericamente equivalentes e métricas reproduzidas. Os hashes históricos não
+são substituídos.
 
 **Origem:** [PHASE_4B_RANDOM_FOREST.md](PHASE_4B_RANDOM_FOREST.md) e tabelas
 `phase_4b_random_forest_*` em `reports/tables/`.
 
 **Status:** confirmado; segunda baseline executada sem comparação formal entre modelos.
+
+### R008 — XGBoost baseline
+
+**Data:** 19/08/2026.
+
+**População e período:** três folds temporais internos, com fit progressivo em 2021–2023 e
+validações separadas em 2022, 2023 e 2024. Nenhuma transformação, predição ou métrica de 2025
+foi realizada.
+
+**Método:** pipeline train-only da Fase 3E seguido por XGBoost 3.3.0 com 300 árvores,
+`learning_rate=0.05`, profundidade máxima 6, subamostragem de linhas e colunas em 0,8,
+regularização L2 baseline, `tree_method="hist"` e CPU. A configuração foi única e congelada,
+sem tuning, reponderação de classe ou early stopping.
+
+**Resultado:** as APs foram 0,390375, 0,404968 e 0,407090. A média aritmética não ponderada foi
+0,400811 e o desvio padrão populacional, 0,007430. Os três Boosters completaram exatamente
+300 rounds. ROC-AUC, Brier, métricas no corte fixo 0,5 e calibração foram registrados como
+diagnósticos; nenhum threshold foi selecionado.
+
+**Limitações:** trata-se de uma baseline não otimizada, não de modelo vencedor. Não houve
+interpretação de importância de features, refit final ou consulta a 2025.
+
+**Origem:** [PHASE_4C_XGBOOST.md](PHASE_4C_XGBOOST.md) e tabelas `phase_4c_xgboost_*` em
+`reports/tables/`.
+
+**Status:** confirmado; terceira família executada sem comparação formal entre modelos.
 
 ## Achados exploratórios
 
