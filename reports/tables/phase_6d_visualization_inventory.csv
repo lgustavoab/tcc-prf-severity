@@ -1,0 +1,23 @@
+visual_id,route,title,visual_type,library,source_asset,scientific_status,interactive,responsive,accessibility_support,status
+V6D001,/visao-geral,Panorama publicado,KPI cards,HTML,overview/summary.json,MIXED,true,true,labels visíveis,PASS
+V6D002,/visao-geral,Composição anual das ocorrências,stacked bar chart,Recharts,overview/summary.json,MIXED,false,true,accessibilityLayer; tabela completa,PASS
+V6D003,/exploracao,Hora registrada,line chart,Recharts,exploration/temporal.json,EXPLORATORY,true,true,accessibilityLayer; valores compactos,PASS
+V6D004,/exploracao,Dia da semana,horizontal bar chart,Recharts,exploration/temporal.json,EXPLORATORY,true,true,accessibilityLayer; tabela completa,PASS
+V6D005,/exploracao,Tipo de pista,horizontal bar chart,Recharts,exploration/contextual.json,EXPLORATORY,true,true,accessibilityLayer; tabela completa,PASS
+V6D006,/exploracao,Condição meteorológica,horizontal bar chart,Recharts,exploration/contextual.json,EXPLORATORY,true,true,accessibilityLayer; nota sobre Ignorado; tabela,PASS
+V6D007,/exploracao,Uso do solo,horizontal bar chart,Recharts,exploration/contextual.json,EXPLORATORY,true,true,accessibilityLayer; tabela completa,PASS
+V6D008,/geografia,Resumo geográfico filtrado,KPI cards,HTML,geography/geography.json,EXPLORATORY,true,true,labels visíveis,PASS
+V6D009,/geografia,Comparação descritiva por UF ou BR,horizontal bar chart + table,Recharts + HTML,geography/geography.json,EXPLORATORY,true,true,accessibilityLayer; tabela completa,PASS
+V6D010,/modelos,Average Precision média,bar chart,Recharts,models/model_comparison.json,FROZEN_RESULT,false,true,accessibilityLayer; tabela completa,PASS
+V6D011,/modelos,Avaliação temporal final em 2025,KPI cards,HTML,models/final_2025.json,FROZEN_RESULT,false,true,valores e referências visíveis,PASS
+V6D012,/modelos,Calibração descritiva em 2025,line chart,Recharts,models/calibration_2025.json,FROZEN_RESULT,false,true,accessibilityLayer; referência; tabela,PASS
+V6D013,/validacao-temporal,Average Precision por fold temporal,multi-series line chart,Recharts,validation/temporal_validation.json,FROZEN_RESULT,false,true,accessibilityLayer; legenda; tabela,PASS
+V6D014,/validacao-temporal,Nove resultados modelo/fold,data table,HTML,validation/temporal_validation.json,FROZEN_RESULT,false,true,cabeçalhos e valores completos,PASS
+V6D015,/limiar,Métricas do limiar congelado,KPI cards,HTML,threshold/threshold_2025.json,FROZEN_RESULT,false,true,labels e explicação,PASS
+V6D016,/limiar,Matriz de confusão publicada,CSS grid,HTML/CSS,threshold/threshold_2025.json,FROZEN_RESULT,false,true,aria-label completo; explicação textual,PASS
+V6D017,/interpretacao,Contribuições por variável de origem,horizontal bar chart,Recharts,interpretation/source_predictors.json,FROZEN_RESULT,true,true,accessibilityLayer; tabela; labels técnicos,PASS
+V6D018,/interpretacao,Top 15 de features transformadas,horizontal bar chart,Recharts,interpretation/transformed_top15.json,FROZEN_RESULT,true,true,accessibilityLayer; tabela; labels técnicos,PASS
+V6D019,/metodologia,Desenho temporal,timeline cards,HTML/CSS,methodology/design.json,DOCUMENTATION,false,true,ordem e períodos textuais,PASS
+V6D020,/metodologia,Representações e preprocessing,data table,HTML,methodology/features.json,DOCUMENTATION,false,true,cabeçalhos e conteúdo integral,PASS
+V6D021,/metodologia,Grupos de transformação,summary cards,HTML,methodology/features.json,DOCUMENTATION,false,true,conteúdo textual,PASS
+V6D022,/,Sobre o estudo e perguntas de pesquisa,semantic cards + glossary,HTML,meta.json + overview/summary.json,DOCUMENTATION,true,true,headings hierárquicos; details nativo; links claros; definições textuais,PASS

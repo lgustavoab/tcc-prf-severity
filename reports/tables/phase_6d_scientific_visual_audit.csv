@@ -1,0 +1,18 @@
+check_id,route,visual_id,rule,expected_behavior,observed_behavior,status,notes
+S6D001,/modelos,V6D010,nenhum AP recalculado,exibir valores congelados do JSON,mean_average_precision consumida diretamente,PASS,escala 0–1
+S6D002,/validacao-temporal,V6D013,nenhum AP recalculado,exibir nove APs publicadas,average_precision consumida diretamente,PASS,nenhuma agregação científica
+S6D003,/validacao-temporal,V6D014,nenhum ROC recalculado,exibir ROC-AUC publicada,roc_auc consumida diretamente,PASS,tabela somente leitura
+S6D004,/modelos,V6D011,nenhum Brier recalculado,exibir Brier publicado,brier_score consumido diretamente,PASS,delta publicado não recalculado
+S6D005,/interpretacao,V6D017,nenhum SHAP recalculado,exibir contribuições publicadas,mean_absolute_shap consumido diretamente,PASS,ordem original preservada
+S6D006,/limiar,V6D015,threshold imutável,sem slider ou edição,threshold somente leitura,PASS,nenhuma simulação
+S6D007,/limiar,V6D016,matriz congelada,TN FP FN TP exatamente do asset,valores consumidos diretamente,PASS,sem predições no browser
+S6D008,/geografia,V6D009,nenhum choropleth,usar barras e tabela,nenhum mapa implementado,PASS,sem linguagem de perigo
+S6D009,/exploracao,V6D003,proporção exploratória limitada,graves/total após soma aditiva,helper usa apenas três contagens e uma divisão,PASS,nenhuma outra métrica
+S6D010,/exploracao,V6D005,escopos independentes,TEMPORAL não recorta CONTEXTUAL,estados e filtros permanecem separados,PASS,dois assets físicos
+S6D011,/geografia,V6D009,linguagem geográfica neutra,sem mais perigosa ou mais segura,comparação descritiva e caveat de exposição,PASS,ordenação geográfica
+S6D012,/interpretacao,V6D018,SHAP não causal,explicitar comportamento do modelo,caveat não causal visível,PASS,OHE e cardinalidade mencionados
+S6D013,/modelos,V6D012,calibração não categórica,diagnóstico descritivo,linguagem evita afirmar modelo calibrado,PASS,dez bins preservados
+S6D014,/visao-geral,V6D002,sem inferência temporal,descrição sem tendência estatística,evolução descrita como descritiva,PASS,sem teste novo
+S6D015,/,V6D022,sem conclusão científica nova,sintetizar somente resultados aprovados,RQ1–RQ5 reproduzem síntese 5A e revisão 5F,PASS,linguagem para público não especializado
+S6D016,/,V6D022,resultados congelados distintos de exploração,explicar apresentação versus filtros,ML permanece somente leitura e filtros usam agregações publicadas,PASS,nenhum treino ou métrica nova
+S6D017,/,V6D022,limites de exposição e causalidade,não sugerir risco territorial ou uso operacional,seção obrigatória explicita ausência de denominador e alcance observacional,PASS,sem recomendação operacional

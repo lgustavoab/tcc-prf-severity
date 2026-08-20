@@ -702,6 +702,36 @@ compatibilidade preserva a lógica científica da exportação 6B e verifica byt
 não altera arquivos frontend existentes fora de `dashboard/public/data`. Próxima etapa: Fase
 6D.
 
+### D029 — Visualizações científicas do dashboard
+
+**Data:** 19/08/2026.
+
+**Decisão:** integrar o dashboard estático com Recharts 3.10.1, react-is 19.2.8, HTML
+semântico e CSS nativo. Durante a revisão da Fase 6D foi identificada a necessidade de uma
+camada introdutória de comunicação científica para público não especializado. A nova Home `/`
+recebeu essa função e a Visão Geral analítica foi preservada em `/visao-geral`, totalizando
+nove rotas. Gráficos consomem valores congelados diretamente; somente páginas exploratórias
+podem somar contagens aditivas e calcular graves/total dentro do próprio escopo.
+
+**Justificativa:** a publicação web deve tornar os resultados e agregações auditados
+consultáveis sem duplicar o pipeline científico. Tabelas e resumos associados impedem que
+tooltip ou cor sejam as únicas fontes dos valores.
+
+**Consequências:** Sobre o estudo, Visão Geral, exploração temporal e contextual, geografia,
+modelos, validação temporal, limiar, interpretação e metodologia possuem conteúdo funcional e
+responsivo. A Home introdutória explica RQ1–RQ5, resultados congelados, filtros exploratórios,
+glossário e limites de interpretação. Cada RQ oferece resposta curta e aprofundamento opcional
+em `details` nativo, mantendo a ressalva científica sempre visível. A matriz de confusão usa HTML/CSS; não há coroplético,
+slider, inferência, AP, ROC-AUC, Brier, F1, calibração ou SHAP novos. Os 15 JSONs e o pipeline
+Python permanecem inalterados.
+
+**Origem:** [PHASE_6D_DASHBOARD_VISUALIZATIONS.md](PHASE_6D_DASHBOARD_VISUALIZATIONS.md),
+`dashboard/src/components/charts/` e tabelas `phase_6d_*` em `reports/tables/`.
+
+**Status:** confirmada; nove rotas integradas com revisão estrutural para desktop, tablet e
+mobile, incluindo a camada de comunicação científica. Próxima etapa: Fase 6E — polimento,
+auditoria visual final, otimização e deploy.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

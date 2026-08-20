@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 
+import { AnnualOverviewChart } from "@/components/charts/annual-overview-chart";
 import { EmptyState } from "@/components/feedback/empty-state";
 import { ErrorState } from "@/components/feedback/error-state";
 import { LoadingState } from "@/components/feedback/loading-state";
-import { VisualizationPlaceholder } from "@/components/feedback/visualization-placeholder";
 import { YearSelect } from "@/components/filters/year-select";
 import { DATA_PATHS } from "@/lib/data/paths";
 import { useDashboardAsset } from "@/lib/data/use-dashboard-asset";
@@ -40,11 +40,7 @@ export function OverviewFoundation() {
           <article className="metric-card"><span>Período apresentado</span><strong>{year === "all" ? "2021–2025" : year}</strong></article>
         </div>
       </section>
-      <VisualizationPlaceholder
-        title="Evolução e composição do período"
-        description="Área reservada para os gráficos acessíveis da visão geral, sem antecipar a integração científica da Fase 6D."
-        asset="OVERVIEW · overview/summary.json"
-      />
+      <AnnualOverviewChart rows={asset.data.data} />
     </div>
   );
 }

@@ -1,0 +1,10 @@
+route,page_name,visualization_status,primary_visuals,interactive_scope,responsive_strategy,accessibility_strategy,status
+/,Sobre o estudo,IMPLEMENTED,introdução; RQ1–RQ5; glossário; limites; CTAs,NONE,grids 2/2/1 e CTAs 4/2/1,HTML semântico; headings; links claros; textos integrais,PASS
+/visao-geral,Visão Geral,IMPLEMENTED,KPIs; composição anual,YEAR_LOCAL,grid adaptativo; chart responsivo,tabela anual associada; accessibilityLayer,PASS
+/exploracao,Exploração,IMPLEMENTED,hora; dia; pista; meteorologia; uso do solo,TEMPORAL_LOCAL | CONTEXTUAL_LOCAL,charts empilhados no tablet/mobile,tabelas e resumos associados; accessibilityLayer,PASS
+/geografia,Geografia,IMPLEMENTED,resumo; barras; tabela,YEAR_UF_BR_LOCAL,barras com altura por categoria; overflow de tabela,tabela completa; labels; caveat,PASS
+/modelos,Modelos,IMPLEMENTED,AP média; métricas 2025; calibração,NONE,metric grid adaptativo; charts responsivos,tabelas associadas; linha de referência identificada,PASS
+/validacao-temporal,Validação Temporal,IMPLEMENTED,AP por fold; tabela de métricas,NONE,chart e tabela adaptativos,legenda textual; tabela; caveat temporal,PASS
+/limiar,Limiar de Decisão,IMPLEMENTED,métricas; matriz de confusão,NONE,grid da matriz reorganizado em telas estreitas,aria-label completo; explicação textual,PASS
+/interpretacao,Interpretação,IMPLEMENTED,SHAP por origem; top 15 transformadas,PUBLISHED_VIEW_LOCAL,barras com altura por categoria; tabela rolável,labels amigáveis e técnicos; tabela; caveat,PASS
+/metodologia,Metodologia,IMPLEMENTED,timeline; features; grupos,NONE,timeline 4/2/1 colunas; tabela rolável,estrutura semântica; conteúdo textual equivalente,PASS
