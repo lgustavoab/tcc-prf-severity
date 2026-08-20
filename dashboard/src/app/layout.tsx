@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Gravidade de Acidentes em Rodovias Federais",
+    default: "Gravidade de Acidentes em Rodovias Federais | TCC",
     template: "%s | Gravidade em Rodovias Federais",
   },
   description:

@@ -1,0 +1,46 @@
+check_id,category,check,status,evidence
+Q6E001,scope,Branch esperada,PASS,feat/phase-6e-dashboard-polish
+Q6E002,routes,Nove rotas preservadas,PASS,As nove rotas do contrato continuam presentes
+Q6E003,semantics,Um h1 por rota,PASS,27 combinações de rota e largura auditadas
+Q6E004,semantics,Landmark main único,PASS,Um elemento main por rota
+Q6E005,semantics,Idioma do documento,PASS,html lang pt-BR
+Q6E006,semantics,Hierarquia de headings,PASS,Salto h1 para h3 corrigido em modelos
+Q6E007,accessibility,Skip link,PASS,Link para conteudo-principal preservado
+Q6E008,accessibility,Navegação nomeada,PASS,nav com aria-label Navegação principal
+Q6E009,accessibility,Labels de selects,PASS,Labels associados por htmlFor e id
+Q6E010,accessibility,Grupos multiselect,PASS,fieldset legend details summary labels e checkboxes nativos
+Q6E011,accessibility,Details da Home,PASS,Cinco details nativos com ressalvas fora da região recolhível
+Q6E012,accessibility,Foco visível,PASS,Outline global de 3 px com contraste 5.86 para 1 sobre branco
+Q6E013,accessibility,Tabindex positivo ausente,PASS,Nenhum tabindex positivo introduzido
+Q6E014,accessibility,Áreas de toque dos filtros,PASS,Select summary label e botão com mínimo de 44 px
+Q6E015,accessibility,Contraste do texto principal,PASS,14.99 para 1 sobre o fundo
+Q6E016,accessibility,Contraste do texto secundário,PASS,5.61 para 1 sobre branco
+Q6E017,accessibility,Contraste da navegação,PASS,10.16 para 1 no sidebar
+Q6E018,accessibility,Conteúdo não depende somente de cor,PASS,Títulos descrições tabelas notas e equivalentes textuais preservados
+Q6E019,responsive,390 px sem overflow global,PASS,Nove rotas verificadas
+Q6E020,responsive,768 px sem overflow global,PASS,Nove rotas verificadas
+Q6E021,responsive,1280 px sem overflow global,PASS,Nove rotas verificadas
+Q6E022,responsive,Gráficos dentro do viewport,PASS,Zero chartsOutside nas 27 combinações
+Q6E023,responsive,Tabelas com overflow interno,PASS,Todas as tabelas permanecem em data-table-wrap
+Q6E024,responsive,Details abertos em mobile,PASS,Cinco details abertos sem overflow global
+Q6E025,navigation,Indicação de navegação horizontal,PASS,Scrollbar fina e fade discreto sem JavaScript
+Q6E026,charts,Títulos e descrições,PASS,ChartCard rotulado por heading e parágrafo descritivo
+Q6E027,charts,Valores equivalentes,PASS,Tabelas chips notas ou textos acompanham os gráficos
+Q6E028,states,LoadingState,PASS,role status e aria-live polite
+Q6E029,states,ErrorState,PASS,role alert e mensagem explícita
+Q6E030,console,Warnings no navegador,PASS,Zero warnings nas nove rotas
+Q6E031,console,Erros no navegador,PASS,Zero erros nas nove rotas
+Q6E032,performance,Maior chunk JavaScript,PASS,381019 bytes sem regressão relevante frente ao histórico da Fase 6D
+Q6E033,performance,Decisão de otimização,PASS,Bundle mantido sem refatoração ampla de baixo retorno
+Q6E034,metadata,Título acadêmico básico,PASS,Gravidade de Acidentes em Rodovias Federais barra TCC
+Q6E035,metadata,Descrição básica,PASS,Descrição científica fiel sem marketing ou tracking
+Q6E036,favicon,Decisão sobre favicon,PASS,Comportamento padrão mantido sem novo asset ou dependência
+Q6E037,build,ESLint,PASS,npm run lint
+Q6E038,build,TypeScript,PASS,npm run typecheck
+Q6E039,build,Build de produção,PASS,npm run build
+Q6E040,build,Export estático,PASS,Nove rotas e cinco assets essenciais
+Q6E041,build,Check integrado,PASS,npm run check
+Q6E042,integrity,JSONs científicos,PASS,15 hashes SHA-256 idênticos antes e depois
+Q6E043,integrity,Python e contratos científicos,PASS,src tests pyproject.toml e uv.lock inalterados
+Q6E044,git,Whitespace e conflitos,PASS,git diff --check
+Q6E045,deployment,Deploy não executado,PASS,Fase 6E.2 permanece pendente

@@ -19,7 +19,7 @@ export function ModelComparisonChart({ asset }: { asset: ModelComparisonAsset })
     .map((row) => ({ ...row, label: MODEL_LABELS[row.model_id] ?? row.model_id, fill: MODEL_COLORS[row.model_id] }));
 
   return (
-    <ChartCard id="model-comparison" title="Average Precision média" description="Média não ponderada das três validações temporais, apresentada em escala de 0 a 1.">
+    <ChartCard id="model-comparison" headingLevel="h2" title="Average Precision média" description="Média não ponderada das três validações temporais, apresentada em escala de 0 a 1.">
       <div className="chart-frame chart-standard">
         <BarChart responsive accessibilityLayer data={data} margin={{ top: 12, right: 16, left: 4, bottom: 6 }} style={{ width: "100%", height: "100%" }}>
           <CartesianGrid stroke="#d6dee2" strokeDasharray="3 3" vertical={false} />
