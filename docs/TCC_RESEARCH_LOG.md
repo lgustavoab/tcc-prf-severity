@@ -732,6 +732,30 @@ Python permanecem inalterados.
 mobile, incluindo a camada de comunicação científica. Próxima etapa: Fase 6E — polimento,
 auditoria visual final, otimização e deploy.
 
+### D030 — Polimento e QA do dashboard estático
+
+**Data:** 19/08/2026.
+
+**Decisão:** encerrar a Fase 6E.1 com auditoria das nove rotas em 390, 768 e 1280 px,
+correções localizadas de hierarquia de headings, áreas de toque, indicação da navegação
+horizontal e metadata acadêmica básica. O bundle atual foi mantido após medição, sem lazy
+loading em massa ou refatoração arquitetural.
+
+**Justificativa:** o dashboard já estava cientificamente aprovado; a preparação para publicação
+exigia eliminar problemas concretos de apresentação e acessibilidade sem alterar resultados,
+dados ou a arquitetura estática.
+
+**Consequências:** as 27 combinações de rota e largura não apresentaram overflow global; as
+nove rotas exportaram sem warning; console, lint, tipagem e check integrado foram aprovados. Os
+15 JSONs científicos permaneceram bitwise idênticos e Python, testes, `pyproject.toml` e
+`uv.lock` não foram modificados. Não houve deploy.
+
+**Origem:** [PHASE_6E_DASHBOARD_POLISH.md](PHASE_6E_DASHBOARD_POLISH.md) e
+`reports/tables/phase_6e_final_qa.csv`.
+
+**Status:** confirmada para revisão pré-deploy. A Fase 6E.2 permanece responsável por destino
+de hospedagem, configuração final e publicação controlada.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

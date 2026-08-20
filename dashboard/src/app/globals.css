@@ -91,16 +91,16 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.2r
 
 .filter-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: start; gap: 0.75rem; padding: 1rem; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-muted); }
 .select-control { display: grid; gap: 0.35rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 650; }
-.select-control select, .multi-select summary { min-height: 42px; padding: 0.55rem 0.65rem; border: 1px solid #bcc9ce; border-radius: 8px; color: var(--text); background: var(--surface); }
+.select-control select, .multi-select summary { min-height: 44px; padding: 0.55rem 0.65rem; border: 1px solid #bcc9ce; border-radius: 8px; color: var(--text); background: var(--surface); }
 .multi-select { min-width: 0; padding: 0; border: 0; }
 .multi-select legend { margin-bottom: 0.35rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 650; }
 .multi-select details { position: relative; }
 .multi-select summary { display: flex; align-items: center; cursor: pointer; }
 .multi-select-menu { position: absolute; z-index: 5; width: min(320px, 82vw); max-height: 320px; overflow: auto; padding: 0.75rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
 .check-list { display: grid; gap: 0.25rem; margin-top: 0.5rem; }
-.check-list label { display: flex; align-items: center; gap: 0.55rem; padding: 0.3rem; font-size: 0.88rem; }
+.check-list label { min-height: 44px; display: flex; align-items: center; gap: 0.55rem; padding: 0.5rem 0.3rem; font-size: 0.88rem; }
 .check-list input { width: 1rem; height: 1rem; accent-color: var(--accent); }
-.text-button { padding: 0; border: 0; color: var(--accent); background: transparent; font-weight: 700; cursor: pointer; }
+.text-button { min-height: 44px; padding: 0.5rem 0.25rem; border: 0; color: var(--accent); background: transparent; font-weight: 700; cursor: pointer; }
 
 .scientific-caveat { display: grid; grid-template-columns: auto 1fr; gap: 0.85rem; padding: 1.1rem; border: 1px solid #b9d5d7; border-radius: var(--radius); background: #eaf4f4; }
 .scientific-caveat p { margin: 0.25rem 0 0; color: #34565a; }
@@ -128,7 +128,7 @@ tr:last-child td { border-bottom: 0; }
 .chart-card { min-width: 0; padding: clamp(1rem, 2vw, 1.5rem); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
 .surface .chart-card { margin-top: 1rem; box-shadow: none; }
 .chart-card-header { margin-bottom: 0.9rem; }
-.chart-card-header h3 { margin: 0; font-size: 1.08rem; }
+.chart-card-header h2, .chart-card-header h3 { margin: 0; font-size: 1.08rem; }
 .chart-card-header p { margin: 0.3rem 0 0; color: var(--text-muted); font-size: 0.9rem; }
 .chart-frame { width: 100%; min-width: 0; }
 .chart-standard { height: clamp(300px, 38vw, 420px); }
@@ -223,7 +223,12 @@ tr:last-child td { border-bottom: 0; }
   .brand-block { grid-template-columns: 1fr auto; align-items: center; padding-bottom: 0.8rem; }
   .brand-kicker, .sidebar-note { display: none; }
   .period-chip { grid-column: 2; grid-row: 1 / span 2; }
-  .site-navigation ul { display: flex; gap: 0.3rem; overflow-x: auto; padding-bottom: 0.3rem; }
+  .site-navigation { position: relative; }
+  .site-navigation::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0.55rem; width: 2rem; pointer-events: none; background: linear-gradient(90deg, transparent, #17373b); }
+  .site-navigation ul { display: flex; gap: 0.3rem; overflow-x: auto; padding: 0 1.5rem 0.4rem 0; scrollbar-color: #8bd2d3 #17373b; scrollbar-width: thin; }
+  .site-navigation ul::-webkit-scrollbar { height: 6px; }
+  .site-navigation ul::-webkit-scrollbar-track { background: #17373b; }
+  .site-navigation ul::-webkit-scrollbar-thumb { border-radius: 999px; background: #8bd2d3; }
   .site-navigation li { flex: 0 0 auto; }
   .site-navigation a { padding: 0.5rem 0.65rem; }
   .nav-label { display: none; }
