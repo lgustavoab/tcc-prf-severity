@@ -4,7 +4,7 @@ Projeto de Ciência de Dados para analisar fatores associados à gravidade de ac
 
 ## Estado atual
 
-**Fase 6C concluída — fundação Next.js estática criada sobre os dados auditados do dashboard.**
+**Fase 6D concluída — visualizações e comunicação científica integradas ao dashboard estático.**
 
 Nesta fase o projeto:
 
@@ -84,7 +84,8 @@ Nesta fase o projeto:
   19 referências verificadas, com auditorias de terminologia, números, citações e revisão.
 - materializa 12 assets lógicos em 14 partes JSON, com manifesto, hashes, reconciliação e
   escopos temporal/contextual separados, sem inferência ou recomputação de ML;
-- mantém o frontend não iniciado: não existem Next.js, React, TypeScript ou dependências Node.
+- publica uma Home introdutória para público não especializado e preserva a Visão Geral
+  analítica em `/visao-geral`, totalizando nove rotas estáticas.
 
 Consulte o [`contrato de dados`](docs/DATA_CONTRACT.md) e a documentação do
 [`dataset intermediário`](docs/INTERIM_DATASET.md). O aceite formal da fundação está em
@@ -517,11 +518,18 @@ necessárias antes da integração definitiva ao manuscrito.
 
 ## Arquitetura do dashboard estático
 
-A Fase 6A definiu a arquitetura, a Fase 6B materializou os JSONs determinísticos e a Fase 6C
-criou a aplicação Next.js/React/TypeScript com App Router e static export. O frontend lê
-somente `dashboard/public/data/`, mantém os escopos temporal e contextual independentes,
-implementa filtros locais, UF → BR, navegação acessível e páginas congeladas sem recortes
-populacionais. As visualizações científicas finais permanecem reservadas à Fase 6D.
+A Fase 6A definiu a arquitetura, a Fase 6B materializou os JSONs determinísticos, a Fase 6C
+criou a aplicação Next.js/React/TypeScript e a Fase 6D integrou gráficos Recharts, tabelas,
+KPIs, matriz de confusão e desenho metodológico. O frontend lê somente
+`dashboard/public/data/`, mantém filtros locais e resultados científicos congelados e se
+reorganiza em desktop, tablet e mobile. Não existe backend, inferência ou recálculo de
+métricas científicas.
+
+Durante a revisão da Fase 6D foi identificada a necessidade de uma camada introdutória de
+comunicação científica para público não especializado. A nova Home `/` explica a pergunta
+central, as cinco perguntas de pesquisa, resultados congelados, glossário e limites de
+interpretação. A Visão Geral analítica foi movida sem perda para `/visao-geral`; o site possui
+nove rotas estáticas.
 
 ## Documentação científica
 
@@ -580,6 +588,8 @@ populacionais. As visualizações científicas finais permanecem reservadas à F
   JSONs, manifesto, hashes, reconciliação, determinismo e limites da camada estática de dados.
 - [`PHASE_6C_DASHBOARD_SHELL.md`](docs/PHASE_6C_DASHBOARD_SHELL.md): aplicação Next.js,
   rotas, componentes, dados tipados, filtros locais, acessibilidade e static export.
+- [`PHASE_6D_DASHBOARD_VISUALIZATIONS.md`](docs/PHASE_6D_DASHBOARD_VISUALIZATIONS.md):
+  integração dos gráficos, tabelas, matriz de confusão, responsividade e fronteira científica.
 - [`TCC_RESEARCH_LOG.md`](docs/TCC_RESEARCH_LOG.md): memória científica curada de decisões,
   resultados confirmados, hipóteses e limitações.
 - [`EDA_FINDINGS.md`](docs/EDA_FINDINGS.md): registro detalhado dos achados da Fase 2,
@@ -600,8 +610,8 @@ grupos `ml` e `viz` permanecem reservados para fases futuras.
 
 ## Próximo passo
 
-A próxima etapa é a Fase 6D, que integrará as visualizações científicas aos placeholders e aos
-dados já tipados da fundação estática.
+A próxima etapa é a Fase 6E, dedicada ao polimento visual, auditoria final de acessibilidade e
+responsividade, otimização do build estático e deploy. Nenhum deploy foi concluído na 6D.
 
 ## Princípio metodológico
 

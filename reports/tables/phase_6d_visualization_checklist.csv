@@ -1,0 +1,60 @@
+check_id,check,status,evidence
+D6D001,branch correta,PASS,feat/phase-6d-dashboard-visualizations
+D6D002,Recharts estável instalado,PASS,3.10.1 exact
+D6D003,react-is compatível,PASS,19.2.8 alinhado ao React
+D6D004,nenhuma outra chart lib,PASS,somente Recharts
+D6D005,JSONs 6B inalterados,PASS,15 SHA-256 idênticos
+D6D006,Python inalterado,PASS,sem diff novo em scripts src tests pyproject ou uv.lock
+D6D007,9 rotas implementadas,PASS,static export
+D6D008,visão geral KPIs implementados,PASS,quatro métricas e período
+D6D009,visão geral YEAR funcional,PASS,linha total ou anual publicada
+D6D010,visão geral visual temporal,PASS,composição anual
+D6D011,exploração temporal funcional,PASS,filtros e agregações autorizadas
+D6D012,exploração contextual funcional,PASS,filtros e agregações autorizadas
+D6D013,escopos independentes,PASS,estados separados
+D6D014,hora visualizada,PASS,line chart e valores
+D6D015,dia da semana visualizado,PASS,barras e tabela
+D6D016,tipo de pista visualizado,PASS,barras e tabela
+D6D017,meteorologia visualizada,PASS,Ignorado preservado
+D6D018,uso do solo visualizado,PASS,barras e tabela
+D6D019,geografia funcional,PASS,resumo barras e tabela
+D6D020,UF→BR preservado,PASS,br_by_uf e limpeza da seleção
+D6D021,sem mapa coroplético,PASS,ausente
+D6D022,tabela geográfica,PASS,total graves não graves proporção
+D6D023,model comparison chart,PASS,AP média 0–1
+D6D024,final 2025 metrics,PASS,seis métricas congeladas
+D6D025,calibration chart,PASS,dez bins e referência y=x
+D6D026,temporal validation chart,PASS,três modelos e três folds
+D6D027,temporal validation table,PASS,AP ROC-AUC Brier
+D6D028,threshold metrics,PASS,threshold precisão recall F1
+D6D029,confusion matrix,PASS,HTML CSS com TN FP FN TP
+D6D030,sem slider,PASS,nenhum controle de threshold
+D6D031,SHAP source chart,PASS,22 variáveis na ordem publicada
+D6D032,SHAP top15 chart,PASS,15 features na ordem publicada
+D6D033,SHAP caveat,PASS,não causal OHE cardinalidade
+D6D034,methodology temporal design,PASS,três folds e avaliação final
+D6D035,methodology feature view,PASS,11 representações e grupos
+D6D036,desktop responsive,PASS,layout >=1024px
+D6D037,tablet responsive,PASS,layout 640–1023px
+D6D038,mobile responsive,PASS,layout <640px
+D6D039,charts responsive,PASS,prop responsive e alturas por conteúdo
+D6D040,tables responsive,PASS,overflow horizontal
+D6D041,filters responsive,PASS,grid e controles touch
+D6D042,tooltips não exclusivos,PASS,tabelas resumos e valores associados
+D6D043,labels acessíveis,PASS,títulos descrições e accessibilityLayer
+D6D044,foco preservado,PASS,focus-visible e controles nativos
+D6D045,sem cálculo AP,PASS,consumo direto
+D6D046,sem cálculo ROC,PASS,consumo direto
+D6D047,sem cálculo Brier,PASS,consumo direto
+D6D048,sem novo F1,PASS,consumo direto
+D6D049,sem SHAP novo,PASS,consumo direto
+D6D050,sem inferência,PASS,nenhum modelo no frontend
+D6D051,sem backend,PASS,static export
+D6D052,static export PASS,PASS,9 rotas e 5 assets essenciais
+D6D053,lint PASS,PASS,npm run lint
+D6D054,typecheck PASS,PASS,npm run typecheck
+D6D055,build PASS,PASS,npm run build
+D6D056,Python tests PASS,PASS,378 testes
+D6D057,home de comunicação científica,PASS,introdução target pergunta central e CTAs
+D6D058,RQ1–RQ5 comunicadas,PASS,perguntas respostas simples details opcionais links e ressalvas sempre visíveis
+D6D059,resultados congelados e exploração distinguidos,PASS,definições glossário filtros e limites explícitos

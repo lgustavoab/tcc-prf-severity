@@ -8,7 +8,8 @@ export interface NavigationItem {
 }
 
 export const NAV_ITEMS: readonly NavigationItem[] = [
-  { href: "/", label: "Visão Geral", shortLabel: "Geral", status: "MIXED" },
+  { href: "/", label: "Sobre o estudo", shortLabel: "Sobre", status: "DOCUMENTATION" },
+  { href: "/visao-geral", label: "Visão Geral", shortLabel: "Geral", status: "MIXED" },
   { href: "/exploracao", label: "Exploração", shortLabel: "Exploração", status: "EXPLORATORY" },
   { href: "/geografia", label: "Geografia", shortLabel: "Geografia", status: "EXPLORATORY" },
   { href: "/modelos", label: "Modelos", shortLabel: "Modelos", status: "FROZEN_RESULT" },

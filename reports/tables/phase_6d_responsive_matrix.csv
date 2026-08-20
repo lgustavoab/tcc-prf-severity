@@ -1,0 +1,20 @@
+route,component_or_area,desktop,tablet,mobile,overflow_checked,labels_checked,touch_checked,notes,status
+/,introdução e resumo,duas áreas e KPIs 2x2,conteúdo empilhado,KPIs em uma coluna,true,true,false,inspeção estrutural em 390px 768px e desktop,PASS
+/,RQ1–RQ5 e glossário,duas colunas,duas colunas,uma coluna,true,true,false,conteúdo integral sem hover,PASS
+/,limites e CTAs,duas colunas e 4 CTAs,duas colunas e 2 CTAs,uma coluna,true,true,true,links semânticos e foco preservado,PASS
+/visao-geral,KPI grid,4 cards por linha,2 cards por linha,1 card por linha,true,true,true,conteúdo analítico preservado da antiga home,PASS
+/visao-geral,composição anual,chart amplo,chart em coluna,altura 340px e tabela rolável,true,true,false,inspeção estrutural em 390px 768px e desktop,PASS
+/exploracao,filtros temporal e contextual,controles lado a lado,controles reorganizados,controles empilhados e menus no fluxo,true,true,true,escopos mantêm estados independentes,PASS
+/exploracao,charts temporais,duas colunas,uma coluna,uma coluna e valores essenciais abaixo,true,true,false,tooltips não são fonte exclusiva,PASS
+/exploracao,charts contextuais,uma coluna ampla,uma coluna,altura cresce por categoria,true,true,false,Ignorado preservado e identificado,PASS
+/geografia,filtros YEAR UF BR,controles lado a lado,controles reorganizados,controles empilhados,true,true,true,UF limpa BR incompatível,PASS
+/geografia,barras e tabela,altura conforme 27 UFs,altura conforme categorias,overflow horizontal na tabela,true,true,false,sem mapa coroplético,PASS
+/modelos,comparação e métricas,chart e 3 cards,chart e 2 cards,chart e cards em uma coluna,true,true,false,escala AP 0–1,PASS
+/modelos,calibração,chart amplo,chart em coluna,chart 340px e tabela rolável,true,true,false,referência y=x identificada,PASS
+/validacao-temporal,line chart e tabela,chart amplo,chart em coluna,legenda quebra e tabela rolável,true,true,false,três séries distinguidas por cor label e traço,PASS
+/limiar,métricas,4 cards,2 cards,1 card,true,true,false,sem slider ou controle de edição,PASS
+/limiar,matriz de confusão,matriz e explicação lado a lado,blocos empilhados,grid compacto e explicação abaixo,true,true,false,aria-label contém TN FP FN TP,PASS
+/interpretacao,seletor de visão,lateral ao título,lateral ao título,empilhado,true,true,true,seleciona somente resultados publicados,PASS
+/interpretacao,barras SHAP,altura por 22 ou 15 linhas,altura preservada,labels e tabela com overflow,true,true,false,nome amigável e técnico preservados,PASS
+/metodologia,timeline,4 colunas,2 colunas,1 coluna,true,true,false,valores lidos do JSON,PASS
+/metodologia,tabelas e grupos,tabela e 3 cards,tabela e cards refluem,overflow horizontal e 1 card,true,true,false,colunas essenciais preservadas,PASS

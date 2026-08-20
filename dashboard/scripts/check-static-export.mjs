@@ -4,6 +4,7 @@ import path from "node:path";
 const outDir = path.resolve("out");
 const routes = [
   "index.html",
+  "visao-geral.html",
   "exploracao.html",
   "geografia.html",
   "modelos.html",

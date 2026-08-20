@@ -1,7 +1,6 @@
-import { OverviewFoundation } from "@/components/scientific/overview-foundation";
+import { AboutStudyFoundation } from "@/components/scientific/about-study-foundation";
 import { PageHeader } from "@/components/scientific/page-header";
-import { ScientificCaveat } from "@/components/scientific/scientific-caveat";
 
-export default function OverviewPage() {
-  return <div className="section-stack"><PageHeader title="Visão Geral" description="Panorama dos acidentes registrados e porta de entrada para os resultados do estudo." status="MIXED" /><OverviewFoundation /><ScientificCaveat /></div>;
+export default function AboutStudyPage() {
+  return <div className="section-stack"><PageHeader title="Entenda o estudo" description="Análise dos fatores associados à gravidade de acidentes em rodovias federais brasileiras e avaliação de modelos de aprendizado de máquina." status="DOCUMENTATION" badgeLabel="TCC · Ciência de dados" /><AboutStudyFoundation /></div>;
 }
