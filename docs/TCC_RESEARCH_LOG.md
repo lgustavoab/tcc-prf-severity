@@ -756,6 +756,30 @@ nove rotas exportaram sem warning; console, lint, tipagem e check integrado fora
 **Status:** confirmada para revisão pré-deploy. A Fase 6E.2 permanece responsável por destino
 de hospedagem, configuração final e publicação controlada.
 
+### D031 — Publicação controlada do dashboard estático
+
+**Data:** 19/08/2026.
+
+**Decisão:** publicar na Vercel o commit
+`379d455280a3bd74d500e7f53c847794158c73fb` da `main`, com `dashboard` como Root Directory,
+Next.js autodetectado e domínio público <https://tcc-prf-severity.vercel.app>.
+
+**Justificativa:** a publicação por integração Git preserva o recorte do monorepositório, a
+exportação estática e a rastreabilidade exata entre produção, branch e commit, sem introduzir
+configuração ou serviço desnecessário.
+
+**Consequências:** o deployment `dpl_484Z5z4UdnZ3paGEVrzG8HV4zfdF` terminou `READY`; as nove
+rotas, o refresh direto, a navegação, os gráficos e a responsividade representativa foram
+aprovados. Os 15 JSONs responderam HTTP 200; os 14 assets declarados coincidiram em tamanho e
+SHA-256 com o manifesto, também servido na materialização versionada. CSS e JavaScript
+apresentaram MIME correto e não houve erro de console ou runtime. Nenhum resultado científico,
+código, dado, dependência, variável de ambiente ou serviço de backend foi alterado.
+
+**Origem:** [PHASE_6E_DASHBOARD_POLISH.md](PHASE_6E_DASHBOARD_POLISH.md) e deployment Vercel
+`dpl_484Z5z4UdnZ3paGEVrzG8HV4zfdF`.
+
+**Status:** confirmada; dashboard de produção publicado e validado.
+
 ## Resultados consolidados
 
 ### R001 — Dimensão do dataset

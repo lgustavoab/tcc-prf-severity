@@ -96,3 +96,33 @@ A etapa seguinte pode tratar exclusivamente da revisão final do destino de hosp
 path/URLs quando exigidos pelo provedor, política de cache e execução controlada do deploy.
 Favicon customizado é opcional e só deve ser criado com uma decisão visual explícita. Analytics,
 tracking, backend e inferência em produção permanecem fora do escopo.
+
+## Fase 6E.2 — Deploy de produção
+
+Em 19/08/2026, o dashboard foi publicado na Vercel no projeto `tcc-prf-severity`, com
+`dashboard` como Root Directory, framework Next.js autodetectado e integração GitHub ligada à
+branch de produção `main`. O deploy utilizou o commit
+`379d455280a3bd74d500e7f53c847794158c73fb`, executou `npm run build` (`next build`) e foi
+concluído com status `READY` sob o identificador
+`dpl_484Z5z4UdnZ3paGEVrzG8HV4zfdF`.
+
+URL pública aprovada: <https://tcc-prf-severity.vercel.app>.
+
+As nove rotas foram acessadas diretamente em produção e renderizaram com `main` e `h1`; a
+navegação interna e o refresh direto em `/modelos` também foram aprovados, sem 404. A inspeção
+representativa em 390, 768 e 1280 px confirmou navegação horizontal mobile, ausência de
+overflow global e apresentação funcional da Home, da Visão Geral, dos modelos, de tabela e de
+gráficos maiores. A Home preservou título, resumo, definição operacional de acidente grave,
+RQ1–RQ5, cinco aprofundamentos, ressalvas, resultados congelados, glossário, escopo e CTAs.
+
+Os 15 JSONs em `dashboard/public/data/` responderam HTTP 200 com `application/json`; os 14
+assets declarados coincidiram em tamanho e SHA-256 com o manifesto, que também foi servido na
+materialização versionada. CSS e chunks JavaScript responderam HTTP 200 com MIME apropriado.
+Não foram observados erros ou warnings no console, erros de runtime, falhas de hidratação ou
+assets quebrados. Nenhum dado, código, dependência, variável de ambiente, backend, função,
+banco, analytics, tracking ou domínio customizado foi adicionado.
+
+A primeira tentativa, feita por upload local a partir de `dashboard/`, falhou antes do build
+porque a Root Directory remota `dashboard` foi aplicada novamente ao diretório já recortado. Os
+logs identificaram objetivamente a causa; a configuração correta foi preservada e o deploy
+final foi disparado da fonte Git no commit acima, sem alteração de código ou tentativa aleatória.
